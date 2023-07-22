@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Mapeamentos\Adicional.hbm.xml" />
+    <None Remove="Mapeamentos\Cliente.hbm.xml" />
+    <None Remove="Mapeamentos\ItemPedido.hbm.xml" />
+    <None Remove="Mapeamentos\Pedido.hbm.xml" />
+    <None Remove="Mapeamentos\Prescricao.hbm.xml" />
+    <None Remove="Mapeamentos\Produto.hbm.xml" />
+    <None Remove="Mapeamentos\Receita.hbm.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\Adicional.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\Cliente.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\ItemPedido.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\Pedido.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\Prescricao.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\Produto.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\Receita.hbm.xml" />
+  </ItemGroup>
+
+</Project>

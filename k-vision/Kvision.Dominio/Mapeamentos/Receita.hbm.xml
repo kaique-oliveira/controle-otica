@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Kvision.Dominio.Entidades" assembly="Kvision.Dominio">
+
+	<class name="Receita" lazy="false" table="tbl_receita" >
+
+		<id name="Id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="DataCadastro"		column="d_cadastro"			type="date" />
+		
+		<property name="DataExame"			column="d_exame"			type="date" />
+		<property name="DataValExame"		column="d_val_exame"		type="date" />
+		<property name="NomeExaminador"	    column="nome_examinador"	type="string" length="150" />
+
+		<many-to-one name="Cliente"
+					 class="Cliente"
+					 column="id_cliente"
+					 fetch="join"
+					 foreign-key="tbl_receita_id_cliente_fkey"/>
+
+	</class>
+</hibernate-mapping>

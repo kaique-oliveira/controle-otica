@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Kvision.Dominio.Entidades" assembly="Kvision.Dominio">
+
+	<class name="Pedido" lazy="false" table="tbl_pedido" >
+
+		<id name="Id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="DataCadastro"		column="d_cadastro"			type="date" />
+		
+		<property name="TipoPagamento"		column="tipo_pagamento"		type="string" length="6" />
+		<property name="Total"				column="total"				type="decimal" />
+
+		<many-to-one name="Cliente"
+					 class="Cliente"
+					 column="id_cliente"
+					 fetch="join"
+					 foreign-key="tbl_pedido_id_cliente_fkey"/>
+		
+		<many-to-one name="Receita"
+			 class="Receita"
+			 column="id_receita"
+			 fetch="join"
+			 foreign-key="tbl_pedido_id_receita_fkey"/>
+
+	</class>
+</hibernate-mapping>

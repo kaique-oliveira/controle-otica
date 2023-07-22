@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Kvision.Dominio.Entidades" assembly="Kvision.Dominio">
+
+	<class name="Prescricao" lazy="false" table="tbl_prescricao" >
+
+		<id name="Id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="DataCadastro"		column="d_cadastro"		type="date" />
+		
+		<property name="Tipo"	column="tipo"			type="string" length="6" />
+		
+		<property name="EsfericoDireito"	column="esf_direito"	type="decimal" />
+		<property name="CilindricoDireito"	column="cil_direito"	type="decimal" />
+		<property name="EixoDireito"		column="eixo_direito"	type="decimal" />
+		<property name="DPDireito"			column="dnp_direito"	type="decimal" />
+
+		<property name="EsfericoEsquerdo"	column="esf_esquerdo"	type="decimal" />
+		<property name="CilindricoEsquerdo"	column="cil_esquerdo"	type="decimal" />
+		<property name="EixoEsquerdo"		column="eixo_esquerdo"	type="decimal" />
+		<property name="DPEsquerdo"			column="dnp_esquerdo"	type="decimal" />
+
+		<many-to-one name="Receita"
+				 class="Receita"
+				 column="id_receita"
+				 fetch="join"
+				 foreign-key="tbl_prescricao_id_receita_fkey"/>
+
+	</class>
+</hibernate-mapping>
+
+
+
+
+
