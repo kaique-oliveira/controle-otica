@@ -2,7 +2,7 @@ create table tbl_cliente(
  id serial constraint pk_id_cliente primary key,
  d_cadastro date not null,
  nome varchar(150) not null, 
- telefone varchar(14) not null
+ telefone varchar(16) not null
 );
 
 create table tbl_receita(
@@ -20,14 +20,14 @@ create table tbl_prescricao(
  id serial constraint pk_id_prescricao primary key,
  d_cadastro date not null,
  tipo varchar(6) not null, 
- esf_direito decimal, 
- cil_direito decimal, 
- eixo_direito decimal, 
- dnp_direito decimal, 
- esf_esquerdo decimal, 
- cil_esquerdo decimal, 
- eixo_esquerdo decimal, 
- dnp_esquerdo decimal, 
+ esf_direito decimal null, 
+ cil_direito decimal null, 
+ eixo_direito decimal null, 
+ dnp_direito decimal null, 
+ esf_esquerdo decimal null, 
+ cil_esquerdo decimal null, 
+ eixo_esquerdo decimal null, 
+ dnp_esquerdo decimal null, 
  id_receita int not null,
  foreign key (id_receita) references tbl_receita (id) 
  on  delete  cascade

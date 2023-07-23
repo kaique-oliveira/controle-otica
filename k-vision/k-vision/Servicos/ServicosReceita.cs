@@ -14,9 +14,21 @@ namespace Kvision.Frame.Servicos
             _receita = receita;
         }
 
-        public string Cadastrar(Receita entidade)
+        public string Cadastrar(Receita receita)
         {
-            throw new NotImplementedException();
+            string resultValidacao = ValidarCampos(receita);
+
+            if (resultValidacao == "")
+            {
+                if (_receita.Insert(receita))
+                {
+                    return "Receita cadastrado com sucesso!";
+                }
+
+                return "Ops, algo deu errado";
+            }
+
+            return resultValidacao;
         }
 
         public List<Receita> ConsultarTodos()
@@ -34,6 +46,17 @@ namespace Kvision.Frame.Servicos
         public string Editar(Receita entidade)
         {
             throw new NotImplementedException();
+        }
+
+        private string ValidarCampos(Receita receita)
+        {
+            if (string.IsNullOrEmpty(receita.DataExame.ToString()) 
+                || string.IsNullOrEmpty(receita.DataValExame.ToString()) || string.IsNullOrEmpty(receita.NomeExaminador))
+            {
+                return "Preencha todos os campos!";
+            }
+
+            return "";
         }
     }
 }

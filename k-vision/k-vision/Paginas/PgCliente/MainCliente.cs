@@ -28,8 +28,12 @@ namespace Kvision.Frame.Paginas.PgCliente
             indexlista = -1;
             dg_clientes.AutoGenerateColumns = false;
             listaClientes = servicos.ConsultarTodos();
-            dg_clientes.DataSource = listaClientes;
-            dg_clientes.Rows[0].Cells[0].Selected = false;
+
+            if (listaClientes.Count > 0)
+            {
+                dg_clientes.DataSource = listaClientes;
+                dg_clientes.Rows[0].Cells[0].Selected = false;
+            }
         }
 
         private void bnt_show_cadastrar_Click(object sender, EventArgs e)
@@ -45,13 +49,14 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void txt_filtro_TextChanged(object sender, EventArgs e)
         {
-            dg_clientes.DataSource = listaClientes.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro.Text.ToUpperInvariant()) 
+            dg_clientes.DataSource = listaClientes.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro.Text.ToUpperInvariant())
                 || x.Telefone.Contains(txt_filtro.Text));
         }
 
         private void btn_show_editar_Click(object sender, EventArgs e)
         {
-            if(indexlista > -1) { 
+            if (indexlista > -1)
+            {
                 Cliente clienteRecuperado = listaClientes[indexlista];
                 var crud_cliente = new PersistirCliente(TiposOperacoes.Editar, servicos, clienteRecuperado, this);
                 crud_cliente.ShowDialog();
@@ -73,7 +78,7 @@ namespace Kvision.Frame.Paginas.PgCliente
                     Cliente clienteRecuperado = listaClientes[indexlista];
                     MessageBox.Show($"{servicos.Deletar(clienteRecuperado)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     atualizarGrid();
-                }  
+                }
             }
             else
             {
@@ -88,8 +93,17 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void btn_show_exames_Click(object sender, EventArgs e)
         {
-            var mainExames = new MainExames();
-            mainExames.ShowDialog();
+            if (indexlista > -1)
+            {
+                Cliente cliente = listaClientes[indexlista];
+                var mainExames = new MainReceita(cliente);
+                mainExames.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
+            }
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace k_vision
 
         private void btn_cliente_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

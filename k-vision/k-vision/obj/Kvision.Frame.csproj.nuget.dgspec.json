@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\k-vision\\Kvision.Frame.csproj": {}
+    "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\k-vision\\Kvision.Frame.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\k-vision\\Kvision.Frame.csproj": {
+    "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\k-vision\\Kvision.Frame.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\k-vision\\Kvision.Frame.csproj",
+        "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\k-vision\\Kvision.Frame.csproj",
         "projectName": "Kvision.Frame",
-        "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\k-vision\\Kvision.Frame.csproj",
-        "packagesPath": "C:\\Users\\kaique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\k-vision\\obj\\",
+        "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\k-vision\\Kvision.Frame.csproj",
+        "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\k-vision\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,17 +27,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://192.168.10.40/GaleriaNugetInterfocus/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {
-                "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Database\\Kvision.Database.csproj"
+              "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {
+                "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj"
               },
-              "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
-                "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
+              "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
               }
             }
           }
@@ -69,24 +71,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {
+    "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
+        "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
         "projectName": "Kvision.Database",
-        "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
-        "packagesPath": "C:\\Users\\kaique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Database\\obj\\",
+        "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
+        "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -95,14 +98,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://192.168.10.40/GaleriaNugetInterfocus/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
-                "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
+              "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
               }
             }
           }
@@ -166,24 +170,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
+    "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
         "projectName": "Kvision.Dominio",
-        "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
-        "packagesPath": "C:\\Users\\kaique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\k-vision\\Kvision.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
+        "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -192,6 +197,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://192.168.10.40/GaleriaNugetInterfocus/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -225,7 +231,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -5,5 +5,6 @@ namespace Kvision.Dominio.Enums
     {
         Longe = 0,
         Perto = 1,
+        Ambos = 2,
     }
 }
