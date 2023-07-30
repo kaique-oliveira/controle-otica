@@ -1,13 +1,9 @@
 ﻿using Kvision.Database.Conexao;
-using Kvision.Database.Interfaces;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
-using Kvision.Frame.Interfaces;
 using Kvision.Frame.Paginas.PgExames;
 using Kvision.Frame.Servicos;
-using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace Kvision.Frame.Paginas.PgCliente
 {
@@ -21,7 +17,8 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         ServicosCliente servicos = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
         List<Cliente> listaClientes = new List<Cliente>();
-        int indexlista = -1;
+        Cliente cliente = new Cliente();
+        public int indexlista = -1;
 
         public void atualizarGrid()
         {
@@ -31,7 +28,7 @@ namespace Kvision.Frame.Paginas.PgCliente
 
             if (listaClientes.Count > 0)
             {
-                dg_clientes.DataSource = listaClientes;
+                dg_clientes.DataSource = listaClientes.OrderBy(c => c.Nome).ToList();
                 dg_clientes.Rows[0].Cells[0].Selected = false;
             }
         }
@@ -40,11 +37,6 @@ namespace Kvision.Frame.Paginas.PgCliente
         {
             var crud_cliente = new PersistirCliente(TiposOperacoes.Cadastrar, servicos, null, this);
             crud_cliente.ShowDialog();
-        }
-
-        private void MainCliente_Load(object sender, EventArgs e)
-        {
-            atualizarGrid();
         }
 
         private void txt_filtro_TextChanged(object sender, EventArgs e)
@@ -69,14 +61,13 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void btn_deletar_Click(object sender, EventArgs e)
         {
-
             if (indexlista > -1)
             {
                 var result = MessageBox.Show($"Deseja realmente deletar este cliente?", "Antenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    Cliente clienteRecuperado = listaClientes[indexlista];
-                    MessageBox.Show($"{servicos.Deletar(clienteRecuperado)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show($"{servicos.Deletar(cliente)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     atualizarGrid();
                 }
             }
@@ -89,6 +80,7 @@ namespace Kvision.Frame.Paginas.PgCliente
         private void dg_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indexlista = dg_clientes.CurrentCell.RowIndex;
+            cliente = listaClientes[indexlista];
         }
 
         private void btn_show_exames_Click(object sender, EventArgs e)
@@ -104,6 +96,11 @@ namespace Kvision.Frame.Paginas.PgCliente
                 MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
             }
 
+        }
+
+        private void MainCliente_Shown(object sender, EventArgs e)
+        {
+            atualizarGrid();
         }
     }
 }

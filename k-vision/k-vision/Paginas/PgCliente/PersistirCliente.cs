@@ -1,11 +1,6 @@
-﻿using Kvision.Database.Conexao;
-using Kvision.Database.Interfaces;
-using Kvision.Database.Servicos;
-using Kvision.Dominio.Entidades;
+﻿using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
 using Kvision.Frame.Interfaces;
-using Kvision.Frame.Servicos;
-using System.Globalization;
 
 namespace Kvision.Frame.Paginas.PgCliente
 {
@@ -41,23 +36,39 @@ namespace Kvision.Frame.Paginas.PgCliente
 
             if (_tiposOperacoes == TiposOperacoes.Cadastrar)
             {
-                MessageBox.Show($"{_servicos.Cadastrar(_cliente)}", "Atenção");
+                var result = MessageBox.Show($"{_servicos.Cadastrar(_cliente)}", "Antenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    _mainCliente.atualizarGrid();
+                    limparCampos();
+                    _mainCliente.indexlista = -1;
+                    this.Close();
+                }
             }
             else
             {
-                MessageBox.Show($"{_servicos.Editar(_cliente)}", "Atenção");
+                var result = MessageBox.Show($"{_servicos.Editar(_cliente)}", "Antenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    _mainCliente.atualizarGrid();
+                    limparCampos();
+                    _mainCliente.indexlista = -1;
+                    this.Close();
+                }
             }
-
-            _mainCliente.atualizarGrid();
-            limparCampos();
         }
 
         private void PersistirCliente_Load(object sender, EventArgs e)
         {
-            if (_cliente != null)
+            if (_tiposOperacoes == TiposOperacoes.Editar)
             {
                 txt_nome.Text = _cliente.Nome;
                 txt_telefone.Text = _cliente.Telefone;
+                this.Text = "Editando cliente";
+            }
+            else
+            {
+                this.Text = "Cadastrando cliente";
             }
         }
     }

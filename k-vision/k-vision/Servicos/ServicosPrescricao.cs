@@ -40,15 +40,29 @@ namespace Kvision.Frame.Servicos
             return result;
         }
 
-
-        public string Deletar(Prescricao entidade)
+        public string Deletar(Prescricao precricao)
         {
-            throw new NotImplementedException();
+            if (_prescricao.Delete(precricao))
+            {
+                return "Prescricão deletada com sucesso!";
+            }
+            else
+            {
+                return "Ops, algo deu errado";
+            }
         }
 
-        public string Editar(Prescricao entidade)
+        public string Editar(Prescricao prescricao)
         {
-            throw new NotImplementedException();
+            if (_prescricao.Update(prescricao))
+            {
+                return "Receita cadastrada com sucesso!";
+            }
+            else
+            {
+                return "Ops, algo deu errado";
+            }
         }
+
     }
 }

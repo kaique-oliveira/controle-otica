@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {}
+    "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {
+    "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
+        "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
         "projectName": "Kvision.Database",
-        "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
+        "projectPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
         "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\obj\\",
+        "outputPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -34,8 +34,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
-                "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
+              "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
+                "projectPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
               }
             }
           }
@@ -103,14 +103,14 @@
         }
       }
     },
-    "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
+    "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
         "projectName": "Kvision.Dominio",
-        "projectPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
+        "projectPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
         "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Dominio\\obj\\",
+        "outputPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

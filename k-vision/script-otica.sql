@@ -16,21 +16,21 @@ create table tbl_receita(
  on  delete  cascade
 );
 
-create table tbl_prescricao(
- id serial constraint pk_id_prescricao primary key,
- d_cadastro date not null,
- tipo varchar(6) not null, 
- esf_direito decimal null, 
- cil_direito decimal null, 
- eixo_direito decimal null, 
- dnp_direito decimal null, 
- esf_esquerdo decimal null, 
- cil_esquerdo decimal null, 
- eixo_esquerdo decimal null, 
- dnp_esquerdo decimal null, 
- id_receita int not null,
- foreign key (id_receita) references tbl_receita (id) 
- on  delete  cascade
+CREATE TABLE public.tbl_prescricao (
+	id serial4 NOT NULL,
+	d_cadastro date NOT NULL,
+	tipo int4 NOT NULL,
+	esf_direito varchar NULL,
+	cil_direito varchar NULL,
+	eixo_direito varchar NULL,
+	dnp_direito varchar NULL,
+	esf_esquerdo varchar NULL,
+	cil_esquerdo varchar NULL,
+	eixo_esquerdo varchar NULL,
+	dnp_esquerdo varchar NULL,
+	id_receita int4 NOT NULL,
+	CONSTRAINT pk_id_prescricao PRIMARY KEY (id),
+	CONSTRAINT tbl_prescricao_id_receita_fkey FOREIGN KEY (id_receita) REFERENCES public.tbl_receita(id) ON DELETE CASCADE
 );
 
 create table tbl_pedido(

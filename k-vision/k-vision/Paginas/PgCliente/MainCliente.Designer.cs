@@ -32,7 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dg_clientes = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             dataCadastro = new DataGridViewTextBoxColumn();
@@ -59,18 +58,18 @@
             dg_clientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.Silver;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dg_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dg_clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_clientes.Columns.AddRange(new DataGridViewColumn[] { id, nome, telefone, dataCadastro });
+            dg_clientes.Columns.AddRange(new DataGridViewColumn[] { nome, telefone, dataCadastro });
             dg_clientes.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = Color.CornflowerBlue;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
@@ -78,14 +77,14 @@
             dg_clientes.DefaultCellStyle = dataGridViewCellStyle2;
             dg_clientes.EnableHeadersVisualStyles = false;
             dg_clientes.GridColor = Color.WhiteSmoke;
-            dg_clientes.Location = new Point(175, 59);
+            dg_clientes.Location = new Point(176, 59);
             dg_clientes.MultiSelect = false;
             dg_clientes.Name = "dg_clientes";
             dg_clientes.ReadOnly = true;
             dg_clientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = Color.Silver;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
@@ -94,17 +93,9 @@
             dg_clientes.RowHeadersVisible = false;
             dg_clientes.RowTemplate.Height = 25;
             dg_clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_clientes.Size = new Size(461, 390);
+            dg_clientes.Size = new Size(430, 390);
             dg_clientes.TabIndex = 0;
             dg_clientes.CellClick += dg_clientes_CellClick;
-            // 
-            // id
-            // 
-            id.DataPropertyName = "id";
-            id.HeaderText = "Código";
-            id.Name = "id";
-            id.ReadOnly = true;
-            id.Width = 60;
             // 
             // nome
             // 
@@ -121,6 +112,7 @@
             telefone.HeaderText = "Telefone";
             telefone.Name = "telefone";
             telefone.ReadOnly = true;
+            telefone.Width = 130;
             // 
             // dataCadastro
             // 
@@ -168,7 +160,7 @@
             btn_show_exames.Name = "btn_show_exames";
             btn_show_exames.Size = new Size(135, 48);
             btn_show_exames.TabIndex = 5;
-            btn_show_exames.Text = "Ver exames";
+            btn_show_exames.Text = "Ver receitas";
             btn_show_exames.UseVisualStyleBackColor = false;
             btn_show_exames.Click += btn_show_exames_Click;
             // 
@@ -208,15 +200,16 @@
             panel2.Controls.Add(txt_filtro);
             panel2.Location = new Point(175, 13);
             panel2.Name = "panel2";
-            panel2.Size = new Size(461, 40);
+            panel2.Size = new Size(431, 40);
             panel2.TabIndex = 4;
             // 
             // txt_filtro
             // 
-            txt_filtro.Location = new Point(10, 9);
+            txt_filtro.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_filtro.Location = new Point(11, 6);
             txt_filtro.Name = "txt_filtro";
             txt_filtro.PlaceholderText = "Buscar cliente por nome ou final do telefone";
-            txt_filtro.Size = new Size(439, 23);
+            txt_filtro.Size = new Size(407, 27);
             txt_filtro.TabIndex = 0;
             txt_filtro.Tag = "";
             txt_filtro.TextChanged += txt_filtro_TextChanged;
@@ -226,14 +219,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(653, 461);
+            ClientSize = new Size(636, 461);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dg_clientes);
             Name = "MainCliente";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Clientes";
-            Load += MainCliente_Load;
+            Shown += MainCliente_Shown;
             ((System.ComponentModel.ISupportInitialize)dg_clientes).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -251,15 +244,14 @@
         private Button button1;
         private DataGridView dg_clientes;
         private Button bnt_cadastrar;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn telefone;
-        private DataGridViewTextBoxColumn dataCadastro;
         private Panel panel1;
         private Button btn_show_exames;
         private Button btn_deletar;
         private Button btn_show_editar;
         private Panel panel2;
         private TextBox txt_filtro;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn telefone;
+        private DataGridViewTextBoxColumn dataCadastro;
     }
 }

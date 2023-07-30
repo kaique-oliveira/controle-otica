@@ -69,10 +69,6 @@
             txt_dp_direito_longe = new MaskedTextBox();
             txt_cil_direito_longe = new MaskedTextBox();
             txt_esf_esquerdo_longe = new MaskedTextBox();
-            label18 = new Label();
-            rd_longe = new RadioButton();
-            rd_perto = new RadioButton();
-            rd_ambos = new RadioButton();
             panel_perto.SuspendLayout();
             panel5.SuspendLayout();
             panel_longe.SuspendLayout();
@@ -86,11 +82,11 @@
             btn_salvar.FlatStyle = FlatStyle.Flat;
             btn_salvar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             btn_salvar.ForeColor = SystemColors.Control;
-            btn_salvar.Location = new Point(360, 429);
+            btn_salvar.Location = new Point(357, 312);
             btn_salvar.Margin = new Padding(3, 4, 3, 4);
             btn_salvar.Name = "btn_salvar";
             btn_salvar.Size = new Size(86, 49);
-            btn_salvar.TabIndex = 23;
+            btn_salvar.TabIndex = 42;
             btn_salvar.Text = "Salvar";
             btn_salvar.UseVisualStyleBackColor = false;
             btn_salvar.Click += btn_salvar_Click;
@@ -161,7 +157,7 @@
             lbl_perto.AutoSize = true;
             lbl_perto.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_perto.ForeColor = Color.BlueViolet;
-            lbl_perto.Location = new Point(592, 230);
+            lbl_perto.Location = new Point(589, 113);
             lbl_perto.Name = "lbl_perto";
             lbl_perto.Size = new Size(51, 21);
             lbl_perto.TabIndex = 24;
@@ -176,12 +172,11 @@
             panel_perto.Controls.Add(label11);
             panel_perto.Controls.Add(label12);
             panel_perto.Controls.Add(panel5);
-            panel_perto.Location = new Point(426, 254);
+            panel_perto.Location = new Point(423, 137);
             panel_perto.Margin = new Padding(3, 4, 3, 4);
             panel_perto.Name = "panel_perto";
             panel_perto.Size = new Size(347, 109);
             panel_perto.TabIndex = 23;
-            panel_perto.Visible = false;
             // 
             // label9
             // 
@@ -249,7 +244,7 @@
             txt_dp_esquerdo_perto.Mask = "0,00";
             txt_dp_esquerdo_perto.Name = "txt_dp_esquerdo_perto";
             txt_dp_esquerdo_perto.Size = new Size(69, 27);
-            txt_dp_esquerdo_perto.TabIndex = 34;
+            txt_dp_esquerdo_perto.TabIndex = 41;
             txt_dp_esquerdo_perto.ValidatingType = typeof(DateTime);
             // 
             // label13
@@ -269,7 +264,7 @@
             txt_eixo_esquerdo_perto.Mask = "0,00";
             txt_eixo_esquerdo_perto.Name = "txt_eixo_esquerdo_perto";
             txt_eixo_esquerdo_perto.Size = new Size(69, 27);
-            txt_eixo_esquerdo_perto.TabIndex = 36;
+            txt_eixo_esquerdo_perto.TabIndex = 40;
             txt_eixo_esquerdo_perto.ValidatingType = typeof(DateTime);
             // 
             // label14
@@ -290,7 +285,7 @@
             txt_cil_esquerdo_perto.Mask = "0,00";
             txt_cil_esquerdo_perto.Name = "txt_cil_esquerdo_perto";
             txt_cil_esquerdo_perto.Size = new Size(69, 27);
-            txt_cil_esquerdo_perto.TabIndex = 37;
+            txt_cil_esquerdo_perto.TabIndex = 39;
             txt_cil_esquerdo_perto.ValidatingType = typeof(DateTime);
             // 
             // txt_eixo_direito_perto
@@ -300,7 +295,7 @@
             txt_eixo_direito_perto.Mask = "0,00";
             txt_eixo_direito_perto.Name = "txt_eixo_direito_perto";
             txt_eixo_direito_perto.Size = new Size(69, 27);
-            txt_eixo_direito_perto.TabIndex = 32;
+            txt_eixo_direito_perto.TabIndex = 36;
             txt_eixo_direito_perto.ValidatingType = typeof(DateTime);
             // 
             // txt_esf_esquerdo_perto
@@ -310,7 +305,7 @@
             txt_esf_esquerdo_perto.Mask = "0,00";
             txt_esf_esquerdo_perto.Name = "txt_esf_esquerdo_perto";
             txt_esf_esquerdo_perto.Size = new Size(69, 27);
-            txt_esf_esquerdo_perto.TabIndex = 35;
+            txt_esf_esquerdo_perto.TabIndex = 38;
             txt_esf_esquerdo_perto.ValidatingType = typeof(DateTime);
             // 
             // txt_dp_direito_perto
@@ -320,7 +315,7 @@
             txt_dp_direito_perto.Mask = "0,00";
             txt_dp_direito_perto.Name = "txt_dp_direito_perto";
             txt_dp_direito_perto.Size = new Size(69, 27);
-            txt_dp_direito_perto.TabIndex = 33;
+            txt_dp_direito_perto.TabIndex = 37;
             txt_dp_direito_perto.ValidatingType = typeof(DateTime);
             // 
             // txt_esf_direito_perto
@@ -330,7 +325,7 @@
             txt_esf_direito_perto.Mask = "0,00";
             txt_esf_direito_perto.Name = "txt_esf_direito_perto";
             txt_esf_direito_perto.Size = new Size(69, 27);
-            txt_esf_direito_perto.TabIndex = 30;
+            txt_esf_direito_perto.TabIndex = 34;
             txt_esf_direito_perto.ValidatingType = typeof(DateTime);
             // 
             // txt_cil_direito_perto
@@ -340,7 +335,7 @@
             txt_cil_direito_perto.Mask = "0,00";
             txt_cil_direito_perto.Name = "txt_cil_direito_perto";
             txt_cil_direito_perto.Size = new Size(69, 27);
-            txt_cil_direito_perto.TabIndex = 31;
+            txt_cil_direito_perto.TabIndex = 35;
             txt_cil_direito_perto.ValidatingType = typeof(DateTime);
             // 
             // lbl_longe
@@ -348,7 +343,7 @@
             lbl_longe.AutoSize = true;
             lbl_longe.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_longe.ForeColor = Color.Firebrick;
-            lbl_longe.Location = new Point(181, 230);
+            lbl_longe.Location = new Point(178, 113);
             lbl_longe.Name = "lbl_longe";
             lbl_longe.Size = new Size(57, 21);
             lbl_longe.TabIndex = 22;
@@ -363,12 +358,11 @@
             panel_longe.Controls.Add(label6);
             panel_longe.Controls.Add(label15);
             panel_longe.Controls.Add(panel3);
-            panel_longe.Location = new Point(15, 254);
+            panel_longe.Location = new Point(12, 137);
             panel_longe.Margin = new Padding(3, 4, 3, 4);
             panel_longe.Name = "panel_longe";
             panel_longe.Size = new Size(344, 107);
             panel_longe.TabIndex = 21;
-            panel_longe.Visible = false;
             // 
             // label4
             // 
@@ -436,7 +430,7 @@
             txt_dp_esquerdo_longe.Mask = "0,00";
             txt_dp_esquerdo_longe.Name = "txt_dp_esquerdo_longe";
             txt_dp_esquerdo_longe.Size = new Size(69, 27);
-            txt_dp_esquerdo_longe.TabIndex = 30;
+            txt_dp_esquerdo_longe.TabIndex = 33;
             txt_dp_esquerdo_longe.ValidatingType = typeof(DateTime);
             // 
             // label16
@@ -477,7 +471,7 @@
             txt_cil_esquerdo_longe.Mask = "0,00";
             txt_cil_esquerdo_longe.Name = "txt_cil_esquerdo_longe";
             txt_cil_esquerdo_longe.Size = new Size(69, 27);
-            txt_cil_esquerdo_longe.TabIndex = 33;
+            txt_cil_esquerdo_longe.TabIndex = 31;
             txt_cil_esquerdo_longe.ValidatingType = typeof(DateTime);
             // 
             // txt_esf_direito_longe
@@ -527,65 +521,15 @@
             txt_esf_esquerdo_longe.Mask = "0,00";
             txt_esf_esquerdo_longe.Name = "txt_esf_esquerdo_longe";
             txt_esf_esquerdo_longe.Size = new Size(69, 27);
-            txt_esf_esquerdo_longe.TabIndex = 31;
+            txt_esf_esquerdo_longe.TabIndex = 30;
             txt_esf_esquerdo_longe.ValidatingType = typeof(DateTime);
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.Location = new Point(15, 124);
-            label18.Name = "label18";
-            label18.Size = new Size(213, 20);
-            label18.TabIndex = 25;
-            label18.Text = "Selecione o tipo de prescrição";
-            // 
-            // rd_longe
-            // 
-            rd_longe.AutoSize = true;
-            rd_longe.Location = new Point(20, 147);
-            rd_longe.Name = "rd_longe";
-            rd_longe.Size = new Size(68, 24);
-            rd_longe.TabIndex = 4;
-            rd_longe.TabStop = true;
-            rd_longe.Text = "Longe";
-            rd_longe.UseVisualStyleBackColor = true;
-            rd_longe.CheckedChanged += rd_longe_CheckedChanged;
-            // 
-            // rd_perto
-            // 
-            rd_perto.AutoSize = true;
-            rd_perto.Location = new Point(138, 147);
-            rd_perto.Name = "rd_perto";
-            rd_perto.Size = new Size(61, 24);
-            rd_perto.TabIndex = 5;
-            rd_perto.TabStop = true;
-            rd_perto.Text = "Perto";
-            rd_perto.UseVisualStyleBackColor = true;
-            rd_perto.CheckedChanged += rd_perto_CheckedChanged;
-            // 
-            // rd_ambos
-            // 
-            rd_ambos.AutoSize = true;
-            rd_ambos.Location = new Point(254, 147);
-            rd_ambos.Name = "rd_ambos";
-            rd_ambos.Size = new Size(74, 24);
-            rd_ambos.TabIndex = 6;
-            rd_ambos.TabStop = true;
-            rd_ambos.Text = "Ambos";
-            rd_ambos.UseVisualStyleBackColor = true;
-            rd_ambos.CheckedChanged += rd_ambos_CheckedChanged;
             // 
             // PersistirReceita
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(821, 498);
-            Controls.Add(rd_ambos);
-            Controls.Add(rd_perto);
-            Controls.Add(rd_longe);
-            Controls.Add(label18);
+            ClientSize = new Size(780, 372);
             Controls.Add(lbl_perto);
             Controls.Add(panel_perto);
             Controls.Add(lbl_longe);
@@ -643,9 +587,6 @@
         private Label label16;
         private Label label17;
         private Label label18;
-        private RadioButton rd_longe;
-        private RadioButton rd_perto;
-        private RadioButton rd_ambos;
         private MaskedTextBox txt_dp_esquerdo_longe;
         private MaskedTextBox txt_eixo_esquerdo_longe;
         private MaskedTextBox txt_cil_esquerdo_longe;

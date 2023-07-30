@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "OQp0dggjZIyaldldgZ2Acd6s4W3E90onfgnzwiK0VT5mEfgOVjSy1gFEet0iyn84fmM6z1m/R7T7CgZ8VZmyUA==",
+  "dgSpecHash": "8prUGCGVHLjInIG51T8WH7i2ZZe8apyczkFidD2+q5mwlJ9t0K29/Wy7if3C1Tg55SSQiXpFp0X1WQ0bu/GHbQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
+  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Interfocus\\.nuget\\packages\\antlr3.runtime\\3.5.1\\antlr3.runtime.3.5.1.nupkg.sha512",
     "C:\\Users\\Interfocus\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",

@@ -38,14 +38,42 @@ namespace Kvision.Frame.Servicos
             return result;
         }
 
+        public string Deletar(Receita receita, List<Prescricao> prescricoes, ServicosPrescricao servicosPrescricao)
+        {
+            foreach (var presc in prescricoes)
+            {
+                servicosPrescricao.Deletar(presc);
+            }
+            if (_receita.Delete(receita))
+            {
+                return "Receita deletada com sucesso!";
+            }
+            else
+            {
+                return "Ops, algo deu errado";
+            }
+        }
+
         public string Deletar(Receita entidade)
         {
             throw new NotImplementedException();
         }
 
-        public string Editar(Receita entidade)
+        public string Editar(Receita receita)
         {
-            throw new NotImplementedException();
+            string resultValidacao = ValidarCampos(receita);
+
+            if (resultValidacao == "")
+            {
+                if (_receita.Update(receita))
+                {
+                    return "Receita cadastrado com sucesso!";
+                }
+
+                return "Ops, algo deu errado";
+            }
+
+            return resultValidacao;
         }
 
         private string ValidarCampos(Receita receita)

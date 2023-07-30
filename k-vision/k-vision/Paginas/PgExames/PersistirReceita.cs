@@ -1,10 +1,9 @@
-﻿
-
-using Kvision.Database.Conexao;
+﻿using Kvision.Database.Conexao;
 using Kvision.Database.Interfaces;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.Enums;
+using Kvision.Frame.Enum;
 using Kvision.Frame.Interfaces;
 using Kvision.Frame.Servicos;
 
@@ -13,10 +12,19 @@ namespace Kvision.Frame.Paginas.PgExames
     public partial class PersistirReceita : Form
     {
         private readonly Cliente _cliente;
-        public PersistirReceita(Cliente cliente)
+        private Receita _receita;
+        private List<Prescricao> _prescricao;
+        private TiposOperacoes _tiposOperacoes;
+        private MainReceita _mainReceita;
+        public PersistirReceita(Cliente cliente, Receita? receita, List<Prescricao>? prescricao, TiposOperacoes tiposOperacoes, MainReceita mainReceita)
         {
-            _cliente = cliente; 
+            _cliente = cliente;
+            _receita = receita ?? new Receita();
+            _prescricao = prescricao ?? new List<Prescricao>();
+            _tiposOperacoes = tiposOperacoes;
+            _mainReceita = mainReceita;
             InitializeComponent();
+            _mainReceita = mainReceita;
         }
 
         ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
@@ -24,144 +32,164 @@ namespace Kvision.Frame.Paginas.PgExames
         private TiposPrescricao _tipo;
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            Receita receita = new Receita();
+            _receita.DataExame = DateTime.Parse(txt_d_realizado.Text);
+            _receita.DataValExame = DateTime.Parse(txt_d_validade.Text);
+            _receita.NomeExaminador = txt_nome_dr.Text;
+            _receita.Cliente = _cliente;
 
-            receita.DataExame = DateTime.Parse(txt_d_realizado.Text);
-            receita.DataValExame = DateTime.Parse(txt_d_validade.Text);
-            receita.NomeExaminador = txt_nome_dr.Text;
-            receita.Cliente = _cliente;
 
-            var retorno = servicosReceita.Cadastrar(receita);
-            if (retorno != "Receita cadastrado com sucesso!") {
-                MessageBox.Show(retorno);
+            if (_tiposOperacoes == TiposOperacoes.Cadastrar)
+            {
+                servicosReceita.Cadastrar(_receita);
+
+                _receita = servicosReceita.ConsultarTodos().Last();
             }
 
-            Receita receitaRecuperada = servicosReceita.ConsultarTodos().Last();
 
-            List<Prescricao> prescricoes = new List<Prescricao>();
-           
-
-            if (_tipo == TiposPrescricao.Longe)
+            Prescricao recuperarLonge()
             {
                 Prescricao prescricao = new Prescricao();
 
-                prescricao.Receita = receitaRecuperada;
-                prescricao.EsfericoDireito = decimal.Parse(txt_esf_direito_longe.Text);
-                prescricao.EixoDireito = decimal.Parse(txt_eixo_direito_longe.Text);
-                prescricao.CilindricoDireito = decimal.Parse(txt_cil_direito_longe.Text);
-                prescricao.DPDireito = decimal.Parse(txt_dp_direito_longe.Text);
+                prescricao.Tipo = TiposPrescricao.Longe;
 
-                prescricao.EsfericoEsquerdo = decimal.Parse(txt_esf_esquerdo_longe.Text);
-                prescricao.EixoEsquerdo = decimal.Parse(txt_eixo_esquerdo_longe.Text);
-                prescricao.CilindricoEsquerdo = decimal.Parse(txt_cil_esquerdo_longe.Text);
-                prescricao.DPEsquerdo = decimal.Parse(txt_dp_esquerdo_longe.Text);
-
-
-                prescricoes.Add(prescricao);
-            }
-            else if(_tipo == TiposPrescricao.Perto)
-            {
-                Prescricao prescricao = new Prescricao();
-
-                prescricao.Receita = receitaRecuperada;
-                prescricao.EsfericoDireito = decimal.Parse(txt_esf_direito_perto.Text);
-                prescricao.EixoDireito = decimal.Parse(txt_eixo_direito_perto.Text);
-                prescricao.CilindricoDireito = decimal.Parse(txt_cil_direito_perto.Text);
-                prescricao.DPDireito = decimal.Parse(txt_dp_direito_perto.Text);
-
-                prescricao.EsfericoEsquerdo = decimal.Parse(txt_esf_esquerdo_perto.Text);
-                prescricao.EixoEsquerdo = decimal.Parse(txt_eixo_esquerdo_perto.Text);
-                prescricao.CilindricoEsquerdo = decimal.Parse(txt_cil_esquerdo_perto.Text);
-                prescricao.DPEsquerdo = decimal.Parse(txt_dp_esquerdo_perto.Text);
-
-                prescricoes.Add(prescricao);
-            }
-            else if (_tipo == TiposPrescricao.Ambos)
-            {
-                for (int i = 0; i < 2; i++)
+                if (_tiposOperacoes == TiposOperacoes.Editar)
                 {
-                    Prescricao prescricao = new Prescricao();
+                    prescricao = _prescricao.Where(p => p.Tipo == prescricao.Tipo).First();
 
-                    switch (prescricoes.Count)
-                    {
-                        case 0:
-                            prescricao.Tipo = TiposPrescricao.Longe;
-                            prescricao.Receita = receitaRecuperada;
-                            prescricao.EsfericoDireito = decimal.Parse(txt_esf_direito_longe.Text);
-                            prescricao.EixoDireito = decimal.Parse(txt_eixo_direito_longe.Text);
-                            prescricao.CilindricoDireito = decimal.Parse(txt_cil_direito_longe.Text);
-                            prescricao.DPDireito = decimal.Parse(txt_dp_direito_longe.Text);
-
-                            prescricao.EsfericoEsquerdo = decimal.Parse(txt_esf_esquerdo_longe.Text);
-                            prescricao.EixoEsquerdo = decimal.Parse(txt_eixo_esquerdo_longe.Text);
-                            prescricao.CilindricoEsquerdo = decimal.Parse(txt_cil_esquerdo_longe.Text);
-                            prescricao.DPEsquerdo = decimal.Parse(txt_dp_esquerdo_longe.Text);
-                            break;
-                        case 1:
-                            prescricao.Tipo = TiposPrescricao.Perto;
-                            prescricao.Receita = receitaRecuperada;
-                            prescricao.EsfericoDireito = decimal.Parse(txt_esf_direito_perto.Text);
-                            prescricao.EixoDireito = decimal.Parse(txt_eixo_direito_perto.Text);
-                            prescricao.CilindricoDireito = decimal.Parse(txt_cil_direito_perto.Text);
-                            prescricao.DPDireito = decimal.Parse(txt_dp_direito_perto.Text);
-
-                            prescricao.EsfericoEsquerdo = decimal.Parse(txt_esf_esquerdo_perto.Text);
-                            prescricao.EixoEsquerdo = decimal.Parse(txt_eixo_esquerdo_perto.Text);
-                            prescricao.CilindricoEsquerdo = decimal.Parse(txt_cil_esquerdo_perto.Text);
-                            prescricao.DPEsquerdo = decimal.Parse(txt_dp_esquerdo_perto.Text);
-                            break;
-                        default:
-                            return;
-                    }
-                  
-                    prescricoes.Add(prescricao);
                 }
+
+                prescricao.Receita = _receita;
+                prescricao.EsfericoDireito = txt_esf_direito_longe.Text;
+                prescricao.EixoDireito = txt_eixo_direito_longe.Text;
+                prescricao.CilindricoDireito = txt_cil_direito_longe.Text;
+                prescricao.DPDireito = txt_dp_direito_longe.Text;
+
+                prescricao.EsfericoEsquerdo = txt_esf_esquerdo_longe.Text;
+                prescricao.EixoEsquerdo = txt_eixo_esquerdo_longe.Text;
+                prescricao.CilindricoEsquerdo = txt_cil_esquerdo_longe.Text;
+                prescricao.DPEsquerdo = txt_dp_esquerdo_longe.Text;
+
+                return prescricao;
             }
+
+            Prescricao recuperarPerto()
+            {
+                Prescricao prescricao = new Prescricao();
+
+                prescricao.Tipo = TiposPrescricao.Perto;
+
+                if (_tiposOperacoes == TiposOperacoes.Editar)
+                {
+                    prescricao = _prescricao.Where(p => p.Tipo == prescricao.Tipo).First();
+                }
+
+                prescricao.Receita = _receita;
+                prescricao.EsfericoDireito = txt_esf_direito_perto.Text;
+                prescricao.EixoDireito = txt_eixo_direito_perto.Text;
+                prescricao.CilindricoDireito = txt_cil_direito_perto.Text;
+                prescricao.DPDireito = txt_dp_direito_perto.Text;
+
+                prescricao.EsfericoEsquerdo = txt_esf_esquerdo_perto.Text;
+                prescricao.EixoEsquerdo = txt_eixo_esquerdo_perto.Text;
+                prescricao.CilindricoEsquerdo = txt_cil_esquerdo_perto.Text;
+                prescricao.DPEsquerdo = txt_dp_esquerdo_perto.Text;
+
+                return prescricao;
+            }
+
+            var longe = recuperarLonge();
+            var perto = recuperarPerto();
+
+            if (_tiposOperacoes == TiposOperacoes.Editar)
+            {
+                _prescricao.Remove(_prescricao.Where(p => p.Id == longe.Id).First());
+                _prescricao.Remove(_prescricao.Where(p => p.Id == perto.Id).First());
+            }
+
+            _prescricao.Add(longe);
+            _prescricao.Add(perto);
 
             string res = "";
-            foreach (Prescricao presc in prescricoes)
+            foreach (Prescricao presc in _prescricao)
             {
-                res = servicosPrescricao.Cadastrar(presc);
+                switch (_tiposOperacoes)
+                {
+                    case TiposOperacoes.Cadastrar:
+                        res = servicosPrescricao.Cadastrar(presc);
+                        break;
+                    case TiposOperacoes.Editar:
+                        res = servicosPrescricao.Editar(presc);
+                        break;
+                    default:
+                        break;
+                }
+
             }
-            MessageBox.Show(res);
+
+            var result = MessageBox.Show(res, "Antenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (result == DialogResult.OK)
+            {
+                _mainReceita.atualizarGrid();
+                _mainReceita.limparCampos();
+                _mainReceita.indexlista = -1;
+                this.Close();
+            }           
         }
 
-        private void rd_longe_CheckedChanged(object sender, EventArgs e)
-        {
-            lbl_longe.Visible = true;
-            panel_longe.Visible = true;
-
-            lbl_perto.Visible = false;
-            panel_perto.Visible = false;
-
-            _tipo = TiposPrescricao.Longe;
-        }
-
-        private void rd_perto_CheckedChanged(object sender, EventArgs e)
-        {
-            lbl_perto.Visible = true;
-            panel_perto.Visible = true;
-
-            lbl_longe.Visible = false;
-            panel_longe.Visible = false;
-
-            _tipo = TiposPrescricao.Perto;
-        }
-
-        private void rd_ambos_CheckedChanged(object sender, EventArgs e)
-        {
-            lbl_perto.Visible = true;
-            panel_perto.Visible = true;
-
-            lbl_longe.Visible = true;
-            panel_longe.Visible = true;
-
-            _tipo = TiposPrescricao.Ambos;
-        }
 
         private void PersistirReceita_Load(object sender, EventArgs e)
         {
+            if (_tiposOperacoes == TiposOperacoes.Editar)
+            {
+                txt_d_realizado.Text = _receita.DataExame.ToString();
+                txt_d_validade.Text = _receita.DataValExame.ToString();
+                txt_nome_dr.Text = _receita.NomeExaminador.ToString();
 
+                void carregarLonge(Prescricao presc)
+                {
+                    txt_esf_direito_longe.Text = presc.EsfericoDireito;
+                    txt_cil_direito_longe.Text = presc.CilindricoDireito;
+                    txt_eixo_direito_longe.Text = presc.EixoDireito;
+                    txt_dp_direito_longe.Text = presc.DPDireito;
+                    ;
+                    txt_esf_esquerdo_longe.Text = presc.EsfericoEsquerdo;
+                    txt_cil_esquerdo_longe.Text = presc.CilindricoEsquerdo;
+                    txt_eixo_esquerdo_longe.Text = presc.EixoEsquerdo;
+                    txt_dp_esquerdo_longe.Text = presc.DPEsquerdo;
+                }
+
+                void carregarPerto(Prescricao presc)
+                {
+                    txt_esf_direito_perto.Text = presc.EsfericoDireito;
+                    txt_cil_direito_perto.Text = presc.CilindricoDireito;
+                    txt_eixo_direito_perto.Text = presc.EixoDireito;
+                    txt_dp_direito_perto.Text = presc.DPDireito;
+
+                    txt_esf_esquerdo_perto.Text = presc.EsfericoEsquerdo;
+                    txt_cil_esquerdo_perto.Text = presc.CilindricoEsquerdo;
+                    txt_eixo_esquerdo_perto.Text = presc.EixoEsquerdo;
+                    txt_dp_esquerdo_perto.Text = presc.DPEsquerdo;
+                }
+
+                foreach (var presc in _prescricao)
+                {
+                    switch (presc.Tipo)
+                    {
+                        case Dominio.Enums.TiposPrescricao.Longe:
+                            carregarLonge(presc);
+                            break;
+                        case Dominio.Enums.TiposPrescricao.Perto:
+                            carregarPerto(presc);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                this.Text = "Editando receita";
+            }
+            else {
+                this.Text = "Cadastrando receita";
+            }
         }
     }
 }

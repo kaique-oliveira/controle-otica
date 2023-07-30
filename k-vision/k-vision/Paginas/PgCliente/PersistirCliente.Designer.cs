@@ -101,7 +101,7 @@
             Controls.Add(label1);
             Name = "PersistirCliente";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastrar Cliente";
+            Text = "Cadastrando cliente";
             Load += PersistirCliente_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -9,17 +9,17 @@
 		</id>
 		<property name="DataCadastro"		column="d_cadastro"		type="date" />
 		
-		<property name="Tipo"	column="tipo"		type="string"		length="6"/>
+		<property name="Tipo"	column="tipo"			length="6"/>
 		
-		<property name="EsfericoDireito"	column="esf_direito"	type="decimal" not-null="false"/>
-		<property name="CilindricoDireito"	column="cil_direito"	type="decimal" not-null="false"/>
-		<property name="EixoDireito"		column="eixo_direito"	type="decimal" not-null="false"/>
-		<property name="DPDireito"			column="dnp_direito"	type="decimal" not-null="false"/>
+		<property name="EsfericoDireito"	column="esf_direito"	type="string" not-null="false"/>
+		<property name="CilindricoDireito"	column="cil_direito"	type="string" not-null="false"/>
+		<property name="EixoDireito"		column="eixo_direito"	type="string" not-null="false"/>
+		<property name="DPDireito"			column="dnp_direito"	type="string" not-null="false"/>
 
-		<property name="EsfericoEsquerdo"	column="esf_esquerdo"	type="decimal" not-null="false"/>
-		<property name="CilindricoEsquerdo"	column="cil_esquerdo"	type="decimal" not-null="false"/>
-		<property name="EixoEsquerdo"		column="eixo_esquerdo"	type="decimal" not-null="false"/>
-		<property name="DPEsquerdo"			column="dnp_esquerdo"	type="decimal" not-null="false"/>
+		<property name="EsfericoEsquerdo"	column="esf_esquerdo"	type="string" not-null="false"/>
+		<property name="CilindricoEsquerdo"	column="cil_esquerdo"	type="string" not-null="false"/>
+		<property name="EixoEsquerdo"		column="eixo_esquerdo"	type="string" not-null="false"/>
+		<property name="DPEsquerdo"			column="dnp_esquerdo"	type="string" not-null="false"/>
 
 		<many-to-one name="Receita"
 				 class="Receita"

@@ -48,7 +48,6 @@ namespace Kvision.Frame.Servicos
             return resultValidacao;
         }
 
-
         public List<Cliente> ConsultarTodos() { 
  
             var result = _cliente.FindAll().ToList<Cliente>();
@@ -67,7 +66,6 @@ namespace Kvision.Frame.Servicos
 
         public string Deletar(Cliente cliente)
         {
-
             if (_cliente.Delete(cliente))
             {
                     return "Cliente deletado com sucesso!";

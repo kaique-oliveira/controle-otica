@@ -28,46 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            btn_show_cliente = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            btn_show_clientes = new Button();
+            btn_show_produtos = new Button();
             SuspendLayout();
             // 
-            // menuStrip1
+            // btn_show_clientes
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { btn_show_cliente });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(251, 24);
-            menuStrip1.TabIndex = 2;
-            menuStrip1.Text = "menuStrip1";
+            btn_show_clientes.BackColor = Color.LimeGreen;
+            btn_show_clientes.FlatAppearance.BorderSize = 0;
+            btn_show_clientes.FlatStyle = FlatStyle.Flat;
+            btn_show_clientes.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_show_clientes.ForeColor = SystemColors.ButtonHighlight;
+            btn_show_clientes.Location = new Point(12, 60);
+            btn_show_clientes.Name = "btn_show_clientes";
+            btn_show_clientes.Size = new Size(139, 61);
+            btn_show_clientes.TabIndex = 3;
+            btn_show_clientes.Text = "Clientes";
+            btn_show_clientes.UseVisualStyleBackColor = false;
+            btn_show_clientes.Click += btn_show_clientes_Click;
             // 
-            // btn_show_cliente
+            // btn_show_produtos
             // 
-            btn_show_cliente.Name = "btn_show_cliente";
-            btn_show_cliente.Size = new Size(56, 20);
-            btn_show_cliente.Text = "Cliente";
-            btn_show_cliente.Click += toolStripMenuItem1_Click;
+            btn_show_produtos.BackColor = Color.Gold;
+            btn_show_produtos.FlatAppearance.BorderSize = 0;
+            btn_show_produtos.FlatStyle = FlatStyle.Flat;
+            btn_show_produtos.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_show_produtos.ForeColor = SystemColors.ButtonHighlight;
+            btn_show_produtos.Location = new Point(181, 60);
+            btn_show_produtos.Name = "btn_show_produtos";
+            btn_show_produtos.Size = new Size(139, 61);
+            btn_show_produtos.TabIndex = 4;
+            btn_show_produtos.Text = "Produtos";
+            btn_show_produtos.UseVisualStyleBackColor = false;
+            btn_show_produtos.Click += btn_show_produtos_Click;
             // 
             // MainFrame
             // 
             BackColor = SystemColors.AppWorkspace;
-            ClientSize = new Size(251, 23);
-            Controls.Add(menuStrip1);
+            ClientSize = new Size(578, 182);
+            Controls.Add(btn_show_produtos);
+            Controls.Add(btn_show_clientes);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             ImeMode = ImeMode.Off;
-            MainMenuStrip = menuStrip1;
             Name = "MainFrame";
             StartPosition = FormStartPosition.CenterScreen;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private ToolStripMenuItem clienteToolStripMenuItem;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem btn_show_cliente;
+        private Button btn_show_clientes;
+        private Button btn_show_produtos;
     }
 }

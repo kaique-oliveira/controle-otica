@@ -16,5 +16,11 @@
     <Compile Update="Paginas\PgExames\PersistirReceita.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Paginas\PgProduto\MainProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PgProduto\PersistirProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

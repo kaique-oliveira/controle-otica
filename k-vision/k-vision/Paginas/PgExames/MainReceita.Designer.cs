@@ -106,6 +106,7 @@
             btn_deletar.TabIndex = 4;
             btn_deletar.Text = "Deletar";
             btn_deletar.UseVisualStyleBackColor = false;
+            btn_deletar.Click += btn_deletar_Click;
             // 
             // btn_show_editar
             // 
@@ -120,6 +121,7 @@
             btn_show_editar.TabIndex = 3;
             btn_show_editar.Text = "Editar";
             btn_show_editar.UseVisualStyleBackColor = false;
+            btn_show_editar.Click += btn_show_editar_Click;
             // 
             // bnt_cadastrar
             // 
@@ -158,7 +160,7 @@
             dg_receitas.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = Color.CornflowerBlue;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
@@ -166,7 +168,7 @@
             dg_receitas.DefaultCellStyle = dataGridViewCellStyle2;
             dg_receitas.EnableHeadersVisualStyles = false;
             dg_receitas.GridColor = Color.WhiteSmoke;
-            dg_receitas.Location = new Point(170, 12);
+            dg_receitas.Location = new Point(157, 12);
             dg_receitas.MultiSelect = false;
             dg_receitas.Name = "dg_receitas";
             dg_receitas.ReadOnly = true;
@@ -283,6 +285,7 @@
             // 
             // txt_dp_esquerdo_longe
             // 
+            txt_dp_esquerdo_longe.Enabled = false;
             txt_dp_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_esquerdo_longe.Location = new Point(260, 34);
             txt_dp_esquerdo_longe.Mask = "0,00";
@@ -293,6 +296,7 @@
             // 
             // txt_eixo_esquerdo_longe
             // 
+            txt_eixo_esquerdo_longe.Enabled = false;
             txt_eixo_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_esquerdo_longe.Location = new Point(185, 35);
             txt_eixo_esquerdo_longe.Mask = "0,00";
@@ -303,6 +307,7 @@
             // 
             // txt_cil_esquerdo_longe
             // 
+            txt_cil_esquerdo_longe.Enabled = false;
             txt_cil_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_esquerdo_longe.Location = new Point(110, 35);
             txt_cil_esquerdo_longe.Mask = "0,00";
@@ -313,6 +318,7 @@
             // 
             // txt_eixo_direito_longe
             // 
+            txt_eixo_direito_longe.Enabled = false;
             txt_eixo_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_direito_longe.Location = new Point(185, 3);
             txt_eixo_direito_longe.Mask = "0,00";
@@ -323,6 +329,7 @@
             // 
             // txt_cil_direito_longe
             // 
+            txt_cil_direito_longe.Enabled = false;
             txt_cil_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_direito_longe.Location = new Point(110, 3);
             txt_cil_direito_longe.Mask = "0,00";
@@ -333,6 +340,7 @@
             // 
             // txt_esf_esquerdo_longe
             // 
+            txt_esf_esquerdo_longe.Enabled = false;
             txt_esf_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_esquerdo_longe.Location = new Point(35, 35);
             txt_esf_esquerdo_longe.Mask = "0,00";
@@ -343,6 +351,7 @@
             // 
             // txt_esf_direito_longe
             // 
+            txt_esf_direito_longe.Enabled = false;
             txt_esf_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_direito_longe.Location = new Point(35, 4);
             txt_esf_direito_longe.Mask = "0,00";
@@ -362,6 +371,7 @@
             // 
             // txt_dp_direito_longe
             // 
+            txt_dp_direito_longe.Enabled = false;
             txt_dp_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_direito_longe.Location = new Point(260, 4);
             txt_dp_direito_longe.Mask = "0,00";
@@ -475,6 +485,7 @@
             // 
             // txt_dp_esquerdo_perto
             // 
+            txt_dp_esquerdo_perto.Enabled = false;
             txt_dp_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_esquerdo_perto.Location = new Point(260, 34);
             txt_dp_esquerdo_perto.Mask = "0,00";
@@ -494,6 +505,7 @@
             // 
             // txt_eixo_esquerdo_perto
             // 
+            txt_eixo_esquerdo_perto.Enabled = false;
             txt_eixo_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_esquerdo_perto.Location = new Point(185, 35);
             txt_eixo_esquerdo_perto.Mask = "0,00";
@@ -514,6 +526,7 @@
             // 
             // txt_cil_esquerdo_perto
             // 
+            txt_cil_esquerdo_perto.Enabled = false;
             txt_cil_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_esquerdo_perto.Location = new Point(110, 35);
             txt_cil_esquerdo_perto.Mask = "0,00";
@@ -524,6 +537,7 @@
             // 
             // txt_eixo_direito_perto
             // 
+            txt_eixo_direito_perto.Enabled = false;
             txt_eixo_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_direito_perto.Location = new Point(185, 3);
             txt_eixo_direito_perto.Mask = "0,00";
@@ -534,6 +548,7 @@
             // 
             // txt_dp_direito_perto
             // 
+            txt_dp_direito_perto.Enabled = false;
             txt_dp_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_direito_perto.Location = new Point(260, 4);
             txt_dp_direito_perto.Mask = "0,00";
@@ -544,6 +559,7 @@
             // 
             // txt_cil_direito_perto
             // 
+            txt_cil_direito_perto.Enabled = false;
             txt_cil_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_direito_perto.Location = new Point(110, 3);
             txt_cil_direito_perto.Mask = "0,00";
@@ -554,6 +570,7 @@
             // 
             // txt_esf_direito_perto
             // 
+            txt_esf_direito_perto.Enabled = false;
             txt_esf_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_direito_perto.Location = new Point(35, 4);
             txt_esf_direito_perto.Mask = "0,00";
@@ -564,6 +581,7 @@
             // 
             // txt_esf_esquerdo_perto
             // 
+            txt_esf_esquerdo_perto.Enabled = false;
             txt_esf_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_esquerdo_perto.Location = new Point(35, 35);
             txt_esf_esquerdo_perto.Mask = "0,00";
@@ -578,7 +596,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(935, 364);
+            ClientSize = new Size(922, 364);
             Controls.Add(label8);
             Controls.Add(panel4);
             Controls.Add(label7);
@@ -588,7 +606,7 @@
             Name = "MainReceita";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Exames";
-            Load += MainExames_Load;
+            Shown += MainReceita_Shown;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dg_receitas).EndInit();
             panel2.ResumeLayout(false);
