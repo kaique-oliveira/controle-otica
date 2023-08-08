@@ -11,7 +11,6 @@ namespace Kvision.Frame.Paginas.PgCliente
     {
         public MainCliente()
         {
-
             InitializeComponent();
         }
 

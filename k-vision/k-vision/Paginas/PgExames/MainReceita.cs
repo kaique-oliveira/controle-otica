@@ -159,9 +159,9 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void MainReceita_Shown(object sender, EventArgs e)
         {
-            {
-                atualizarGrid();
-            }
+            
+            atualizarGrid();
+            
         }
     }
 }

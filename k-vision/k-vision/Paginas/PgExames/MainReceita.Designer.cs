@@ -168,7 +168,7 @@
             dg_receitas.DefaultCellStyle = dataGridViewCellStyle2;
             dg_receitas.EnableHeadersVisualStyles = false;
             dg_receitas.GridColor = Color.WhiteSmoke;
-            dg_receitas.Location = new Point(157, 12);
+            dg_receitas.Location = new Point(176, 12);
             dg_receitas.MultiSelect = false;
             dg_receitas.Name = "dg_receitas";
             dg_receitas.ReadOnly = true;
