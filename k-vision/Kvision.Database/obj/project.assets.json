@@ -6113,25 +6113,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Interfocus\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\kaique\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
+      "projectUniqueName": "C:\\Users\\kaique\\Desktop\\projeto ótica\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
       "projectName": "Kvision.Database",
-      "projectPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
-      "packagesPath": "C:\\Users\\Interfocus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Database\\obj\\",
+      "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\controle-otica\\k-vision\\Kvision.Database\\Kvision.Database.csproj",
+      "packagesPath": "C:\\Users\\kaique\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\controle-otica\\k-vision\\Kvision.Database\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Interfocus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kaique\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -6140,15 +6138,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://192.168.10.40/GaleriaNugetInterfocus/nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
-              "projectPath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
+            "C:\\Users\\kaique\\Desktop\\projeto ótica\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj": {
+              "projectPath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj"
             }
           }
         }
@@ -6212,17 +6209,11 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://192.168.10.40/GaleriaNugetInterfocus/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    },
     {
       "code": "NU1608",
       "level": "Warning",

@@ -1,4 +1,5 @@
-﻿using Kvision.Database.Conexao;
+﻿using k_vision;
+using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
@@ -9,8 +10,10 @@ namespace Kvision.Frame.Paginas.PgCliente
 {
     public partial class MainCliente : Form
     {
-        public MainCliente()
+        private readonly MainFrame _mainFrame;
+        public MainCliente(MainFrame mainFrame)
         {
+            _mainFrame = mainFrame;
             InitializeComponent();
         }
 
@@ -29,6 +32,7 @@ namespace Kvision.Frame.Paginas.PgCliente
             {
                 dg_clientes.DataSource = listaClientes.OrderBy(c => c.Nome).ToList();
                 dg_clientes.Rows[0].Cells[0].Selected = false;
+                _mainFrame.atualizarGridClientes();
             }
         }
 
@@ -84,22 +88,27 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void btn_show_exames_Click(object sender, EventArgs e)
         {
-            if (indexlista > -1)
-            {
-                Cliente cliente = listaClientes[indexlista];
-                var mainExames = new MainReceita(cliente);
-                mainExames.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
-            }
+            //if (indexlista > -1)
+            //{
+            //    Cliente cliente = listaClientes[indexlista];
+            //    var mainExames = new MainReceita(cliente);
+            //    mainExames.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
+            //}
 
         }
 
         private void MainCliente_Shown(object sender, EventArgs e)
         {
             atualizarGrid();
+        }
+
+        private void dg_clientes_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -28,597 +28,603 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            panel1 = new Panel();
-            btn_deletar = new Button();
-            btn_show_editar = new Button();
-            bnt_cadastrar = new Button();
-            dg_receitas = new DataGridView();
-            DataExame = new DataGridViewTextBoxColumn();
-            DataValExame = new DataGridViewTextBoxColumn();
-            nomeExaminador = new DataGridViewTextBoxColumn();
-            panel2 = new Panel();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            panel3 = new Panel();
-            txt_dp_esquerdo_longe = new MaskedTextBox();
-            txt_eixo_esquerdo_longe = new MaskedTextBox();
-            txt_cil_esquerdo_longe = new MaskedTextBox();
-            txt_eixo_direito_longe = new MaskedTextBox();
-            txt_cil_direito_longe = new MaskedTextBox();
-            txt_esf_esquerdo_longe = new MaskedTextBox();
-            txt_esf_direito_longe = new MaskedTextBox();
-            label6 = new Label();
-            txt_dp_direito_longe = new MaskedTextBox();
-            label5 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            panel4 = new Panel();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            panel5 = new Panel();
-            txt_dp_esquerdo_perto = new MaskedTextBox();
-            label13 = new Label();
-            txt_eixo_esquerdo_perto = new MaskedTextBox();
-            label14 = new Label();
-            txt_cil_esquerdo_perto = new MaskedTextBox();
-            txt_eixo_direito_perto = new MaskedTextBox();
-            txt_dp_direito_perto = new MaskedTextBox();
-            txt_cil_direito_perto = new MaskedTextBox();
-            txt_esf_direito_perto = new MaskedTextBox();
-            txt_esf_esquerdo_perto = new MaskedTextBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dg_receitas).BeginInit();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_deletar = new System.Windows.Forms.Button();
+            this.btn_show_editar = new System.Windows.Forms.Button();
+            this.bnt_cadastrar = new System.Windows.Forms.Button();
+            this.dg_receitas = new System.Windows.Forms.DataGridView();
+            this.DataExame = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataValExame = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeExaminador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_dp_esquerdo_longe = new System.Windows.Forms.MaskedTextBox();
+            this.txt_eixo_esquerdo_longe = new System.Windows.Forms.MaskedTextBox();
+            this.txt_cil_esquerdo_longe = new System.Windows.Forms.MaskedTextBox();
+            this.txt_eixo_direito_longe = new System.Windows.Forms.MaskedTextBox();
+            this.txt_cil_direito_longe = new System.Windows.Forms.MaskedTextBox();
+            this.txt_esf_esquerdo_longe = new System.Windows.Forms.MaskedTextBox();
+            this.txt_esf_direito_longe = new System.Windows.Forms.MaskedTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_dp_direito_longe = new System.Windows.Forms.MaskedTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.txt_dp_esquerdo_perto = new System.Windows.Forms.MaskedTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_eixo_esquerdo_perto = new System.Windows.Forms.MaskedTextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txt_cil_esquerdo_perto = new System.Windows.Forms.MaskedTextBox();
+            this.txt_eixo_direito_perto = new System.Windows.Forms.MaskedTextBox();
+            this.txt_dp_direito_perto = new System.Windows.Forms.MaskedTextBox();
+            this.txt_cil_direito_perto = new System.Windows.Forms.MaskedTextBox();
+            this.txt_esf_direito_perto = new System.Windows.Forms.MaskedTextBox();
+            this.txt_esf_esquerdo_perto = new System.Windows.Forms.MaskedTextBox();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_receitas)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(btn_deletar);
-            panel1.Controls.Add(btn_show_editar);
-            panel1.Controls.Add(bnt_cadastrar);
-            panel1.Location = new Point(-2, -2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(156, 368);
-            panel1.TabIndex = 6;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.btn_deletar);
+            this.panel1.Controls.Add(this.btn_show_editar);
+            this.panel1.Controls.Add(this.bnt_cadastrar);
+            this.panel1.Location = new System.Drawing.Point(-2, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(156, 368);
+            this.panel1.TabIndex = 6;
             // 
             // btn_deletar
             // 
-            btn_deletar.BackColor = Color.Crimson;
-            btn_deletar.FlatAppearance.BorderSize = 0;
-            btn_deletar.FlatStyle = FlatStyle.Flat;
-            btn_deletar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_deletar.ForeColor = Color.White;
-            btn_deletar.Location = new Point(8, 209);
-            btn_deletar.Name = "btn_deletar";
-            btn_deletar.Size = new Size(135, 48);
-            btn_deletar.TabIndex = 4;
-            btn_deletar.Text = "Deletar";
-            btn_deletar.UseVisualStyleBackColor = false;
-            btn_deletar.Click += btn_deletar_Click;
+            this.btn_deletar.BackColor = System.Drawing.Color.Crimson;
+            this.btn_deletar.FlatAppearance.BorderSize = 0;
+            this.btn_deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deletar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_deletar.ForeColor = System.Drawing.Color.White;
+            this.btn_deletar.Location = new System.Drawing.Point(8, 209);
+            this.btn_deletar.Name = "btn_deletar";
+            this.btn_deletar.Size = new System.Drawing.Size(135, 48);
+            this.btn_deletar.TabIndex = 4;
+            this.btn_deletar.Text = "Deletar";
+            this.btn_deletar.UseVisualStyleBackColor = false;
+            this.btn_deletar.Click += new System.EventHandler(this.btn_deletar_Click);
             // 
             // btn_show_editar
             // 
-            btn_show_editar.BackColor = Color.Orange;
-            btn_show_editar.FlatAppearance.BorderSize = 0;
-            btn_show_editar.FlatStyle = FlatStyle.Flat;
-            btn_show_editar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_show_editar.ForeColor = Color.White;
-            btn_show_editar.Location = new Point(7, 140);
-            btn_show_editar.Name = "btn_show_editar";
-            btn_show_editar.Size = new Size(135, 48);
-            btn_show_editar.TabIndex = 3;
-            btn_show_editar.Text = "Editar";
-            btn_show_editar.UseVisualStyleBackColor = false;
-            btn_show_editar.Click += btn_show_editar_Click;
+            this.btn_show_editar.BackColor = System.Drawing.Color.Orange;
+            this.btn_show_editar.FlatAppearance.BorderSize = 0;
+            this.btn_show_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_editar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_show_editar.ForeColor = System.Drawing.Color.White;
+            this.btn_show_editar.Location = new System.Drawing.Point(7, 140);
+            this.btn_show_editar.Name = "btn_show_editar";
+            this.btn_show_editar.Size = new System.Drawing.Size(135, 48);
+            this.btn_show_editar.TabIndex = 3;
+            this.btn_show_editar.Text = "Editar";
+            this.btn_show_editar.UseVisualStyleBackColor = false;
+            this.btn_show_editar.Click += new System.EventHandler(this.btn_show_editar_Click);
             // 
             // bnt_cadastrar
             // 
-            bnt_cadastrar.BackColor = Color.YellowGreen;
-            bnt_cadastrar.FlatAppearance.BorderSize = 0;
-            bnt_cadastrar.FlatStyle = FlatStyle.Flat;
-            bnt_cadastrar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            bnt_cadastrar.ForeColor = Color.White;
-            bnt_cadastrar.Location = new Point(7, 69);
-            bnt_cadastrar.Name = "bnt_cadastrar";
-            bnt_cadastrar.Size = new Size(135, 48);
-            bnt_cadastrar.TabIndex = 2;
-            bnt_cadastrar.Text = "Cadastrar";
-            bnt_cadastrar.UseVisualStyleBackColor = false;
-            bnt_cadastrar.Click += bnt_cadastrar_Click;
+            this.bnt_cadastrar.BackColor = System.Drawing.Color.YellowGreen;
+            this.bnt_cadastrar.FlatAppearance.BorderSize = 0;
+            this.bnt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnt_cadastrar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bnt_cadastrar.ForeColor = System.Drawing.Color.White;
+            this.bnt_cadastrar.Location = new System.Drawing.Point(7, 69);
+            this.bnt_cadastrar.Name = "bnt_cadastrar";
+            this.bnt_cadastrar.Size = new System.Drawing.Size(135, 48);
+            this.bnt_cadastrar.TabIndex = 2;
+            this.bnt_cadastrar.Text = "Cadastrar";
+            this.bnt_cadastrar.UseVisualStyleBackColor = false;
+            this.bnt_cadastrar.Click += new System.EventHandler(this.bnt_cadastrar_Click);
             // 
             // dg_receitas
             // 
-            dg_receitas.AllowUserToAddRows = false;
-            dg_receitas.AllowUserToDeleteRows = false;
-            dg_receitas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            dg_receitas.BackgroundColor = Color.WhiteSmoke;
-            dg_receitas.BorderStyle = BorderStyle.None;
-            dg_receitas.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dg_receitas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Silver;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dg_receitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dg_receitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_receitas.Columns.AddRange(new DataGridViewColumn[] { DataExame, DataValExame, nomeExaminador });
-            dg_receitas.Cursor = Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dg_receitas.DefaultCellStyle = dataGridViewCellStyle2;
-            dg_receitas.EnableHeadersVisualStyles = false;
-            dg_receitas.GridColor = Color.WhiteSmoke;
-            dg_receitas.Location = new Point(176, 12);
-            dg_receitas.MultiSelect = false;
-            dg_receitas.Name = "dg_receitas";
-            dg_receitas.ReadOnly = true;
-            dg_receitas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.LightGray;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dg_receitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dg_receitas.RowHeadersVisible = false;
-            dg_receitas.RowTemplate.Height = 25;
-            dg_receitas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_receitas.Size = new Size(380, 340);
-            dg_receitas.TabIndex = 5;
-            dg_receitas.CellClick += dg_receitas_CellClick;
+            this.dg_receitas.AllowUserToAddRows = false;
+            this.dg_receitas.AllowUserToDeleteRows = false;
+            this.dg_receitas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dg_receitas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dg_receitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dg_receitas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dg_receitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_receitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dg_receitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_receitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DataExame,
+            this.DataValExame,
+            this.nomeExaminador});
+            this.dg_receitas.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_receitas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dg_receitas.EnableHeadersVisualStyles = false;
+            this.dg_receitas.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.dg_receitas.Location = new System.Drawing.Point(176, 12);
+            this.dg_receitas.MultiSelect = false;
+            this.dg_receitas.Name = "dg_receitas";
+            this.dg_receitas.ReadOnly = true;
+            this.dg_receitas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_receitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dg_receitas.RowHeadersVisible = false;
+            this.dg_receitas.RowTemplate.Height = 25;
+            this.dg_receitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dg_receitas.Size = new System.Drawing.Size(380, 340);
+            this.dg_receitas.TabIndex = 5;
+            this.dg_receitas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_receitas_CellClick);
             // 
             // DataExame
             // 
-            DataExame.DataPropertyName = "DataExame";
-            DataExame.HeaderText = "Data";
-            DataExame.Name = "DataExame";
-            DataExame.ReadOnly = true;
-            DataExame.Width = 80;
+            this.DataExame.DataPropertyName = "DataExame";
+            this.DataExame.HeaderText = "Data";
+            this.DataExame.Name = "DataExame";
+            this.DataExame.ReadOnly = true;
+            this.DataExame.Width = 80;
             // 
             // DataValExame
             // 
-            DataValExame.DataPropertyName = "DataValExame";
-            DataValExame.HeaderText = "Validade";
-            DataValExame.MinimumWidth = 60;
-            DataValExame.Name = "DataValExame";
-            DataValExame.ReadOnly = true;
+            this.DataValExame.DataPropertyName = "DataValExame";
+            this.DataValExame.HeaderText = "Validade";
+            this.DataValExame.MinimumWidth = 60;
+            this.DataValExame.Name = "DataValExame";
+            this.DataValExame.ReadOnly = true;
             // 
             // nomeExaminador
             // 
-            nomeExaminador.DataPropertyName = "nomeExaminador";
-            nomeExaminador.HeaderText = "Doutor";
-            nomeExaminador.Name = "nomeExaminador";
-            nomeExaminador.ReadOnly = true;
-            nomeExaminador.Width = 200;
+            this.nomeExaminador.DataPropertyName = "nomeExaminador";
+            this.nomeExaminador.HeaderText = "Doutor";
+            this.nomeExaminador.Name = "nomeExaminador";
+            this.nomeExaminador.ReadOnly = true;
+            this.nomeExaminador.Width = 200;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Bisque;
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.Controls.Add(panel3);
-            panel2.Location = new Point(578, 60);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(333, 90);
-            panel2.TabIndex = 7;
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(578, 60);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(333, 90);
+            this.panel2.TabIndex = 7;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(276, 4);
-            label4.Name = "label4";
-            label4.Size = new Size(29, 20);
-            label4.TabIndex = 11;
-            label4.Text = "DP";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(276, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 20);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "DP";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(195, 4);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 20);
-            label3.TabIndex = 10;
-            label3.Text = "Eixo";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(195, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Eixo";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(121, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(30, 20);
-            label2.TabIndex = 9;
-            label2.Text = "Cil.";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(121, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Cil.";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(49, 4);
-            label1.Name = "label1";
-            label1.Size = new Size(31, 20);
-            label1.TabIndex = 8;
-            label1.Text = "Esf.";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(49, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Esf.";
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.AppWorkspace;
-            panel3.Controls.Add(txt_dp_esquerdo_longe);
-            panel3.Controls.Add(txt_eixo_esquerdo_longe);
-            panel3.Controls.Add(txt_cil_esquerdo_longe);
-            panel3.Controls.Add(txt_eixo_direito_longe);
-            panel3.Controls.Add(txt_cil_direito_longe);
-            panel3.Controls.Add(txt_esf_esquerdo_longe);
-            panel3.Controls.Add(txt_esf_direito_longe);
-            panel3.Controls.Add(label6);
-            panel3.Controls.Add(txt_dp_direito_longe);
-            panel3.Controls.Add(label5);
-            panel3.Location = new Point(0, 25);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(333, 65);
-            panel3.TabIndex = 8;
+            this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel3.Controls.Add(this.txt_dp_esquerdo_longe);
+            this.panel3.Controls.Add(this.txt_eixo_esquerdo_longe);
+            this.panel3.Controls.Add(this.txt_cil_esquerdo_longe);
+            this.panel3.Controls.Add(this.txt_eixo_direito_longe);
+            this.panel3.Controls.Add(this.txt_cil_direito_longe);
+            this.panel3.Controls.Add(this.txt_esf_esquerdo_longe);
+            this.panel3.Controls.Add(this.txt_esf_direito_longe);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.txt_dp_direito_longe);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(0, 25);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(333, 65);
+            this.panel3.TabIndex = 8;
             // 
             // txt_dp_esquerdo_longe
             // 
-            txt_dp_esquerdo_longe.Enabled = false;
-            txt_dp_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_dp_esquerdo_longe.Location = new Point(260, 34);
-            txt_dp_esquerdo_longe.Mask = "0,00";
-            txt_dp_esquerdo_longe.Name = "txt_dp_esquerdo_longe";
-            txt_dp_esquerdo_longe.Size = new Size(69, 27);
-            txt_dp_esquerdo_longe.TabIndex = 19;
-            txt_dp_esquerdo_longe.ValidatingType = typeof(DateTime);
+            this.txt_dp_esquerdo_longe.Enabled = false;
+            this.txt_dp_esquerdo_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_dp_esquerdo_longe.Location = new System.Drawing.Point(260, 34);
+            this.txt_dp_esquerdo_longe.Mask = "0,00";
+            this.txt_dp_esquerdo_longe.Name = "txt_dp_esquerdo_longe";
+            this.txt_dp_esquerdo_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_dp_esquerdo_longe.TabIndex = 19;
+            this.txt_dp_esquerdo_longe.ValidatingType = typeof(System.DateTime);
             // 
             // txt_eixo_esquerdo_longe
             // 
-            txt_eixo_esquerdo_longe.Enabled = false;
-            txt_eixo_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_eixo_esquerdo_longe.Location = new Point(185, 35);
-            txt_eixo_esquerdo_longe.Mask = "0,00";
-            txt_eixo_esquerdo_longe.Name = "txt_eixo_esquerdo_longe";
-            txt_eixo_esquerdo_longe.Size = new Size(69, 27);
-            txt_eixo_esquerdo_longe.TabIndex = 20;
-            txt_eixo_esquerdo_longe.ValidatingType = typeof(DateTime);
+            this.txt_eixo_esquerdo_longe.Enabled = false;
+            this.txt_eixo_esquerdo_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_eixo_esquerdo_longe.Location = new System.Drawing.Point(185, 35);
+            this.txt_eixo_esquerdo_longe.Mask = "0,00";
+            this.txt_eixo_esquerdo_longe.Name = "txt_eixo_esquerdo_longe";
+            this.txt_eixo_esquerdo_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_eixo_esquerdo_longe.TabIndex = 20;
+            this.txt_eixo_esquerdo_longe.ValidatingType = typeof(System.DateTime);
             // 
             // txt_cil_esquerdo_longe
             // 
-            txt_cil_esquerdo_longe.Enabled = false;
-            txt_cil_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cil_esquerdo_longe.Location = new Point(110, 35);
-            txt_cil_esquerdo_longe.Mask = "0,00";
-            txt_cil_esquerdo_longe.Name = "txt_cil_esquerdo_longe";
-            txt_cil_esquerdo_longe.Size = new Size(69, 27);
-            txt_cil_esquerdo_longe.TabIndex = 21;
-            txt_cil_esquerdo_longe.ValidatingType = typeof(DateTime);
+            this.txt_cil_esquerdo_longe.Enabled = false;
+            this.txt_cil_esquerdo_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_cil_esquerdo_longe.Location = new System.Drawing.Point(110, 35);
+            this.txt_cil_esquerdo_longe.Mask = "0,00";
+            this.txt_cil_esquerdo_longe.Name = "txt_cil_esquerdo_longe";
+            this.txt_cil_esquerdo_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_cil_esquerdo_longe.TabIndex = 21;
+            this.txt_cil_esquerdo_longe.ValidatingType = typeof(System.DateTime);
             // 
             // txt_eixo_direito_longe
             // 
-            txt_eixo_direito_longe.Enabled = false;
-            txt_eixo_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_eixo_direito_longe.Location = new Point(185, 3);
-            txt_eixo_direito_longe.Mask = "0,00";
-            txt_eixo_direito_longe.Name = "txt_eixo_direito_longe";
-            txt_eixo_direito_longe.Size = new Size(69, 27);
-            txt_eixo_direito_longe.TabIndex = 17;
-            txt_eixo_direito_longe.ValidatingType = typeof(DateTime);
+            this.txt_eixo_direito_longe.Enabled = false;
+            this.txt_eixo_direito_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_eixo_direito_longe.Location = new System.Drawing.Point(185, 3);
+            this.txt_eixo_direito_longe.Mask = "0,00";
+            this.txt_eixo_direito_longe.Name = "txt_eixo_direito_longe";
+            this.txt_eixo_direito_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_eixo_direito_longe.TabIndex = 17;
+            this.txt_eixo_direito_longe.ValidatingType = typeof(System.DateTime);
             // 
             // txt_cil_direito_longe
             // 
-            txt_cil_direito_longe.Enabled = false;
-            txt_cil_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cil_direito_longe.Location = new Point(110, 3);
-            txt_cil_direito_longe.Mask = "0,00";
-            txt_cil_direito_longe.Name = "txt_cil_direito_longe";
-            txt_cil_direito_longe.Size = new Size(69, 27);
-            txt_cil_direito_longe.TabIndex = 16;
-            txt_cil_direito_longe.ValidatingType = typeof(DateTime);
+            this.txt_cil_direito_longe.Enabled = false;
+            this.txt_cil_direito_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_cil_direito_longe.Location = new System.Drawing.Point(110, 3);
+            this.txt_cil_direito_longe.Mask = "0,00";
+            this.txt_cil_direito_longe.Name = "txt_cil_direito_longe";
+            this.txt_cil_direito_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_cil_direito_longe.TabIndex = 16;
+            this.txt_cil_direito_longe.ValidatingType = typeof(System.DateTime);
             // 
             // txt_esf_esquerdo_longe
             // 
-            txt_esf_esquerdo_longe.Enabled = false;
-            txt_esf_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_esf_esquerdo_longe.Location = new Point(35, 35);
-            txt_esf_esquerdo_longe.Mask = "0,00";
-            txt_esf_esquerdo_longe.Name = "txt_esf_esquerdo_longe";
-            txt_esf_esquerdo_longe.Size = new Size(69, 27);
-            txt_esf_esquerdo_longe.TabIndex = 19;
-            txt_esf_esquerdo_longe.ValidatingType = typeof(DateTime);
+            this.txt_esf_esquerdo_longe.Enabled = false;
+            this.txt_esf_esquerdo_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_esf_esquerdo_longe.Location = new System.Drawing.Point(35, 35);
+            this.txt_esf_esquerdo_longe.Mask = "0,00";
+            this.txt_esf_esquerdo_longe.Name = "txt_esf_esquerdo_longe";
+            this.txt_esf_esquerdo_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_esf_esquerdo_longe.TabIndex = 19;
+            this.txt_esf_esquerdo_longe.ValidatingType = typeof(System.DateTime);
             // 
             // txt_esf_direito_longe
             // 
-            txt_esf_direito_longe.Enabled = false;
-            txt_esf_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_esf_direito_longe.Location = new Point(35, 4);
-            txt_esf_direito_longe.Mask = "0,00";
-            txt_esf_direito_longe.Name = "txt_esf_direito_longe";
-            txt_esf_direito_longe.Size = new Size(69, 27);
-            txt_esf_direito_longe.TabIndex = 15;
-            txt_esf_direito_longe.ValidatingType = typeof(DateTime);
+            this.txt_esf_direito_longe.Enabled = false;
+            this.txt_esf_direito_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_esf_direito_longe.Location = new System.Drawing.Point(35, 4);
+            this.txt_esf_direito_longe.Mask = "0,00";
+            this.txt_esf_direito_longe.Name = "txt_esf_direito_longe";
+            this.txt_esf_direito_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_esf_direito_longe.TabIndex = 15;
+            this.txt_esf_direito_longe.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(4, 42);
-            label6.Name = "label6";
-            label6.Size = new Size(25, 15);
-            label6.TabIndex = 13;
-            label6.Text = "O.E";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(25, 15);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "O.E";
             // 
             // txt_dp_direito_longe
             // 
-            txt_dp_direito_longe.Enabled = false;
-            txt_dp_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_dp_direito_longe.Location = new Point(260, 4);
-            txt_dp_direito_longe.Mask = "0,00";
-            txt_dp_direito_longe.Name = "txt_dp_direito_longe";
-            txt_dp_direito_longe.Size = new Size(69, 27);
-            txt_dp_direito_longe.TabIndex = 18;
-            txt_dp_direito_longe.ValidatingType = typeof(DateTime);
+            this.txt_dp_direito_longe.Enabled = false;
+            this.txt_dp_direito_longe.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_dp_direito_longe.Location = new System.Drawing.Point(260, 4);
+            this.txt_dp_direito_longe.Mask = "0,00";
+            this.txt_dp_direito_longe.Name = "txt_dp_direito_longe";
+            this.txt_dp_direito_longe.Size = new System.Drawing.Size(69, 27);
+            this.txt_dp_direito_longe.TabIndex = 18;
+            this.txt_dp_direito_longe.ValidatingType = typeof(System.DateTime);
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Location = new Point(4, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(27, 15);
-            label5.TabIndex = 12;
-            label5.Text = "O.D";
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Location = new System.Drawing.Point(4, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 15);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "O.D";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.Firebrick;
-            label7.Location = new Point(723, 37);
-            label7.Name = "label7";
-            label7.Size = new Size(52, 20);
-            label7.TabIndex = 12;
-            label7.Text = "Longe";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Firebrick;
+            this.label7.Location = new System.Drawing.Point(723, 37);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(52, 20);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Longe";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.BlueViolet;
-            label8.Location = new Point(723, 191);
-            label8.Name = "label8";
-            label8.Size = new Size(47, 20);
-            label8.TabIndex = 14;
-            label8.Text = "Perto";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.BlueViolet;
+            this.label8.Location = new System.Drawing.Point(723, 191);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 20);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Perto";
             // 
             // panel4
             // 
-            panel4.BackColor = Color.Thistle;
-            panel4.Controls.Add(label9);
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(label11);
-            panel4.Controls.Add(label12);
-            panel4.Controls.Add(panel5);
-            panel4.Location = new Point(578, 214);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(333, 91);
-            panel4.TabIndex = 13;
+            this.panel4.BackColor = System.Drawing.Color.Thistle;
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.label12);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Location = new System.Drawing.Point(578, 214);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(333, 91);
+            this.panel4.TabIndex = 13;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.Location = new Point(276, 4);
-            label9.Name = "label9";
-            label9.Size = new Size(29, 20);
-            label9.TabIndex = 11;
-            label9.Text = "DP";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(276, 4);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 20);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "DP";
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.Location = new Point(195, 4);
-            label10.Name = "label10";
-            label10.Size = new Size(38, 20);
-            label10.TabIndex = 10;
-            label10.Text = "Eixo";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(195, 4);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 20);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Eixo";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.Location = new Point(121, 4);
-            label11.Name = "label11";
-            label11.Size = new Size(30, 20);
-            label11.TabIndex = 9;
-            label11.Text = "Cil.";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(121, 4);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(30, 20);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Cil.";
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.Location = new Point(49, 4);
-            label12.Name = "label12";
-            label12.Size = new Size(31, 20);
-            label12.TabIndex = 8;
-            label12.Text = "Esf.";
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label12.Location = new System.Drawing.Point(49, 4);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 20);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Esf.";
             // 
             // panel5
             // 
-            panel5.BackColor = SystemColors.AppWorkspace;
-            panel5.Controls.Add(txt_dp_esquerdo_perto);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(txt_eixo_esquerdo_perto);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(txt_cil_esquerdo_perto);
-            panel5.Controls.Add(txt_eixo_direito_perto);
-            panel5.Controls.Add(txt_dp_direito_perto);
-            panel5.Controls.Add(txt_cil_direito_perto);
-            panel5.Controls.Add(txt_esf_direito_perto);
-            panel5.Controls.Add(txt_esf_esquerdo_perto);
-            panel5.Location = new Point(0, 25);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(333, 66);
-            panel5.TabIndex = 8;
+            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel5.Controls.Add(this.txt_dp_esquerdo_perto);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.txt_eixo_esquerdo_perto);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.txt_cil_esquerdo_perto);
+            this.panel5.Controls.Add(this.txt_eixo_direito_perto);
+            this.panel5.Controls.Add(this.txt_dp_direito_perto);
+            this.panel5.Controls.Add(this.txt_cil_direito_perto);
+            this.panel5.Controls.Add(this.txt_esf_direito_perto);
+            this.panel5.Controls.Add(this.txt_esf_esquerdo_perto);
+            this.panel5.Location = new System.Drawing.Point(0, 25);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(333, 66);
+            this.panel5.TabIndex = 8;
             // 
             // txt_dp_esquerdo_perto
             // 
-            txt_dp_esquerdo_perto.Enabled = false;
-            txt_dp_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_dp_esquerdo_perto.Location = new Point(260, 34);
-            txt_dp_esquerdo_perto.Mask = "0,00";
-            txt_dp_esquerdo_perto.Name = "txt_dp_esquerdo_perto";
-            txt_dp_esquerdo_perto.Size = new Size(69, 27);
-            txt_dp_esquerdo_perto.TabIndex = 26;
-            txt_dp_esquerdo_perto.ValidatingType = typeof(DateTime);
+            this.txt_dp_esquerdo_perto.Enabled = false;
+            this.txt_dp_esquerdo_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_dp_esquerdo_perto.Location = new System.Drawing.Point(260, 34);
+            this.txt_dp_esquerdo_perto.Mask = "0,00";
+            this.txt_dp_esquerdo_perto.Name = "txt_dp_esquerdo_perto";
+            this.txt_dp_esquerdo_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_dp_esquerdo_perto.TabIndex = 26;
+            this.txt_dp_esquerdo_perto.ValidatingType = typeof(System.DateTime);
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(4, 40);
-            label13.Name = "label13";
-            label13.Size = new Size(25, 15);
-            label13.TabIndex = 13;
-            label13.Text = "O.E";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(4, 40);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(25, 15);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "O.E";
             // 
             // txt_eixo_esquerdo_perto
             // 
-            txt_eixo_esquerdo_perto.Enabled = false;
-            txt_eixo_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_eixo_esquerdo_perto.Location = new Point(185, 35);
-            txt_eixo_esquerdo_perto.Mask = "0,00";
-            txt_eixo_esquerdo_perto.Name = "txt_eixo_esquerdo_perto";
-            txt_eixo_esquerdo_perto.Size = new Size(69, 27);
-            txt_eixo_esquerdo_perto.TabIndex = 28;
-            txt_eixo_esquerdo_perto.ValidatingType = typeof(DateTime);
+            this.txt_eixo_esquerdo_perto.Enabled = false;
+            this.txt_eixo_esquerdo_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_eixo_esquerdo_perto.Location = new System.Drawing.Point(185, 35);
+            this.txt_eixo_esquerdo_perto.Mask = "0,00";
+            this.txt_eixo_esquerdo_perto.Name = "txt_eixo_esquerdo_perto";
+            this.txt_eixo_esquerdo_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_eixo_esquerdo_perto.TabIndex = 28;
+            this.txt_eixo_esquerdo_perto.ValidatingType = typeof(System.DateTime);
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.Transparent;
-            label14.Location = new Point(4, 9);
-            label14.Name = "label14";
-            label14.Size = new Size(27, 15);
-            label14.TabIndex = 12;
-            label14.Text = "O.D";
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Location = new System.Drawing.Point(4, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 15);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "O.D";
             // 
             // txt_cil_esquerdo_perto
             // 
-            txt_cil_esquerdo_perto.Enabled = false;
-            txt_cil_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cil_esquerdo_perto.Location = new Point(110, 35);
-            txt_cil_esquerdo_perto.Mask = "0,00";
-            txt_cil_esquerdo_perto.Name = "txt_cil_esquerdo_perto";
-            txt_cil_esquerdo_perto.Size = new Size(69, 27);
-            txt_cil_esquerdo_perto.TabIndex = 29;
-            txt_cil_esquerdo_perto.ValidatingType = typeof(DateTime);
+            this.txt_cil_esquerdo_perto.Enabled = false;
+            this.txt_cil_esquerdo_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_cil_esquerdo_perto.Location = new System.Drawing.Point(110, 35);
+            this.txt_cil_esquerdo_perto.Mask = "0,00";
+            this.txt_cil_esquerdo_perto.Name = "txt_cil_esquerdo_perto";
+            this.txt_cil_esquerdo_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_cil_esquerdo_perto.TabIndex = 29;
+            this.txt_cil_esquerdo_perto.ValidatingType = typeof(System.DateTime);
             // 
             // txt_eixo_direito_perto
             // 
-            txt_eixo_direito_perto.Enabled = false;
-            txt_eixo_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_eixo_direito_perto.Location = new Point(185, 3);
-            txt_eixo_direito_perto.Mask = "0,00";
-            txt_eixo_direito_perto.Name = "txt_eixo_direito_perto";
-            txt_eixo_direito_perto.Size = new Size(69, 27);
-            txt_eixo_direito_perto.TabIndex = 24;
-            txt_eixo_direito_perto.ValidatingType = typeof(DateTime);
+            this.txt_eixo_direito_perto.Enabled = false;
+            this.txt_eixo_direito_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_eixo_direito_perto.Location = new System.Drawing.Point(185, 3);
+            this.txt_eixo_direito_perto.Mask = "0,00";
+            this.txt_eixo_direito_perto.Name = "txt_eixo_direito_perto";
+            this.txt_eixo_direito_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_eixo_direito_perto.TabIndex = 24;
+            this.txt_eixo_direito_perto.ValidatingType = typeof(System.DateTime);
             // 
             // txt_dp_direito_perto
             // 
-            txt_dp_direito_perto.Enabled = false;
-            txt_dp_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_dp_direito_perto.Location = new Point(260, 4);
-            txt_dp_direito_perto.Mask = "0,00";
-            txt_dp_direito_perto.Name = "txt_dp_direito_perto";
-            txt_dp_direito_perto.Size = new Size(69, 27);
-            txt_dp_direito_perto.TabIndex = 25;
-            txt_dp_direito_perto.ValidatingType = typeof(DateTime);
+            this.txt_dp_direito_perto.Enabled = false;
+            this.txt_dp_direito_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_dp_direito_perto.Location = new System.Drawing.Point(260, 4);
+            this.txt_dp_direito_perto.Mask = "0,00";
+            this.txt_dp_direito_perto.Name = "txt_dp_direito_perto";
+            this.txt_dp_direito_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_dp_direito_perto.TabIndex = 25;
+            this.txt_dp_direito_perto.ValidatingType = typeof(System.DateTime);
             // 
             // txt_cil_direito_perto
             // 
-            txt_cil_direito_perto.Enabled = false;
-            txt_cil_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_cil_direito_perto.Location = new Point(110, 3);
-            txt_cil_direito_perto.Mask = "0,00";
-            txt_cil_direito_perto.Name = "txt_cil_direito_perto";
-            txt_cil_direito_perto.Size = new Size(69, 27);
-            txt_cil_direito_perto.TabIndex = 23;
-            txt_cil_direito_perto.ValidatingType = typeof(DateTime);
+            this.txt_cil_direito_perto.Enabled = false;
+            this.txt_cil_direito_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_cil_direito_perto.Location = new System.Drawing.Point(110, 3);
+            this.txt_cil_direito_perto.Mask = "0,00";
+            this.txt_cil_direito_perto.Name = "txt_cil_direito_perto";
+            this.txt_cil_direito_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_cil_direito_perto.TabIndex = 23;
+            this.txt_cil_direito_perto.ValidatingType = typeof(System.DateTime);
             // 
             // txt_esf_direito_perto
             // 
-            txt_esf_direito_perto.Enabled = false;
-            txt_esf_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_esf_direito_perto.Location = new Point(35, 4);
-            txt_esf_direito_perto.Mask = "0,00";
-            txt_esf_direito_perto.Name = "txt_esf_direito_perto";
-            txt_esf_direito_perto.Size = new Size(69, 27);
-            txt_esf_direito_perto.TabIndex = 22;
-            txt_esf_direito_perto.ValidatingType = typeof(DateTime);
+            this.txt_esf_direito_perto.Enabled = false;
+            this.txt_esf_direito_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_esf_direito_perto.Location = new System.Drawing.Point(35, 4);
+            this.txt_esf_direito_perto.Mask = "0,00";
+            this.txt_esf_direito_perto.Name = "txt_esf_direito_perto";
+            this.txt_esf_direito_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_esf_direito_perto.TabIndex = 22;
+            this.txt_esf_direito_perto.ValidatingType = typeof(System.DateTime);
             // 
             // txt_esf_esquerdo_perto
             // 
-            txt_esf_esquerdo_perto.Enabled = false;
-            txt_esf_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_esf_esquerdo_perto.Location = new Point(35, 35);
-            txt_esf_esquerdo_perto.Mask = "0,00";
-            txt_esf_esquerdo_perto.Name = "txt_esf_esquerdo_perto";
-            txt_esf_esquerdo_perto.Size = new Size(69, 27);
-            txt_esf_esquerdo_perto.TabIndex = 27;
-            txt_esf_esquerdo_perto.ValidatingType = typeof(DateTime);
+            this.txt_esf_esquerdo_perto.Enabled = false;
+            this.txt_esf_esquerdo_perto.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_esf_esquerdo_perto.Location = new System.Drawing.Point(35, 35);
+            this.txt_esf_esquerdo_perto.Mask = "0,00";
+            this.txt_esf_esquerdo_perto.Name = "txt_esf_esquerdo_perto";
+            this.txt_esf_esquerdo_perto.Size = new System.Drawing.Size(69, 27);
+            this.txt_esf_esquerdo_perto.TabIndex = 27;
+            this.txt_esf_esquerdo_perto.ValidatingType = typeof(System.DateTime);
             // 
             // MainReceita
             // 
-            AccessibleRole = AccessibleRole.None;
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(922, 364);
-            Controls.Add(label8);
-            Controls.Add(panel4);
-            Controls.Add(label7);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(dg_receitas);
-            Name = "MainReceita";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Exames";
-            Shown += MainReceita_Shown;
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dg_receitas).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(922, 364);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dg_receitas);
+            this.Name = "MainReceita";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Exames";
+            this.Shown += new System.EventHandler(this.MainReceita_Shown);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_receitas)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

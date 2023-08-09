@@ -1,4 +1,5 @@
-﻿using Kvision.Database.Conexao;
+﻿using k_vision;
+using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
@@ -10,8 +11,10 @@ namespace Kvision.Frame.Paginas.PgExames
     public partial class MainReceita : Form
     {
         private readonly Cliente _cliente;
-        public MainReceita(Cliente cliente)
+        private readonly MainFrame _mainFrame;
+        public MainReceita(Cliente cliente, MainFrame mainFrame)
         {
+            _mainFrame = mainFrame;
             _cliente = cliente;
             InitializeComponent();
         }
@@ -35,6 +38,7 @@ namespace Kvision.Frame.Paginas.PgExames
                 dg_receitas.DataSource = listaReceita;
                 indexlista = -1;
                 dg_receitas.Rows[0].Cells[0].Selected = false;
+                _mainFrame.atualizarGridReceitas();
             }
         }
 

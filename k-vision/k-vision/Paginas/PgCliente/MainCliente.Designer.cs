@@ -28,210 +28,216 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            dg_clientes = new DataGridView();
-            nome = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
-            dataCadastro = new DataGridViewTextBoxColumn();
-            bnt_cadastrar = new Button();
-            panel1 = new Panel();
-            btn_show_exames = new Button();
-            btn_deletar = new Button();
-            btn_show_editar = new Button();
-            panel2 = new Panel();
-            txt_filtro = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dg_clientes).BeginInit();
-            panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            SuspendLayout();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dg_clientes = new System.Windows.Forms.DataGridView();
+            this.nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataCadastro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bnt_cadastrar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_show_exames = new System.Windows.Forms.Button();
+            this.btn_deletar = new System.Windows.Forms.Button();
+            this.btn_show_editar = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_filtro = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_clientes)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.SuspendLayout();
             // 
             // dg_clientes
             // 
-            dg_clientes.AllowUserToAddRows = false;
-            dg_clientes.AllowUserToDeleteRows = false;
-            dg_clientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            dg_clientes.BackgroundColor = Color.WhiteSmoke;
-            dg_clientes.BorderStyle = BorderStyle.None;
-            dg_clientes.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dg_clientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Silver;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dg_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dg_clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_clientes.Columns.AddRange(new DataGridViewColumn[] { nome, telefone, dataCadastro });
-            dg_clientes.Cursor = Cursors.Hand;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dg_clientes.DefaultCellStyle = dataGridViewCellStyle2;
-            dg_clientes.EnableHeadersVisualStyles = false;
-            dg_clientes.GridColor = Color.WhiteSmoke;
-            dg_clientes.Location = new Point(176, 59);
-            dg_clientes.MultiSelect = false;
-            dg_clientes.Name = "dg_clientes";
-            dg_clientes.ReadOnly = true;
-            dg_clientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.Silver;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dg_clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dg_clientes.RowHeadersVisible = false;
-            dg_clientes.RowTemplate.Height = 25;
-            dg_clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_clientes.Size = new Size(430, 390);
-            dg_clientes.TabIndex = 0;
-            dg_clientes.CellClick += dg_clientes_CellClick;
+            this.dg_clientes.AllowUserToAddRows = false;
+            this.dg_clientes.AllowUserToDeleteRows = false;
+            this.dg_clientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dg_clientes.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dg_clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dg_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dg_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dg_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nome,
+            this.telefone,
+            this.dataCadastro});
+            this.dg_clientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_clientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dg_clientes.EnableHeadersVisualStyles = false;
+            this.dg_clientes.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.dg_clientes.Location = new System.Drawing.Point(176, 59);
+            this.dg_clientes.MultiSelect = false;
+            this.dg_clientes.Name = "dg_clientes";
+            this.dg_clientes.ReadOnly = true;
+            this.dg_clientes.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_clientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dg_clientes.RowHeadersVisible = false;
+            this.dg_clientes.RowTemplate.Height = 25;
+            this.dg_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dg_clientes.Size = new System.Drawing.Size(430, 390);
+            this.dg_clientes.TabIndex = 0;
+            this.dg_clientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_clientes_CellClick);
             // 
             // nome
             // 
-            nome.DataPropertyName = "nome";
-            nome.HeaderText = "Nome";
-            nome.MinimumWidth = 100;
-            nome.Name = "nome";
-            nome.ReadOnly = true;
-            nome.Width = 200;
+            this.nome.DataPropertyName = "nome";
+            this.nome.HeaderText = "Nome";
+            this.nome.MinimumWidth = 100;
+            this.nome.Name = "nome";
+            this.nome.ReadOnly = true;
+            this.nome.Width = 200;
             // 
             // telefone
             // 
-            telefone.DataPropertyName = "telefone";
-            telefone.HeaderText = "Telefone";
-            telefone.Name = "telefone";
-            telefone.ReadOnly = true;
-            telefone.Width = 130;
+            this.telefone.DataPropertyName = "telefone";
+            this.telefone.HeaderText = "Telefone";
+            this.telefone.Name = "telefone";
+            this.telefone.ReadOnly = true;
+            this.telefone.Width = 130;
             // 
             // dataCadastro
             // 
-            dataCadastro.DataPropertyName = "dataCadastro";
-            dataCadastro.HeaderText = "Cadastrado";
-            dataCadastro.Name = "dataCadastro";
-            dataCadastro.ReadOnly = true;
+            this.dataCadastro.DataPropertyName = "dataCadastro";
+            this.dataCadastro.HeaderText = "Cadastrado";
+            this.dataCadastro.Name = "dataCadastro";
+            this.dataCadastro.ReadOnly = true;
             // 
             // bnt_cadastrar
             // 
-            bnt_cadastrar.BackColor = Color.YellowGreen;
-            bnt_cadastrar.FlatAppearance.BorderSize = 0;
-            bnt_cadastrar.FlatStyle = FlatStyle.Flat;
-            bnt_cadastrar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            bnt_cadastrar.ForeColor = Color.White;
-            bnt_cadastrar.Location = new Point(7, 79);
-            bnt_cadastrar.Name = "bnt_cadastrar";
-            bnt_cadastrar.Size = new Size(135, 48);
-            bnt_cadastrar.TabIndex = 2;
-            bnt_cadastrar.Text = "Cadastrar";
-            bnt_cadastrar.UseVisualStyleBackColor = false;
-            bnt_cadastrar.Click += bnt_show_cadastrar_Click;
+            this.bnt_cadastrar.BackColor = System.Drawing.Color.YellowGreen;
+            this.bnt_cadastrar.FlatAppearance.BorderSize = 0;
+            this.bnt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bnt_cadastrar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bnt_cadastrar.ForeColor = System.Drawing.Color.White;
+            this.bnt_cadastrar.Location = new System.Drawing.Point(7, 79);
+            this.bnt_cadastrar.Name = "bnt_cadastrar";
+            this.bnt_cadastrar.Size = new System.Drawing.Size(135, 48);
+            this.bnt_cadastrar.TabIndex = 2;
+            this.bnt_cadastrar.Text = "Cadastrar";
+            this.bnt_cadastrar.UseVisualStyleBackColor = false;
+            this.bnt_cadastrar.Click += new System.EventHandler(this.bnt_show_cadastrar_Click);
             // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(btn_show_exames);
-            panel1.Controls.Add(btn_deletar);
-            panel1.Controls.Add(btn_show_editar);
-            panel1.Controls.Add(bnt_cadastrar);
-            panel1.Location = new Point(0, -2);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(151, 464);
-            panel1.TabIndex = 3;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.Controls.Add(this.btn_show_exames);
+            this.panel1.Controls.Add(this.btn_deletar);
+            this.panel1.Controls.Add(this.btn_show_editar);
+            this.panel1.Controls.Add(this.bnt_cadastrar);
+            this.panel1.Location = new System.Drawing.Point(0, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(151, 464);
+            this.panel1.TabIndex = 3;
             // 
             // btn_show_exames
             // 
-            btn_show_exames.BackColor = Color.DodgerBlue;
-            btn_show_exames.FlatAppearance.BorderSize = 0;
-            btn_show_exames.FlatStyle = FlatStyle.Flat;
-            btn_show_exames.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_show_exames.ForeColor = Color.White;
-            btn_show_exames.Location = new Point(8, 290);
-            btn_show_exames.Name = "btn_show_exames";
-            btn_show_exames.Size = new Size(135, 48);
-            btn_show_exames.TabIndex = 5;
-            btn_show_exames.Text = "Ver receitas";
-            btn_show_exames.UseVisualStyleBackColor = false;
-            btn_show_exames.Click += btn_show_exames_Click;
+            this.btn_show_exames.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_show_exames.FlatAppearance.BorderSize = 0;
+            this.btn_show_exames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_exames.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_show_exames.ForeColor = System.Drawing.Color.White;
+            this.btn_show_exames.Location = new System.Drawing.Point(8, 290);
+            this.btn_show_exames.Name = "btn_show_exames";
+            this.btn_show_exames.Size = new System.Drawing.Size(135, 48);
+            this.btn_show_exames.TabIndex = 5;
+            this.btn_show_exames.Text = "Ver receitas";
+            this.btn_show_exames.UseVisualStyleBackColor = false;
+            this.btn_show_exames.Visible = false;
+            this.btn_show_exames.Click += new System.EventHandler(this.btn_show_exames_Click);
             // 
             // btn_deletar
             // 
-            btn_deletar.BackColor = Color.Crimson;
-            btn_deletar.FlatAppearance.BorderSize = 0;
-            btn_deletar.FlatStyle = FlatStyle.Flat;
-            btn_deletar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_deletar.ForeColor = Color.White;
-            btn_deletar.Location = new Point(8, 219);
-            btn_deletar.Name = "btn_deletar";
-            btn_deletar.Size = new Size(135, 48);
-            btn_deletar.TabIndex = 4;
-            btn_deletar.Text = "Deletar";
-            btn_deletar.UseVisualStyleBackColor = false;
-            btn_deletar.Click += btn_deletar_Click;
+            this.btn_deletar.BackColor = System.Drawing.Color.Crimson;
+            this.btn_deletar.FlatAppearance.BorderSize = 0;
+            this.btn_deletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_deletar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_deletar.ForeColor = System.Drawing.Color.White;
+            this.btn_deletar.Location = new System.Drawing.Point(8, 219);
+            this.btn_deletar.Name = "btn_deletar";
+            this.btn_deletar.Size = new System.Drawing.Size(135, 48);
+            this.btn_deletar.TabIndex = 4;
+            this.btn_deletar.Text = "Deletar";
+            this.btn_deletar.UseVisualStyleBackColor = false;
+            this.btn_deletar.Click += new System.EventHandler(this.btn_deletar_Click);
             // 
             // btn_show_editar
             // 
-            btn_show_editar.BackColor = Color.Orange;
-            btn_show_editar.FlatAppearance.BorderSize = 0;
-            btn_show_editar.FlatStyle = FlatStyle.Flat;
-            btn_show_editar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_show_editar.ForeColor = Color.White;
-            btn_show_editar.Location = new Point(7, 150);
-            btn_show_editar.Name = "btn_show_editar";
-            btn_show_editar.Size = new Size(135, 48);
-            btn_show_editar.TabIndex = 3;
-            btn_show_editar.Text = "Editar";
-            btn_show_editar.UseVisualStyleBackColor = false;
-            btn_show_editar.Click += btn_show_editar_Click;
+            this.btn_show_editar.BackColor = System.Drawing.Color.Orange;
+            this.btn_show_editar.FlatAppearance.BorderSize = 0;
+            this.btn_show_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_editar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_show_editar.ForeColor = System.Drawing.Color.White;
+            this.btn_show_editar.Location = new System.Drawing.Point(7, 150);
+            this.btn_show_editar.Name = "btn_show_editar";
+            this.btn_show_editar.Size = new System.Drawing.Size(135, 48);
+            this.btn_show_editar.TabIndex = 3;
+            this.btn_show_editar.Text = "Editar";
+            this.btn_show_editar.UseVisualStyleBackColor = false;
+            this.btn_show_editar.Click += new System.EventHandler(this.btn_show_editar_Click);
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Bisque;
-            panel2.Controls.Add(txt_filtro);
-            panel2.Location = new Point(175, 13);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(431, 40);
-            panel2.TabIndex = 4;
+            this.panel2.BackColor = System.Drawing.Color.Bisque;
+            this.panel2.Controls.Add(this.txt_filtro);
+            this.panel2.Location = new System.Drawing.Point(175, 13);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(431, 40);
+            this.panel2.TabIndex = 4;
             // 
             // txt_filtro
             // 
-            txt_filtro.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_filtro.Location = new Point(11, 6);
-            txt_filtro.Name = "txt_filtro";
-            txt_filtro.PlaceholderText = "Buscar cliente por nome ou final do telefone";
-            txt_filtro.Size = new Size(407, 27);
-            txt_filtro.TabIndex = 0;
-            txt_filtro.Tag = "";
-            txt_filtro.TextChanged += txt_filtro_TextChanged;
+            this.txt_filtro.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_filtro.Location = new System.Drawing.Point(11, 6);
+            this.txt_filtro.Name = "txt_filtro";
+            this.txt_filtro.PlaceholderText = "Buscar cliente por nome ou final do telefone";
+            this.txt_filtro.Size = new System.Drawing.Size(407, 27);
+            this.txt_filtro.TabIndex = 0;
+            this.txt_filtro.Tag = "";
             // 
             // MainCliente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(636, 461);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(dg_clientes);
-            Name = "MainCliente";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Clientes";
-            Shown += MainCliente_Shown;
-            ((System.ComponentModel.ISupportInitialize)dg_clientes).EndInit();
-            panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(636, 461);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.dg_clientes);
+            this.Name = "MainCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Clientes";
+            this.Shown += new System.EventHandler(this.MainCliente_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_clientes)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

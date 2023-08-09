@@ -3,6 +3,7 @@ using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Interfaces;
 using Kvision.Frame.Paginas.PgCliente;
+using Kvision.Frame.Paginas.PgExames;
 using Kvision.Frame.Paginas.PgProduto;
 using Kvision.Frame.Servicos;
 
@@ -32,11 +33,6 @@ namespace k_vision
         //Receita receita = new Receita();
 
 
-        private void btn_show_cliente_Click(object sender, EventArgs e)
-        {
-            var f_cliente = new MainCliente();
-            f_cliente.ShowDialog();
-        }
 
         private void btn_show_prod_Click(object sender, EventArgs e)
         {
@@ -76,11 +72,32 @@ namespace k_vision
                 indexlistaReceita = -1;
                 dg_receitas.Rows[0].Cells[0].Selected = false;
                 dg_receitas.Enabled = true;
+                btn_gerenciar_receitas.Enabled = true;
             }
             else
             {
                 dg_receitas.DataSource = null;
             }
+        }
+
+
+        private void btn_gerenciar_receitas_Click(object sender, EventArgs e)
+        {
+            if (indexlistaCliente > -1)
+            {
+                var mainExames = new MainReceita(_cliente, this);
+                mainExames.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
+            }
+        }
+
+        private void btn_gerenciar_clientes_Click(object sender, EventArgs e)
+        {
+            var f_cliente = new MainCliente(this);
+            f_cliente.ShowDialog();
         }
 
         private void dg_clientes_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -46,3 +46,19 @@ C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Database\ob
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\refint\Kvision.Database.dll
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.pdb
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\ref\Kvision.Database.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\bin\Debug\net6.0\Kvision.Database.deps.json
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\bin\Debug\net6.0\Kvision.Database.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\bin\Debug\net6.0\Kvision.Database.pdb
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\bin\Debug\net6.0\Kvision.Dominio.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\bin\Debug\net6.0\Kvision.Dominio.pdb
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\bin\Debug\net6.0\Kvision.Dominio.dll.config
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.csproj.AssemblyReference.cache
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.AssemblyInfoInputs.cache
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.AssemblyInfo.cs
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.csproj.CoreCompileInputs.cache
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.csproj.CopyComplete
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\refint\Kvision.Database.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\Kvision.Database.pdb
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Database\obj\Debug\net6.0\ref\Kvision.Database.dll

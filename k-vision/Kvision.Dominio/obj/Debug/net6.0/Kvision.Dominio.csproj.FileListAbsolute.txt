@@ -37,3 +37,16 @@ C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Dominio\obj
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\refint\Kvision.Dominio.dll
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.pdb
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\ref\Kvision.Dominio.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\bin\Debug\net6.0\Kvision.Dominio.dll.config
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\bin\Debug\net6.0\Kvision.Dominio.deps.json
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\bin\Debug\net6.0\Kvision.Dominio.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\bin\Debug\net6.0\Kvision.Dominio.pdb
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.csproj.AssemblyReference.cache
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.AssemblyInfoInputs.cache
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.AssemblyInfo.cs
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\refint\Kvision.Dominio.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\Kvision.Dominio.pdb
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\Kvision.Dominio\obj\Debug\net6.0\ref\Kvision.Dominio.dll
