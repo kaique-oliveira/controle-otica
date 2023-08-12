@@ -1,7 +1,6 @@
 ﻿using Kvision.Database.Interfaces;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Interfaces;
-using System.Data;
 
 namespace Kvision.Frame.Servicos
 {

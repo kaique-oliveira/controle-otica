@@ -33,11 +33,13 @@ CREATE TABLE public.tbl_prescricao (
 	CONSTRAINT tbl_prescricao_id_receita_fkey FOREIGN KEY (id_receita) REFERENCES public.tbl_receita(id) ON DELETE CASCADE
 );
 
-create table tbl_pedido(
- id serial constraint pk_id_pedido primary key,
+create table tbl_venda(
+ id serial constraint pk_id_venda primary key,
  d_cadastro date not null,
  tipo_pagamento varchar(6),
  total money not null, 
+ produtos text,
+ adicionais text,
  id_cliente int not null,
  id_receita int not null,
  foreign key (id_receita) references tbl_receita (id) 
@@ -46,35 +48,12 @@ create table tbl_pedido(
  on  delete  cascade
 );
 
-
-create table tbl_adicional(
- id serial constraint pk_id_adicional primary key,
- d_cadastro date not null,
- descricao varchar(150) not null, 
- valor money not null, 
- id_pedido int,
- foreign key (id_pedido) references tbl_pedido (id) 
- on  delete  cascade
-);
-
-
 create table tbl_produto(
  id serial constraint pk_id_produto primary key,
  d_cadastro date not null,
  nome varchar(150) not null,
  quantidade int,
  valor money not null
-);
-
-create table tbl_item_pedido(
- id serial constraint pk_id_item_pedido primary key,
- d_cadastro date not null,
- id_pedido int,
- id_produto int,
- foreign key (id_pedido) references tbl_pedido (id) 
- on  delete  cascade,
- foreign key (id_produto) references tbl_produto (id) 
- on  delete  cascade
 );
 
 

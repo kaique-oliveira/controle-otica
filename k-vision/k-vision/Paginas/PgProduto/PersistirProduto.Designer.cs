@@ -28,107 +28,107 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            txt_nome = new TextBox();
-            txt_valor = new MaskedTextBox();
-            label2 = new Label();
-            label3 = new Label();
-            txt_quantidade = new MaskedTextBox();
-            btn_salvar = new Button();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txt_nome = new System.Windows.Forms.TextBox();
+            this.txt_valor = new System.Windows.Forms.MaskedTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_quantidade = new System.Windows.Forms.MaskedTextBox();
+            this.btn_salvar = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(27, 45);
-            label1.Name = "label1";
-            label1.Size = new Size(53, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Nome:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(9, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome:";
             // 
             // txt_nome
             // 
-            txt_nome.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_nome.Location = new Point(27, 68);
-            txt_nome.Name = "txt_nome";
-            txt_nome.PlaceholderText = "Nome do produto ou coleção";
-            txt_nome.Size = new Size(344, 27);
-            txt_nome.TabIndex = 1;
+            this.txt_nome.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_nome.Location = new System.Drawing.Point(9, 53);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.PlaceholderText = "Nome do produto ou coleção";
+            this.txt_nome.Size = new System.Drawing.Size(222, 27);
+            this.txt_nome.TabIndex = 1;
             // 
             // txt_valor
             // 
-            txt_valor.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_valor.Location = new Point(27, 228);
-            txt_valor.Mask = "000,00";
-            txt_valor.Name = "txt_valor";
-            txt_valor.Size = new Size(100, 27);
-            txt_valor.TabIndex = 4;
-            txt_valor.ValidatingType = typeof(int);
+            this.txt_valor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_valor.Location = new System.Drawing.Point(13, 183);
+            this.txt_valor.Mask = "000,00";
+            this.txt_valor.Name = "txt_valor";
+            this.txt_valor.Size = new System.Drawing.Size(218, 27);
+            this.txt_valor.TabIndex = 3;
+            this.txt_valor.ValidatingType = typeof(int);
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(27, 123);
-            label2.Name = "label2";
-            label2.Size = new Size(172, 20);
-            label2.TabIndex = 2;
-            label2.Text = "Quantidade em estoque:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(14, 101);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(172, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Quantidade em estoque:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(27, 205);
-            label3.Name = "label3";
-            label3.Size = new Size(131, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Valor por unidade:";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(15, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(131, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Valor por unidade:";
             // 
             // txt_quantidade
             // 
-            txt_quantidade.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_quantidade.Location = new Point(27, 146);
-            txt_quantidade.Mask = "00000";
-            txt_quantidade.Name = "txt_quantidade";
-            txt_quantidade.Size = new Size(344, 27);
-            txt_quantidade.TabIndex = 6;
-            txt_quantidade.ValidatingType = typeof(int);
+            this.txt_quantidade.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_quantidade.Location = new System.Drawing.Point(11, 124);
+            this.txt_quantidade.Mask = "00000 ";
+            this.txt_quantidade.Name = "txt_quantidade";
+            this.txt_quantidade.Size = new System.Drawing.Size(218, 27);
+            this.txt_quantidade.TabIndex = 2;
+            this.txt_quantidade.ValidatingType = typeof(int);
             // 
             // btn_salvar
             // 
-            btn_salvar.BackColor = Color.YellowGreen;
-            btn_salvar.FlatAppearance.BorderSize = 0;
-            btn_salvar.FlatStyle = FlatStyle.Flat;
-            btn_salvar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_salvar.ForeColor = SystemColors.Control;
-            btn_salvar.Location = new Point(158, 321);
-            btn_salvar.Name = "btn_salvar";
-            btn_salvar.Size = new Size(75, 37);
-            btn_salvar.TabIndex = 14;
-            btn_salvar.Text = "Salvar";
-            btn_salvar.UseVisualStyleBackColor = false;
-            btn_salvar.Click += btn_salvar_Click;
+            this.btn_salvar.BackColor = System.Drawing.Color.YellowGreen;
+            this.btn_salvar.FlatAppearance.BorderSize = 0;
+            this.btn_salvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_salvar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_salvar.ForeColor = System.Drawing.SystemColors.Control;
+            this.btn_salvar.Location = new System.Drawing.Point(84, 265);
+            this.btn_salvar.Name = "btn_salvar";
+            this.btn_salvar.Size = new System.Drawing.Size(75, 37);
+            this.btn_salvar.TabIndex = 4;
+            this.btn_salvar.Text = "Salvar";
+            this.btn_salvar.UseVisualStyleBackColor = false;
+            this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
             // PersistirProduto
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(399, 370);
-            Controls.Add(btn_salvar);
-            Controls.Add(txt_quantidade);
-            Controls.Add(label3);
-            Controls.Add(txt_valor);
-            Controls.Add(label2);
-            Controls.Add(txt_nome);
-            Controls.Add(label1);
-            Name = "PersistirProduto";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastrando Produto";
-            Load += PersistirProduto_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(246, 314);
+            this.Controls.Add(this.btn_salvar);
+            this.Controls.Add(this.txt_quantidade);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_valor);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txt_nome);
+            this.Controls.Add(this.label1);
+            this.Name = "PersistirProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastrando Produto";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

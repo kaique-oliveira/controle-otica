@@ -193,3 +193,4 @@ C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\k-vision\obj\Debu
 C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.pdb
 C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.genruntimeconfig.cache
 C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\ref\Kvision.Frame.dll
+C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendas.MainVenda.resources

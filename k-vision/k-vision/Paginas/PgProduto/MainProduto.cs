@@ -1,4 +1,5 @@
-﻿using Kvision.Database.Conexao;
+﻿using k_vision;
+using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
@@ -9,8 +10,10 @@ namespace Kvision.Frame.Paginas.PgProduto
 {
     public partial class MainProduto : Form
     {
-        public MainProduto()
+        private readonly MainFrame _mainFrame;
+        public MainProduto(MainFrame mainFrame)
         {
+            _mainFrame = mainFrame;
             InitializeComponent();
         }
 
@@ -30,6 +33,7 @@ namespace Kvision.Frame.Paginas.PgProduto
             {
                 dg_produtos.DataSource = listaProdutos.OrderBy(p => p.Nome).ToList();
                 dg_produtos.Rows[0].Cells[0].Selected = false;
+                _mainFrame.atualizarGridProduto();
             }
         }
 
