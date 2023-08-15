@@ -67,7 +67,7 @@ namespace Kvision.Frame.Servicos
             {
                 if (_receita.Update(receita))
                 {
-                    return "Receita cadastrado com sucesso!";
+                    return "Receita editada com sucesso!";
                 }
 
                 return "Ops, algo deu errado";

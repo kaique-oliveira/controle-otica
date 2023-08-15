@@ -1,5 +1,4 @@
 using Kvision.Database.Conexao;
-using Kvision.Database.Interfaces;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.Enums;
@@ -10,8 +9,7 @@ using Kvision.Frame.Paginas.PgProduto;
 using Kvision.Frame.Paginas.PgVendas;
 using Kvision.Frame.Servicos;
 using System.Text.Json;
-using System.Text.Json.Nodes;
-using System.Text.Json.Serialization;
+
 
 namespace k_vision
 {
@@ -21,7 +19,7 @@ namespace k_vision
         {
             InitializeComponent();
         }
-       
+
 
         ServicosCliente servicosCliente = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
         ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
@@ -53,10 +51,11 @@ namespace k_vision
             if (listaReceitas.Count > 0)
             {
                 dg_receitas.DataSource = listaReceitas;
-                indexlistaReceita = -1;
-                dg_receitas.Rows[0].Cells[0].Selected = false;
+
+                dg_receitas.ClearSelection();
                 dg_receitas.Enabled = true;
                 btn_gerenciar_receitas.Enabled = true;
+                indexlistaReceita = -1;
             }
             else
             {
@@ -88,7 +87,8 @@ namespace k_vision
             }
         }
 
-        public void limparVendaToda() {
+        public void limparVendaToda()
+        {
             listViewProdutos.Items.Clear();
             listaItemProduto.Clear();
             listaAdicional.Clear();
@@ -99,7 +99,10 @@ namespace k_vision
             dg_clientes.ClearSelection();
             dg_receitas.ClearSelection();
             dg_receitas.DataSource = null;
-
+            cbo_tipo_pagamento.SelectedIndex = -1;
+            indexlistaCliente = -1;
+            indexlistaReceita = -1;
+            indexlistaProduto = -1;
         }
 
         private void MainFrame_Shown(object sender, EventArgs e)
@@ -107,12 +110,17 @@ namespace k_vision
             atualizarGridClientes();
             atualizarGridProduto();
             lbl_valor_total.Text = $"R$ 0,00";
+
+            cbo_tipo_pagamento.Items.Add(TiposPagamento.Cartão);
+            cbo_tipo_pagamento.Items.Add(TiposPagamento.Dinheiro);
+            cbo_tipo_pagamento.Items.Add(TiposPagamento.Pix);
         }
 
         private void btn_gerenciar_receitas_Click(object sender, EventArgs e)
         {
             if (indexlistaCliente > -1)
             {
+                this.Hide();
                 var mainExames = new MainReceita(_cliente, this);
                 mainExames.ShowDialog();
             }
@@ -124,6 +132,7 @@ namespace k_vision
 
         private void btn_gerenciar_clientes_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var f_cliente = new MainCliente(this);
             f_cliente.ShowDialog();
         }
@@ -140,17 +149,19 @@ namespace k_vision
             dg_produtos.DataSource = listaProdutos.FindAll(p => p.Nome.ToUpperInvariant().Contains(txt_filtro_produto.Text.ToUpperInvariant()));
         }
 
-      
+
 
         private void btn_gerenciar_produto_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var f_produto = new MainProduto(this);
             f_produto.ShowDialog();
         }
 
         private void btn_gerenciar_vendas_Click(object sender, EventArgs e)
         {
-            var f_venda = new MainVenda(servicosVenda);
+            this.Hide();
+            var f_venda = new MainVenda(servicosVenda, this);
             f_venda.ShowDialog();
         }
 
@@ -159,6 +170,7 @@ namespace k_vision
             indexlistaCliente = dg_clientes.CurrentCell.RowIndex;
             _cliente = listaClientes[indexlistaCliente];
             lblClienteVenda.Text = $"{_cliente.Nome}";
+            btn_gerenciar_receitas.Enabled = true;
             atualizarGridReceitas();
         }
 
@@ -196,25 +208,38 @@ namespace k_vision
                 txt_descricao_adiconal.Clear();
                 txt_valor_adicional.Clear();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Preencha todos os campos!", "Atenção");
             }
         }
 
         private void bnt_finalizar_venda_Click(object sender, EventArgs e)
         {
-            _venda.TipoPagamento = TiposPagamento.Cartão;
+            switch (cbo_tipo_pagamento.SelectedItem.ToString())
+            {
+                case "Cartão":
+                    _venda.TipoPagamento = TiposPagamento.Cartão;
+                    break;
+                case "Dinheiro":
+                    _venda.TipoPagamento = TiposPagamento.Dinheiro;
+                    break;
+                case "Pix":
+                    _venda.TipoPagamento = TiposPagamento.Pix;
+                    break;
+            }
+
             _venda.Total = valorTotal;
             _venda.Cliente = _cliente;
             _venda.Receita = _receita;
             _venda.Produtos = JsonSerializer.Serialize<List<ItemProduto>>(listaItemProduto);
             _venda.Adicionais = JsonSerializer.Serialize<List<Adicional>>(listaAdicional);
 
-            limparVendaToda();
-
             MessageBox.Show(servicosVenda.AjustarSaldo(_venda, servicosProduto), "Atenção");
 
+            limparVendaToda();
             atualizarGridProduto();
+            btn_gerenciar_receitas.Enabled = false;
         }
 
 
@@ -223,7 +248,7 @@ namespace k_vision
         {
             if (indexlistaProduto != -1)
             {
-                _produto =  listaProdutos[indexlistaProduto];
+                _produto = listaProdutos[indexlistaProduto];
 
 
                 if (listaItemProduto.Count != 0 && listaItemProduto.Where(p => p.Id == _produto.Id).Count() != 0)
@@ -269,7 +294,8 @@ namespace k_vision
 
                 dg_produtos.ClearSelection();
             }
-            else {
+            else
+            {
                 MessageBox.Show("Selecione um produto!", "Atenção");
             }
         }
@@ -282,7 +308,6 @@ namespace k_vision
             valorTotal = 0;
             lbl_valor_total.Text = $"R$ 0,00";
         }
-
 
     }
 }

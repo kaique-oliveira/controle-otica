@@ -61,9 +61,14 @@ namespace Kvision.Frame.Servicos
             throw new NotImplementedException();
         }
 
-        public string Editar(Venda entidade)
+        public string Editar(Venda venda)
         {
-            throw new NotImplementedException();
+            if (_venda.Update(venda))
+            {
+                return "Venda editada com sucesso!";
+            }
+
+            return "Ops, algo deu errado";
         }
     }
 }

@@ -71,12 +71,18 @@ namespace Kvision.Frame.Paginas.PgProduto
                 txt_nome.Text = _produto.Nome;
                 txt_quantidade.Text = _produto.Quantidade.ToString();
                 txt_valor.Text = _produto.Valor.ToString();
-                this.Text = "Editando Produto";
+                lblTitulo.Text = "Editando Produto";
             }
             else
             {
-                this.Text = "Cadastrando Produto";
+                lblTitulo.Text = "Cadastrando Produto";
             }
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            _mainProduto.Show();
+            this.Close();
         }
     }
 }

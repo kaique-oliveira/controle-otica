@@ -30,10 +30,12 @@ namespace Kvision.Frame.Paginas.PgExames
         ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
         ServicosPrescricao servicosPrescricao = new ServicosPrescricao(new CrudPrescricao(new ConexaoDatabase()));
         private TiposPrescricao _tipo;
+
+
         private void btn_salvar_Click(object sender, EventArgs e)
         {
-            _receita.DataExame = DateTime.Parse(txt_d_realizado.Text);
-            _receita.DataValExame = DateTime.Parse(txt_d_validade.Text);
+            _receita.DataExame = DateTime.Parse(dtp_data_realizado.Value.ToString());
+            _receita.DataValExame = DateTime.Parse(_receita.DataExame.AddMonths(6).ToShortDateString());
             _receita.NomeExaminador = txt_nome_dr.Text;
             _receita.Cliente = _cliente;
 
@@ -43,6 +45,10 @@ namespace Kvision.Frame.Paginas.PgExames
                 servicosReceita.Cadastrar(_receita);
 
                 _receita = servicosReceita.ConsultarTodos().Last();
+            }
+            else
+            {
+                servicosReceita.Editar(_receita);
             }
 
 
@@ -132,17 +138,16 @@ namespace Kvision.Frame.Paginas.PgExames
                 _mainReceita.atualizarGrid();
                 _mainReceita.limparCampos();
                 _mainReceita.indexlista = -1;
+                _mainReceita.Show();
                 this.Close();
-            }           
+            }
         }
-
 
         private void PersistirReceita_Load(object sender, EventArgs e)
         {
             if (_tiposOperacoes == TiposOperacoes.Editar)
             {
-                txt_d_realizado.Text = _receita.DataExame.ToString();
-                txt_d_validade.Text = _receita.DataValExame.ToString();
+                dtp_data_realizado.Value = _receita.DataExame;
                 txt_nome_dr.Text = _receita.NomeExaminador.ToString();
 
                 void carregarLonge(Prescricao presc)
@@ -185,11 +190,18 @@ namespace Kvision.Frame.Paginas.PgExames
                             break;
                     }
                 }
-                this.Text = "Editando receita";
+                lblTitulo.Text = "Editando receita";
             }
-            else {
-                this.Text = "Cadastrando receita";
+            else
+            {
+                lblTitulo.Text = "Cadastrando receita";
             }
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            _mainReceita.Show();
+            this.Close();
         }
     }
 }

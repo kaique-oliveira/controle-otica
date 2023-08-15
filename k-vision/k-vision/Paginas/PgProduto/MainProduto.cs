@@ -1,5 +1,6 @@
 ﻿using k_vision;
 using Kvision.Database.Conexao;
+using Kvision.Database.Interfaces;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
@@ -45,6 +46,7 @@ namespace Kvision.Frame.Paginas.PgProduto
 
         private void bnt_show_cadastrar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var crud_produto = new PersistirProduto(TiposOperacoes.Cadastrar, servicos, null, this);
             crud_produto.ShowDialog();
         }
@@ -59,6 +61,7 @@ namespace Kvision.Frame.Paginas.PgProduto
         {
             if (indexlista > -1)
             {
+                this.Hide();
                 var crud_produto = new PersistirProduto(TiposOperacoes.Editar, servicos, produto, this);
                 crud_produto.ShowDialog();
             }
@@ -71,6 +74,30 @@ namespace Kvision.Frame.Paginas.PgProduto
         private void txt_filtro_TextChanged(object sender, EventArgs e)
         {
             dg_produtos.DataSource = listaProdutos.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro.Text.ToUpperInvariant()));
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            _mainFrame.Show();
+            this.Hide();
+        }
+
+        private void btn_deletar_Click(object sender, EventArgs e)
+        {
+            if (indexlista > -1)
+            {
+                var result = MessageBox.Show($"Deseja realmente deletar este produto?", "Antenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+
+                    MessageBox.Show($"{servicos.Deletar(produto)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    atualizarGrid();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecione um produto da lista!", "Atenção");
+            }
         }
     }
 }

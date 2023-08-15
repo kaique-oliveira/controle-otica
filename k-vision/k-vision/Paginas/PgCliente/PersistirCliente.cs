@@ -53,6 +53,7 @@ namespace Kvision.Frame.Paginas.PgCliente
                     _mainCliente.atualizarGrid();
                     limparCampos();
                     _mainCliente.indexlista = -1;
+                    _mainCliente.Show();
                     this.Close();
                 }
             }
@@ -64,12 +65,18 @@ namespace Kvision.Frame.Paginas.PgCliente
             {
                 txt_nome.Text = _cliente.Nome;
                 txt_telefone.Text = _cliente.Telefone;
-                this.Text = "Editando cliente";
+                lblTitulo.Text = "Editando cliente";
             }
             else
             {
-                this.Text = "Cadastrando cliente";
+                lblTitulo.Text = "Cadastrando cliente";
             }
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            _mainCliente.Show();
+            this.Close(); ;
         }
     }
 }

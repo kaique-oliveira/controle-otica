@@ -56,7 +56,7 @@ namespace Kvision.Frame.Servicos
         {
             if (_prescricao.Update(prescricao))
             {
-                return "Receita cadastrada com sucesso!";
+                return "Receita editada com sucesso!";
             }
             else
             {

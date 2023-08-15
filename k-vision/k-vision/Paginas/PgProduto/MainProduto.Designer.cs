@@ -31,97 +31,40 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            panel1 = new Panel();
-            btn_deletar = new Button();
-            btn_show_editar = new Button();
-            bnt_show_cadastrar = new Button();
-            panel2 = new Panel();
-            txt_filtro = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainProduto));
+            panel3 = new Panel();
             dg_produtos = new DataGridView();
             id = new DataGridViewTextBoxColumn();
             nome = new DataGridViewTextBoxColumn();
             quantidade = new DataGridViewTextBoxColumn();
             valor = new DataGridViewTextBoxColumn();
+            panel1 = new Panel();
+            bnt_show_cadastrar = new Button();
+            btn_show_editar = new Button();
+            btn_deletar = new Button();
+            panel2 = new Panel();
+            pictureBox2 = new PictureBox();
+            txt_filtro = new TextBox();
+            pictureBox3 = new PictureBox();
+            lblTitulo = new Label();
+            btn_fechar = new Button();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dg_produtos).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dg_produtos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // panel1
+            // panel3
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(btn_deletar);
-            panel1.Controls.Add(btn_show_editar);
-            panel1.Controls.Add(bnt_show_cadastrar);
-            panel1.Location = new Point(0, -7);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(151, 458);
-            panel1.TabIndex = 4;
-            // 
-            // btn_deletar
-            // 
-            btn_deletar.BackColor = Color.Crimson;
-            btn_deletar.FlatAppearance.BorderSize = 0;
-            btn_deletar.FlatStyle = FlatStyle.Flat;
-            btn_deletar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_deletar.ForeColor = Color.White;
-            btn_deletar.Location = new Point(8, 251);
-            btn_deletar.Name = "btn_deletar";
-            btn_deletar.Size = new Size(135, 48);
-            btn_deletar.TabIndex = 4;
-            btn_deletar.Text = "Deletar";
-            btn_deletar.UseVisualStyleBackColor = false;
-            // 
-            // btn_show_editar
-            // 
-            btn_show_editar.BackColor = Color.Orange;
-            btn_show_editar.FlatAppearance.BorderSize = 0;
-            btn_show_editar.FlatStyle = FlatStyle.Flat;
-            btn_show_editar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_show_editar.ForeColor = Color.White;
-            btn_show_editar.Location = new Point(7, 182);
-            btn_show_editar.Name = "btn_show_editar";
-            btn_show_editar.Size = new Size(135, 48);
-            btn_show_editar.TabIndex = 3;
-            btn_show_editar.Text = "Editar";
-            btn_show_editar.UseVisualStyleBackColor = false;
-            btn_show_editar.Click += btn_show_editar_Click;
-            // 
-            // bnt_show_cadastrar
-            // 
-            bnt_show_cadastrar.BackColor = Color.YellowGreen;
-            bnt_show_cadastrar.FlatAppearance.BorderSize = 0;
-            bnt_show_cadastrar.FlatStyle = FlatStyle.Flat;
-            bnt_show_cadastrar.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            bnt_show_cadastrar.ForeColor = Color.White;
-            bnt_show_cadastrar.Location = new Point(7, 111);
-            bnt_show_cadastrar.Name = "bnt_show_cadastrar";
-            bnt_show_cadastrar.Size = new Size(135, 48);
-            bnt_show_cadastrar.TabIndex = 2;
-            bnt_show_cadastrar.Text = "Cadastrar";
-            bnt_show_cadastrar.UseVisualStyleBackColor = false;
-            bnt_show_cadastrar.Click += bnt_show_cadastrar_Click;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Bisque;
-            panel2.Controls.Add(txt_filtro);
-            panel2.Location = new Point(181, 10);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(430, 40);
-            panel2.TabIndex = 6;
-            // 
-            // txt_filtro
-            // 
-            txt_filtro.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_filtro.Location = new Point(10, 7);
-            txt_filtro.Name = "txt_filtro";
-            txt_filtro.PlaceholderText = "Buscar produto pelo nome";
-            txt_filtro.Size = new Size(410, 27);
-            txt_filtro.TabIndex = 0;
-            txt_filtro.Tag = "";
-            txt_filtro.TextChanged += txt_filtro_TextChanged;
+            panel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            panel3.BackColor = Color.LightGray;
+            panel3.Controls.Add(dg_produtos);
+            panel3.Location = new Point(13, 89);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(445, 458);
+            panel3.TabIndex = 12;
             // 
             // dg_produtos
             // 
@@ -133,11 +76,11 @@
             dg_produtos.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dg_produtos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.Silver;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
             dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dg_produtos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dg_produtos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -145,15 +88,15 @@
             dg_produtos.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Thistle;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dg_produtos.DefaultCellStyle = dataGridViewCellStyle2;
             dg_produtos.EnableHeadersVisualStyles = false;
             dg_produtos.GridColor = Color.WhiteSmoke;
-            dg_produtos.Location = new Point(181, 56);
+            dg_produtos.Location = new Point(8, 7);
             dg_produtos.MultiSelect = false;
             dg_produtos.Name = "dg_produtos";
             dg_produtos.ReadOnly = true;
@@ -169,7 +112,7 @@
             dg_produtos.RowHeadersVisible = false;
             dg_produtos.RowTemplate.Height = 25;
             dg_produtos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_produtos.Size = new Size(430, 376);
+            dg_produtos.Size = new Size(430, 445);
             dg_produtos.TabIndex = 5;
             dg_produtos.CellClick += dg_produtos_CellClick;
             // 
@@ -206,37 +149,186 @@
             valor.ReadOnly = true;
             valor.Width = 80;
             // 
+            // panel1
+            // 
+            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(bnt_show_cadastrar);
+            panel1.Controls.Add(btn_show_editar);
+            panel1.Controls.Add(btn_deletar);
+            panel1.Location = new Point(12, 552);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(446, 50);
+            panel1.TabIndex = 11;
+            // 
+            // bnt_show_cadastrar
+            // 
+            bnt_show_cadastrar.BackColor = SystemColors.ButtonFace;
+            bnt_show_cadastrar.FlatAppearance.BorderSize = 0;
+            bnt_show_cadastrar.FlatStyle = FlatStyle.Flat;
+            bnt_show_cadastrar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            bnt_show_cadastrar.ForeColor = Color.FromArgb(64, 64, 64);
+            bnt_show_cadastrar.Image = (Image)resources.GetObject("bnt_show_cadastrar.Image");
+            bnt_show_cadastrar.ImageAlign = ContentAlignment.MiddleLeft;
+            bnt_show_cadastrar.Location = new Point(9, 8);
+            bnt_show_cadastrar.Name = "bnt_show_cadastrar";
+            bnt_show_cadastrar.Size = new Size(120, 33);
+            bnt_show_cadastrar.TabIndex = 2;
+            bnt_show_cadastrar.Text = "Cadastrar";
+            bnt_show_cadastrar.TextAlign = ContentAlignment.MiddleRight;
+            bnt_show_cadastrar.UseVisualStyleBackColor = false;
+            bnt_show_cadastrar.Click += bnt_show_cadastrar_Click;
+            // 
+            // btn_show_editar
+            // 
+            btn_show_editar.BackColor = SystemColors.ButtonFace;
+            btn_show_editar.FlatAppearance.BorderSize = 0;
+            btn_show_editar.FlatStyle = FlatStyle.Flat;
+            btn_show_editar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_show_editar.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_show_editar.Image = (Image)resources.GetObject("btn_show_editar.Image");
+            btn_show_editar.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_show_editar.Location = new Point(163, 8);
+            btn_show_editar.Name = "btn_show_editar";
+            btn_show_editar.Size = new Size(120, 33);
+            btn_show_editar.TabIndex = 3;
+            btn_show_editar.Text = "Editar";
+            btn_show_editar.UseVisualStyleBackColor = false;
+            btn_show_editar.Click += btn_show_editar_Click;
+            // 
+            // btn_deletar
+            // 
+            btn_deletar.BackColor = SystemColors.ButtonFace;
+            btn_deletar.FlatAppearance.BorderSize = 0;
+            btn_deletar.FlatStyle = FlatStyle.Flat;
+            btn_deletar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_deletar.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_deletar.Image = (Image)resources.GetObject("btn_deletar.Image");
+            btn_deletar.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_deletar.Location = new Point(317, 8);
+            btn_deletar.Name = "btn_deletar";
+            btn_deletar.Size = new Size(120, 33);
+            btn_deletar.TabIndex = 4;
+            btn_deletar.Text = "Deletar";
+            btn_deletar.UseVisualStyleBackColor = false;
+            btn_deletar.Click += btn_deletar_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.LightGray;
+            panel2.Controls.Add(pictureBox2);
+            panel2.Controls.Add(txt_filtro);
+            panel2.Location = new Point(14, 43);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(444, 40);
+            panel2.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(6, 7);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(24, 24);
+            pictureBox2.TabIndex = 15;
+            pictureBox2.TabStop = false;
+            // 
+            // txt_filtro
+            // 
+            txt_filtro.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_filtro.Location = new Point(33, 6);
+            txt_filtro.Name = "txt_filtro";
+            txt_filtro.PlaceholderText = "ex: \"Coleção cassino\"";
+            txt_filtro.Size = new Size(401, 27);
+            txt_filtro.TabIndex = 0;
+            txt_filtro.Tag = "";
+            txt_filtro.TextChanged += txt_filtro_TextChanged;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox3.Location = new Point(4, 3);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(22, 22);
+            pictureBox3.TabIndex = 20;
+            pictureBox3.TabStop = false;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitulo.Location = new Point(29, 4);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(71, 20);
+            lblTitulo.TabIndex = 19;
+            lblTitulo.Text = "Produtos";
+            // 
+            // btn_fechar
+            // 
+            btn_fechar.BackColor = Color.Transparent;
+            btn_fechar.BackgroundImage = (Image)resources.GetObject("btn_fechar.BackgroundImage");
+            btn_fechar.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_fechar.Cursor = Cursors.Hand;
+            btn_fechar.FlatAppearance.BorderSize = 0;
+            btn_fechar.FlatStyle = FlatStyle.Flat;
+            btn_fechar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_fechar.ForeColor = SystemColors.ActiveCaptionText;
+            btn_fechar.Location = new Point(437, 3);
+            btn_fechar.Name = "btn_fechar";
+            btn_fechar.Size = new Size(28, 28);
+            btn_fechar.TabIndex = 18;
+            btn_fechar.UseVisualStyleBackColor = false;
+            btn_fechar.Click += btn_fechar_Click;
+            // 
             // MainProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(641, 444);
-            Controls.Add(panel2);
-            Controls.Add(dg_produtos);
+            BackColor = Color.White;
+            ClientSize = new Size(469, 608);
+            Controls.Add(pictureBox3);
+            Controls.Add(lblTitulo);
+            Controls.Add(btn_fechar);
+            Controls.Add(panel3);
             Controls.Add(panel1);
+            Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "MainProduto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Produtos";
             Shown += MainProduto_Shown;
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dg_produtos).EndInit();
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dg_produtos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Panel panel1;
-        private Button btn_deletar;
-        private Button btn_show_editar;
-        private Button bnt_show_cadastrar;
-        private Panel panel2;
-        private TextBox txt_filtro;
+        private Panel panel3;
         private DataGridView dg_produtos;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn quantidade;
         private DataGridViewTextBoxColumn valor;
+        private Panel panel1;
+        private Button bnt_show_cadastrar;
+        private Button btn_show_editar;
+        private Button btn_deletar;
+        private Panel panel2;
+        private TextBox txt_filtro;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private Label lblTitulo;
+        private Button btn_fechar;
     }
 }

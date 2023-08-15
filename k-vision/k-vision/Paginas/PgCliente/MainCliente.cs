@@ -38,6 +38,7 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void bnt_show_cadastrar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var crud_cliente = new PersistirCliente(TiposOperacoes.Cadastrar, servicos, null, this);
             crud_cliente.ShowDialog();
         }
@@ -52,6 +53,7 @@ namespace Kvision.Frame.Paginas.PgCliente
         {
             if (indexlista > -1)
             {
+                this.Hide();
                 Cliente clienteRecuperado = listaClientes[indexlista];
                 var crud_cliente = new PersistirCliente(TiposOperacoes.Editar, servicos, clienteRecuperado, this);
                 crud_cliente.ShowDialog();
@@ -86,29 +88,16 @@ namespace Kvision.Frame.Paginas.PgCliente
             cliente = listaClientes[indexlista];
         }
 
-        private void btn_show_exames_Click(object sender, EventArgs e)
-        {
-            //if (indexlista > -1)
-            //{
-            //    Cliente cliente = listaClientes[indexlista];
-            //    var mainExames = new MainReceita(cliente);
-            //    mainExames.ShowDialog();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
-            //}
-
-        }
 
         private void MainCliente_Shown(object sender, EventArgs e)
         {
             atualizarGrid();
         }
 
-        private void dg_clientes_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void btn_fechar_Click(object sender, EventArgs e)
         {
-
+            _mainFrame.Show();
+            this.Close();
         }
     }
 }

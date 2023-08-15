@@ -1,16 +1,8 @@
-﻿using Kvision.Dominio.Entidades;
+﻿using k_vision;
+using Kvision.Dominio.Entidades;
 using Kvision.Dominio.ViewModel;
 using Kvision.Frame.Servicos;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace Kvision.Frame.Paginas.PgVendas
 {
@@ -19,10 +11,11 @@ namespace Kvision.Frame.Paginas.PgVendas
         private readonly ServicosVenda _servicosVenda;
         private readonly ServicosCliente _servicoCliente;
         private readonly ServicosReceita _servicoReceita;
-
-        public MainVenda(ServicosVenda servicosVenda)
+        private readonly MainFrame _mainFrame;
+        public MainVenda(ServicosVenda servicosVenda, MainFrame mainFrame)
         {
             _servicosVenda = servicosVenda;
+            _mainFrame = mainFrame;
             //_servicoCliente = servicoCliente;
             //_servicoReceita = servicosReceita;
             //, ServicosCliente servicoCliente, ServicosReceita servicosReceita
@@ -31,6 +24,7 @@ namespace Kvision.Frame.Paginas.PgVendas
         }
 
         List<Venda> listaVendas = new List<Venda>();
+
         Cliente _cliente = new Cliente();
         Receita _receita = new Receita();
         Venda _venda = new Venda();
@@ -60,6 +54,15 @@ namespace Kvision.Frame.Paginas.PgVendas
                 dg_vendas.DataSource = listaView;
                 indexlistaVenda = -1;
                 dg_vendas.ClearSelection();
+
+                decimal total = 0;
+
+                foreach (var item in listaVendas)
+                {
+                    total += item.Total;
+                }
+
+                lbl_total_todas_as_vendas.Text = total.ToString();
             }
             else
             {
@@ -70,6 +73,8 @@ namespace Kvision.Frame.Paginas.PgVendas
         private void MainVenda_Shown(object sender, EventArgs e)
         {
             atualizarGridVendas();
+            dtp_data_inicio.MaxDate = DateTime.Now;
+            dtp_data_fim.MaxDate = DateTime.Now;
         }
 
         private void dg_vendas_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -80,6 +85,7 @@ namespace Kvision.Frame.Paginas.PgVendas
             lblClienteVenda.Text = _venda.Cliente.Nome;
             lblReceita_selecionada.Text = $"{_venda.Receita.DataExame.ToShortDateString()} - {_venda.Receita.NomeExaminador}";
             lbl_valor_total.Text = $"R$ {_venda.Total}";
+            lbl_pagamento.Text = _venda.TipoPagamento.ToString();
 
             List<ItemProduto> itensProdutos = JsonSerializer.Deserialize<List<ItemProduto>>(_venda.Produtos);
 
@@ -106,8 +112,87 @@ namespace Kvision.Frame.Paginas.PgVendas
                     listViewProdutos.Items.Add(itemList);
                 }
             }
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            _mainFrame.Show();
+            this.Close();
+        }
+
+        private void dtp_data_inicio_ValueChanged(object sender, EventArgs e)
+        {
+            dtp_data_fim.MinDate = dtp_data_inicio.Value;
+
+            var listaFiltrada = listaVendas.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+            && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+
+            List<VendaView> listaView = new List<VendaView>();
+
+            foreach (var item in listaFiltrada)
+            {
+                VendaView v = new VendaView();
+
+                v.DataCadastro = item.DataCadastro;
+                v.Nome = item.Cliente.Nome;
+                v.TipoPagamento = item.TipoPagamento;
+
+                listaView.Add(v);
+            }
+            dg_vendas.DataSource = listaFiltrada;
 
 
+            decimal total = 0;
+
+            foreach (var item in listaFiltrada)
+            {
+                total += item.Total;
+            }
+
+            lbl_total_todas_as_vendas.Text = total.ToString();
+
+        }
+
+        private void dtp_data_fim_ValueChanged(object sender, EventArgs e)
+        {
+            var listaFiltrada = listaVendas.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+            && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+
+            List<VendaView> listaView = new List<VendaView>();
+
+            foreach (var item in listaFiltrada)
+            {
+                VendaView v = new VendaView();
+
+                v.DataCadastro = item.DataCadastro;
+                v.Nome = item.Cliente.Nome;
+                v.TipoPagamento = item.TipoPagamento;
+
+                listaView.Add(v);
+            }
+            dg_vendas.DataSource = listaView;
+
+            decimal total = 0;
+            foreach (var item in listaFiltrada)
+            {
+                total += item.Total;
+            }
+
+            lbl_total_todas_as_vendas.Text = total.ToString();
+
+        }
+
+        private void btn_limpar_filtro_Click(object sender, EventArgs e)
+        {
+            dtp_data_inicio.Value = DateTime.Now.Date;
+            dtp_data_fim.Value = DateTime.Now.Date;
+        }
+
+        private void btn_show_editar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var f_editarVenda = new EditarVenda(this, _venda);
+            f_editarVenda.ShowDialog();
         }
     }
 }

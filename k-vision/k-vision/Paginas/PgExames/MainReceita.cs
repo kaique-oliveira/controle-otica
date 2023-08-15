@@ -116,6 +116,7 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void bnt_cadastrar_Click(object sender, EventArgs e)
         {
+            this.Hide();
             var persistirExame = new PersistirReceita(_cliente, null, null, TiposOperacoes.Cadastrar, this);
             persistirExame.ShowDialog();
         }
@@ -131,6 +132,7 @@ namespace Kvision.Frame.Paginas.PgExames
         {
             if (indexlista > -1)
             {
+                this.Hide();
                 var persistirExame = new PersistirReceita(_cliente, receita, listaPrescricoes, TiposOperacoes.Editar, this);
                 persistirExame.ShowDialog();
             }
@@ -163,9 +165,15 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void MainReceita_Shown(object sender, EventArgs e)
         {
-            
+
             atualizarGrid();
-            
+
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+            _mainFrame.Show();
+            this.Close();
         }
     }
 }
