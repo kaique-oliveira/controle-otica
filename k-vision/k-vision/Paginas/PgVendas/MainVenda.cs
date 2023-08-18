@@ -1,6 +1,8 @@
 ﻿using k_vision;
+using Kvision.Database.Interfaces;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.ViewModel;
+using Kvision.Frame.Interfaces;
 using Kvision.Frame.Servicos;
 using System.Text.Json;
 
@@ -193,6 +195,24 @@ namespace Kvision.Frame.Paginas.PgVendas
             this.Hide();
             var f_editarVenda = new EditarVenda(this, _venda);
             f_editarVenda.ShowDialog();
+        }
+
+        private void btn_deletar_Click(object sender, EventArgs e)
+        {
+            if (indexlistaVenda > -1)
+            {
+                var result = MessageBox.Show($"Deseja realmente deletar esta venda?", "Antenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+
+                    MessageBox.Show($"{_servicosVenda.Deletar(_venda)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    atualizarGridVendas();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
+            }
         }
     }
 }

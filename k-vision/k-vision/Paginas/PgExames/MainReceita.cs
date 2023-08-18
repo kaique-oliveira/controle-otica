@@ -31,7 +31,7 @@ namespace Kvision.Frame.Paginas.PgExames
         public void atualizarGrid()
         {
             dg_receitas.AutoGenerateColumns = false;
-            listaReceita = servicos.ConsultarTodos().FindAll(r => r.Cliente.Id == _cliente.Id);
+            listaReceita = servicos.ConsultarTodos().FindAll(r => r.Cliente.Id == _cliente.Id).OrderByDescending(c => c.DataCadastro).ToList();
 
             if (listaReceita.Count > 0)
             {

@@ -56,9 +56,16 @@ namespace Kvision.Frame.Servicos
             return result;
         }
 
-        public string Deletar(Venda entidade)
+        public string Deletar(Venda venda)
         {
-            throw new NotImplementedException();
+            if (_venda.Delete(venda))
+            {
+                return "Venda deletada com sucesso!";
+            }
+            else
+            {
+                return "Ops, algo deu errado";
+            }
         }
 
         public string Editar(Venda venda)

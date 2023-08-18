@@ -46,7 +46,7 @@ namespace k_vision
         public void atualizarGridReceitas()
         {
             dg_receitas.AutoGenerateColumns = false;
-            listaReceitas = servicosReceita.ConsultarTodos().FindAll(r => r.Cliente.Id == _cliente.Id);
+            listaReceitas = servicosReceita.ConsultarTodos().FindAll(r => r.Cliente.Id == _cliente.Id).OrderByDescending(c => c.DataCadastro).ToList();
 
             if (listaReceitas.Count > 0)
             {
@@ -87,6 +87,8 @@ namespace k_vision
             }
         }
 
+
+
         public void limparVendaToda()
         {
             listViewProdutos.Items.Clear();
@@ -109,11 +111,34 @@ namespace k_vision
         {
             atualizarGridClientes();
             atualizarGridProduto();
+
             lbl_valor_total.Text = $"R$ 0,00";
 
             cbo_tipo_pagamento.Items.Add(TiposPagamento.Cartão);
             cbo_tipo_pagamento.Items.Add(TiposPagamento.Dinheiro);
             cbo_tipo_pagamento.Items.Add(TiposPagamento.Pix);
+        }
+
+
+
+        private void txt_filtro_cliente_TextChanged(object sender, EventArgs e)
+        {
+            dg_clientes.DataSource = listaClientes.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro_cliente.Text.ToUpperInvariant())
+               || x.Telefone.Contains(txt_filtro_cliente.Text));
+            indexlistaCliente = -1;
+        }
+
+        private void txt_filtro_produto_TextChanged(object sender, EventArgs e)
+        {
+            dg_produtos.DataSource = listaProdutos.FindAll(p => p.Nome.ToUpperInvariant().Contains(txt_filtro_produto.Text.ToUpperInvariant()));
+        }
+
+
+        private void btn_gerenciar_clientes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var f_cliente = new MainCliente(this);
+            f_cliente.ShowDialog();
         }
 
         private void btn_gerenciar_receitas_Click(object sender, EventArgs e)
@@ -130,27 +155,6 @@ namespace k_vision
             }
         }
 
-        private void btn_gerenciar_clientes_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var f_cliente = new MainCliente(this);
-            f_cliente.ShowDialog();
-        }
-
-        private void txt_filtro_cliente_TextChanged(object sender, EventArgs e)
-        {
-            dg_clientes.DataSource = listaClientes.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro_cliente.Text.ToUpperInvariant())
-               || x.Telefone.Contains(txt_filtro_cliente.Text));
-            indexlistaCliente = -1;
-        }
-
-        private void txt_filtro_produto_TextChanged(object sender, EventArgs e)
-        {
-            dg_produtos.DataSource = listaProdutos.FindAll(p => p.Nome.ToUpperInvariant().Contains(txt_filtro_produto.Text.ToUpperInvariant()));
-        }
-
-
-
         private void btn_gerenciar_produto_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -164,6 +168,7 @@ namespace k_vision
             var f_venda = new MainVenda(servicosVenda, this);
             f_venda.ShowDialog();
         }
+
 
         private void dg_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -242,7 +247,10 @@ namespace k_vision
             btn_gerenciar_receitas.Enabled = false;
         }
 
-
+        private void btn_cancelar_venda_Click(object sender, EventArgs e)
+        {
+            limparVendaToda();
+        }
 
         private void btn_add_produto_lista_Click(object sender, EventArgs e)
         {

@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4/mbuhympRkkGtwBqs5SLvjU3zQWF4UJObFQFLC25DQRsc7FGuBFISYgsSaQNqEp7+LE910uhuzstHU2qMUWRQ==",
+  "dgSpecHash": "hOxbdpvw4B4AphAMl/PIHv8PHZH7l3x/jer4OV4196P9CCsqkwUPef5FYu51z0JDLbYzyC5Een9OeV4qgZwBfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
+  "projectFilePath": "C:\\Users\\kaique\\Desktop\\projeto ótica\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://192.168.10.40/GaleriaNugetInterfocus/nuget'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

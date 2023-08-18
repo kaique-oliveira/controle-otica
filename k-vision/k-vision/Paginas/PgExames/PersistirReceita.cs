@@ -23,8 +23,9 @@ namespace Kvision.Frame.Paginas.PgExames
             _prescricao = prescricao ?? new List<Prescricao>();
             _tiposOperacoes = tiposOperacoes;
             _mainReceita = mainReceita;
+            
             InitializeComponent();
-            _mainReceita = mainReceita;
+            
         }
 
         ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
@@ -196,6 +197,8 @@ namespace Kvision.Frame.Paginas.PgExames
             {
                 lblTitulo.Text = "Cadastrando receita";
             }
+
+            dtp_data_realizado.MaxDate = DateTime.Now;
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)

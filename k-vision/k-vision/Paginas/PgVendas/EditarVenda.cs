@@ -1,13 +1,8 @@
-﻿using FluentNHibernate.Infrastructure;
-using Kvision.Database.Conexao;
+﻿using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.Enums;
 using Kvision.Dominio.ViewModel;
-using Kvision.Frame.Paginas.PgCliente;
-using Kvision.Frame.Paginas.PgExames;
-using Kvision.Frame.Paginas.PgProduto;
-using Kvision.Frame.Paginas.PgVendas;
 using Kvision.Frame.Servicos;
 using System.Text.Json;
 
@@ -112,7 +107,6 @@ namespace Kvision.Frame.Paginas.PgVendas
         {
             atualizarGridClientes();
             atualizarGridProduto();
-            lbl_valor_total.Text = $"R$ 0,00";
 
             cbo_tipo_pagamento.Items.Add(TiposPagamento.Cartão);
             cbo_tipo_pagamento.Items.Add(TiposPagamento.Dinheiro);
@@ -120,8 +114,10 @@ namespace Kvision.Frame.Paginas.PgVendas
 
             _cliente = _vendaParaEditar.Cliente;
             _receita = _vendaParaEditar.Receita;
+            _venda = _vendaParaEditar;
 
             lbl_valor_total.Text = _vendaParaEditar.Total.ToString();
+            valorTotal = _vendaParaEditar.Total;
             lblClienteVenda.Text = _vendaParaEditar.Cliente.Nome;
             lblReceita_selecionada.Text = $"{_vendaParaEditar.Receita.DataCadastro.ToShortDateString()} - {_vendaParaEditar.Receita.NomeExaminador}";
 
@@ -141,12 +137,14 @@ namespace Kvision.Frame.Paginas.PgVendas
 
 
             var produtos = JsonSerializer.Deserialize<List<Produto>>(_vendaParaEditar.Produtos);
+            
             foreach (var item in produtos)
             {
                 ListViewItem itemList = new ListViewItem($"{item.Quantidade} - {item.Nome}");
                 itemList.SubItems.Add($"R$ {item.Valor}");
 
                 listViewProdutos.Items.Add(itemList);
+                listaItemProduto.Add(new ItemProduto() { Id = item.Id, Nome = item.Nome, Quantidade = item.Quantidade, Valor = item.Valor});
             }
 
             var adicionais = JsonSerializer.Deserialize<List<Adicional>>(_vendaParaEditar.Adicionais);
@@ -290,11 +288,6 @@ namespace Kvision.Frame.Paginas.PgVendas
             lbl_valor_total.Text = $"R$ 0,00";
         }
 
-        private void btn_fechar_Click(object sender, EventArgs e)
-        {
-            _mainVenda.Show();
-            this.Close();
-        }
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
@@ -321,6 +314,11 @@ namespace Kvision.Frame.Paginas.PgVendas
 
             _mainVenda.atualizarGridVendas();
 
+            _mainVenda.Show();
+            this.Close();
+        }
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
             _mainVenda.Show();
             this.Close();
         }

@@ -42,7 +42,7 @@ namespace Kvision.Frame.Paginas.PgCliente
                     _mainCliente.atualizarGrid();
                     limparCampos();
                     _mainCliente.indexlista = -1;
-                    this.Close();
+                   
                 }
             }
             else
@@ -53,10 +53,11 @@ namespace Kvision.Frame.Paginas.PgCliente
                     _mainCliente.atualizarGrid();
                     limparCampos();
                     _mainCliente.indexlista = -1;
-                    _mainCliente.Show();
-                    this.Close();
+                   
                 }
             }
+            _mainCliente.Show();
+            this.Close();
         }
 
         private void PersistirCliente_Load(object sender, EventArgs e)
