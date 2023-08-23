@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Kvision.Dominio.Entidades
+﻿namespace Kvision.Dominio.Entidades
 {
     public class Receita
     {
@@ -10,6 +8,7 @@ namespace Kvision.Dominio.Entidades
         public virtual DateTime DataValExame { get; set; }
         public virtual string NomeExaminador { get; set; }
         public virtual Cliente Cliente { get; set; }
+        public virtual PrescricaoAdicional PrescricaoAdicional { get; set; }
 
     }
 }

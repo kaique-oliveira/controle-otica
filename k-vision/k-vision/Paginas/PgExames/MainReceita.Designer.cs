@@ -33,6 +33,16 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainReceita));
             panel7 = new Panel();
+            panel9 = new Panel();
+            label19 = new Label();
+            label20 = new Label();
+            panel10 = new Panel();
+            label21 = new Label();
+            label22 = new Label();
+            txt_altura_esquerdo = new MaskedTextBox();
+            txt_adicao_esquerdo = new MaskedTextBox();
+            txt_adicao_direito = new MaskedTextBox();
+            txt_altura_direito = new MaskedTextBox();
             label15 = new Label();
             panel2 = new Panel();
             label4 = new Label();
@@ -80,7 +90,10 @@
             pictureBox3 = new PictureBox();
             lblTitulo = new Label();
             btn_fechar = new Button();
+            panel8 = new Panel();
             panel7.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
@@ -95,15 +108,138 @@
             // 
             panel7.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panel7.BackColor = Color.LightGray;
+            panel7.Controls.Add(panel9);
             panel7.Controls.Add(label15);
             panel7.Controls.Add(panel2);
             panel7.Controls.Add(label7);
             panel7.Controls.Add(panel4);
             panel7.Controls.Add(label8);
-            panel7.Location = new Point(415, 102);
+            panel7.Location = new Point(416, 46);
             panel7.Name = "panel7";
-            panel7.Size = new Size(353, 280);
+            panel7.Size = new Size(357, 417);
             panel7.TabIndex = 17;
+            // 
+            // panel9
+            // 
+            panel9.Anchor = AnchorStyles.None;
+            panel9.BackColor = Color.PowderBlue;
+            panel9.Controls.Add(label19);
+            panel9.Controls.Add(label20);
+            panel9.Controls.Add(panel10);
+            panel9.Location = new Point(79, 300);
+            panel9.Margin = new Padding(3, 4, 3, 4);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(200, 98);
+            panel9.TabIndex = 26;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label19.ForeColor = Color.FromArgb(64, 64, 64);
+            label19.Location = new Point(125, 4);
+            label19.Name = "label19";
+            label19.Size = new Size(51, 20);
+            label19.TabIndex = 9;
+            label19.Text = "Altura";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label20.ForeColor = Color.FromArgb(64, 64, 64);
+            label20.Location = new Point(47, 4);
+            label20.Name = "label20";
+            label20.Size = new Size(56, 20);
+            label20.TabIndex = 8;
+            label20.Text = "Adição";
+            // 
+            // panel10
+            // 
+            panel10.Anchor = AnchorStyles.None;
+            panel10.BackColor = Color.WhiteSmoke;
+            panel10.Controls.Add(label21);
+            panel10.Controls.Add(label22);
+            panel10.Controls.Add(txt_altura_esquerdo);
+            panel10.Controls.Add(txt_adicao_esquerdo);
+            panel10.Controls.Add(txt_adicao_direito);
+            panel10.Controls.Add(txt_altura_direito);
+            panel10.Location = new Point(0, 28);
+            panel10.Margin = new Padding(3, 4, 3, 4);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(200, 70);
+            panel10.TabIndex = 8;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label21.ForeColor = Color.FromArgb(64, 64, 64);
+            label21.Location = new Point(9, 45);
+            label21.Name = "label21";
+            label21.Size = new Size(24, 15);
+            label21.TabIndex = 13;
+            label21.Text = "O.E";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.BackColor = Color.Transparent;
+            label22.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label22.ForeColor = Color.FromArgb(64, 64, 64);
+            label22.Location = new Point(9, 11);
+            label22.Name = "label22";
+            label22.Size = new Size(27, 15);
+            label22.TabIndex = 12;
+            label22.Text = "O.D";
+            // 
+            // txt_altura_esquerdo
+            // 
+            txt_altura_esquerdo.Enabled = false;
+            txt_altura_esquerdo.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_altura_esquerdo.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_altura_esquerdo.Location = new Point(118, 37);
+            txt_altura_esquerdo.Mask = "0,00";
+            txt_altura_esquerdo.Name = "txt_altura_esquerdo";
+            txt_altura_esquerdo.Size = new Size(69, 27);
+            txt_altura_esquerdo.TabIndex = 39;
+            txt_altura_esquerdo.ValidatingType = typeof(DateTime);
+            // 
+            // txt_adicao_esquerdo
+            // 
+            txt_adicao_esquerdo.Enabled = false;
+            txt_adicao_esquerdo.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_adicao_esquerdo.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_adicao_esquerdo.Location = new Point(43, 37);
+            txt_adicao_esquerdo.Mask = "0,00";
+            txt_adicao_esquerdo.Name = "txt_adicao_esquerdo";
+            txt_adicao_esquerdo.Size = new Size(69, 27);
+            txt_adicao_esquerdo.TabIndex = 38;
+            txt_adicao_esquerdo.ValidatingType = typeof(DateTime);
+            // 
+            // txt_adicao_direito
+            // 
+            txt_adicao_direito.Enabled = false;
+            txt_adicao_direito.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_adicao_direito.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_adicao_direito.Location = new Point(43, 6);
+            txt_adicao_direito.Mask = "0,00";
+            txt_adicao_direito.Name = "txt_adicao_direito";
+            txt_adicao_direito.Size = new Size(69, 27);
+            txt_adicao_direito.TabIndex = 34;
+            txt_adicao_direito.ValidatingType = typeof(DateTime);
+            // 
+            // txt_altura_direito
+            // 
+            txt_altura_direito.Enabled = false;
+            txt_altura_direito.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_altura_direito.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_altura_direito.Location = new Point(118, 5);
+            txt_altura_direito.Mask = "0,00";
+            txt_altura_direito.Name = "txt_altura_direito";
+            txt_altura_direito.Size = new Size(69, 27);
+            txt_altura_direito.TabIndex = 35;
+            txt_altura_direito.ValidatingType = typeof(DateTime);
             // 
             // label15
             // 
@@ -133,6 +269,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(64, 64, 64);
             label4.Location = new Point(276, 4);
             label4.Name = "label4";
             label4.Size = new Size(29, 20);
@@ -143,6 +280,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(64, 64, 64);
             label3.Location = new Point(195, 4);
             label3.Name = "label3";
             label3.Size = new Size(38, 20);
@@ -153,6 +291,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(64, 64, 64);
             label2.Location = new Point(121, 4);
             label2.Name = "label2";
             label2.Size = new Size(30, 20);
@@ -163,6 +302,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(64, 64, 64);
             label1.Location = new Point(49, 4);
             label1.Name = "label1";
             label1.Size = new Size(31, 20);
@@ -171,7 +311,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.AppWorkspace;
+            panel3.BackColor = Color.WhiteSmoke;
             panel3.Controls.Add(txt_dp_esquerdo_longe);
             panel3.Controls.Add(txt_eixo_esquerdo_longe);
             panel3.Controls.Add(txt_cil_esquerdo_longe);
@@ -191,6 +331,7 @@
             // 
             txt_dp_esquerdo_longe.Enabled = false;
             txt_dp_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_dp_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_esquerdo_longe.Location = new Point(260, 34);
             txt_dp_esquerdo_longe.Mask = "0,00";
             txt_dp_esquerdo_longe.Name = "txt_dp_esquerdo_longe";
@@ -202,6 +343,7 @@
             // 
             txt_eixo_esquerdo_longe.Enabled = false;
             txt_eixo_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_eixo_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_esquerdo_longe.Location = new Point(185, 35);
             txt_eixo_esquerdo_longe.Mask = "0,00";
             txt_eixo_esquerdo_longe.Name = "txt_eixo_esquerdo_longe";
@@ -213,6 +355,7 @@
             // 
             txt_cil_esquerdo_longe.Enabled = false;
             txt_cil_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_cil_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_cil_esquerdo_longe.Location = new Point(110, 35);
             txt_cil_esquerdo_longe.Mask = "0,00";
             txt_cil_esquerdo_longe.Name = "txt_cil_esquerdo_longe";
@@ -224,6 +367,7 @@
             // 
             txt_eixo_direito_longe.Enabled = false;
             txt_eixo_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_eixo_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_direito_longe.Location = new Point(185, 3);
             txt_eixo_direito_longe.Mask = "0,00";
             txt_eixo_direito_longe.Name = "txt_eixo_direito_longe";
@@ -235,6 +379,7 @@
             // 
             txt_cil_direito_longe.Enabled = false;
             txt_cil_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_cil_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_cil_direito_longe.Location = new Point(110, 3);
             txt_cil_direito_longe.Mask = "0,00";
             txt_cil_direito_longe.Name = "txt_cil_direito_longe";
@@ -246,6 +391,7 @@
             // 
             txt_esf_esquerdo_longe.Enabled = false;
             txt_esf_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_esf_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_esquerdo_longe.Location = new Point(35, 35);
             txt_esf_esquerdo_longe.Mask = "0,00";
             txt_esf_esquerdo_longe.Name = "txt_esf_esquerdo_longe";
@@ -257,6 +403,7 @@
             // 
             txt_esf_direito_longe.Enabled = false;
             txt_esf_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_esf_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_direito_longe.Location = new Point(35, 4);
             txt_esf_direito_longe.Mask = "0,00";
             txt_esf_direito_longe.Name = "txt_esf_direito_longe";
@@ -267,6 +414,7 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.ForeColor = Color.FromArgb(64, 64, 64);
             label6.Location = new Point(4, 42);
             label6.Name = "label6";
             label6.Size = new Size(25, 15);
@@ -277,6 +425,7 @@
             // 
             txt_dp_direito_longe.Enabled = false;
             txt_dp_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_dp_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_direito_longe.Location = new Point(260, 4);
             txt_dp_direito_longe.Mask = "0,00";
             txt_dp_direito_longe.Name = "txt_dp_direito_longe";
@@ -288,6 +437,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
+            label5.ForeColor = Color.FromArgb(64, 64, 64);
             label5.Location = new Point(4, 9);
             label5.Name = "label5";
             label5.Size = new Size(27, 15);
@@ -298,7 +448,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.Firebrick;
+            label7.ForeColor = Color.FromArgb(64, 64, 64);
             label7.Location = new Point(154, 32);
             label7.Name = "label7";
             label7.Size = new Size(52, 20);
@@ -322,6 +472,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(64, 64, 64);
             label9.Location = new Point(276, 4);
             label9.Name = "label9";
             label9.Size = new Size(29, 20);
@@ -332,6 +483,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(64, 64, 64);
             label10.Location = new Point(195, 4);
             label10.Name = "label10";
             label10.Size = new Size(38, 20);
@@ -342,6 +494,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.FromArgb(64, 64, 64);
             label11.Location = new Point(121, 4);
             label11.Name = "label11";
             label11.Size = new Size(30, 20);
@@ -352,6 +505,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = Color.FromArgb(64, 64, 64);
             label12.Location = new Point(49, 4);
             label12.Name = "label12";
             label12.Size = new Size(31, 20);
@@ -360,7 +514,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = SystemColors.AppWorkspace;
+            panel5.BackColor = Color.WhiteSmoke;
             panel5.Controls.Add(txt_dp_esquerdo_perto);
             panel5.Controls.Add(label13);
             panel5.Controls.Add(txt_eixo_esquerdo_perto);
@@ -380,6 +534,7 @@
             // 
             txt_dp_esquerdo_perto.Enabled = false;
             txt_dp_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_dp_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_esquerdo_perto.Location = new Point(260, 34);
             txt_dp_esquerdo_perto.Mask = "0,00";
             txt_dp_esquerdo_perto.Name = "txt_dp_esquerdo_perto";
@@ -390,6 +545,7 @@
             // label13
             // 
             label13.AutoSize = true;
+            label13.ForeColor = Color.FromArgb(64, 64, 64);
             label13.Location = new Point(4, 40);
             label13.Name = "label13";
             label13.Size = new Size(25, 15);
@@ -400,6 +556,7 @@
             // 
             txt_eixo_esquerdo_perto.Enabled = false;
             txt_eixo_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_eixo_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_esquerdo_perto.Location = new Point(185, 35);
             txt_eixo_esquerdo_perto.Mask = "0,00";
             txt_eixo_esquerdo_perto.Name = "txt_eixo_esquerdo_perto";
@@ -411,6 +568,7 @@
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.Transparent;
+            label14.ForeColor = Color.FromArgb(64, 64, 64);
             label14.Location = new Point(4, 9);
             label14.Name = "label14";
             label14.Size = new Size(27, 15);
@@ -421,6 +579,7 @@
             // 
             txt_cil_esquerdo_perto.Enabled = false;
             txt_cil_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_cil_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_cil_esquerdo_perto.Location = new Point(110, 35);
             txt_cil_esquerdo_perto.Mask = "0,00";
             txt_cil_esquerdo_perto.Name = "txt_cil_esquerdo_perto";
@@ -432,6 +591,7 @@
             // 
             txt_eixo_direito_perto.Enabled = false;
             txt_eixo_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_eixo_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_direito_perto.Location = new Point(185, 3);
             txt_eixo_direito_perto.Mask = "0,00";
             txt_eixo_direito_perto.Name = "txt_eixo_direito_perto";
@@ -443,6 +603,7 @@
             // 
             txt_dp_direito_perto.Enabled = false;
             txt_dp_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_dp_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_direito_perto.Location = new Point(260, 4);
             txt_dp_direito_perto.Mask = "0,00";
             txt_dp_direito_perto.Name = "txt_dp_direito_perto";
@@ -454,6 +615,7 @@
             // 
             txt_cil_direito_perto.Enabled = false;
             txt_cil_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_cil_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_cil_direito_perto.Location = new Point(110, 3);
             txt_cil_direito_perto.Mask = "0,00";
             txt_cil_direito_perto.Name = "txt_cil_direito_perto";
@@ -465,6 +627,7 @@
             // 
             txt_esf_direito_perto.Enabled = false;
             txt_esf_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_esf_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_direito_perto.Location = new Point(35, 4);
             txt_esf_direito_perto.Mask = "0,00";
             txt_esf_direito_perto.Name = "txt_esf_direito_perto";
@@ -476,6 +639,7 @@
             // 
             txt_esf_esquerdo_perto.Enabled = false;
             txt_esf_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_esf_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_esquerdo_perto.Location = new Point(35, 35);
             txt_esf_esquerdo_perto.Mask = "0,00";
             txt_esf_esquerdo_perto.Name = "txt_esf_esquerdo_perto";
@@ -487,7 +651,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.BlueViolet;
+            label8.ForeColor = Color.FromArgb(64, 64, 64);
             label8.Location = new Point(154, 159);
             label8.Name = "label8";
             label8.Size = new Size(47, 20);
@@ -499,9 +663,9 @@
             panel6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panel6.BackColor = Color.LightGray;
             panel6.Controls.Add(dg_receitas);
-            panel6.Location = new Point(11, 43);
+            panel6.Location = new Point(11, 44);
             panel6.Name = "panel6";
-            panel6.Size = new Size(398, 363);
+            panel6.Size = new Size(402, 363);
             panel6.TabIndex = 16;
             // 
             // dg_receitas
@@ -534,7 +698,7 @@
             dg_receitas.DefaultCellStyle = dataGridViewCellStyle2;
             dg_receitas.EnableHeadersVisualStyles = false;
             dg_receitas.GridColor = Color.WhiteSmoke;
-            dg_receitas.Location = new Point(10, 6);
+            dg_receitas.Location = new Point(12, 6);
             dg_receitas.MultiSelect = false;
             dg_receitas.Name = "dg_receitas";
             dg_receitas.ReadOnly = true;
@@ -584,9 +748,9 @@
             panel1.Controls.Add(bnt_cadastrar);
             panel1.Controls.Add(btn_deletar);
             panel1.Controls.Add(btn_show_editar);
-            panel1.Location = new Point(11, 411);
+            panel1.Location = new Point(11, 413);
             panel1.Name = "panel1";
-            panel1.Size = new Size(398, 50);
+            panel1.Size = new Size(402, 50);
             panel1.TabIndex = 18;
             // 
             // bnt_cadastrar
@@ -622,6 +786,7 @@
             btn_deletar.TabIndex = 4;
             btn_deletar.Text = "Deletar";
             btn_deletar.UseVisualStyleBackColor = false;
+            btn_deletar.Click += btn_deletar_Click;
             // 
             // btn_show_editar
             // 
@@ -642,10 +807,10 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackColor = Color.FromArgb(224, 224, 224);
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(3, 3);
+            pictureBox3.Location = new Point(5, 6);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(22, 22);
             pictureBox3.TabIndex = 21;
@@ -654,9 +819,10 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.Transparent;
+            lblTitulo.BackColor = Color.FromArgb(224, 224, 224);
             lblTitulo.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(28, 4);
+            lblTitulo.ForeColor = Color.FromArgb(64, 64, 64);
+            lblTitulo.Location = new Point(30, 7);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(64, 20);
             lblTitulo.TabIndex = 20;
@@ -664,7 +830,7 @@
             // 
             // btn_fechar
             // 
-            btn_fechar.BackColor = Color.Transparent;
+            btn_fechar.BackColor = Color.FromArgb(224, 224, 224);
             btn_fechar.BackgroundImage = (Image)resources.GetObject("btn_fechar.BackgroundImage");
             btn_fechar.BackgroundImageLayout = ImageLayout.Stretch;
             btn_fechar.Cursor = Cursors.Hand;
@@ -672,33 +838,47 @@
             btn_fechar.FlatStyle = FlatStyle.Flat;
             btn_fechar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btn_fechar.ForeColor = SystemColors.ActiveCaptionText;
-            btn_fechar.Location = new Point(748, 3);
+            btn_fechar.Location = new Point(748, 5);
             btn_fechar.Name = "btn_fechar";
             btn_fechar.Size = new Size(28, 28);
             btn_fechar.TabIndex = 19;
             btn_fechar.UseVisualStyleBackColor = false;
             btn_fechar.Click += btn_fechar_Click;
             // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(224, 224, 224);
+            panel8.Location = new Point(2, 2);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(779, 467);
+            panel8.TabIndex = 22;
+            // 
             // MainReceita
             // 
             AccessibleRole = AccessibleRole.None;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(779, 469);
+            BackColor = Color.DarkOrange;
+            ClientSize = new Size(783, 471);
             Controls.Add(pictureBox3);
             Controls.Add(lblTitulo);
             Controls.Add(btn_fechar);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel1);
+            Controls.Add(panel8);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainReceita";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Exames";
             Shown += MainReceita_Shown;
+            Click += btn_deletar_Click;
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -765,5 +945,16 @@
         private DataGridViewTextBoxColumn DataExame;
         private DataGridViewTextBoxColumn DataValExame;
         private DataGridViewTextBoxColumn nomeExaminador;
+        private Panel panel8;
+        private Panel panel9;
+        private Label label19;
+        private Label label20;
+        private Panel panel10;
+        private Label label21;
+        private Label label22;
+        private MaskedTextBox txt_altura_esquerdo;
+        private MaskedTextBox txt_adicao_esquerdo;
+        private MaskedTextBox txt_adicao_direito;
+        private MaskedTextBox txt_altura_direito;
     }
 }

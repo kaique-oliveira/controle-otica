@@ -1,10 +1,8 @@
 ﻿using Kvision.Database.Conexao;
-using Kvision.Database.Interfaces;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.Enums;
 using Kvision.Frame.Enum;
-using Kvision.Frame.Interfaces;
 using Kvision.Frame.Servicos;
 
 namespace Kvision.Frame.Paginas.PgExames
@@ -23,22 +21,45 @@ namespace Kvision.Frame.Paginas.PgExames
             _prescricao = prescricao ?? new List<Prescricao>();
             _tiposOperacoes = tiposOperacoes;
             _mainReceita = mainReceita;
-            
+
             InitializeComponent();
-            
+
         }
 
         ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
         ServicosPrescricao servicosPrescricao = new ServicosPrescricao(new CrudPrescricao(new ConexaoDatabase()));
+        ServicosPrescricaoAdicional servicoPrescricaoAdicional = new ServicosPrescricaoAdicional(new CrudPrescricaoAdicional(new ConexaoDatabase()));
         private TiposPrescricao _tipo;
+        PrescricaoAdicional _prescriAdicional;
 
 
         private void btn_salvar_Click(object sender, EventArgs e)
         {
+            _prescriAdicional = new PrescricaoAdicional()
+            {
+                AdicaoDireito = txt_adicao_direito.Text,
+                AlturaDireito = txt_altura_direito.Text,
+                AdicaoEsquerdo = txt_adicao_esquerdo.Text,
+                AlturaEsquerdo = txt_altura_esquerdo.Text
+            };
+
+            if (_tiposOperacoes == TiposOperacoes.Cadastrar)
+            {
+                servicoPrescricaoAdicional.Cadastrar(_prescriAdicional);
+
+                _prescriAdicional = servicoPrescricaoAdicional.ConsultarTodos().Last();
+            }
+            else
+            {
+                _prescriAdicional.Id = _receita.PrescricaoAdicional.Id;
+                servicoPrescricaoAdicional.Editar(_prescriAdicional);
+            }
+
             _receita.DataExame = DateTime.Parse(dtp_data_realizado.Value.ToString());
-            _receita.DataValExame = DateTime.Parse(_receita.DataExame.AddMonths(6).ToShortDateString());
+            _receita.DataValExame = DateTime.Parse(_receita.DataExame.AddMonths(12).ToShortDateString());
             _receita.NomeExaminador = txt_nome_dr.Text;
             _receita.Cliente = _cliente;
+            _receita.PrescricaoAdicional = _prescriAdicional;
 
 
             if (_tiposOperacoes == TiposOperacoes.Cadastrar)
@@ -51,6 +72,8 @@ namespace Kvision.Frame.Paginas.PgExames
             {
                 servicosReceita.Editar(_receita);
             }
+
+
 
 
             Prescricao recuperarLonge()
@@ -116,6 +139,7 @@ namespace Kvision.Frame.Paginas.PgExames
             _prescricao.Add(longe);
             _prescricao.Add(perto);
 
+
             string res = "";
             foreach (Prescricao presc in _prescricao)
             {
@@ -150,6 +174,11 @@ namespace Kvision.Frame.Paginas.PgExames
             {
                 dtp_data_realizado.Value = _receita.DataExame;
                 txt_nome_dr.Text = _receita.NomeExaminador.ToString();
+
+                txt_adicao_direito.Text = _receita.PrescricaoAdicional.AdicaoDireito.ToString();
+                txt_altura_direito.Text = _receita.PrescricaoAdicional.AlturaDireito.ToString();
+                txt_adicao_esquerdo.Text = _receita.PrescricaoAdicional.AdicaoEsquerdo.ToString();
+                txt_altura_esquerdo.Text = _receita.PrescricaoAdicional.AlturaEsquerdo.ToString();
 
                 void carregarLonge(Prescricao presc)
                 {
@@ -203,7 +232,6 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _mainReceita.Show();
             this.Close();
         }
     }

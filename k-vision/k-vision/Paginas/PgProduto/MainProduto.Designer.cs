@@ -241,7 +241,7 @@
             txt_filtro.Name = "txt_filtro";
             txt_filtro.PlaceholderText = "ex: \"Coleção cassino\"";
             txt_filtro.Size = new Size(401, 27);
-            txt_filtro.TabIndex = 0;
+            txt_filtro.TabIndex = 1;
             txt_filtro.Tag = "";
             txt_filtro.TextChanged += txt_filtro_TextChanged;
             // 

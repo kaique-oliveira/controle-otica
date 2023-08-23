@@ -49,6 +49,7 @@ namespace Kvision.Frame.Paginas.PgProduto
                     this.Close();
                 }
             }
+
             else
             {
                 var result = MessageBox.Show($"{_servicos.Editar(_produto)}", "Antenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -60,6 +61,9 @@ namespace Kvision.Frame.Paginas.PgProduto
                     this.Close();
                 }
             }
+
+            _mainProduto.Show();
+            this.Hide();
 
         }
 

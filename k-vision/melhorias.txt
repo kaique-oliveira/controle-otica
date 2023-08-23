@@ -1,0 +1,18 @@
+- Cliente
+ Endereço
+
+- Receita
+ Questão da adição, somatória das prescricoes
+ vencimento de 1 ano
+ 
+- Venda
+ Tipo de pagemento débito ou crédito
+ Observação 
+
+- Cria o fluxo de caixa
+ imprimir fluxo
+
+- Produto 
+ Se é serviço ou produto
+
+ 

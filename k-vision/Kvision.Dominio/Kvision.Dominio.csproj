@@ -9,6 +9,7 @@
   <ItemGroup>
     <None Remove="Mapeamentos\Cliente.hbm.xml" />
     <None Remove="Mapeamentos\Prescricao.hbm.xml" />
+    <None Remove="Mapeamentos\PrescricaoAdicional.hbm.xml" />
     <None Remove="Mapeamentos\Produto.hbm.xml" />
     <None Remove="Mapeamentos\Receita.hbm.xml" />
     <None Remove="Mapeamentos\Venda.hbm.xml" />
@@ -16,6 +17,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Mapeamentos\Cliente.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\PrescricaoAdicional.hbm.xml" />
     <EmbeddedResource Include="Mapeamentos\Venda.hbm.xml" />
     <EmbeddedResource Include="Mapeamentos\Prescricao.hbm.xml" />
     <EmbeddedResource Include="Mapeamentos\Produto.hbm.xml" />

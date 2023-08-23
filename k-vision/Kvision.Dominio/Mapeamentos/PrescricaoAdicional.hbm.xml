@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Kvision.Dominio.Entidades" assembly="Kvision.Dominio">
+
+	<class name="PrescricaoAdicional" lazy="false" table="tbl_prescricao_adicional" >
+
+		<id name="Id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="DataCadastro"		column="d_cadastro"		type="date" />
+
+
+		<property name="AdicaoDireito"		column="adicao_direito"	type="string" not-null="false"/>
+		<property name="AlturaDireito"		column="altura_direito"	type="string" not-null="false"/>
+		<property name="AdicaoEsquerdo"		column="adicao_esquerdo"	type="string" not-null="false"/>
+		<property name="AlturaEsquerdo"		column="altura_esquerdo"	type="string" not-null="false"/>
+
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+

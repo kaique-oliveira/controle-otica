@@ -34,6 +34,12 @@ namespace Kvision.Frame.Paginas.PgCliente
             _cliente.Nome = txt_nome.Text;
             _cliente.Telefone = txt_telefone.Text;
 
+            _cliente.Cep = txt_cep.Text;
+            _cliente.Logradouro = txt_logradouro.Text;
+            _cliente.Bairro = txt_bairro.Text;
+            _cliente.Localidade = txt_localidade.Text;
+            _cliente.Complemento = txt_complemento.Text;
+
             if (_tiposOperacoes == TiposOperacoes.Cadastrar)
             {
                 var result = MessageBox.Show($"{_servicos.Cadastrar(_cliente)}", "Antenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -42,7 +48,7 @@ namespace Kvision.Frame.Paginas.PgCliente
                     _mainCliente.atualizarGrid();
                     limparCampos();
                     _mainCliente.indexlista = -1;
-                   
+
                 }
             }
             else
@@ -53,7 +59,7 @@ namespace Kvision.Frame.Paginas.PgCliente
                     _mainCliente.atualizarGrid();
                     limparCampos();
                     _mainCliente.indexlista = -1;
-                   
+
                 }
             }
             _mainCliente.Show();
@@ -66,6 +72,13 @@ namespace Kvision.Frame.Paginas.PgCliente
             {
                 txt_nome.Text = _cliente.Nome;
                 txt_telefone.Text = _cliente.Telefone;
+
+                txt_cep.Text = _cliente.Cep;
+                txt_logradouro.Text = _cliente.Logradouro;
+                txt_bairro.Text = _cliente.Bairro;
+                txt_localidade.Text = _cliente.Localidade;
+                txt_complemento.Text = _cliente.Complemento;
+
                 lblTitulo.Text = "Editando cliente";
             }
             else
@@ -76,7 +89,6 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _mainCliente.Show();
             this.Close(); ;
         }
     }

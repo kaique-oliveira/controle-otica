@@ -136,7 +136,6 @@ namespace k_vision
 
         private void btn_gerenciar_clientes_Click(object sender, EventArgs e)
         {
-            this.Hide();
             var f_cliente = new MainCliente(this);
             f_cliente.ShowDialog();
         }
@@ -145,7 +144,6 @@ namespace k_vision
         {
             if (indexlistaCliente > -1)
             {
-                this.Hide();
                 var mainExames = new MainReceita(_cliente, this);
                 mainExames.ShowDialog();
             }
@@ -175,7 +173,6 @@ namespace k_vision
             indexlistaCliente = dg_clientes.CurrentCell.RowIndex;
             _cliente = listaClientes[indexlistaCliente];
             lblClienteVenda.Text = $"{_cliente.Nome}";
-            btn_gerenciar_receitas.Enabled = true;
             atualizarGridReceitas();
         }
 
@@ -201,8 +198,12 @@ namespace k_vision
                 itemList.SubItems.Add($"R$ {decimal.Parse(txt_valor_adicional.Text.Replace(".", ","))}");
                 listViewProdutos.Items.Add(itemList);
 
-                _adiconal.Descricao = txt_descricao_adiconal.Text;
-                _adiconal.Valor = decimal.Parse(txt_valor_adicional.Text.Replace(".", ","));
+                _adiconal = new Adicional()
+                {
+                    Descricao = txt_descricao_adiconal.Text,
+                    Valor = decimal.Parse(txt_valor_adicional.Text.Replace(".", ","))
+                };
+
 
                 listaAdicional.Add(_adiconal);
 

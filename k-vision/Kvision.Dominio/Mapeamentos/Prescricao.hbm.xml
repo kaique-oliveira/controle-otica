@@ -8,9 +8,9 @@
 			<generator class="increment" />
 		</id>
 		<property name="DataCadastro"		column="d_cadastro"		type="date" />
-		
+
 		<property name="Tipo"	column="tipo"			length="6"/>
-		
+
 		<property name="EsfericoDireito"	column="esf_direito"	type="string" not-null="false"/>
 		<property name="CilindricoDireito"	column="cil_direito"	type="string" not-null="false"/>
 		<property name="EixoDireito"		column="eixo_direito"	type="string" not-null="false"/>
@@ -29,8 +29,3 @@
 
 	</class>
 </hibernate-mapping>
-
-
-
-
-

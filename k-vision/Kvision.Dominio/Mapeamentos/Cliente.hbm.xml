@@ -9,8 +9,13 @@
 		</id>
 		<property name="DataCadastro"	column="d_cadastro"		type="date" />
 		
-		<property name="Nome"			column="nome"			type="string" length="150" />
-		<property name="Telefone"	    column="telefone"		type="string" length="15" />
-
+		<property name="Nome"			column="nome"			type="string"	length="150" />
+		<property name="Telefone"	    column="telefone"		type="string"	length="15" />
+		
+		<property name="Cep"			column="cep"			type="string"	length="9" />
+		<property name="Logradouro"	    column="logradouro"		type="string"	length="150" />
+		<property name="Complemento"	column="complemento"	type="string"	length="200" />
+		<property name="Bairro"			column="bairro"			type="string"	length="150" />
+		<property name="Localidade"		column="localidade"		type="string"	length="20" />
 	</class>
 </hibernate-mapping>

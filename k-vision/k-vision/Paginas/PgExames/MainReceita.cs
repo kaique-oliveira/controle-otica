@@ -1,5 +1,6 @@
 ﻿using k_vision;
 using Kvision.Database.Conexao;
+using Kvision.Database.Interfaces;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
@@ -31,7 +32,7 @@ namespace Kvision.Frame.Paginas.PgExames
         public void atualizarGrid()
         {
             dg_receitas.AutoGenerateColumns = false;
-            listaReceita = servicos.ConsultarTodos().FindAll(r => r.Cliente.Id == _cliente.Id).OrderByDescending(c => c.DataCadastro).ToList();
+            listaReceita = servicos.ConsultarTodos().FindAll(r => r.Cliente.Id == _cliente.Id).OrderByDescending(c => c.Id).ToList();
 
             if (listaReceita.Count > 0)
             {
@@ -74,6 +75,10 @@ namespace Kvision.Frame.Paginas.PgExames
                 txt_dp_esquerdo_perto.Text = presc.DPEsquerdo;
             }
 
+            txt_adicao_direito.Text = listaReceita[indexlista].PrescricaoAdicional.AdicaoDireito.ToString();
+            txt_altura_direito.Text = listaReceita[indexlista].PrescricaoAdicional.AlturaDireito.ToString();
+            txt_adicao_esquerdo.Text = listaReceita[indexlista].PrescricaoAdicional.AdicaoEsquerdo.ToString();
+            txt_altura_esquerdo.Text = listaReceita[indexlista].PrescricaoAdicional.AlturaEsquerdo.ToString();
 
             foreach (var presc in listaPrescricoes)
             {
@@ -112,11 +117,15 @@ namespace Kvision.Frame.Paginas.PgExames
             txt_cil_esquerdo_perto.Text = "";
             txt_eixo_esquerdo_perto.Text = "";
             txt_dp_esquerdo_perto.Text = "";
+
+            txt_adicao_direito.Text = "";
+            txt_altura_direito.Text = "";
+            txt_adicao_esquerdo.Text = "";
+            txt_altura_esquerdo.Text = "";
         }
 
         private void bnt_cadastrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
             var persistirExame = new PersistirReceita(_cliente, null, null, TiposOperacoes.Cadastrar, this);
             persistirExame.ShowDialog();
         }
@@ -132,7 +141,6 @@ namespace Kvision.Frame.Paginas.PgExames
         {
             if (indexlista > -1)
             {
-                this.Hide();
                 var persistirExame = new PersistirReceita(_cliente, receita, listaPrescricoes, TiposOperacoes.Editar, this);
                 persistirExame.ShowDialog();
             }
@@ -172,7 +180,6 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _mainFrame.Show();
             this.Close();
         }
     }

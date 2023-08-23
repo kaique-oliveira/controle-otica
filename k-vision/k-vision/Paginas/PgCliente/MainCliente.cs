@@ -3,7 +3,6 @@ using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
-using Kvision.Frame.Paginas.PgExames;
 using Kvision.Frame.Servicos;
 
 namespace Kvision.Frame.Paginas.PgCliente
@@ -38,22 +37,13 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void bnt_show_cadastrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
             var crud_cliente = new PersistirCliente(TiposOperacoes.Cadastrar, servicos, null, this);
             crud_cliente.ShowDialog();
         }
-
-        private void txt_filtro_TextChanged(object sender, EventArgs e)
-        {
-            dg_clientes.DataSource = listaClientes.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro.Text.ToUpperInvariant())
-                || x.Telefone.Contains(txt_filtro.Text));
-        }
-
         private void btn_show_editar_Click(object sender, EventArgs e)
         {
             if (indexlista > -1)
             {
-                this.Hide();
                 Cliente clienteRecuperado = listaClientes[indexlista];
                 var crud_cliente = new PersistirCliente(TiposOperacoes.Editar, servicos, clienteRecuperado, this);
                 crud_cliente.ShowDialog();
@@ -63,6 +53,14 @@ namespace Kvision.Frame.Paginas.PgCliente
                 MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
             }
         }
+
+        private void txt_filtro_TextChanged(object sender, EventArgs e)
+        {
+            dg_clientes.DataSource = listaClientes.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro.Text.ToUpperInvariant())
+                || x.Telefone.Contains(txt_filtro.Text));
+        }
+
+
 
         private void btn_deletar_Click(object sender, EventArgs e)
         {
@@ -96,7 +94,6 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _mainFrame.Show();
             this.Close();
         }
     }

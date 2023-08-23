@@ -17,7 +17,13 @@
 					 class="Cliente"
 					 column="id_cliente"
 					 fetch="join"
-					 foreign-key="tbl_receita_id_cliente_fkey"/>
+					 foreign-key="tbl_cliente_id_fkey"/>
+
+		<many-to-one name="PrescricaoAdicional"
+			 class="PrescricaoAdicional"
+			 column="id_adicional"
+			 fetch="join"
+			 foreign-key="tbl_prescricao_id_adicional_fkey"/>
 
 	</class>
 </hibernate-mapping>

@@ -37,6 +37,11 @@
             nome = new DataGridViewTextBoxColumn();
             telefone = new DataGridViewTextBoxColumn();
             dataCadastro = new DataGridViewTextBoxColumn();
+            cep = new DataGridViewTextBoxColumn();
+            logradouro = new DataGridViewTextBoxColumn();
+            bairro = new DataGridViewTextBoxColumn();
+            localidade = new DataGridViewTextBoxColumn();
+            complemento = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             txt_filtro = new TextBox();
@@ -47,6 +52,7 @@
             btn_fechar = new Button();
             pictureBox3 = new PictureBox();
             lblTitulo = new Label();
+            panel4 = new Panel();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dg_clientes).BeginInit();
             panel2.SuspendLayout();
@@ -60,9 +66,9 @@
             panel3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.LightGray;
             panel3.Controls.Add(dg_clientes);
-            panel3.Location = new Point(7, 82);
+            panel3.Location = new Point(7, 81);
             panel3.Name = "panel3";
-            panel3.Size = new Size(476, 279);
+            panel3.Size = new Size(1183, 357);
             panel3.TabIndex = 8;
             // 
             // dg_clientes
@@ -83,7 +89,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dg_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dg_clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_clientes.Columns.AddRange(new DataGridViewColumn[] { nome, telefone, dataCadastro });
+            dg_clientes.Columns.AddRange(new DataGridViewColumn[] { nome, telefone, dataCadastro, cep, logradouro, bairro, localidade, complemento });
             dg_clientes.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
@@ -95,7 +101,7 @@
             dg_clientes.DefaultCellStyle = dataGridViewCellStyle2;
             dg_clientes.EnableHeadersVisualStyles = false;
             dg_clientes.GridColor = Color.WhiteSmoke;
-            dg_clientes.Location = new Point(8, 8);
+            dg_clientes.Location = new Point(5, 5);
             dg_clientes.MultiSelect = false;
             dg_clientes.Name = "dg_clientes";
             dg_clientes.ReadOnly = true;
@@ -111,7 +117,7 @@
             dg_clientes.RowHeadersVisible = false;
             dg_clientes.RowTemplate.Height = 25;
             dg_clientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_clientes.Size = new Size(462, 260);
+            dg_clientes.Size = new Size(1171, 348);
             dg_clientes.TabIndex = 0;
             dg_clientes.CellClick += dg_clientes_CellClick;
             // 
@@ -140,6 +146,45 @@
             dataCadastro.ReadOnly = true;
             dataCadastro.Width = 130;
             // 
+            // cep
+            // 
+            cep.DataPropertyName = "cep";
+            cep.HeaderText = "CEP";
+            cep.Name = "cep";
+            cep.ReadOnly = true;
+            // 
+            // logradouro
+            // 
+            logradouro.DataPropertyName = "logradouro";
+            logradouro.HeaderText = "RUA";
+            logradouro.Name = "logradouro";
+            logradouro.ReadOnly = true;
+            logradouro.Width = 200;
+            // 
+            // bairro
+            // 
+            bairro.DataPropertyName = "bairro";
+            bairro.HeaderText = "BAIRRO";
+            bairro.Name = "bairro";
+            bairro.ReadOnly = true;
+            bairro.Width = 160;
+            // 
+            // localidade
+            // 
+            localidade.DataPropertyName = "localidade";
+            localidade.HeaderText = "CIDADE";
+            localidade.Name = "localidade";
+            localidade.ReadOnly = true;
+            localidade.Width = 110;
+            // 
+            // complemento
+            // 
+            complemento.DataPropertyName = "complemento";
+            complemento.HeaderText = "Complemento";
+            complemento.Name = "complemento";
+            complemento.ReadOnly = true;
+            complemento.Width = 140;
+            // 
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -148,7 +193,7 @@
             panel2.Controls.Add(txt_filtro);
             panel2.Location = new Point(7, 37);
             panel2.Name = "panel2";
-            panel2.Size = new Size(476, 40);
+            panel2.Size = new Size(1183, 40);
             panel2.TabIndex = 7;
             // 
             // pictureBox2
@@ -180,9 +225,9 @@
             panel1.Controls.Add(btn_deletar);
             panel1.Controls.Add(btn_show_editar);
             panel1.Controls.Add(bnt_cadastrar);
-            panel1.Location = new Point(7, 366);
+            panel1.Location = new Point(7, 446);
             panel1.Name = "panel1";
-            panel1.Size = new Size(477, 50);
+            panel1.Size = new Size(1183, 50);
             panel1.TabIndex = 6;
             // 
             // btn_deletar
@@ -194,7 +239,7 @@
             btn_deletar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_deletar.Image = (Image)resources.GetObject("btn_deletar.Image");
             btn_deletar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_deletar.Location = new Point(332, 8);
+            btn_deletar.Location = new Point(651, 8);
             btn_deletar.Name = "btn_deletar";
             btn_deletar.Size = new Size(120, 33);
             btn_deletar.TabIndex = 4;
@@ -211,7 +256,7 @@
             btn_show_editar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_editar.Image = (Image)resources.GetObject("btn_show_editar.Image");
             btn_show_editar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_editar.Location = new Point(177, 8);
+            btn_show_editar.Location = new Point(496, 8);
             btn_show_editar.Name = "btn_show_editar";
             btn_show_editar.Size = new Size(120, 33);
             btn_show_editar.TabIndex = 3;
@@ -229,7 +274,7 @@
             bnt_cadastrar.ForeColor = Color.FromArgb(64, 64, 64);
             bnt_cadastrar.Image = (Image)resources.GetObject("bnt_cadastrar.Image");
             bnt_cadastrar.ImageAlign = ContentAlignment.MiddleLeft;
-            bnt_cadastrar.Location = new Point(22, 8);
+            bnt_cadastrar.Location = new Point(341, 8);
             bnt_cadastrar.Name = "bnt_cadastrar";
             bnt_cadastrar.Size = new Size(120, 33);
             bnt_cadastrar.TabIndex = 2;
@@ -240,7 +285,7 @@
             // 
             // btn_fechar
             // 
-            btn_fechar.BackColor = Color.Transparent;
+            btn_fechar.BackColor = Color.FromArgb(224, 224, 224);
             btn_fechar.BackgroundImage = (Image)resources.GetObject("btn_fechar.BackgroundImage");
             btn_fechar.BackgroundImageLayout = ImageLayout.Stretch;
             btn_fechar.Cursor = Cursors.Hand;
@@ -248,7 +293,7 @@
             btn_fechar.FlatStyle = FlatStyle.Flat;
             btn_fechar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btn_fechar.ForeColor = SystemColors.ActiveCaptionText;
-            btn_fechar.Location = new Point(460, 3);
+            btn_fechar.Location = new Point(1165, 4);
             btn_fechar.Name = "btn_fechar";
             btn_fechar.Size = new Size(28, 28);
             btn_fechar.TabIndex = 9;
@@ -257,10 +302,10 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.BackColor = Color.FromArgb(224, 224, 224);
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(4, 2);
+            pictureBox3.Location = new Point(10, 7);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(22, 22);
             pictureBox3.TabIndex = 17;
@@ -269,26 +314,36 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.White;
+            lblTitulo.BackColor = Color.FromArgb(224, 224, 224);
             lblTitulo.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitulo.Location = new Point(29, 3);
+            lblTitulo.ForeColor = Color.FromArgb(64, 64, 64);
+            lblTitulo.Location = new Point(35, 8);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(62, 20);
             lblTitulo.TabIndex = 16;
             lblTitulo.Text = "Clientes";
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(224, 224, 224);
+            panel4.Location = new Point(2, 2);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1196, 501);
+            panel4.TabIndex = 18;
+            // 
             // MainCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(491, 425);
+            BackColor = Color.DarkOrange;
+            ClientSize = new Size(1200, 505);
             Controls.Add(pictureBox3);
             Controls.Add(lblTitulo);
             Controls.Add(btn_fechar);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(panel4);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainCliente";
             StartPosition = FormStartPosition.CenterScreen;
@@ -321,11 +376,17 @@
         private Button btn_deletar;
         private Button btn_show_editar;
         private Button bnt_cadastrar;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn telefone;
-        private DataGridViewTextBoxColumn dataCadastro;
         private Button btn_fechar;
         private PictureBox pictureBox3;
         private Label lblTitulo;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn telefone;
+        private DataGridViewTextBoxColumn dataCadastro;
+        private DataGridViewTextBoxColumn cep;
+        private DataGridViewTextBoxColumn logradouro;
+        private DataGridViewTextBoxColumn bairro;
+        private DataGridViewTextBoxColumn localidade;
+        private DataGridViewTextBoxColumn complemento;
+        private Panel panel4;
     }
 }
