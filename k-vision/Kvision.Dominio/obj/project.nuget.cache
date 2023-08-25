@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4/mbuhympRkkGtwBqs5SLvjU3zQWF4UJObFQFLC25DQRsc7FGuBFISYgsSaQNqEp7+LE910uhuzstHU2qMUWRQ==",
+  "dgSpecHash": "uBBUjnnUxSfkgNKx1znaIs1BYgRZscIgww4ii7aQ1rPKcHRrvKTF724xEekjbAgyIABhC/ktL1HvhzXgkoXAwQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Interfocus\\Desktop\\projetos\\controle-otica\\k-vision\\Kvision.Dominio\\Kvision.Dominio.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Interfocus\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": [
     {
       "code": "NU1803",

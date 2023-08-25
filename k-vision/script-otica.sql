@@ -7,6 +7,7 @@ create table tbl_cliente(
  telefone varchar(16) not null,
  cep varchar(9) not null,
  logradouro varchar(150) not null,
+numero_casa int4 not null default 0,
  complemento  varchar(200) null,
  bairro varchar(150) not null,
  localidade varchar(20) not null

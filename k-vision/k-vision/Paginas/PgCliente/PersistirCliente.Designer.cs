@@ -49,6 +49,8 @@
             pictureBox3 = new PictureBox();
             lblTitulo = new Label();
             panel3 = new Panel();
+            txt_numero = new MaskedTextBox();
+            label8 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
@@ -66,7 +68,7 @@
             btn_salvar.Location = new Point(103, 503);
             btn_salvar.Name = "btn_salvar";
             btn_salvar.Size = new Size(85, 33);
-            btn_salvar.TabIndex = 13;
+            btn_salvar.TabIndex = 17;
             btn_salvar.Text = "Salvar";
             btn_salvar.TextAlign = ContentAlignment.MiddleRight;
             btn_salvar.UseVisualStyleBackColor = false;
@@ -79,8 +81,8 @@
             txt_telefone.Location = new Point(10, 96);
             txt_telefone.Mask = "(99) 00000-0000";
             txt_telefone.Name = "txt_telefone";
-            txt_telefone.Size = new Size(265, 27);
-            txt_telefone.TabIndex = 9;
+            txt_telefone.Size = new Size(282, 27);
+            txt_telefone.TabIndex = 10;
             // 
             // label2
             // 
@@ -110,12 +112,14 @@
             txt_nome.ForeColor = Color.FromArgb(64, 64, 64);
             txt_nome.Location = new Point(10, 37);
             txt_nome.Name = "txt_nome";
-            txt_nome.Size = new Size(265, 27);
-            txt_nome.TabIndex = 6;
+            txt_nome.Size = new Size(282, 27);
+            txt_nome.TabIndex = 9;
             // 
             // panel1
             // 
             panel1.BackColor = Color.LightGray;
+            panel1.Controls.Add(txt_numero);
+            panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(txt_complemento);
             panel1.Controls.Add(label6);
@@ -132,7 +136,7 @@
             panel1.Controls.Add(txt_nome);
             panel1.Location = new Point(10, 46);
             panel1.Name = "panel1";
-            panel1.Size = new Size(292, 442);
+            panel1.Size = new Size(304, 442);
             panel1.TabIndex = 14;
             // 
             // label7
@@ -152,8 +156,8 @@
             txt_complemento.ForeColor = Color.FromArgb(64, 64, 64);
             txt_complemento.Location = new Point(12, 402);
             txt_complemento.Name = "txt_complemento";
-            txt_complemento.Size = new Size(263, 27);
-            txt_complemento.TabIndex = 18;
+            txt_complemento.Size = new Size(280, 27);
+            txt_complemento.TabIndex = 16;
             // 
             // label6
             // 
@@ -172,8 +176,8 @@
             txt_localidade.ForeColor = Color.FromArgb(64, 64, 64);
             txt_localidade.Location = new Point(12, 345);
             txt_localidade.Name = "txt_localidade";
-            txt_localidade.Size = new Size(263, 27);
-            txt_localidade.TabIndex = 16;
+            txt_localidade.Size = new Size(280, 27);
+            txt_localidade.TabIndex = 15;
             // 
             // label5
             // 
@@ -192,7 +196,7 @@
             txt_bairro.ForeColor = Color.FromArgb(64, 64, 64);
             txt_bairro.Location = new Point(11, 287);
             txt_bairro.Name = "txt_bairro";
-            txt_bairro.Size = new Size(265, 27);
+            txt_bairro.Size = new Size(282, 27);
             txt_bairro.TabIndex = 14;
             // 
             // label4
@@ -212,7 +216,7 @@
             txt_logradouro.ForeColor = Color.FromArgb(64, 64, 64);
             txt_logradouro.Location = new Point(11, 231);
             txt_logradouro.Name = "txt_logradouro";
-            txt_logradouro.Size = new Size(265, 27);
+            txt_logradouro.Size = new Size(230, 27);
             txt_logradouro.TabIndex = 12;
             // 
             // txt_cep
@@ -222,8 +226,9 @@
             txt_cep.Location = new Point(10, 176);
             txt_cep.Mask = "00000-000";
             txt_cep.Name = "txt_cep";
-            txt_cep.Size = new Size(265, 27);
+            txt_cep.Size = new Size(282, 27);
             txt_cep.TabIndex = 11;
+            txt_cep.Validated += txt_cep_Validated;
             // 
             // label3
             // 
@@ -246,7 +251,7 @@
             btn_fechar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_fechar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_fechar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_fechar.Location = new Point(279, 1);
+            btn_fechar.Location = new Point(290, 3);
             btn_fechar.Name = "btn_fechar";
             btn_fechar.Size = new Size(28, 28);
             btn_fechar.TabIndex = 14;
@@ -285,8 +290,29 @@
             panel3.Controls.Add(btn_fechar);
             panel3.Location = new Point(2, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(310, 555);
+            panel3.Size = new Size(321, 555);
             panel3.TabIndex = 18;
+            // 
+            // txt_numero
+            // 
+            txt_numero.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_numero.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_numero.Location = new Point(243, 231);
+            txt_numero.Mask = "00000";
+            txt_numero.Name = "txt_numero";
+            txt_numero.Size = new Size(50, 27);
+            txt_numero.TabIndex = 13;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(64, 64, 64);
+            label8.Location = new Point(242, 210);
+            label8.Name = "label8";
+            label8.Size = new Size(32, 20);
+            label8.TabIndex = 20;
+            label8.Text = "Nº:";
             // 
             // PersistirCliente
             // 
@@ -294,7 +320,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.EnableAllowFocusChange;
             BackColor = Color.DarkMagenta;
-            ClientSize = new Size(314, 559);
+            ClientSize = new Size(325, 559);
             Controls.Add(pictureBox3);
             Controls.Add(lblTitulo);
             Controls.Add(panel1);
@@ -333,5 +359,7 @@
         private Label label7;
         private TextBox txt_complemento;
         private Panel panel3;
+        private MaskedTextBox txt_numero;
+        private Label label8;
     }
 }

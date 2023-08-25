@@ -1,4 +1,5 @@
 ﻿using Kvision.Dominio.Entidades;
+using Kvision.Dominio.Servico;
 using Kvision.Frame.Enum;
 using Kvision.Frame.Interfaces;
 
@@ -36,9 +37,11 @@ namespace Kvision.Frame.Paginas.PgCliente
 
             _cliente.Cep = txt_cep.Text;
             _cliente.Logradouro = txt_logradouro.Text;
+            _cliente.NumeroCasa = int.Parse(txt_numero.Text);
             _cliente.Bairro = txt_bairro.Text;
             _cliente.Localidade = txt_localidade.Text;
             _cliente.Complemento = txt_complemento.Text;
+
 
             if (_tiposOperacoes == TiposOperacoes.Cadastrar)
             {
@@ -75,6 +78,7 @@ namespace Kvision.Frame.Paginas.PgCliente
 
                 txt_cep.Text = _cliente.Cep;
                 txt_logradouro.Text = _cliente.Logradouro;
+                txt_numero.Text = _cliente.NumeroCasa.ToString();
                 txt_bairro.Text = _cliente.Bairro;
                 txt_localidade.Text = _cliente.Localidade;
                 txt_complemento.Text = _cliente.Complemento;
@@ -90,6 +94,25 @@ namespace Kvision.Frame.Paginas.PgCliente
         private void btn_fechar_Click(object sender, EventArgs e)
         {
             this.Close(); ;
+        }
+
+        private void txt_cep_Validated(object sender, EventArgs e)
+        {
+            var endereco = ServiceBuscarEndereco.BuscarEndereco(txt_cep.Text);
+            if (endereco != null)
+            {
+                if (endereco.Street.Equals("erro"))
+                {
+                    MessageBox.Show("Sem conexão com a internet, não foi possivel buscar o endereço!");
+                }
+                else
+                {
+                    txt_cep.Text = endereco.Cep;
+                    txt_logradouro.Text = endereco.Street;
+                    txt_bairro.Text = endereco.Neighborhood;
+                    txt_localidade.Text = endereco.City;
+                }
+            }
         }
     }
 }

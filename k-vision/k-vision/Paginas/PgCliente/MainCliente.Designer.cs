@@ -34,14 +34,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainCliente));
             panel3 = new Panel();
             dg_clientes = new DataGridView();
-            nome = new DataGridViewTextBoxColumn();
-            telefone = new DataGridViewTextBoxColumn();
-            dataCadastro = new DataGridViewTextBoxColumn();
-            cep = new DataGridViewTextBoxColumn();
-            logradouro = new DataGridViewTextBoxColumn();
-            bairro = new DataGridViewTextBoxColumn();
-            localidade = new DataGridViewTextBoxColumn();
-            complemento = new DataGridViewTextBoxColumn();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             txt_filtro = new TextBox();
@@ -53,6 +45,15 @@
             pictureBox3 = new PictureBox();
             lblTitulo = new Label();
             panel4 = new Panel();
+            nome = new DataGridViewTextBoxColumn();
+            telefone = new DataGridViewTextBoxColumn();
+            dataCadastro = new DataGridViewTextBoxColumn();
+            cep = new DataGridViewTextBoxColumn();
+            logradouro = new DataGridViewTextBoxColumn();
+            numeroCasa = new DataGridViewTextBoxColumn();
+            bairro = new DataGridViewTextBoxColumn();
+            localidade = new DataGridViewTextBoxColumn();
+            complemento = new DataGridViewTextBoxColumn();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dg_clientes).BeginInit();
             panel2.SuspendLayout();
@@ -89,7 +90,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dg_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dg_clientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dg_clientes.Columns.AddRange(new DataGridViewColumn[] { nome, telefone, dataCadastro, cep, logradouro, bairro, localidade, complemento });
+            dg_clientes.Columns.AddRange(new DataGridViewColumn[] { nome, telefone, dataCadastro, cep, logradouro, numeroCasa, bairro, localidade, complemento });
             dg_clientes.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
@@ -101,7 +102,7 @@
             dg_clientes.DefaultCellStyle = dataGridViewCellStyle2;
             dg_clientes.EnableHeadersVisualStyles = false;
             dg_clientes.GridColor = Color.WhiteSmoke;
-            dg_clientes.Location = new Point(5, 5);
+            dg_clientes.Location = new Point(6, 5);
             dg_clientes.MultiSelect = false;
             dg_clientes.Name = "dg_clientes";
             dg_clientes.ReadOnly = true;
@@ -120,70 +121,6 @@
             dg_clientes.Size = new Size(1171, 348);
             dg_clientes.TabIndex = 0;
             dg_clientes.CellClick += dg_clientes_CellClick;
-            // 
-            // nome
-            // 
-            nome.DataPropertyName = "nome";
-            nome.HeaderText = "NOME";
-            nome.MinimumWidth = 100;
-            nome.Name = "nome";
-            nome.ReadOnly = true;
-            nome.Width = 200;
-            // 
-            // telefone
-            // 
-            telefone.DataPropertyName = "telefone";
-            telefone.HeaderText = "TELEFONE";
-            telefone.Name = "telefone";
-            telefone.ReadOnly = true;
-            telefone.Width = 130;
-            // 
-            // dataCadastro
-            // 
-            dataCadastro.DataPropertyName = "dataCadastro";
-            dataCadastro.HeaderText = "CADASTRADO";
-            dataCadastro.Name = "dataCadastro";
-            dataCadastro.ReadOnly = true;
-            dataCadastro.Width = 130;
-            // 
-            // cep
-            // 
-            cep.DataPropertyName = "cep";
-            cep.HeaderText = "CEP";
-            cep.Name = "cep";
-            cep.ReadOnly = true;
-            // 
-            // logradouro
-            // 
-            logradouro.DataPropertyName = "logradouro";
-            logradouro.HeaderText = "RUA";
-            logradouro.Name = "logradouro";
-            logradouro.ReadOnly = true;
-            logradouro.Width = 200;
-            // 
-            // bairro
-            // 
-            bairro.DataPropertyName = "bairro";
-            bairro.HeaderText = "BAIRRO";
-            bairro.Name = "bairro";
-            bairro.ReadOnly = true;
-            bairro.Width = 160;
-            // 
-            // localidade
-            // 
-            localidade.DataPropertyName = "localidade";
-            localidade.HeaderText = "CIDADE";
-            localidade.Name = "localidade";
-            localidade.ReadOnly = true;
-            localidade.Width = 110;
-            // 
-            // complemento
-            // 
-            complemento.DataPropertyName = "complemento";
-            complemento.HeaderText = "Complemento";
-            complemento.Name = "complemento";
-            complemento.ReadOnly = true;
-            complemento.Width = 140;
             // 
             // panel2
             // 
@@ -331,6 +268,78 @@
             panel4.Size = new Size(1196, 501);
             panel4.TabIndex = 18;
             // 
+            // nome
+            // 
+            nome.DataPropertyName = "nome";
+            nome.HeaderText = "NOME";
+            nome.MinimumWidth = 100;
+            nome.Name = "nome";
+            nome.ReadOnly = true;
+            nome.Width = 200;
+            // 
+            // telefone
+            // 
+            telefone.DataPropertyName = "telefone";
+            telefone.HeaderText = "TELEFONE";
+            telefone.Name = "telefone";
+            telefone.ReadOnly = true;
+            telefone.Width = 130;
+            // 
+            // dataCadastro
+            // 
+            dataCadastro.DataPropertyName = "dataCadastro";
+            dataCadastro.HeaderText = "CADASTRADO";
+            dataCadastro.Name = "dataCadastro";
+            dataCadastro.ReadOnly = true;
+            dataCadastro.Width = 130;
+            // 
+            // cep
+            // 
+            cep.DataPropertyName = "cep";
+            cep.HeaderText = "CEP";
+            cep.Name = "cep";
+            cep.ReadOnly = true;
+            // 
+            // logradouro
+            // 
+            logradouro.DataPropertyName = "logradouro";
+            logradouro.HeaderText = "RUA";
+            logradouro.Name = "logradouro";
+            logradouro.ReadOnly = true;
+            logradouro.Width = 200;
+            // 
+            // numeroCasa
+            // 
+            numeroCasa.DataPropertyName = "numeroCasa";
+            numeroCasa.HeaderText = "Nº";
+            numeroCasa.Name = "numeroCasa";
+            numeroCasa.ReadOnly = true;
+            numeroCasa.Width = 40;
+            // 
+            // bairro
+            // 
+            bairro.DataPropertyName = "bairro";
+            bairro.HeaderText = "BAIRRO";
+            bairro.Name = "bairro";
+            bairro.ReadOnly = true;
+            bairro.Width = 150;
+            // 
+            // localidade
+            // 
+            localidade.DataPropertyName = "localidade";
+            localidade.HeaderText = "CIDADE";
+            localidade.Name = "localidade";
+            localidade.ReadOnly = true;
+            localidade.Width = 110;
+            // 
+            // complemento
+            // 
+            complemento.DataPropertyName = "complemento";
+            complemento.HeaderText = "Complemento";
+            complemento.Name = "complemento";
+            complemento.ReadOnly = true;
+            complemento.Width = 110;
+            // 
             // MainCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -379,14 +388,15 @@
         private Button btn_fechar;
         private PictureBox pictureBox3;
         private Label lblTitulo;
+        private Panel panel4;
         private DataGridViewTextBoxColumn nome;
         private DataGridViewTextBoxColumn telefone;
         private DataGridViewTextBoxColumn dataCadastro;
         private DataGridViewTextBoxColumn cep;
         private DataGridViewTextBoxColumn logradouro;
+        private DataGridViewTextBoxColumn numeroCasa;
         private DataGridViewTextBoxColumn bairro;
         private DataGridViewTextBoxColumn localidade;
         private DataGridViewTextBoxColumn complemento;
-        private Panel panel4;
     }
 }

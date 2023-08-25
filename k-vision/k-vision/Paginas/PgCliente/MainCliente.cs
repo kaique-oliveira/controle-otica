@@ -25,11 +25,11 @@ namespace Kvision.Frame.Paginas.PgCliente
         {
             indexlista = -1;
             dg_clientes.AutoGenerateColumns = false;
-            listaClientes = servicos.ConsultarTodos();
+            listaClientes = servicos.ConsultarTodos().OrderBy(c => c.Nome).ToList();
 
             if (listaClientes.Count > 0)
             {
-                dg_clientes.DataSource = listaClientes.OrderBy(c => c.Nome).ToList();
+                dg_clientes.DataSource = listaClientes;
                 dg_clientes.Rows[0].Cells[0].Selected = false;
                 _mainFrame.atualizarGridClientes();
             }
