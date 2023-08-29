@@ -12,13 +12,17 @@
     <None Remove="Mapeamentos\PrescricaoAdicional.hbm.xml" />
     <None Remove="Mapeamentos\Produto.hbm.xml" />
     <None Remove="Mapeamentos\Receita.hbm.xml" />
-    <None Remove="Mapeamentos\Venda.hbm.xml" />
+    <None Remove="Mapeamentos\Servico.hbm.xml" />
+    <None Remove="Mapeamentos\VendaProduto.hbm.xml" />
+    <None Remove="Mapeamentos\VendaServico.hbm.xml" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Mapeamentos\Cliente.hbm.xml" />
     <EmbeddedResource Include="Mapeamentos\PrescricaoAdicional.hbm.xml" />
-    <EmbeddedResource Include="Mapeamentos\Venda.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\Servico.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\VendaServico.hbm.xml" />
+    <EmbeddedResource Include="Mapeamentos\VendaProduto.hbm.xml" />
     <EmbeddedResource Include="Mapeamentos\Prescricao.hbm.xml" />
     <EmbeddedResource Include="Mapeamentos\Produto.hbm.xml" />
     <EmbeddedResource Include="Mapeamentos\Receita.hbm.xml" />

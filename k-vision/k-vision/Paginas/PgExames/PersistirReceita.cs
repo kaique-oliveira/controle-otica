@@ -24,6 +24,7 @@ namespace Kvision.Frame.Paginas.PgExames
 
             InitializeComponent();
 
+            this.ShowInTaskbar = false;
         }
 
         ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
@@ -53,6 +54,7 @@ namespace Kvision.Frame.Paginas.PgExames
             {
                 _prescriAdicional.Id = _receita.PrescricaoAdicional.Id;
                 servicoPrescricaoAdicional.Editar(_prescriAdicional);
+                
             }
 
             _receita.DataExame = DateTime.Parse(dtp_data_realizado.Value.ToString());
@@ -163,7 +165,7 @@ namespace Kvision.Frame.Paginas.PgExames
                 _mainReceita.atualizarGrid();
                 _mainReceita.limparCampos();
                 _mainReceita.indexlista = -1;
-                _mainReceita.Show();
+                _mainReceita.Opacity = 100;
                 this.Close();
             }
         }
@@ -232,6 +234,7 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
+            _mainReceita.Opacity = 100;
             this.Close();
         }
     }

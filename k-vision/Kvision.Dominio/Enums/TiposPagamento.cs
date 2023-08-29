@@ -2,9 +2,10 @@
 namespace Kvision.Dominio.Enums
 {
     public enum TiposPagamento
-    {
-        Cartão = 0,
+    { 
+        Dinheiro = 0,
         Pix = 1,
-        Dinheiro = 2,
+        Debito = 2,
+        Credito = 3
     }
 }

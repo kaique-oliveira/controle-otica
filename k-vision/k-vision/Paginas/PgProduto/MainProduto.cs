@@ -11,11 +11,13 @@ namespace Kvision.Frame.Paginas.PgProduto
 {
     public partial class MainProduto : Form
     {
-        private readonly MainFrame _mainFrame;
-        public MainProduto(MainFrame mainFrame)
+        private TelaBlur _blur;
+        public MainProduto(TelaBlur blur)
         {
-            _mainFrame = mainFrame;
+            this._blur = blur;
             InitializeComponent();
+
+            this.ShowInTaskbar = false;
         }
 
         ServicosProduto servicos = new ServicosProduto(new CrudProduto(new ConexaoDatabase()));
@@ -34,7 +36,7 @@ namespace Kvision.Frame.Paginas.PgProduto
             {
                 dg_produtos.DataSource = listaProdutos.OrderBy(p => p.Nome).ToList();
                 dg_produtos.Rows[0].Cells[0].Selected = false;
-                _mainFrame.atualizarGridProduto();
+                //_mainFrame.atualizarGridProduto();
             }
         }
 
@@ -46,7 +48,7 @@ namespace Kvision.Frame.Paginas.PgProduto
 
         private void bnt_show_cadastrar_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Opacity = 0;
             var crud_produto = new PersistirProduto(TiposOperacoes.Cadastrar, servicos, null, this);
             crud_produto.ShowDialog();
         }
@@ -61,7 +63,7 @@ namespace Kvision.Frame.Paginas.PgProduto
         {
             if (indexlista > -1)
             {
-                this.Hide();
+                this.Opacity = 0;
                 var crud_produto = new PersistirProduto(TiposOperacoes.Editar, servicos, produto, this);
                 crud_produto.ShowDialog();
             }
@@ -78,8 +80,8 @@ namespace Kvision.Frame.Paginas.PgProduto
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _mainFrame.Show();
-            this.Hide();
+            _blur.Close();
+            this.Close();
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)

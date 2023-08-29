@@ -4,6 +4,9 @@
     <Compile Update="MainFrame.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Paginas\Mensagem.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Paginas\PgCliente\PersistirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -22,10 +25,37 @@
     <Compile Update="Paginas\PgProduto\PersistirProduto.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Paginas\pgServico\MainServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\pgServico\PersistirServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PgVendaProduto\AddAdicional.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PgVendaProduto\SelecionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PgVendaProduto\SelecionarProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PgVendaProduto\SelecionarReceita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PgVendaServico\AddServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Paginas\PgVendas\EditarVenda.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Paginas\PgVendas\MainVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\TelaBlur.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

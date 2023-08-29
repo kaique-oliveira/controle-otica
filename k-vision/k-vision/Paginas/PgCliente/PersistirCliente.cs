@@ -2,6 +2,7 @@
 using Kvision.Dominio.Servico;
 using Kvision.Frame.Enum;
 using Kvision.Frame.Interfaces;
+using Kvision.Frame.Paginas.pgServico;
 
 namespace Kvision.Frame.Paginas.PgCliente
 {
@@ -19,7 +20,9 @@ namespace Kvision.Frame.Paginas.PgCliente
             _servicos = servicos;
             _cliente = cliente ?? new Cliente();
             _mainCliente = mainCliente;
+
             InitializeComponent();
+            this.ShowInTaskbar = false;
         }
 
 
@@ -45,7 +48,7 @@ namespace Kvision.Frame.Paginas.PgCliente
 
             if (_tiposOperacoes == TiposOperacoes.Cadastrar)
             {
-                var result = MessageBox.Show($"{_servicos.Cadastrar(_cliente)}", "Antenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var result = MessageBox.Show($"{_servicos.Cadastrar(_cliente)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
                     _mainCliente.atualizarGrid();
@@ -62,11 +65,12 @@ namespace Kvision.Frame.Paginas.PgCliente
                     _mainCliente.atualizarGrid();
                     limparCampos();
                     _mainCliente.indexlista = -1;
-
+                    _mainCliente.Opacity = 100;
+                    this.Close();
                 }
             }
-            _mainCliente.Show();
-            this.Close();
+
+
         }
 
         private void PersistirCliente_Load(object sender, EventArgs e)
@@ -93,7 +97,8 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            this.Close(); ;
+            _mainCliente.Opacity = 100;
+            this.Close();
         }
 
         private void txt_cep_Validated(object sender, EventArgs e)

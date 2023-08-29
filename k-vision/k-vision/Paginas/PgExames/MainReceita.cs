@@ -1,9 +1,8 @@
-﻿using k_vision;
-using Kvision.Database.Conexao;
-using Kvision.Database.Interfaces;
+﻿using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
+using Kvision.Frame.Paginas.PgCliente;
 using Kvision.Frame.Servicos;
 
 
@@ -12,12 +11,16 @@ namespace Kvision.Frame.Paginas.PgExames
     public partial class MainReceita : Form
     {
         private readonly Cliente _cliente;
-        private readonly MainFrame _mainFrame;
-        public MainReceita(Cliente cliente, MainFrame mainFrame)
+        private MainCliente _mainCliente;
+
+        public MainReceita(Cliente cliente, MainCliente mainCliente)
         {
-            _mainFrame = mainFrame;
             _cliente = cliente;
+            _mainCliente = mainCliente;
+
             InitializeComponent();
+
+            this.ShowInTaskbar = false;
         }
 
 
@@ -39,7 +42,6 @@ namespace Kvision.Frame.Paginas.PgExames
                 dg_receitas.DataSource = listaReceita;
                 indexlista = -1;
                 dg_receitas.Rows[0].Cells[0].Selected = false;
-                _mainFrame.atualizarGridReceitas();
             }
         }
 
@@ -126,6 +128,7 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void bnt_cadastrar_Click(object sender, EventArgs e)
         {
+            this.Opacity = 0;
             var persistirExame = new PersistirReceita(_cliente, null, null, TiposOperacoes.Cadastrar, this);
             persistirExame.ShowDialog();
         }
@@ -134,6 +137,9 @@ namespace Kvision.Frame.Paginas.PgExames
         {
             indexlista = dg_receitas.CurrentCell.RowIndex;
             receita = listaReceita[indexlista];
+
+            btn_deletar.Enabled = true;
+            btn_show_editar.Enabled = true;
             buscarPrescricao();
         }
 
@@ -141,6 +147,7 @@ namespace Kvision.Frame.Paginas.PgExames
         {
             if (indexlista > -1)
             {
+                this.Opacity = 0;
                 var persistirExame = new PersistirReceita(_cliente, receita, listaPrescricoes, TiposOperacoes.Editar, this);
                 persistirExame.ShowDialog();
             }
@@ -173,13 +180,12 @@ namespace Kvision.Frame.Paginas.PgExames
 
         private void MainReceita_Shown(object sender, EventArgs e)
         {
-
             atualizarGrid();
-
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
+            _mainCliente.Opacity = 100;
             this.Close();
         }
     }

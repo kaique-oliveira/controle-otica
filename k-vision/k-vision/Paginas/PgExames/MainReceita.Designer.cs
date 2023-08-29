@@ -33,6 +33,8 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainReceita));
             panel7 = new Panel();
+            panel1 = new Panel();
+            label16 = new Label();
             panel9 = new Panel();
             label19 = new Label();
             label20 = new Label();
@@ -43,7 +45,6 @@
             txt_adicao_esquerdo = new MaskedTextBox();
             txt_adicao_direito = new MaskedTextBox();
             txt_altura_direito = new MaskedTextBox();
-            label15 = new Label();
             panel2 = new Panel();
             label4 = new Label();
             label3 = new Label();
@@ -83,7 +84,6 @@
             DataExame = new DataGridViewTextBoxColumn();
             DataValExame = new DataGridViewTextBoxColumn();
             nomeExaminador = new DataGridViewTextBoxColumn();
-            panel1 = new Panel();
             bnt_cadastrar = new Button();
             btn_deletar = new Button();
             btn_show_editar = new Button();
@@ -91,7 +91,9 @@
             lblTitulo = new Label();
             btn_fechar = new Button();
             panel8 = new Panel();
+            panel11 = new Panel();
             panel7.SuspendLayout();
+            panel1.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
             panel2.SuspendLayout();
@@ -100,33 +102,56 @@
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dg_receitas).BeginInit();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel7
             // 
             panel7.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panel7.BackColor = Color.LightGray;
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(panel1);
             panel7.Controls.Add(panel9);
-            panel7.Controls.Add(label15);
             panel7.Controls.Add(panel2);
             panel7.Controls.Add(label7);
             panel7.Controls.Add(panel4);
             panel7.Controls.Add(label8);
-            panel7.Location = new Point(416, 46);
+            panel7.Location = new Point(416, 44);
             panel7.Name = "panel7";
-            panel7.Size = new Size(357, 417);
+            panel7.Size = new Size(357, 402);
             panel7.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.RoyalBlue;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label16);
+            panel1.Location = new Point(-1, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(357, 25);
+            panel1.TabIndex = 34;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.ForeColor = Color.WhiteSmoke;
+            label16.Location = new Point(141, 2);
+            label16.Name = "label16";
+            label16.Size = new Size(79, 20);
+            label16.TabIndex = 33;
+            label16.Text = "Prescrição";
             // 
             // panel9
             // 
             panel9.Anchor = AnchorStyles.None;
             panel9.BackColor = Color.PowderBlue;
+            panel9.BorderStyle = BorderStyle.FixedSingle;
             panel9.Controls.Add(label19);
             panel9.Controls.Add(label20);
             panel9.Controls.Add(panel10);
-            panel9.Location = new Point(79, 300);
+            panel9.Location = new Point(78, 296);
             panel9.Margin = new Padding(3, 4, 3, 4);
             panel9.Name = "panel9";
             panel9.Size = new Size(200, 98);
@@ -158,13 +183,14 @@
             // 
             panel10.Anchor = AnchorStyles.None;
             panel10.BackColor = Color.WhiteSmoke;
+            panel10.BorderStyle = BorderStyle.FixedSingle;
             panel10.Controls.Add(label21);
             panel10.Controls.Add(label22);
             panel10.Controls.Add(txt_altura_esquerdo);
             panel10.Controls.Add(txt_adicao_esquerdo);
             panel10.Controls.Add(txt_adicao_direito);
             panel10.Controls.Add(txt_altura_direito);
-            panel10.Location = new Point(0, 28);
+            panel10.Location = new Point(-1, 27);
             panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
             panel10.Size = new Size(200, 70);
@@ -195,6 +221,7 @@
             // 
             // txt_altura_esquerdo
             // 
+            txt_altura_esquerdo.BorderStyle = BorderStyle.FixedSingle;
             txt_altura_esquerdo.Enabled = false;
             txt_altura_esquerdo.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_altura_esquerdo.ForeColor = Color.FromArgb(64, 64, 64);
@@ -207,6 +234,7 @@
             // 
             // txt_adicao_esquerdo
             // 
+            txt_adicao_esquerdo.BorderStyle = BorderStyle.FixedSingle;
             txt_adicao_esquerdo.Enabled = false;
             txt_adicao_esquerdo.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_adicao_esquerdo.ForeColor = Color.FromArgb(64, 64, 64);
@@ -219,6 +247,7 @@
             // 
             // txt_adicao_direito
             // 
+            txt_adicao_direito.BorderStyle = BorderStyle.FixedSingle;
             txt_adicao_direito.Enabled = false;
             txt_adicao_direito.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_adicao_direito.ForeColor = Color.FromArgb(64, 64, 64);
@@ -231,6 +260,7 @@
             // 
             // txt_altura_direito
             // 
+            txt_altura_direito.BorderStyle = BorderStyle.FixedSingle;
             txt_altura_direito.Enabled = false;
             txt_altura_direito.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_altura_direito.ForeColor = Color.FromArgb(64, 64, 64);
@@ -241,28 +271,18 @@
             txt_altura_direito.TabIndex = 35;
             txt_altura_direito.ValidatingType = typeof(DateTime);
             // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.DimGray;
-            label15.Location = new Point(5, 4);
-            label15.Name = "label15";
-            label15.Size = new Size(74, 17);
-            label15.TabIndex = 15;
-            label15.Text = "Prescrição:";
-            // 
             // panel2
             // 
             panel2.BackColor = Color.Bisque;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(panel3);
-            panel2.Location = new Point(9, 55);
+            panel2.Location = new Point(9, 60);
             panel2.Name = "panel2";
-            panel2.Size = new Size(333, 90);
+            panel2.Size = new Size(333, 95);
             panel2.TabIndex = 7;
             // 
             // label4
@@ -312,6 +332,7 @@
             // panel3
             // 
             panel3.BackColor = Color.WhiteSmoke;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(txt_dp_esquerdo_longe);
             panel3.Controls.Add(txt_eixo_esquerdo_longe);
             panel3.Controls.Add(txt_cil_esquerdo_longe);
@@ -322,13 +343,14 @@
             panel3.Controls.Add(label6);
             panel3.Controls.Add(txt_dp_direito_longe);
             panel3.Controls.Add(label5);
-            panel3.Location = new Point(0, 25);
+            panel3.Location = new Point(-1, 26);
             panel3.Name = "panel3";
-            panel3.Size = new Size(333, 65);
+            panel3.Size = new Size(333, 68);
             panel3.TabIndex = 8;
             // 
             // txt_dp_esquerdo_longe
             // 
+            txt_dp_esquerdo_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_dp_esquerdo_longe.Enabled = false;
             txt_dp_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -341,6 +363,7 @@
             // 
             // txt_eixo_esquerdo_longe
             // 
+            txt_eixo_esquerdo_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_eixo_esquerdo_longe.Enabled = false;
             txt_eixo_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -353,6 +376,7 @@
             // 
             // txt_cil_esquerdo_longe
             // 
+            txt_cil_esquerdo_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_cil_esquerdo_longe.Enabled = false;
             txt_cil_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -365,6 +389,7 @@
             // 
             // txt_eixo_direito_longe
             // 
+            txt_eixo_direito_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_eixo_direito_longe.Enabled = false;
             txt_eixo_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -377,6 +402,7 @@
             // 
             // txt_cil_direito_longe
             // 
+            txt_cil_direito_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_cil_direito_longe.Enabled = false;
             txt_cil_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -389,6 +415,7 @@
             // 
             // txt_esf_esquerdo_longe
             // 
+            txt_esf_esquerdo_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_esf_esquerdo_longe.Enabled = false;
             txt_esf_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -401,6 +428,7 @@
             // 
             // txt_esf_direito_longe
             // 
+            txt_esf_direito_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_esf_direito_longe.Enabled = false;
             txt_esf_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -423,6 +451,7 @@
             // 
             // txt_dp_direito_longe
             // 
+            txt_dp_direito_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_dp_direito_longe.Enabled = false;
             txt_dp_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
@@ -449,7 +478,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(64, 64, 64);
-            label7.Location = new Point(154, 32);
+            label7.Location = new Point(154, 37);
             label7.Name = "label7";
             label7.Size = new Size(52, 20);
             label7.TabIndex = 12;
@@ -458,14 +487,15 @@
             // panel4
             // 
             panel4.BackColor = Color.Thistle;
+            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(label9);
             panel4.Controls.Add(label10);
             panel4.Controls.Add(label11);
             panel4.Controls.Add(label12);
             panel4.Controls.Add(panel5);
-            panel4.Location = new Point(9, 182);
+            panel4.Location = new Point(9, 187);
             panel4.Name = "panel4";
-            panel4.Size = new Size(333, 91);
+            panel4.Size = new Size(333, 96);
             panel4.TabIndex = 13;
             // 
             // label9
@@ -515,6 +545,7 @@
             // panel5
             // 
             panel5.BackColor = Color.WhiteSmoke;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(txt_dp_esquerdo_perto);
             panel5.Controls.Add(label13);
             panel5.Controls.Add(txt_eixo_esquerdo_perto);
@@ -525,17 +556,18 @@
             panel5.Controls.Add(txt_cil_direito_perto);
             panel5.Controls.Add(txt_esf_direito_perto);
             panel5.Controls.Add(txt_esf_esquerdo_perto);
-            panel5.Location = new Point(0, 25);
+            panel5.Location = new Point(-1, 26);
             panel5.Name = "panel5";
-            panel5.Size = new Size(333, 66);
+            panel5.Size = new Size(333, 69);
             panel5.TabIndex = 8;
             // 
             // txt_dp_esquerdo_perto
             // 
+            txt_dp_esquerdo_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_dp_esquerdo_perto.Enabled = false;
             txt_dp_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_dp_esquerdo_perto.Location = new Point(260, 34);
+            txt_dp_esquerdo_perto.Location = new Point(259, 34);
             txt_dp_esquerdo_perto.Mask = "0,00";
             txt_dp_esquerdo_perto.Name = "txt_dp_esquerdo_perto";
             txt_dp_esquerdo_perto.Size = new Size(69, 27);
@@ -554,10 +586,11 @@
             // 
             // txt_eixo_esquerdo_perto
             // 
+            txt_eixo_esquerdo_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_eixo_esquerdo_perto.Enabled = false;
             txt_eixo_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_eixo_esquerdo_perto.Location = new Point(185, 35);
+            txt_eixo_esquerdo_perto.Location = new Point(184, 35);
             txt_eixo_esquerdo_perto.Mask = "0,00";
             txt_eixo_esquerdo_perto.Name = "txt_eixo_esquerdo_perto";
             txt_eixo_esquerdo_perto.Size = new Size(69, 27);
@@ -577,10 +610,11 @@
             // 
             // txt_cil_esquerdo_perto
             // 
+            txt_cil_esquerdo_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_cil_esquerdo_perto.Enabled = false;
             txt_cil_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_cil_esquerdo_perto.Location = new Point(110, 35);
+            txt_cil_esquerdo_perto.Location = new Point(109, 35);
             txt_cil_esquerdo_perto.Mask = "0,00";
             txt_cil_esquerdo_perto.Name = "txt_cil_esquerdo_perto";
             txt_cil_esquerdo_perto.Size = new Size(69, 27);
@@ -589,10 +623,11 @@
             // 
             // txt_eixo_direito_perto
             // 
+            txt_eixo_direito_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_eixo_direito_perto.Enabled = false;
             txt_eixo_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_eixo_direito_perto.Location = new Point(185, 3);
+            txt_eixo_direito_perto.Location = new Point(184, 3);
             txt_eixo_direito_perto.Mask = "0,00";
             txt_eixo_direito_perto.Name = "txt_eixo_direito_perto";
             txt_eixo_direito_perto.Size = new Size(69, 27);
@@ -601,10 +636,11 @@
             // 
             // txt_dp_direito_perto
             // 
+            txt_dp_direito_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_dp_direito_perto.Enabled = false;
             txt_dp_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_dp_direito_perto.Location = new Point(260, 4);
+            txt_dp_direito_perto.Location = new Point(259, 3);
             txt_dp_direito_perto.Mask = "0,00";
             txt_dp_direito_perto.Name = "txt_dp_direito_perto";
             txt_dp_direito_perto.Size = new Size(69, 27);
@@ -613,10 +649,11 @@
             // 
             // txt_cil_direito_perto
             // 
+            txt_cil_direito_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_cil_direito_perto.Enabled = false;
             txt_cil_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_cil_direito_perto.Location = new Point(110, 3);
+            txt_cil_direito_perto.Location = new Point(109, 3);
             txt_cil_direito_perto.Mask = "0,00";
             txt_cil_direito_perto.Name = "txt_cil_direito_perto";
             txt_cil_direito_perto.Size = new Size(69, 27);
@@ -625,10 +662,11 @@
             // 
             // txt_esf_direito_perto
             // 
+            txt_esf_direito_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_esf_direito_perto.Enabled = false;
             txt_esf_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_esf_direito_perto.Location = new Point(35, 4);
+            txt_esf_direito_perto.Location = new Point(34, 4);
             txt_esf_direito_perto.Mask = "0,00";
             txt_esf_direito_perto.Name = "txt_esf_direito_perto";
             txt_esf_direito_perto.Size = new Size(69, 27);
@@ -637,6 +675,7 @@
             // 
             // txt_esf_esquerdo_perto
             // 
+            txt_esf_esquerdo_perto.BorderStyle = BorderStyle.FixedSingle;
             txt_esf_esquerdo_perto.Enabled = false;
             txt_esf_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
@@ -652,7 +691,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(64, 64, 64);
-            label8.Location = new Point(154, 159);
+            label8.Location = new Point(154, 164);
             label8.Name = "label8";
             label8.Size = new Size(47, 20);
             label8.TabIndex = 14;
@@ -662,10 +701,11 @@
             // 
             panel6.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             panel6.BackColor = Color.LightGray;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(dg_receitas);
             panel6.Location = new Point(11, 44);
             panel6.Name = "panel6";
-            panel6.Size = new Size(402, 363);
+            panel6.Size = new Size(392, 402);
             panel6.TabIndex = 16;
             // 
             // dg_receitas
@@ -673,7 +713,7 @@
             dg_receitas.AllowUserToAddRows = false;
             dg_receitas.AllowUserToDeleteRows = false;
             dg_receitas.Anchor = AnchorStyles.None;
-            dg_receitas.BackgroundColor = Color.WhiteSmoke;
+            dg_receitas.BackgroundColor = Color.LightGray;
             dg_receitas.BorderStyle = BorderStyle.None;
             dg_receitas.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dg_receitas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -689,7 +729,7 @@
             dg_receitas.Columns.AddRange(new DataGridViewColumn[] { DataExame, DataValExame, nomeExaminador });
             dg_receitas.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.BackColor = Color.LightGray;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle2.SelectionBackColor = Color.Thistle;
@@ -698,7 +738,7 @@
             dg_receitas.DefaultCellStyle = dataGridViewCellStyle2;
             dg_receitas.EnableHeadersVisualStyles = false;
             dg_receitas.GridColor = Color.WhiteSmoke;
-            dg_receitas.Location = new Point(12, 6);
+            dg_receitas.Location = new Point(5, 6);
             dg_receitas.MultiSelect = false;
             dg_receitas.Name = "dg_receitas";
             dg_receitas.ReadOnly = true;
@@ -714,7 +754,7 @@
             dg_receitas.RowHeadersVisible = false;
             dg_receitas.RowTemplate.Height = 25;
             dg_receitas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_receitas.Size = new Size(380, 351);
+            dg_receitas.Size = new Size(380, 389);
             dg_receitas.TabIndex = 5;
             dg_receitas.CellClick += dg_receitas_CellClick;
             // 
@@ -741,28 +781,16 @@
             nomeExaminador.ReadOnly = true;
             nomeExaminador.Width = 180;
             // 
-            // panel1
-            // 
-            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.LightGray;
-            panel1.Controls.Add(bnt_cadastrar);
-            panel1.Controls.Add(btn_deletar);
-            panel1.Controls.Add(btn_show_editar);
-            panel1.Location = new Point(11, 413);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(402, 50);
-            panel1.TabIndex = 18;
-            // 
             // bnt_cadastrar
             // 
-            bnt_cadastrar.BackColor = SystemColors.ButtonFace;
-            bnt_cadastrar.FlatAppearance.BorderSize = 0;
+            bnt_cadastrar.BackColor = Color.LightGray;
+            bnt_cadastrar.FlatAppearance.BorderColor = Color.Gray;
             bnt_cadastrar.FlatStyle = FlatStyle.Flat;
             bnt_cadastrar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             bnt_cadastrar.ForeColor = Color.FromArgb(64, 64, 64);
             bnt_cadastrar.Image = (Image)resources.GetObject("bnt_cadastrar.Image");
             bnt_cadastrar.ImageAlign = ContentAlignment.MiddleLeft;
-            bnt_cadastrar.Location = new Point(8, 9);
+            bnt_cadastrar.Location = new Point(131, 458);
             bnt_cadastrar.Name = "bnt_cadastrar";
             bnt_cadastrar.Size = new Size(120, 33);
             bnt_cadastrar.TabIndex = 2;
@@ -773,14 +801,15 @@
             // 
             // btn_deletar
             // 
-            btn_deletar.BackColor = SystemColors.ButtonFace;
-            btn_deletar.FlatAppearance.BorderSize = 0;
+            btn_deletar.BackColor = Color.LightGray;
+            btn_deletar.Enabled = false;
+            btn_deletar.FlatAppearance.BorderColor = Color.Gray;
             btn_deletar.FlatStyle = FlatStyle.Flat;
             btn_deletar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_deletar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_deletar.Image = (Image)resources.GetObject("btn_deletar.Image");
             btn_deletar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_deletar.Location = new Point(270, 9);
+            btn_deletar.Location = new Point(475, 458);
             btn_deletar.Name = "btn_deletar";
             btn_deletar.Size = new Size(120, 33);
             btn_deletar.TabIndex = 4;
@@ -790,14 +819,15 @@
             // 
             // btn_show_editar
             // 
-            btn_show_editar.BackColor = SystemColors.ButtonFace;
-            btn_show_editar.FlatAppearance.BorderSize = 0;
+            btn_show_editar.BackColor = Color.LightGray;
+            btn_show_editar.Enabled = false;
+            btn_show_editar.FlatAppearance.BorderColor = Color.Gray;
             btn_show_editar.FlatStyle = FlatStyle.Flat;
             btn_show_editar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_show_editar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_editar.Image = (Image)resources.GetObject("btn_show_editar.Image");
             btn_show_editar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_editar.Location = new Point(139, 9);
+            btn_show_editar.Location = new Point(303, 458);
             btn_show_editar.Name = "btn_show_editar";
             btn_show_editar.Size = new Size(120, 33);
             btn_show_editar.TabIndex = 3;
@@ -807,10 +837,10 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.FromArgb(224, 224, 224);
+            pictureBox3.BackColor = Color.LightGray;
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(5, 6);
+            pictureBox3.Location = new Point(10, 4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(22, 22);
             pictureBox3.TabIndex = 21;
@@ -819,10 +849,10 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.FromArgb(224, 224, 224);
+            lblTitulo.BackColor = Color.LightGray;
             lblTitulo.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitulo.ForeColor = Color.FromArgb(64, 64, 64);
-            lblTitulo.Location = new Point(30, 7);
+            lblTitulo.Location = new Point(35, 5);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(64, 20);
             lblTitulo.TabIndex = 20;
@@ -830,7 +860,7 @@
             // 
             // btn_fechar
             // 
-            btn_fechar.BackColor = Color.FromArgb(224, 224, 224);
+            btn_fechar.BackColor = Color.LightGray;
             btn_fechar.BackgroundImage = (Image)resources.GetObject("btn_fechar.BackgroundImage");
             btn_fechar.BackgroundImageLayout = ImageLayout.Stretch;
             btn_fechar.Cursor = Cursors.Hand;
@@ -838,9 +868,9 @@
             btn_fechar.FlatStyle = FlatStyle.Flat;
             btn_fechar.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             btn_fechar.ForeColor = SystemColors.ActiveCaptionText;
-            btn_fechar.Location = new Point(748, 5);
+            btn_fechar.Location = new Point(756, 3);
             btn_fechar.Name = "btn_fechar";
-            btn_fechar.Size = new Size(28, 28);
+            btn_fechar.Size = new Size(24, 24);
             btn_fechar.TabIndex = 19;
             btn_fechar.UseVisualStyleBackColor = false;
             btn_fechar.Click += btn_fechar_Click;
@@ -848,24 +878,37 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(224, 224, 224);
-            panel8.Location = new Point(2, 2);
+            panel8.BorderStyle = BorderStyle.FixedSingle;
+            panel8.Controls.Add(bnt_cadastrar);
+            panel8.Controls.Add(panel11);
+            panel8.Controls.Add(btn_deletar);
+            panel8.Controls.Add(btn_show_editar);
+            panel8.Location = new Point(0, 0);
             panel8.Name = "panel8";
-            panel8.Size = new Size(779, 467);
+            panel8.Size = new Size(783, 505);
             panel8.TabIndex = 22;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.LightGray;
+            panel11.BorderStyle = BorderStyle.FixedSingle;
+            panel11.Location = new Point(-1, -1);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(783, 29);
+            panel11.TabIndex = 35;
             // 
             // MainReceita
             // 
             AccessibleRole = AccessibleRole.None;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkOrange;
-            ClientSize = new Size(783, 471);
+            BackColor = Color.FromArgb(224, 224, 224);
+            ClientSize = new Size(783, 505);
             Controls.Add(pictureBox3);
             Controls.Add(lblTitulo);
             Controls.Add(btn_fechar);
             Controls.Add(panel7);
             Controls.Add(panel6);
-            Controls.Add(panel1);
             Controls.Add(panel8);
             FormBorderStyle = FormBorderStyle.None;
             Name = "MainReceita";
@@ -875,6 +918,8 @@
             Click += btn_deletar_Click;
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel9.ResumeLayout(false);
             panel9.PerformLayout();
             panel10.ResumeLayout(false);
@@ -889,8 +934,8 @@
             panel5.PerformLayout();
             panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dg_receitas).EndInit();
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel8.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -898,7 +943,6 @@
         #endregion
 
         private Panel panel7;
-        private Label label15;
         private Panel panel2;
         private Label label4;
         private Label label3;
@@ -935,7 +979,6 @@
         private Label label8;
         private Panel panel6;
         private DataGridView dg_receitas;
-        private Panel panel1;
         private Button bnt_cadastrar;
         private Button btn_deletar;
         private Button btn_show_editar;
@@ -956,5 +999,8 @@
         private MaskedTextBox txt_adicao_esquerdo;
         private MaskedTextBox txt_adicao_direito;
         private MaskedTextBox txt_altura_direito;
+        private Panel panel11;
+        private Panel panel1;
+        private Label label16;
     }
 }

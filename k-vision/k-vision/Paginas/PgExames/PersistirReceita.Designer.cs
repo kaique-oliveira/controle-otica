@@ -37,7 +37,8 @@
             label1 = new Label();
             txt_nome_dr = new TextBox();
             panel7 = new Panel();
-            label7 = new Label();
+            panel9 = new Panel();
+            label3 = new Label();
             panel6 = new Panel();
             label19 = new Label();
             label20 = new Label();
@@ -85,8 +86,10 @@
             pictureBox3 = new PictureBox();
             lblTitulo = new Label();
             panel4 = new Panel();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             panel7.SuspendLayout();
+            panel9.SuspendLayout();
             panel6.SuspendLayout();
             panel8.SuspendLayout();
             panel_longe.SuspendLayout();
@@ -99,7 +102,7 @@
             // 
             // btn_fechar
             // 
-            btn_fechar.BackColor = Color.Silver;
+            btn_fechar.BackColor = Color.LightGray;
             btn_fechar.BackgroundImage = (Image)resources.GetObject("btn_fechar.BackgroundImage");
             btn_fechar.BackgroundImageLayout = ImageLayout.Stretch;
             btn_fechar.FlatAppearance.BorderSize = 0;
@@ -107,9 +110,9 @@
             btn_fechar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_fechar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_fechar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_fechar.Location = new Point(654, 3);
+            btn_fechar.Location = new Point(668, 3);
             btn_fechar.Name = "btn_fechar";
-            btn_fechar.Size = new Size(28, 28);
+            btn_fechar.Size = new Size(24, 24);
             btn_fechar.TabIndex = 14;
             btn_fechar.TextAlign = ContentAlignment.MiddleRight;
             btn_fechar.UseVisualStyleBackColor = false;
@@ -117,14 +120,14 @@
             // 
             // btn_salvar
             // 
-            btn_salvar.BackColor = SystemColors.ButtonFace;
-            btn_salvar.FlatAppearance.BorderSize = 0;
+            btn_salvar.BackColor = Color.LightGray;
+            btn_salvar.FlatAppearance.BorderColor = Color.Gray;
             btn_salvar.FlatStyle = FlatStyle.Flat;
             btn_salvar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_salvar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_salvar.Image = (Image)resources.GetObject("btn_salvar.Image");
             btn_salvar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_salvar.Location = new Point(99, 218);
+            btn_salvar.Location = new Point(287, 517);
             btn_salvar.Margin = new Padding(3, 4, 3, 4);
             btn_salvar.Name = "btn_salvar";
             btn_salvar.Size = new Size(85, 33);
@@ -138,11 +141,12 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.BackColor = Color.LightGray;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(dtp_data_realizado);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(txt_nome_dr);
-            panel1.Location = new Point(4, 40);
+            panel1.Location = new Point(6, 45);
             panel1.Name = "panel1";
             panel1.Size = new Size(306, 167);
             panel1.TabIndex = 47;
@@ -181,6 +185,7 @@
             // 
             // txt_nome_dr
             // 
+            txt_nome_dr.BorderStyle = BorderStyle.FixedSingle;
             txt_nome_dr.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             txt_nome_dr.ForeColor = Color.FromArgb(64, 64, 64);
             txt_nome_dr.Location = new Point(13, 114);
@@ -193,36 +198,48 @@
             // 
             panel7.Anchor = AnchorStyles.None;
             panel7.BackColor = Color.LightGray;
-            panel7.Controls.Add(label7);
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(panel9);
             panel7.Controls.Add(panel6);
             panel7.Controls.Add(lbl_perto);
             panel7.Controls.Add(panel_longe);
             panel7.Controls.Add(panel_perto);
             panel7.Controls.Add(lbl_longe);
-            panel7.Location = new Point(314, 40);
+            panel7.Location = new Point(320, 45);
             panel7.Name = "panel7";
             panel7.Size = new Size(364, 459);
             panel7.TabIndex = 46;
             // 
-            // label7
+            // panel9
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(5, 4);
-            label7.Name = "label7";
-            label7.Size = new Size(74, 17);
-            label7.TabIndex = 15;
-            label7.Text = "Prescrição:";
+            panel9.BackColor = Color.RoyalBlue;
+            panel9.BorderStyle = BorderStyle.FixedSingle;
+            panel9.Controls.Add(label3);
+            panel9.Location = new Point(-1, -1);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(364, 25);
+            panel9.TabIndex = 18;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.WhiteSmoke;
+            label3.Location = new Point(145, 2);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 20);
+            label3.TabIndex = 33;
+            label3.Text = "Prescrição";
             // 
             // panel6
             // 
             panel6.Anchor = AnchorStyles.None;
             panel6.BackColor = Color.PowderBlue;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(label19);
             panel6.Controls.Add(label20);
             panel6.Controls.Add(panel8);
-            panel6.Location = new Point(81, 341);
+            panel6.Location = new Point(80, 340);
             panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
             panel6.Size = new Size(200, 109);
@@ -254,13 +271,14 @@
             // 
             panel8.Anchor = AnchorStyles.None;
             panel8.BackColor = Color.WhiteSmoke;
+            panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(label21);
             panel8.Controls.Add(label22);
             panel8.Controls.Add(txt_altura_esquerdo);
             panel8.Controls.Add(txt_adicao_esquerdo);
             panel8.Controls.Add(txt_adicao_direito);
             panel8.Controls.Add(txt_altura_direito);
-            panel8.Location = new Point(0, 34);
+            panel8.Location = new Point(-1, 33);
             panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
             panel8.Size = new Size(200, 75);
@@ -334,7 +352,7 @@
             lbl_perto.AutoSize = true;
             lbl_perto.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_perto.ForeColor = Color.FromArgb(64, 64, 64);
-            lbl_perto.Location = new Point(158, 170);
+            lbl_perto.Location = new Point(158, 188);
             lbl_perto.Name = "lbl_perto";
             lbl_perto.Size = new Size(51, 21);
             lbl_perto.TabIndex = 24;
@@ -345,12 +363,13 @@
             // 
             panel_longe.Anchor = AnchorStyles.None;
             panel_longe.BackColor = Color.Bisque;
+            panel_longe.BorderStyle = BorderStyle.FixedSingle;
             panel_longe.Controls.Add(label4);
             panel_longe.Controls.Add(label5);
             panel_longe.Controls.Add(label6);
             panel_longe.Controls.Add(label15);
             panel_longe.Controls.Add(panel3);
-            panel_longe.Location = new Point(8, 49);
+            panel_longe.Location = new Point(7, 66);
             panel_longe.Margin = new Padding(3, 4, 3, 4);
             panel_longe.Name = "panel_longe";
             panel_longe.Size = new Size(344, 107);
@@ -404,6 +423,7 @@
             // 
             panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.WhiteSmoke;
+            panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(txt_dp_esquerdo_longe);
             panel3.Controls.Add(label16);
             panel3.Controls.Add(txt_eixo_esquerdo_longe);
@@ -414,7 +434,7 @@
             panel3.Controls.Add(txt_dp_direito_longe);
             panel3.Controls.Add(txt_cil_direito_longe);
             panel3.Controls.Add(txt_esf_esquerdo_longe);
-            panel3.Location = new Point(0, 33);
+            panel3.Location = new Point(-1, 32);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(344, 74);
@@ -543,12 +563,13 @@
             // 
             panel_perto.Anchor = AnchorStyles.None;
             panel_perto.BackColor = Color.Thistle;
+            panel_perto.BorderStyle = BorderStyle.FixedSingle;
             panel_perto.Controls.Add(label9);
             panel_perto.Controls.Add(label10);
             panel_perto.Controls.Add(label11);
             panel_perto.Controls.Add(label12);
             panel_perto.Controls.Add(panel5);
-            panel_perto.Location = new Point(8, 194);
+            panel_perto.Location = new Point(7, 211);
             panel_perto.Margin = new Padding(3, 4, 3, 4);
             panel_perto.Name = "panel_perto";
             panel_perto.Size = new Size(347, 109);
@@ -602,6 +623,7 @@
             // 
             panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.WhiteSmoke;
+            panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(txt_dp_esquerdo_perto);
             panel5.Controls.Add(label13);
             panel5.Controls.Add(txt_eixo_esquerdo_perto);
@@ -612,7 +634,7 @@
             panel5.Controls.Add(txt_dp_direito_perto);
             panel5.Controls.Add(txt_esf_direito_perto);
             panel5.Controls.Add(txt_cil_direito_perto);
-            panel5.Location = new Point(0, 34);
+            panel5.Location = new Point(-1, 33);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
             panel5.Size = new Size(347, 75);
@@ -742,7 +764,7 @@
             lbl_longe.AutoSize = true;
             lbl_longe.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_longe.ForeColor = Color.FromArgb(64, 64, 64);
-            lbl_longe.Location = new Point(152, 25);
+            lbl_longe.Location = new Point(152, 43);
             lbl_longe.Name = "lbl_longe";
             lbl_longe.Size = new Size(57, 21);
             lbl_longe.TabIndex = 22;
@@ -751,10 +773,10 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = Color.Silver;
+            pictureBox3.BackColor = Color.LightGray;
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(5, 6);
+            pictureBox3.Location = new Point(8, 4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(22, 22);
             pictureBox3.TabIndex = 50;
@@ -763,10 +785,10 @@
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.Silver;
+            lblTitulo.BackColor = Color.LightGray;
             lblTitulo.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitulo.ForeColor = Color.FromArgb(64, 64, 64);
-            lblTitulo.Location = new Point(30, 7);
+            lblTitulo.Location = new Point(33, 5);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(58, 20);
             lblTitulo.TabIndex = 49;
@@ -774,22 +796,33 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.Silver;
-            panel4.Controls.Add(btn_salvar);
+            panel4.BackColor = Color.FromArgb(224, 224, 224);
+            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(btn_fechar);
+            panel4.Controls.Add(panel2);
+            panel4.Controls.Add(btn_salvar);
             panel4.Controls.Add(panel1);
             panel4.Controls.Add(panel7);
-            panel4.Location = new Point(2, 2);
+            panel4.Location = new Point(0, -1);
             panel4.Name = "panel4";
-            panel4.Size = new Size(685, 506);
+            panel4.Size = new Size(696, 564);
             panel4.TabIndex = 51;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.LightGray;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Location = new Point(-1, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(696, 29);
+            panel2.TabIndex = 48;
             // 
             // PersistirReceita
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkMagenta;
-            ClientSize = new Size(689, 510);
+            BackColor = Color.FromArgb(224, 224, 224);
+            ClientSize = new Size(696, 564);
             Controls.Add(pictureBox3);
             Controls.Add(lblTitulo);
             Controls.Add(panel4);
@@ -804,6 +837,8 @@
             panel1.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             panel8.ResumeLayout(false);
@@ -833,7 +868,6 @@
         private Label label1;
         private TextBox txt_nome_dr;
         private Panel panel7;
-        private Label label7;
         private Label lbl_perto;
         private Panel panel_longe;
         private Label label4;
@@ -881,5 +915,8 @@
         private MaskedTextBox txt_adicao_esquerdo;
         private MaskedTextBox txt_adicao_direito;
         private MaskedTextBox txt_altura_direito;
+        private Panel panel2;
+        private Panel panel9;
+        private Label label3;
     }
 }

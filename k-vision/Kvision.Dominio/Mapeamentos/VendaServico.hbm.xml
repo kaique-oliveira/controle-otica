@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Kvision.Dominio.Entidades" assembly="Kvision.Dominio">
+
+	<class name="VendaServico" lazy="false" table="tbl_venda_servico" >
+
+		<id name="Id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		<property name="DataCadastro"		column="d_cadastro"			type="date" />
+		
+		<property name="TipoPagamento"		column="tipo_pagamento"/>
+		<property name="Total"				column="total"				type="decimal" />
+		<property name="Observacao"		    column="observacao"			type="string" />
+		<property name="Servicos"		    column="servicos"			type="string" />
+		
+	</class>
+</hibernate-mapping>

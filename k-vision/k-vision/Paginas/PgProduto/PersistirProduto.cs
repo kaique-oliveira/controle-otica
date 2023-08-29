@@ -1,13 +1,12 @@
 ﻿using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
 using Kvision.Frame.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace Kvision.Frame.Paginas.PgProduto
 {
     public partial class PersistirProduto : Form
     {
-
-
         private readonly TiposOperacoes _tiposOperacoes;
         private readonly IServicos<Produto> _servicos;
         private Produto _produto;
@@ -19,7 +18,40 @@ namespace Kvision.Frame.Paginas.PgProduto
             _servicos = servicos;
             _produto = produto ?? new Produto();
             _mainProduto = mainProduto;
+
             InitializeComponent();
+
+            this.ShowInTaskbar = false;
+            txt_valor.Text = string.Format("{0:#,##0.00}", 0d);
+        }
+
+
+        private void TextKeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (char.IsDigit(e.KeyChar) || e.KeyChar.Equals('\b'))
+            {
+                TextBox t = (TextBox)sender;
+                string w = Regex.Replace(t.Text, "[^0-9]", string.Empty);
+
+
+                if (e.KeyChar.Equals('\b'))
+                {
+                    if (w == string.Empty) w = "00";
+                    w = w.Substring(0, w.Length - 1);
+                }
+                else
+                {
+                    w += e.KeyChar;
+
+                    t.Text = string.Format("{0:#,##0.00}", Double.Parse(w) / 100);
+                    t.Select(t.Text.Length, 0);
+                    e.Handled = true;
+                }
+                return;
+            }
+            var x = e.KeyChar;
+            e.Handled = true;
         }
 
 
@@ -46,7 +78,6 @@ namespace Kvision.Frame.Paginas.PgProduto
                     _mainProduto.atualizarGrid();
                     limparCampos();
                     _mainProduto.indexlista = -1;
-                    this.Close();
                 }
             }
 
@@ -58,13 +89,10 @@ namespace Kvision.Frame.Paginas.PgProduto
                     _mainProduto.atualizarGrid();
                     limparCampos();
                     _mainProduto.indexlista = -1;
+                    _mainProduto.Opacity = 100;
                     this.Close();
                 }
             }
-
-            _mainProduto.Show();
-            this.Hide();
-
         }
 
 
@@ -85,7 +113,7 @@ namespace Kvision.Frame.Paginas.PgProduto
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _mainProduto.Show();
+            _mainProduto.Opacity = 100;
             this.Close();
         }
     }

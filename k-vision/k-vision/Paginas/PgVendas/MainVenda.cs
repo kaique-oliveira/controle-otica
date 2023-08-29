@@ -10,11 +10,11 @@ namespace Kvision.Frame.Paginas.PgVendas
 {
     public partial class MainVenda : Form
     {
-        private readonly ServicosVenda _servicosVenda;
+        private readonly ServicosVendaProduto _servicosVenda;
         private readonly ServicosCliente _servicoCliente;
         private readonly ServicosReceita _servicoReceita;
         private readonly MainFrame _mainFrame;
-        public MainVenda(ServicosVenda servicosVenda, MainFrame mainFrame)
+        public MainVenda(ServicosVendaProduto servicosVenda, MainFrame mainFrame)
         {
             _servicosVenda = servicosVenda;
             _mainFrame = mainFrame;
@@ -25,11 +25,11 @@ namespace Kvision.Frame.Paginas.PgVendas
             InitializeComponent();
         }
 
-        List<Venda> listaVendas = new List<Venda>();
+        List<VendaProduto> listaVendas = new List<VendaProduto>();
 
         Cliente _cliente = new Cliente();
         Receita _receita = new Receita();
-        Venda _venda = new Venda();
+        VendaProduto _venda = new VendaProduto();
 
         int indexlistaVenda = -1;
 

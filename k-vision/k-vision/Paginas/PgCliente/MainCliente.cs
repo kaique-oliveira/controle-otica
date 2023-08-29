@@ -1,19 +1,21 @@
-﻿using k_vision;
-using Kvision.Database.Conexao;
+﻿using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Enum;
+using Kvision.Frame.Paginas.PgExames;
 using Kvision.Frame.Servicos;
 
 namespace Kvision.Frame.Paginas.PgCliente
 {
     public partial class MainCliente : Form
     {
-        private readonly MainFrame _mainFrame;
-        public MainCliente(MainFrame mainFrame)
+        private TelaBlur _blur;
+        public MainCliente(TelaBlur blur)
         {
-            _mainFrame = mainFrame;
+            _blur = blur;
             InitializeComponent();
+
+            this.ShowInTaskbar = false;
         }
 
         ServicosCliente servicos = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
@@ -31,13 +33,13 @@ namespace Kvision.Frame.Paginas.PgCliente
             {
                 dg_clientes.DataSource = listaClientes;
                 dg_clientes.Rows[0].Cells[0].Selected = false;
-                _mainFrame.atualizarGridClientes();
             }
         }
 
         private void bnt_show_cadastrar_Click(object sender, EventArgs e)
         {
             var crud_cliente = new PersistirCliente(TiposOperacoes.Cadastrar, servicos, null, this);
+            this.Opacity = 0;
             crud_cliente.ShowDialog();
         }
         private void btn_show_editar_Click(object sender, EventArgs e)
@@ -46,6 +48,7 @@ namespace Kvision.Frame.Paginas.PgCliente
             {
                 Cliente clienteRecuperado = listaClientes[indexlista];
                 var crud_cliente = new PersistirCliente(TiposOperacoes.Editar, servicos, clienteRecuperado, this);
+                this.Opacity = 0;
                 crud_cliente.ShowDialog();
             }
             else
@@ -84,6 +87,17 @@ namespace Kvision.Frame.Paginas.PgCliente
         {
             indexlista = dg_clientes.CurrentCell.RowIndex;
             cliente = listaClientes[indexlista];
+
+            txt_cep.Text = cliente.Cep;
+            txt_logradouro.Text = cliente.Logradouro;
+            txt_numero.Text = cliente.NumeroCasa.ToString();
+            txt_bairro.Text = cliente.Bairro;
+            txt_localidade.Text = cliente.Localidade;
+            txt_complemento.Text = cliente.Complemento;
+
+            btn_deletar.Enabled = true;
+            btn_show_editar.Enabled = true;
+            btn_show_receitas.Enabled = true;
         }
 
 
@@ -94,7 +108,15 @@ namespace Kvision.Frame.Paginas.PgCliente
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
+            _blur.Close();
             this.Close();
+        }
+
+        private void btn_show_receitas_Click(object sender, EventArgs e)
+        {
+            var pgReceita = new MainReceita(cliente, this);
+            this.Opacity = 0;
+            pgReceita.ShowDialog();
         }
     }
 }

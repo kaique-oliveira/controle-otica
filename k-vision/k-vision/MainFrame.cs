@@ -3,9 +3,7 @@ using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.Enums;
 using Kvision.Dominio.ViewModel;
-using Kvision.Frame.Paginas.PgCliente;
-using Kvision.Frame.Paginas.PgExames;
-using Kvision.Frame.Paginas.PgProduto;
+using Kvision.Frame.Paginas;
 using Kvision.Frame.Paginas.PgVendas;
 using Kvision.Frame.Servicos;
 using System.Text.Json;
@@ -18,305 +16,357 @@ namespace k_vision
         public MainFrame()
         {
             InitializeComponent();
+            this.ShowInTaskbar = false;
         }
 
-
+        ServicosServico servicosServico = new ServicosServico(new CrudServico(new ConexaoDatabase()));
         ServicosCliente servicosCliente = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
-        ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
         ServicosProduto servicosProduto = new ServicosProduto(new CrudProduto(new ConexaoDatabase()));
-        ServicosVenda servicosVenda = new ServicosVenda(new CrudVenda(new ConexaoDatabase()));
-
-        List<Cliente> listaClientes = new List<Cliente>();
-        List<Receita> listaReceitas = new List<Receita>();
-        List<Produto> listaProdutos = new List<Produto>();
-        List<Adicional> listaAdicional = new List<Adicional>();
-        List<ItemProduto> listaItemProduto = new List<ItemProduto>();
-
-        private int indexlistaCliente = -1, indexlistaReceita = -1, indexlistaProduto = -1;
-
-        Cliente _cliente = new Cliente();
-        Produto _produto = new Produto();
-        Receita _receita = new Receita();
-        Adicional _adiconal = new Adicional();
-        Venda _venda = new Venda();
+        ServicosVendaProduto servicosVenda = new ServicosVendaProduto(new CrudVendaProduto(new ConexaoDatabase()));
 
         private decimal valorTotal = 0;
+        Receita _receita_selecionada;
+
+        Servico _servico = new Servico();
+
+        List<ItemProduto> produtosSelecionados = new List<ItemProduto>();
+        List<Adicional> listaAdicional = new List<Adicional>();
+        List<Servico> listaServico = new List<Servico>();
+        private TiposPagamento tipoPagamento_produto, tipoPagamento_servico;
 
 
-        public void atualizarGridReceitas()
+
+
+        public void confirmarSelecaoReceita(Receita receita)
         {
-            dg_receitas.AutoGenerateColumns = false;
-            listaReceitas = servicosReceita.ConsultarTodos().FindAll(r => r.Cliente.Id == _cliente.Id).OrderByDescending(c => c.DataCadastro).ToList();
+            _receita_selecionada = new Receita();
+            _receita_selecionada = receita;
 
-            if (listaReceitas.Count > 0)
+            lblClienteVenda.Text = receita.Cliente.Nome;
+            lblReceitaVenda.Text = $"{receita.NomeExaminador} -  data: {receita.DataCadastro.ToShortDateString()} | val: {receita.DataValExame.ToShortDateString()}";
+
+            painel_pagamentos.Visible = true;
+        }
+        public void confirmarSelecaoProduto(Produto _produto)
+        {
+            if (produtosSelecionados.Count != 0 && produtosSelecionados.Where(p => p.Id == _produto.Id).Count() != 0)
             {
-                dg_receitas.DataSource = listaReceitas;
-
-                dg_receitas.ClearSelection();
-                dg_receitas.Enabled = true;
-                btn_gerenciar_receitas.Enabled = true;
-                indexlistaReceita = -1;
+                produtosSelecionados.Find(p => p.Id == _produto.Id).Quantidade += 1;
+                produtosSelecionados.Find(p => p.Id == _produto.Id).Valor += _produto.Valor;
             }
             else
             {
-                dg_receitas.DataSource = null;
+                ItemProduto _itemProduto = new ItemProduto();
+                _itemProduto.Id = _produto.Id;
+                _itemProduto.Nome = _produto.Nome;
+                _itemProduto.Valor = _produto.Valor;
+                _itemProduto.Quantidade = 1;
+
+                produtosSelecionados.Add(_itemProduto);
             }
-        }
-        public void atualizarGridProduto()
-        {
-            indexlistaProduto = -1;
-            dg_produtos.AutoGenerateColumns = false;
-            listaProdutos = servicosProduto.ConsultarTodos().OrderBy(p => p.Nome).ToList();
 
-            if (listaProdutos.Count > 0)
-            {
-                dg_produtos.DataSource = listaProdutos;
-                dg_produtos.Rows[0].Cells[0].Selected = false;
-            }
-        }
-        public void atualizarGridClientes()
-        {
-            indexlistaCliente = -1;
-            dg_clientes.AutoGenerateColumns = false;
-            listaClientes = servicosCliente.ConsultarTodos().OrderBy(c => c.Nome).ToList();
-
-            if (listaClientes.Count > 0)
-            {
-                dg_clientes.DataSource = listaClientes;
-                dg_clientes.Rows[0].Cells[0].Selected = false;
-            }
-        }
-
-
-
-        public void limparVendaToda()
-        {
             listViewProdutos.Items.Clear();
-            listaItemProduto.Clear();
-            listaAdicional.Clear();
-            valorTotal = 0;
-            lbl_valor_total.Text = $"R$ 0,00";
-            lblClienteVenda.Text = "";
-            lblReceita_selecionada.Text = "";
-            dg_clientes.ClearSelection();
-            dg_receitas.ClearSelection();
-            dg_receitas.DataSource = null;
-            cbo_tipo_pagamento.SelectedIndex = -1;
-            indexlistaCliente = -1;
-            indexlistaReceita = -1;
-            indexlistaProduto = -1;
-        }
 
-        private void MainFrame_Shown(object sender, EventArgs e)
-        {
-            atualizarGridClientes();
-            atualizarGridProduto();
-
-            lbl_valor_total.Text = $"R$ 0,00";
-
-            cbo_tipo_pagamento.Items.Add(TiposPagamento.Cartão);
-            cbo_tipo_pagamento.Items.Add(TiposPagamento.Dinheiro);
-            cbo_tipo_pagamento.Items.Add(TiposPagamento.Pix);
-        }
-
-
-
-        private void txt_filtro_cliente_TextChanged(object sender, EventArgs e)
-        {
-            dg_clientes.DataSource = listaClientes.FindAll(x => x.Nome.ToUpperInvariant().Contains(txt_filtro_cliente.Text.ToUpperInvariant())
-               || x.Telefone.Contains(txt_filtro_cliente.Text));
-            indexlistaCliente = -1;
-        }
-
-        private void txt_filtro_produto_TextChanged(object sender, EventArgs e)
-        {
-            dg_produtos.DataSource = listaProdutos.FindAll(p => p.Nome.ToUpperInvariant().Contains(txt_filtro_produto.Text.ToUpperInvariant()));
-        }
-
-
-        private void btn_gerenciar_clientes_Click(object sender, EventArgs e)
-        {
-            var f_cliente = new MainCliente(this);
-            f_cliente.ShowDialog();
-        }
-
-        private void btn_gerenciar_receitas_Click(object sender, EventArgs e)
-        {
-            if (indexlistaCliente > -1)
+            foreach (var item in produtosSelecionados)
             {
-                var mainExames = new MainReceita(_cliente, this);
-                mainExames.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
-            }
-        }
+                ListViewItem itemList = new ListViewItem($"{item.Quantidade} - {item.Nome}");
+                itemList.SubItems.Add($"R$ {item.Valor}");
 
-        private void btn_gerenciar_produto_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var f_produto = new MainProduto(this);
-            f_produto.ShowDialog();
-        }
-
-        private void btn_gerenciar_vendas_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            var f_venda = new MainVenda(servicosVenda, this);
-            f_venda.ShowDialog();
-        }
-
-
-        private void dg_clientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexlistaCliente = dg_clientes.CurrentCell.RowIndex;
-            _cliente = listaClientes[indexlistaCliente];
-            lblClienteVenda.Text = $"{_cliente.Nome}";
-            atualizarGridReceitas();
-        }
-
-        private void dg_receitas_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexlistaReceita = dg_receitas.CurrentCell.RowIndex;
-            _receita = listaReceitas[indexlistaReceita];
-            lblReceita_selecionada.Text = $"{_receita.DataCadastro.ToShortDateString()} - {_receita.NomeExaminador}";
-        }
-
-        private void dg_produtos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            indexlistaProduto = dg_produtos.CurrentCell.RowIndex;
-        }
-
-
-
-        private void btn_add_adicional_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txt_descricao_adiconal.Text) && !string.IsNullOrEmpty(txt_valor_adicional.Text))
-            {
-                ListViewItem itemList = new ListViewItem($"1 - {txt_descricao_adiconal.Text}");
-                itemList.SubItems.Add($"R$ {decimal.Parse(txt_valor_adicional.Text.Replace(".", ","))}");
                 listViewProdutos.Items.Add(itemList);
-
-                _adiconal = new Adicional()
-                {
-                    Descricao = txt_descricao_adiconal.Text,
-                    Valor = decimal.Parse(txt_valor_adicional.Text.Replace(".", ","))
-                };
-
-
-                listaAdicional.Add(_adiconal);
-
-
-                valorTotal += decimal.Parse(txt_valor_adicional.Text.Replace(".", ","));
-                lbl_valor_total.Text = $"R$ {valorTotal}";
-
-                txt_descricao_adiconal.Clear();
-                txt_valor_adicional.Clear();
             }
-            else
+
+            bnt_finalizar_venda.Visible = true;
+            painel_observacao.Visible = true;
+            valorTotal += _produto.Valor;
+            txt_total_produto.Text = $"R$ {valorTotal}";
+
+        }
+        public void confirmarAdicional(Adicional adicional)
+        {
+            listaAdicional.Add(adicional);
+            valorTotal += adicional.Valor;
+            txt_total_produto.Text = $"R$ {valorTotal}";
+
+            listViewAdicionais.Items.Clear();
+            foreach (var item in listaAdicional)
             {
-                MessageBox.Show("Preencha todos os campos!", "Atenção");
+                ListViewItem itemList = new ListViewItem($"1 - {item.Descricao}");
+                itemList.SubItems.Add($"R$ {item.Valor}");
+
+                listViewAdicionais.Items.Add(itemList);
             }
+        }
+        public void limparVendaProduto()
+        {
+            valorTotal = 0;
+            produtosSelecionados.Clear();
+            listaAdicional.Clear();
+
+            listViewProdutos.Items.Clear();
+            listViewAdicionais.Items.Clear();
+            txt_observacao_produto.Text = "";
+
+            rb_dinheiro_produto.Checked = false;
+            rb_pix_produto.Checked = false;
+            rb_debito_produto.Checked = false;
+            rb_credito_produto.Checked = false;
+
+            lblClienteVenda.Text = "Nome do cliente";
+            lblReceitaVenda.Text = "Receita do cliente";
+            txt_total_produto.Text = $"R$ 0,00";
+
+            painel_pagamentos.Visible = false;
+            painel_produtos.Visible = false;
+            painel_observacao.Visible = false;
+        }
+
+
+
+
+
+        private void btn_show_select_cliente_Click(object sender, EventArgs e)
+        {
+            TelaBlur t = new TelaBlur(this, "selecionar-cliente");
+            t.ShowDialog();
+
+        }
+
+        private void rb_dinheiro_produto_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_produto = TiposPagamento.Dinheiro;
+                painel_produtos.Visible = true;
+            }
+        }
+
+        private void rb_pix_produto_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_produto = TiposPagamento.Pix;
+                painel_produtos.Visible = true;
+            }
+        }
+
+        private void rb_debito_produto_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_produto = TiposPagamento.Debito;
+                painel_produtos.Visible = true;
+            }
+        }
+
+        private void rb_credito_produto_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_produto = TiposPagamento.Credito;
+                painel_produtos.Visible = true;
+            }
+        }
+
+
+
+        private void btn_show_select_produto_Click(object sender, EventArgs e)
+        {
+            TelaBlur t = new TelaBlur(this, "selecionar-produto");
+            t.ShowDialog();
+        }
+
+        private void btn_show_add_adicional_Click(object sender, EventArgs e)
+        {
+            TelaBlur t = new TelaBlur(this, "selecionar-adicional");
+            t.ShowDialog();
         }
 
         private void bnt_finalizar_venda_Click(object sender, EventArgs e)
         {
-            switch (cbo_tipo_pagamento.SelectedItem.ToString())
+            var newVenda = new VendaProduto()
             {
-                case "Cartão":
-                    _venda.TipoPagamento = TiposPagamento.Cartão;
-                    break;
-                case "Dinheiro":
-                    _venda.TipoPagamento = TiposPagamento.Dinheiro;
-                    break;
-                case "Pix":
-                    _venda.TipoPagamento = TiposPagamento.Pix;
-                    break;
-            }
+                Receita = _receita_selecionada,
+                Cliente = _receita_selecionada.Cliente,
+                Produtos = JsonSerializer.Serialize<List<ItemProduto>>(produtosSelecionados),
+                Adicionais = JsonSerializer.Serialize<List<Adicional>>(listaAdicional),
+                TipoPagamento = tipoPagamento_produto,
+                Observacao = txt_observacao_produto.Text,
+                Total = valorTotal
+            };
 
-            _venda.Total = valorTotal;
-            _venda.Cliente = _cliente;
-            _venda.Receita = _receita;
-            _venda.Produtos = JsonSerializer.Serialize<List<ItemProduto>>(listaItemProduto);
-            _venda.Adicionais = JsonSerializer.Serialize<List<Adicional>>(listaAdicional);
 
-            MessageBox.Show(servicosVenda.AjustarSaldo(_venda, servicosProduto), "Atenção");
+            string response = servicosVenda.AjustarSaldo(newVenda, servicosProduto);
 
-            limparVendaToda();
-            atualizarGridProduto();
-            btn_gerenciar_receitas.Enabled = false;
-        }
-
-        private void btn_cancelar_venda_Click(object sender, EventArgs e)
-        {
-            limparVendaToda();
-        }
-
-        private void btn_add_produto_lista_Click(object sender, EventArgs e)
-        {
-            if (indexlistaProduto != -1)
+            if (response == "Venda finalizada!")
             {
-                _produto = listaProdutos[indexlistaProduto];
-
-
-                if (listaItemProduto.Count != 0 && listaItemProduto.Where(p => p.Id == _produto.Id).Count() != 0)
+                var result = MessageBox.Show($"Venda do produto finaliza!", "Tudo certo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    listaItemProduto.Find(p => p.Id == _produto.Id).Quantidade += 1;
-                    listaItemProduto.Find(p => p.Id == _produto.Id).Valor += _produto.Valor;
+                    limparVendaProduto();
                 }
-                else
-                {
-                    ItemProduto _itemProduto = new ItemProduto();
-                    _itemProduto.Id = _produto.Id;
-                    _itemProduto.Nome = _produto.Nome;
-                    _itemProduto.Valor = _produto.Valor;
-                    _itemProduto.Quantidade = 1;
-
-                    listaItemProduto.Add(_itemProduto);
-                }
-
-
-                listViewProdutos.Items.Clear();
-
-                foreach (var item in listaItemProduto)
-                {
-                    ListViewItem itemList = new ListViewItem($"{item.Quantidade} - {item.Nome}");
-                    itemList.SubItems.Add($"R$ {item.Valor}");
-
-                    listViewProdutos.Items.Add(itemList);
-                }
-
-                if (listaAdicional.Count > 0)
-                {
-                    foreach (var item in listaAdicional)
-                    {
-                        ListViewItem itemList = new ListViewItem($"1 - {item.Descricao}");
-                        itemList.SubItems.Add($"R$ {item.Valor}");
-
-                        listViewProdutos.Items.Add(itemList);
-                    }
-                }
-
-                valorTotal += _produto.Valor;
-                lbl_valor_total.Text = $"R$ {valorTotal}";
-
-                dg_produtos.ClearSelection();
             }
             else
             {
-                MessageBox.Show("Selecione um produto!", "Atenção");
+                MessageBox.Show($"Algo deu errado", "Ops", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }
 
-        private void btn_limpar_produtos_Click(object sender, EventArgs e)
+
+        private void bnt_show_clientes_Click(object sender, EventArgs e)
         {
-            listViewProdutos.Items.Clear();
-            listaItemProduto.Clear();
-            listaAdicional.Clear();
-            valorTotal = 0;
-            lbl_valor_total.Text = $"R$ 0,00";
+            TelaBlur t = new TelaBlur(this, "cliente");
+            t.ShowDialog();
         }
 
+        private void btn_show_prods_Click(object sender, EventArgs e)
+        {
+            TelaBlur t = new TelaBlur(this, "produto");
+            t.ShowDialog();
+        }
+
+        private void btn_show_vendas_Click(object sender, EventArgs e)
+        {
+            var pgVendas = new MainVenda(servicosVenda, this);
+            pgVendas.ShowDialog();
+        }
+
+        private void btn_show_servicos_Click(object sender, EventArgs e)
+        {
+            TelaBlur t = new TelaBlur(this, "servico");
+            t.ShowDialog();
+        }
+
+
+
+        ServicosVendaServico servicosVendaServico = new ServicosVendaServico(new CrudVendaServico(new ConexaoDatabase()));
+        public decimal valor_total_servico = 0;
+
+        public void confirmarServico(Servico servico, string quant)
+        {
+            listaServico.Add(servico);
+
+            listViewServicos.Items.Clear();
+            foreach (var item in listaServico)
+            {
+                ListViewItem itemList = new ListViewItem($"{quant} - {item.Nome}");
+                itemList.SubItems.Add($"R$ {item.Valor}");
+
+                listViewServicos.Items.Add(itemList);
+            }
+
+            painel_pagamento_servico.Visible = true;
+            txt_total_servico.Text = $"R$ {valor_total_servico}";
+        }
+
+        public void limparVendaServico()
+        {
+            txt_observacao_servico.Text = "";
+            txt_total_servico.Text = $"R$ 0,00";
+            listaServico.Clear();
+            listViewServicos.Items.Clear();
+
+            rb_dinheiro_servico.Checked = false;
+            rb_pix_servico.Checked = false;
+            rb_debito_servico.Checked = false;
+            rb_credito_servico.Checked = false;
+
+            painel_observacao_servico.Visible = false;
+            btn_finalizar_servico.Visible = false;
+            painel_pagamento_servico.Visible = false;
+        }
+
+        private void rb_dinheiro_servico_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_servico = TiposPagamento.Dinheiro;
+                painel_observacao_servico.Visible = true;
+                btn_finalizar_servico.Visible = true;
+            }
+        }
+
+        private void rb_pix_servico_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_servico = TiposPagamento.Pix;
+                painel_observacao_servico.Visible = true;
+                btn_finalizar_servico.Visible = true; ;
+            }
+        }
+
+        private void rb_debito_servico_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_servico = TiposPagamento.Debito;
+                painel_observacao_servico.Visible = true;
+                btn_finalizar_servico.Visible = true;
+            }
+        }
+
+        private void rb_credito_servico_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+
+            if (rb.Checked)
+            {
+                tipoPagamento_servico = TiposPagamento.Credito;
+                painel_observacao_servico.Visible = true;
+                btn_finalizar_servico.Visible = true;
+            }
+        }
+
+        private void btn_finalizar_servico_Click(object sender, EventArgs e)
+        {
+            var newVendaServico = new VendaServico()
+            {
+                TipoPagamento = tipoPagamento_servico,
+                Observacao = txt_observacao_servico.Text,
+                Servicos = JsonSerializer.Serialize<List<Servico>>(listaServico),
+                Total = decimal.Parse(string.Format("{0:#,##0.00}", valor_total_servico))
+            };
+
+            var response = servicosVendaServico.Cadastrar(newVendaServico);
+
+            if (response == "Venda finalizada!")
+            {
+                var result = MessageBox.Show($"Venda do serviço finaliza!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (result == DialogResult.OK)
+                {
+                    limparVendaServico();
+                }
+            }
+            else
+            {
+                MessageBox.Show($"Algo deu errado", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btn_show_add_servico_Click(object sender, EventArgs e)
+        {
+            TelaBlur t = new TelaBlur(this, "selecionar-servico");
+            t.ShowDialog();
+        }
+
+        private void MainFrame_Load(object sender, EventArgs e)
+        {
+            var pg_splash = new Splash(this);
+            pg_splash.ShowDialog();
+        }
     }
 }

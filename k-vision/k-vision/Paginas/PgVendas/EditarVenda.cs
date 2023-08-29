@@ -11,8 +11,8 @@ namespace Kvision.Frame.Paginas.PgVendas
     public partial class EditarVenda : Form
     {
         private readonly MainVenda _mainVenda;
-        private Venda _vendaParaEditar;
-        public EditarVenda(MainVenda mainVenda, Venda venda)
+        private VendaProduto _vendaParaEditar;
+        public EditarVenda(MainVenda mainVenda, VendaProduto venda)
         {
             _mainVenda = mainVenda;
             _vendaParaEditar = venda;
@@ -23,7 +23,7 @@ namespace Kvision.Frame.Paginas.PgVendas
         ServicosCliente servicosCliente = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
         ServicosReceita servicosReceita = new ServicosReceita(new CrudReceita(new ConexaoDatabase()));
         ServicosProduto servicosProduto = new ServicosProduto(new CrudProduto(new ConexaoDatabase()));
-        ServicosVenda servicosVenda = new ServicosVenda(new CrudVenda(new ConexaoDatabase()));
+        ServicosVendaProduto servicosVenda = new ServicosVendaProduto(new CrudVendaProduto(new ConexaoDatabase()));
 
         List<Cliente> listaClientes = new List<Cliente>();
         List<Receita> listaReceitas = new List<Receita>();
@@ -37,7 +37,7 @@ namespace Kvision.Frame.Paginas.PgVendas
         Produto _produto = new Produto();
         Receita _receita = new Receita();
         Adicional _adiconal = new Adicional();
-        Venda _venda = new Venda();
+        VendaProduto _venda = new VendaProduto();
 
         private decimal valorTotal = 0;
 
@@ -108,9 +108,9 @@ namespace Kvision.Frame.Paginas.PgVendas
             atualizarGridClientes();
             atualizarGridProduto();
 
-            cbo_tipo_pagamento.Items.Add(TiposPagamento.Cartão);
-            cbo_tipo_pagamento.Items.Add(TiposPagamento.Dinheiro);
-            cbo_tipo_pagamento.Items.Add(TiposPagamento.Pix);
+            //cbo_tipo_pagamento.Items.Add(TiposPagamento.Cartão);
+            //cbo_tipo_pagamento.Items.Add(TiposPagamento.Dinheiro);
+            //cbo_tipo_pagamento.Items.Add(TiposPagamento.Pix);
 
             _cliente = _vendaParaEditar.Cliente;
             _receita = _vendaParaEditar.Receita;
@@ -294,7 +294,7 @@ namespace Kvision.Frame.Paginas.PgVendas
             switch (cbo_tipo_pagamento.SelectedItem.ToString())
             {
                 case "Cartão":
-                    _venda.TipoPagamento = TiposPagamento.Cartão;
+                    //_venda.TipoPagamento = TiposPagamento.Cartão;
                     break;
                 case "Dinheiro":
                     _venda.TipoPagamento = TiposPagamento.Dinheiro;

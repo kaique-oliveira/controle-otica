@@ -66,24 +66,6 @@
   <metadata name="dataCadastro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="cep.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="logradouro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="numeroCasa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bairro.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="localidade.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="complemento.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -103,6 +85,18 @@
         haGlXGVhZ7ojY1g0jUTpbLWm+SCeIj3gyCgtbPb+s8yKKIgrzb5pwZd1qZAZXOUmX+8ciPY8z3Aqc2tO
         9IEvBTccjq2ooUZNTO+csomdrr3rPos/bTxAvFbnPUNSvt14aINRVvYbNcI0Jg8bTtEAAAAASUVORK5C
         YII=
+</value>
+  </data>
+  <data name="btn_show_receitas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAWxJREFUSEtjIBaklU+wSavoXwrC6ZV91lBh0sCZuVGrzs6PPgnDO6anXCqvb/1S
+        3tD6Nauq53J9fT1TaOgqZhAbJAaSA6lB1gMyA2ocJri4OO7B10Nl/2H4xubq/2mV/WCcVdX9Prlkgl5K
+        Vb9BdlXPe5g4SA2yHpAZUOMwAcyC7xen//95a+3/eyeWwy0A4fz6Cb/y6ib+Qha7d3IFWC1ID9EW/H5+
+        8j8I/P379/+C1Tv/t05ZihUvWLMLrAYEQHpItoAUMLgtuJSR8f/bo0dQ3v//+46f/79252EwBrFBgCIL
+        jjs7//9y8yaUhx2QZQHI5SDDkTEIXLn14P/Ji9fBGMQGAbIsAAULyOUgg1/v3g33xau37/8/efEajEFs
+        ECDLAhgAWUCTIMIFqB7JxACyLEB2KS48uH2AnFpwYYpSEXJ6x4UpygekgMFlAazCIQWTVOFQgvFacGpe
+        5OpzC2POU4JBZkCNowdgYAAABpozpdU7fkAAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btn_deletar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
