@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+
+using k_vision;
+using Kvision.Frame.Paginas.PgVendaServico;
 
 namespace Kvision.Frame.Paginas
 {
-    public partial class Mensagem : Form
+    public partial class Mensagem: Form
     {
-        private readonly string _titulo;
-        private readonly string _texto;
-        private readonly bool _tipo; 
-        public Mensagem(string titulo, string texto, bool tipo)
+
+ 
+        private MainFrame? mainFrame;
+        private AddServico? addServico;
+        public Mensagem(MainFrame main, AddServico add)
         {
-            _titulo = titulo;
-            _texto = texto;
-            _tipo = tipo;
+            mainFrame = main;
+            addServico = add;
             InitializeComponent(); 
         }
 
+
+
         private void Mensagem_Load(object sender, EventArgs e)
         {
-            lbl_titulo.ForeColor = _tipo == true ? Color.RoyalBlue : Color.Orange;
-            lbl_titulo.Text = _titulo;
-            lbl_texto.Text = _texto;
+            var dd = mainFrame;
+            var tt = addServico;
         }
 
         private void btn_ok_Click(object sender, EventArgs e)

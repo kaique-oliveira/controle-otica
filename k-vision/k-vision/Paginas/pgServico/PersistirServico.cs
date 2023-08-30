@@ -97,8 +97,8 @@ namespace Kvision.Frame.Paginas.pgServico
             }
             else
             {
-                var mensagem = new Mensagem("Ops", "Por favor, preencha o campo nome, para continuar!", false);
-                mensagem.ShowDialog();
+                MessageBox.Show("Por favor, preencha o campo nome, para continuar!", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 

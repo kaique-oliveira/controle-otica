@@ -5,6 +5,7 @@ using Kvision.Dominio.Enums;
 using Kvision.Dominio.ViewModel;
 using Kvision.Frame.Paginas;
 using Kvision.Frame.Paginas.PgVendas;
+using Kvision.Frame.Paginas.PgVendaServico;
 using Kvision.Frame.Servicos;
 using System.Text.Json;
 
@@ -19,10 +20,10 @@ namespace k_vision
             this.ShowInTaskbar = false;
         }
 
-        ServicosServico servicosServico = new ServicosServico(new CrudServico(new ConexaoDatabase()));
-        ServicosCliente servicosCliente = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
+        //ServicosServico servicosServico = new ServicosServico(new CrudServico(new ConexaoDatabase()));
+        //ServicosCliente servicosCliente = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
         ServicosProduto servicosProduto = new ServicosProduto(new CrudProduto(new ConexaoDatabase()));
-        ServicosVendaProduto servicosVenda = new ServicosVendaProduto(new CrudVendaProduto(new ConexaoDatabase()));
+        ServicosVendaProduto servicosVendaProduto = new ServicosVendaProduto(new CrudVendaProduto(new ConexaoDatabase()));
 
         private decimal valorTotal = 0;
         Receita _receita_selecionada;
@@ -128,7 +129,6 @@ namespace k_vision
         {
             TelaBlur t = new TelaBlur(this, "selecionar-cliente");
             t.ShowDialog();
-
         }
 
         private void rb_dinheiro_produto_CheckedChanged(object sender, EventArgs e)
@@ -203,7 +203,7 @@ namespace k_vision
             };
 
 
-            string response = servicosVenda.AjustarSaldo(newVenda, servicosProduto);
+            string response = servicosVendaProduto.AjustarSaldo(newVenda, servicosProduto);
 
             if (response == "Venda finalizada!")
             {
@@ -232,10 +232,10 @@ namespace k_vision
             t.ShowDialog();
         }
 
-        private void btn_show_vendas_Click(object sender, EventArgs e)
+        private void btn_show_caixa_Click(object sender, EventArgs e)
         {
-            var pgVendas = new MainVenda(servicosVenda, this);
-            pgVendas.ShowDialog();
+            TelaBlur t = new TelaBlur(this, "caixa");
+            t.ShowDialog();
         }
 
         private void btn_show_servicos_Click(object sender, EventArgs e)
@@ -368,5 +368,7 @@ namespace k_vision
             var pg_splash = new Splash(this);
             pg_splash.ShowDialog();
         }
+
+
     }
 }

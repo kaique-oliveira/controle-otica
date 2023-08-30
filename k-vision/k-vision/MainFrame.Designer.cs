@@ -44,7 +44,7 @@
             panel1 = new Panel();
             btn_show_prods = new Button();
             btn_show_servicos = new Button();
-            btn_show_vendas = new Button();
+            btn_show_caixa = new Button();
             label1 = new Label();
             bnt_show_clientes = new Button();
             panel2 = new Panel();
@@ -144,7 +144,7 @@
             bnt_finalizar_venda.ForeColor = Color.FromArgb(64, 64, 64);
             bnt_finalizar_venda.Image = (Image)resources.GetObject("bnt_finalizar_venda.Image");
             bnt_finalizar_venda.ImageAlign = ContentAlignment.MiddleLeft;
-            bnt_finalizar_venda.Location = new Point(303, 639);
+            bnt_finalizar_venda.Location = new Point(303, 635);
             bnt_finalizar_venda.Name = "bnt_finalizar_venda";
             bnt_finalizar_venda.Size = new Size(108, 29);
             bnt_finalizar_venda.TabIndex = 24;
@@ -182,7 +182,7 @@
             btn_show_select_cliente.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_select_cliente.Image = (Image)resources.GetObject("btn_show_select_cliente.Image");
             btn_show_select_cliente.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_select_cliente.Location = new Point(280, 83);
+            btn_show_select_cliente.Location = new Point(280, 82);
             btn_show_select_cliente.Name = "btn_show_select_cliente";
             btn_show_select_cliente.Size = new Size(114, 28);
             btn_show_select_cliente.TabIndex = 23;
@@ -298,10 +298,10 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panel1.BackColor = Color.FromArgb(224, 224, 224);
+            panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(btn_show_prods);
             panel1.Controls.Add(btn_show_servicos);
-            panel1.Controls.Add(btn_show_vendas);
+            panel1.Controls.Add(btn_show_caixa);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(bnt_show_clientes);
@@ -350,25 +350,25 @@
             btn_show_servicos.UseVisualStyleBackColor = false;
             btn_show_servicos.Click += btn_show_servicos_Click;
             // 
-            // btn_show_vendas
+            // btn_show_caixa
             // 
-            btn_show_vendas.BackColor = SystemColors.ControlLight;
-            btn_show_vendas.BackgroundImageLayout = ImageLayout.Stretch;
-            btn_show_vendas.Cursor = Cursors.Hand;
-            btn_show_vendas.FlatAppearance.BorderColor = Color.Gray;
-            btn_show_vendas.FlatStyle = FlatStyle.Flat;
-            btn_show_vendas.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_show_vendas.ForeColor = Color.FromArgb(64, 64, 64);
-            btn_show_vendas.Image = (Image)resources.GetObject("btn_show_vendas.Image");
-            btn_show_vendas.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_vendas.Location = new Point(7, 389);
-            btn_show_vendas.Name = "btn_show_vendas";
-            btn_show_vendas.Size = new Size(112, 33);
-            btn_show_vendas.TabIndex = 15;
-            btn_show_vendas.Text = "Vendas";
-            btn_show_vendas.TextAlign = ContentAlignment.MiddleRight;
-            btn_show_vendas.UseVisualStyleBackColor = false;
-            btn_show_vendas.Click += btn_show_vendas_Click;
+            btn_show_caixa.BackColor = SystemColors.ControlLight;
+            btn_show_caixa.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_show_caixa.Cursor = Cursors.Hand;
+            btn_show_caixa.FlatAppearance.BorderColor = Color.Gray;
+            btn_show_caixa.FlatStyle = FlatStyle.Flat;
+            btn_show_caixa.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_show_caixa.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_show_caixa.Image = (Image)resources.GetObject("btn_show_caixa.Image");
+            btn_show_caixa.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_show_caixa.Location = new Point(7, 389);
+            btn_show_caixa.Name = "btn_show_caixa";
+            btn_show_caixa.Size = new Size(112, 33);
+            btn_show_caixa.TabIndex = 15;
+            btn_show_caixa.Text = "Caixa";
+            btn_show_caixa.TextAlign = ContentAlignment.MiddleRight;
+            btn_show_caixa.UseVisualStyleBackColor = false;
+            btn_show_caixa.Click += btn_show_caixa_Click;
             // 
             // label1
             // 
@@ -405,7 +405,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panel2.BackColor = Color.FromArgb(250, 250, 250);
+            panel2.BackColor = Color.LightGray;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(panel14);
             panel2.Controls.Add(label5);
@@ -656,8 +656,8 @@
             // 
             // listViewAdicionais
             // 
-            listViewAdicionais.BackColor = Color.FromArgb(239, 239, 239);
-            listViewAdicionais.BorderStyle = BorderStyle.None;
+            listViewAdicionais.BackColor = Color.FromArgb(229, 229, 229);
+            listViewAdicionais.BorderStyle = BorderStyle.FixedSingle;
             listViewAdicionais.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6 });
             listViewAdicionais.Font = new Font("Century", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             listViewAdicionais.ForeColor = Color.FromArgb(64, 64, 64);
@@ -683,8 +683,8 @@
             // 
             // listViewProdutos
             // 
-            listViewProdutos.BackColor = Color.FromArgb(239, 239, 239);
-            listViewProdutos.BorderStyle = BorderStyle.None;
+            listViewProdutos.BackColor = Color.FromArgb(229, 229, 229);
+            listViewProdutos.BorderStyle = BorderStyle.FixedSingle;
             listViewProdutos.Columns.AddRange(new ColumnHeader[] { columnHeader3, columnHeader4 });
             listViewProdutos.Font = new Font("Century", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             listViewProdutos.ForeColor = Color.FromArgb(64, 64, 64);
@@ -749,7 +749,7 @@
             lblReceitaVenda.AutoSize = true;
             lblReceitaVenda.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblReceitaVenda.ForeColor = Color.FromArgb(64, 64, 64);
-            lblReceitaVenda.Location = new Point(72, 60);
+            lblReceitaVenda.Location = new Point(72, 57);
             lblReceitaVenda.Name = "lblReceitaVenda";
             lblReceitaVenda.Size = new Size(66, 20);
             lblReceitaVenda.TabIndex = 24;
@@ -760,7 +760,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 11F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.DimGray;
-            label3.Location = new Point(5, 60);
+            label3.Location = new Point(5, 57);
             label3.Name = "label3";
             label3.Size = new Size(69, 18);
             label3.TabIndex = 3;
@@ -780,7 +780,7 @@
             // panel4
             // 
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            panel4.BackColor = Color.FromArgb(250, 250, 250);
+            panel4.BackColor = Color.LightGray;
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(panel11);
             panel4.Controls.Add(btn_finalizar_servico);
@@ -972,7 +972,7 @@
             // 
             // listViewServicos
             // 
-            listViewServicos.BackColor = Color.FromArgb(239, 239, 239);
+            listViewServicos.BackColor = Color.FromArgb(229, 229, 229);
             listViewServicos.BorderStyle = BorderStyle.None;
             listViewServicos.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
             listViewServicos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -1031,7 +1031,7 @@
             // 
             // MainFrame
             // 
-            BackColor = Color.White;
+            BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(1224, 687);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -1101,7 +1101,7 @@
         private Button btn_show_servicos;
         private Label label1;
         private Button bnt_show_clientes;
-        private Button btn_show_vendas;
+        private Button btn_show_caixa;
         private Panel panel2;
         private Panel panel3;
         private Label lblReceitaVenda;

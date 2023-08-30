@@ -1,8 +1,10 @@
 ﻿using k_vision;
+using Kvision.Database.Conexao;
 using Kvision.Database.Interfaces;
+using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.ViewModel;
-using Kvision.Frame.Interfaces;
+using Kvision.Frame.Paginas.PgCaixa;
 using Kvision.Frame.Servicos;
 using System.Text.Json;
 
@@ -10,58 +12,81 @@ namespace Kvision.Frame.Paginas.PgVendas
 {
     public partial class MainVenda : Form
     {
-        private readonly ServicosVendaProduto _servicosVenda;
-        private readonly ServicosCliente _servicoCliente;
-        private readonly ServicosReceita _servicoReceita;
-        private readonly MainFrame _mainFrame;
-        public MainVenda(ServicosVendaProduto servicosVenda, MainFrame mainFrame)
-        {
-            _servicosVenda = servicosVenda;
-            _mainFrame = mainFrame;
-            //_servicoCliente = servicoCliente;
-            //_servicoReceita = servicosReceita;
-            //, ServicosCliente servicoCliente, ServicosReceita servicosReceita
 
+        private MainCaixa _mianCaixa;
+        private TelaBlur _telaBlur;
+        public MainVenda(MainCaixa mainCaixa, TelaBlur telaBlur)
+        {
+            _mianCaixa = mainCaixa;
             InitializeComponent();
+
+            this.ShowInTaskbar = false;
+            _telaBlur = telaBlur;
         }
 
-        List<VendaProduto> listaVendas = new List<VendaProduto>();
+
+        ServicosVendaProduto _servicosVendaProduto = new ServicosVendaProduto(new CrudVendaProduto(new ConexaoDatabase()));
+        ServicosVendaServico _servicosVendaServico = new ServicosVendaServico(new CrudVendaServico(new ConexaoDatabase()));
+        List<VendaProduto> listaVendasProdutos = new List<VendaProduto>();
+        List<VendaServico> listaVendasServicos = new List<VendaServico>();
 
         Cliente _cliente = new Cliente();
         Receita _receita = new Receita();
-        VendaProduto _venda = new VendaProduto();
+        VendaProduto _vendaProduto = new VendaProduto();
+        VendaServico _vendaServico = new VendaServico();
 
+        List<VendaView> listaViewVendas = new List<VendaView>();
+        VendaView vendaView = new VendaView();
         int indexlistaVenda = -1;
+        string tipoVenda = "";
 
         public void atualizarGridVendas()
         {
             dg_vendas.AutoGenerateColumns = false;
-            listaVendas = _servicosVenda.ConsultarTodos();
+            listaVendasProdutos = _servicosVendaProduto.ConsultarTodos();
+            listaVendasServicos = _servicosVendaServico.ConsultarTodos();
 
-            if (listaVendas.Count > 0)
+            if (listaVendasProdutos.Count > 0)
             {
-                List<VendaView> listaView = new List<VendaView>();
-
-                foreach (var item in listaVendas)
+                VendaView v;
+                foreach (var item in listaVendasProdutos)
                 {
-                    VendaView v = new VendaView();
+                    v = new VendaView()
+                    {
+                        Id = item.Id,
+                        DataCadastro = item.DataCadastro,
+                        TipoPagamento = item.TipoPagamento,
+                        TipoVenda = "Podutos",
+                        Valor = item.Total,
+                    };
 
-                    v.DataCadastro = item.DataCadastro;
-                    v.Nome = item.Cliente.Nome;
-                    v.TipoPagamento = item.TipoPagamento;
+                    listaViewVendas.Add(v);
+                }
+                foreach (var item in listaVendasServicos)
+                {
+                    v = new VendaView()
+                    {
+                        Id = item.Id,
+                        DataCadastro = item.DataCadastro,
+                        TipoPagamento = item.TipoPagamento,
+                        TipoVenda = "Serviços",
+                        Valor = item.Total,
+                    };
 
-                    listaView.Add(v);
+                    listaViewVendas.Add(v);
                 }
 
-                dg_vendas.DataSource = listaView;
+                listaViewVendas = listaViewVendas.OrderByDescending(c => c.DataCadastro).ToList();
+
+                dg_vendas.DataSource = listaViewVendas;
                 indexlistaVenda = -1;
                 dg_vendas.ClearSelection();
 
                 decimal total = 0;
 
-                foreach (var item in listaVendas)
+                foreach (var item in listaViewVendas)
                 {
-                    total += item.Total;
+                    total += item.Valor;
                 }
 
                 lbl_total_todas_as_vendas.Text = total.ToString();
@@ -81,34 +106,60 @@ namespace Kvision.Frame.Paginas.PgVendas
 
         private void dg_vendas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            indexlistaVenda = dg_vendas.CurrentCell.RowIndex;
-            _venda = listaVendas[indexlistaVenda];
-
-            lblClienteVenda.Text = _venda.Cliente.Nome;
-            lblReceita_selecionada.Text = $"{_venda.Receita.DataExame.ToShortDateString()} - {_venda.Receita.NomeExaminador}";
-            lbl_valor_total.Text = $"R$ {_venda.Total}";
-            lbl_pagamento.Text = _venda.TipoPagamento.ToString();
-
-            List<ItemProduto> itensProdutos = JsonSerializer.Deserialize<List<ItemProduto>>(_venda.Produtos);
+            var idVenda = int.Parse(dg_vendas.CurrentRow.Cells[0].Value.ToString());
+            tipoVenda = dg_vendas.CurrentRow.Cells[2].Value.ToString();
 
             listViewProdutos.Items.Clear();
+            btn_deletar.Enabled = true;
+            btn_show_editar.Enabled = true;
 
-            foreach (var item in itensProdutos)
+            if (tipoVenda == "Podutos")
             {
-                ListViewItem itemList = new ListViewItem($"{item.Quantidade} - {item.Nome}");
-                itemList.SubItems.Add($"R$ {item.Valor}");
+                _vendaProduto = listaVendasProdutos.Find(p => p.Id == idVenda);
 
-                listViewProdutos.Items.Add(itemList);
-            }
+                lblClienteVenda.Text = _vendaProduto.Cliente.Nome;
+                lblReceita_selecionada.Text = $"{_vendaProduto.Receita.DataExame.ToShortDateString()} - {_vendaProduto.Receita.NomeExaminador}";
+                lbl_valor_total.Text = $"R$ {_vendaProduto.Total}";
+                lbl_pagamento.Text = _vendaProduto.TipoPagamento.ToString();
 
-            List<Adicional> adicionais = !string.IsNullOrEmpty(_venda.Adicionais) ?
-                JsonSerializer.Deserialize<List<Adicional>>(_venda.Adicionais) : new List<Adicional>();
+                List<ItemProduto> itensProdutos = JsonSerializer.Deserialize<List<ItemProduto>>(_vendaProduto.Produtos);
 
-            if (adicionais.Count > 0)
-            {
-                foreach (var item in adicionais)
+                foreach (var item in itensProdutos)
                 {
-                    ListViewItem itemList = new ListViewItem($"1 - {item.Descricao}");
+                    ListViewItem itemList = new ListViewItem($"{item.Quantidade} - {item.Nome}");
+                    itemList.SubItems.Add($"R$ {item.Valor}");
+
+                    listViewProdutos.Items.Add(itemList);
+                }
+
+                List<Adicional> adicionais = !string.IsNullOrEmpty(_vendaProduto.Adicionais) ?
+                    JsonSerializer.Deserialize<List<Adicional>>(_vendaProduto.Adicionais) : new List<Adicional>();
+
+                if (adicionais.Count > 0)
+                {
+                    foreach (var item in adicionais)
+                    {
+                        ListViewItem itemList = new ListViewItem($"1 - {item.Descricao}");
+                        itemList.SubItems.Add($"R$ {item.Valor}");
+
+                        listViewProdutos.Items.Add(itemList);
+                    }
+                }
+            }
+            else
+            {
+                _vendaServico = listaVendasServicos.Find(s => s.Id == idVenda);
+
+                lblClienteVenda.Text = "Não possui";
+                lblReceita_selecionada.Text = "Não possui";
+                lbl_valor_total.Text = $"R$ {_vendaServico.Total}";
+                lbl_pagamento.Text = _vendaServico.TipoPagamento.ToString();
+
+                List<Servico> itensServicos = JsonSerializer.Deserialize<List<Servico>>(_vendaServico.Servicos);
+
+                foreach (var item in itensServicos)
+                {
+                    ListViewItem itemList = new ListViewItem($"{item.Nome}");
                     itemList.SubItems.Add($"R$ {item.Valor}");
 
                     listViewProdutos.Items.Add(itemList);
@@ -118,37 +169,30 @@ namespace Kvision.Frame.Paginas.PgVendas
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _mainFrame.Show();
+            _mianCaixa.Opacity = 100;
             this.Close();
         }
+
+
+
+
 
         private void dtp_data_inicio_ValueChanged(object sender, EventArgs e)
         {
             dtp_data_fim.MinDate = dtp_data_inicio.Value;
 
-            var listaFiltrada = listaVendas.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+            var listaViewVendasFiltrada = listaViewVendas.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
             && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
 
-            List<VendaView> listaView = new List<VendaView>();
 
-            foreach (var item in listaFiltrada)
-            {
-                VendaView v = new VendaView();
-
-                v.DataCadastro = item.DataCadastro;
-                v.Nome = item.Cliente.Nome;
-                v.TipoPagamento = item.TipoPagamento;
-
-                listaView.Add(v);
-            }
-            dg_vendas.DataSource = listaFiltrada;
+            dg_vendas.DataSource = listaViewVendasFiltrada;
 
 
             decimal total = 0;
 
-            foreach (var item in listaFiltrada)
+            foreach (var item in listaViewVendas)
             {
-                total += item.Total;
+                total += item.Valor;
             }
 
             lbl_total_todas_as_vendas.Text = total.ToString();
@@ -157,27 +201,15 @@ namespace Kvision.Frame.Paginas.PgVendas
 
         private void dtp_data_fim_ValueChanged(object sender, EventArgs e)
         {
-            var listaFiltrada = listaVendas.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+            var listaViewVendasFiltrada = listaViewVendas.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
             && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
 
-            List<VendaView> listaView = new List<VendaView>();
-
-            foreach (var item in listaFiltrada)
-            {
-                VendaView v = new VendaView();
-
-                v.DataCadastro = item.DataCadastro;
-                v.Nome = item.Cliente.Nome;
-                v.TipoPagamento = item.TipoPagamento;
-
-                listaView.Add(v);
-            }
-            dg_vendas.DataSource = listaView;
+            dg_vendas.DataSource = listaViewVendasFiltrada;
 
             decimal total = 0;
-            foreach (var item in listaFiltrada)
+            foreach (var item in listaViewVendas)
             {
-                total += item.Total;
+                total += item.Valor;
             }
 
             lbl_total_todas_as_vendas.Text = total.ToString();
@@ -188,13 +220,21 @@ namespace Kvision.Frame.Paginas.PgVendas
         {
             dtp_data_inicio.Value = DateTime.Now.Date;
             dtp_data_fim.Value = DateTime.Now.Date;
+            dg_vendas.DataSource = listaViewVendas;
         }
+
+
+
 
         private void btn_show_editar_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var f_editarVenda = new EditarVenda(this, _venda);
-            f_editarVenda.ShowDialog();
+            if (tipoVenda == "Podutos")
+            {
+                var f_editarVenda = new EditarVendaProduto(this,_telaBlur, _vendaProduto);
+                this.Opacity = 0;
+                f_editarVenda.ShowDialog();
+            }
+          
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)
@@ -205,7 +245,7 @@ namespace Kvision.Frame.Paginas.PgVendas
                 if (result == DialogResult.Yes)
                 {
 
-                    MessageBox.Show($"{_servicosVenda.Deletar(_venda)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"{_servicosVendaProduto.Deletar(_vendaProduto)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     atualizarGridVendas();
                 }
             }

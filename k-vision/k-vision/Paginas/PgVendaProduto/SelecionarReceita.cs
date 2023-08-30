@@ -2,6 +2,7 @@
 using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
+using Kvision.Frame.Paginas.PgVendas;
 using Kvision.Frame.Servicos;
 using System.Data;
 
@@ -12,12 +13,17 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
     {
         private readonly Cliente _cliente;
         private SelecionarCliente _selecionarCliente;
-        private MainFrame _mainFrame;
-        public SelecionarReceita(Cliente cliente, SelecionarCliente selecionarCliente, MainFrame mainFrame)
+
+        private MainFrame? _mainFrame;
+        private EditarVendaProduto? _editarVenda;
+
+        public SelecionarReceita(Cliente cliente, SelecionarCliente selecionarCliente, MainFrame? mainFrame, EditarVendaProduto? editarVenda)
         {
             _cliente = cliente;
             _selecionarCliente = selecionarCliente;
             _mainFrame = mainFrame;
+            _editarVenda = editarVenda; 
+
             InitializeComponent();
 
         }
@@ -120,16 +126,26 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
         {
             if (receita != null && indexlista > -1)
             {
-                _mainFrame.confirmarSelecaoReceita(receita);
-                _selecionarCliente.Fechar();
-                this.Close();
+                if (_mainFrame != null)
+                {
+                    _mainFrame.confirmarSelecaoReceita(receita);
+                    _selecionarCliente.Fechar();
+                    this.Close();
+                }else 
+                if(_editarVenda != null)
+                {
+                    _editarVenda.confirmarSelecaoReceita(receita);
+                    _selecionarCliente.Fechar();
+                    this.Close();
+                }
+               
             }
             else
             {
-                var mensagem = new Mensagem("Atenção", "Por favor, selecione uma receita da lista, para continuar!", false);
-                mensagem.ShowDialog();
+                MessageBox.Show("Por favor, selecione uma receita da lista, para continuar!", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
 
         }
-    }
+    
 }

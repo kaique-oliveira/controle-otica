@@ -204,7 +204,7 @@
             btn_show_receitas.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_receitas.Image = (Image)resources.GetObject("btn_show_receitas.Image");
             btn_show_receitas.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_receitas.Location = new Point(283, 465);
+            btn_show_receitas.Location = new Point(282, 465);
             btn_show_receitas.Name = "btn_show_receitas";
             btn_show_receitas.Size = new Size(109, 33);
             btn_show_receitas.TabIndex = 5;

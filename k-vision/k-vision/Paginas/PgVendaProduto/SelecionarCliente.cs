@@ -2,7 +2,9 @@
 using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
+using Kvision.Frame.Paginas.PgVendas;
 using Kvision.Frame.Servicos;
+using Npgsql.Replication;
 using System.Data;
 
 
@@ -10,15 +12,20 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
 {
     public partial class SelecionarCliente : Form
     {
-        private MainFrame _mainFrame;
+        private MainFrame? _mainFrame;
+        private EditarVendaProduto? _editarVenda;
         private TelaBlur _blur;
-        public SelecionarCliente(MainFrame mainFrame, TelaBlur blur)
+  
+        public SelecionarCliente(MainFrame? mainFrame, EditarVendaProduto? editarVenda, TelaBlur blur)
         {
-            _mainFrame = mainFrame;
             InitializeComponent();
+
+            _mainFrame = mainFrame;
+            _editarVenda = editarVenda;
             _blur = blur;
             this.ShowInTaskbar = false;
         }
+
 
         ServicosCliente servicos = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
         List<Cliente> listaClientes = new List<Cliente>();
@@ -60,15 +67,18 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
         {
             if (_cliente != null && indexlista > -1)
             {
-                var selectReceita = new SelecionarReceita(_cliente, this, _mainFrame);
-                this.Opacity = 0;
-                selectReceita.ShowDialog();
+
+            var selectReceita = new SelecionarReceita(_cliente, this, _mainFrame, _editarVenda);
+            this.Opacity = 0;
+            selectReceita.ShowDialog();
+                
             }
             else
             {
-                var mensagem = new Mensagem("Ops", "Por favor, selecione um cliente da lista, para continuar!", false);
-                mensagem.ShowDialog();
+
+                MessageBox.Show("Por favor, selecione um cliente da lista, para continuar!", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        
         }
 
         private void dg_clientes_CellClick(object sender, DataGridViewCellEventArgs e)

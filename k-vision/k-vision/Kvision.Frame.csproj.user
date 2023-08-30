@@ -7,6 +7,9 @@
     <Compile Update="Paginas\Mensagem.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Paginas\PgCaixa\MainCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Paginas\PgCliente\PersistirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -47,6 +50,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Paginas\PgVendas\EditarVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PgVendas\EditarVendaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Paginas\PgVendas\MainVenda.cs">
