@@ -36,8 +36,6 @@ namespace k_vision
         private TiposPagamento tipoPagamento_produto, tipoPagamento_servico;
 
 
-
-
         public void confirmarSelecaoReceita(Receita receita)
         {
             _receita_selecionada = new Receita();
@@ -207,8 +205,8 @@ namespace k_vision
 
             if (response == "Venda finalizada!")
             {
-                var result = MessageBox.Show($"Venda do produto finaliza!", "Tudo certo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                var result = MessageBox.Show($"Venda do produto finaliza!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
                     limparVendaProduto();
                 }

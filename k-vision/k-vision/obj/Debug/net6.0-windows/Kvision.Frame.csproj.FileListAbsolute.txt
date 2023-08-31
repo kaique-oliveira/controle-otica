@@ -162,7 +162,6 @@ C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendaProduto.SelecionarProduto.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendaProduto.SelecionarReceita.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendaServico.AddServico.resources
-C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendas.EditarVenda.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendas.EditarVendaProduto.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendas.MainVenda.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.Splash.resources

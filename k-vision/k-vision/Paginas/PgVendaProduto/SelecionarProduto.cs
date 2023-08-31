@@ -2,6 +2,7 @@
 using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
+using Kvision.Frame.Paginas.PgVendas;
 using Kvision.Frame.Servicos;
 using System.Data;
 
@@ -11,10 +12,12 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
     public partial class SelecionarProduto : Form
     {
         private MainFrame _mainFrame;
+        private EditarVendaProduto? _editarVendaProduto;
         private TelaBlur _blur;
-        public SelecionarProduto(MainFrame mainFrame, TelaBlur blur)
+        public SelecionarProduto(MainFrame mainFrame, EditarVendaProduto? editarVendaProduto, TelaBlur blur)
         {
             _mainFrame = mainFrame;
+            _editarVendaProduto = editarVendaProduto;
             InitializeComponent();
             _blur = blur;
             this.ShowInTaskbar = false;
@@ -55,9 +58,15 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
         {
             if (produto != null && indexlista != -1)
             {
-                _mainFrame.confirmarSelecaoProduto(produto);
-
-                MessageBox.Show("Produto adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (_mainFrame != null) {
+                    _mainFrame.confirmarSelecaoProduto(produto);
+                    MessageBox.Show("Produto adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if(_editarVendaProduto != null)
+                {
+                    _editarVendaProduto.confirmarSelecaoProduto(produto);
+                    MessageBox.Show("Produto adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
                 dg_produtos.ClearSelection();
             }
@@ -69,8 +78,17 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _blur.Close();
-            this.Close();
+            if(_mainFrame != null)
+            {
+                _blur.Close();
+                this.Close();
+            }
+            else
+            {
+                _editarVendaProduto.Opacity = 100;
+                this.Close();
+            }
+
         }
     }
 }

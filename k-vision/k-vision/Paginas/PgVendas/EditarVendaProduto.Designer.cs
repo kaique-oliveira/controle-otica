@@ -46,6 +46,8 @@
             rb_pix_produto = new RadioButton();
             rb_dinheiro_produto = new RadioButton();
             painel_produtos = new Panel();
+            btn_apagar_adicionais = new Button();
+            btn_apagar_produto = new Button();
             panel8 = new Panel();
             label8 = new Label();
             btn_show_add_adicional = new Button();
@@ -70,7 +72,7 @@
             pictureBox1 = new PictureBox();
             btn_fechar = new Button();
             label1 = new Label();
-            button1 = new Button();
+            btn_salvar_edicao = new Button();
             panel2.SuspendLayout();
             panel14.SuspendLayout();
             painel_observacao.SuspendLayout();
@@ -242,6 +244,7 @@
             rb_credito_produto.TabIndex = 6;
             rb_credito_produto.Text = "Crédito";
             rb_credito_produto.UseVisualStyleBackColor = true;
+            rb_credito_produto.CheckedChanged += rb_credito_produto_CheckedChanged;
             // 
             // rb_debito_produto
             // 
@@ -254,6 +257,7 @@
             rb_debito_produto.TabIndex = 5;
             rb_debito_produto.Text = "Débito";
             rb_debito_produto.UseVisualStyleBackColor = true;
+            rb_debito_produto.CheckedChanged += rb_debito_produto_CheckedChanged;
             // 
             // rb_pix_produto
             // 
@@ -266,6 +270,7 @@
             rb_pix_produto.TabIndex = 4;
             rb_pix_produto.Text = "Pix";
             rb_pix_produto.UseVisualStyleBackColor = true;
+            rb_pix_produto.CheckedChanged += rb_pix_produto_CheckedChanged;
             // 
             // rb_dinheiro_produto
             // 
@@ -278,11 +283,14 @@
             rb_dinheiro_produto.TabIndex = 3;
             rb_dinheiro_produto.Text = "Dinheiro";
             rb_dinheiro_produto.UseVisualStyleBackColor = true;
+            rb_dinheiro_produto.CheckedChanged += rb_dinheiro_produto_CheckedChanged;
             // 
             // painel_produtos
             // 
             painel_produtos.BackColor = Color.FromArgb(229, 229, 229);
             painel_produtos.BorderStyle = BorderStyle.FixedSingle;
+            painel_produtos.Controls.Add(btn_apagar_adicionais);
+            painel_produtos.Controls.Add(btn_apagar_produto);
             painel_produtos.Controls.Add(panel8);
             painel_produtos.Controls.Add(btn_show_add_adicional);
             painel_produtos.Controls.Add(label19);
@@ -294,6 +302,46 @@
             painel_produtos.Name = "painel_produtos";
             painel_produtos.Size = new Size(669, 276);
             painel_produtos.TabIndex = 26;
+            // 
+            // btn_apagar_adicionais
+            // 
+            btn_apagar_adicionais.BackColor = Color.LightGray;
+            btn_apagar_adicionais.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_apagar_adicionais.Cursor = Cursors.Hand;
+            btn_apagar_adicionais.FlatAppearance.BorderColor = Color.Gray;
+            btn_apagar_adicionais.FlatStyle = FlatStyle.Flat;
+            btn_apagar_adicionais.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_apagar_adicionais.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_apagar_adicionais.Image = (Image)resources.GetObject("btn_apagar_adicionais.Image");
+            btn_apagar_adicionais.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_apagar_adicionais.Location = new Point(365, 239);
+            btn_apagar_adicionais.Name = "btn_apagar_adicionais";
+            btn_apagar_adicionais.Size = new Size(121, 28);
+            btn_apagar_adicionais.TabIndex = 31;
+            btn_apagar_adicionais.Text = "Remover";
+            btn_apagar_adicionais.TextAlign = ContentAlignment.MiddleRight;
+            btn_apagar_adicionais.UseVisualStyleBackColor = false;
+            btn_apagar_adicionais.Click += btn_apagar_adicionais_Click;
+            // 
+            // btn_apagar_produto
+            // 
+            btn_apagar_produto.BackColor = Color.LightGray;
+            btn_apagar_produto.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_apagar_produto.Cursor = Cursors.Hand;
+            btn_apagar_produto.FlatAppearance.BorderColor = Color.Gray;
+            btn_apagar_produto.FlatStyle = FlatStyle.Flat;
+            btn_apagar_produto.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_apagar_produto.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_apagar_produto.Image = (Image)resources.GetObject("btn_apagar_produto.Image");
+            btn_apagar_produto.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_apagar_produto.Location = new Point(32, 239);
+            btn_apagar_produto.Name = "btn_apagar_produto";
+            btn_apagar_produto.Size = new Size(121, 28);
+            btn_apagar_produto.TabIndex = 30;
+            btn_apagar_produto.Text = "Remover";
+            btn_apagar_produto.TextAlign = ContentAlignment.MiddleRight;
+            btn_apagar_produto.UseVisualStyleBackColor = false;
+            btn_apagar_produto.Click += btn_apagar_produto_Click;
             // 
             // panel8
             // 
@@ -327,13 +375,14 @@
             btn_show_add_adicional.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_add_adicional.Image = (Image)resources.GetObject("btn_show_add_adicional.Image");
             btn_show_add_adicional.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_add_adicional.Location = new Point(443, 239);
+            btn_show_add_adicional.Location = new Point(517, 239);
             btn_show_add_adicional.Name = "btn_show_add_adicional";
             btn_show_add_adicional.Size = new Size(122, 28);
             btn_show_add_adicional.TabIndex = 29;
             btn_show_add_adicional.Text = "Adicionar";
             btn_show_add_adicional.TextAlign = ContentAlignment.MiddleRight;
             btn_show_add_adicional.UseVisualStyleBackColor = false;
+            btn_show_add_adicional.Click += btn_show_add_adicional_Click;
             // 
             // label19
             // 
@@ -394,6 +443,7 @@
             listViewProdutos.FullRowSelect = true;
             listViewProdutos.HeaderStyle = ColumnHeaderStyle.None;
             listViewProdutos.Location = new Point(11, 54);
+            listViewProdutos.MultiSelect = false;
             listViewProdutos.Name = "listViewProdutos";
             listViewProdutos.Size = new Size(319, 178);
             listViewProdutos.TabIndex = 19;
@@ -422,13 +472,14 @@
             btn_show_select_produto.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_select_produto.Image = (Image)resources.GetObject("btn_show_select_produto.Image");
             btn_show_select_produto.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_select_produto.Location = new Point(114, 239);
+            btn_show_select_produto.Location = new Point(189, 239);
             btn_show_select_produto.Name = "btn_show_select_produto";
             btn_show_select_produto.Size = new Size(121, 28);
             btn_show_select_produto.TabIndex = 23;
             btn_show_select_produto.Text = "Adicionar";
             btn_show_select_produto.TextAlign = ContentAlignment.MiddleRight;
             btn_show_select_produto.UseVisualStyleBackColor = false;
+            btn_show_select_produto.Click += btn_show_select_produto_Click;
             // 
             // panel3
             // 
@@ -582,25 +633,26 @@
             label1.TabIndex = 32;
             label1.Text = "Editando Produto";
             // 
-            // button1
+            // btn_salvar_edicao
             // 
-            button1.Anchor = AnchorStyles.Bottom;
-            button1.BackColor = Color.LightGray;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderColor = Color.Gray;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.FromArgb(64, 64, 64);
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(286, 674);
-            button1.Name = "button1";
-            button1.Size = new Size(155, 29);
-            button1.TabIndex = 38;
-            button1.Text = "Salvar edição";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
+            btn_salvar_edicao.Anchor = AnchorStyles.Bottom;
+            btn_salvar_edicao.BackColor = Color.LightGray;
+            btn_salvar_edicao.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_salvar_edicao.Cursor = Cursors.Hand;
+            btn_salvar_edicao.FlatAppearance.BorderColor = Color.Gray;
+            btn_salvar_edicao.FlatStyle = FlatStyle.Flat;
+            btn_salvar_edicao.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_salvar_edicao.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_salvar_edicao.Image = (Image)resources.GetObject("btn_salvar_edicao.Image");
+            btn_salvar_edicao.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_salvar_edicao.Location = new Point(286, 674);
+            btn_salvar_edicao.Name = "btn_salvar_edicao";
+            btn_salvar_edicao.Size = new Size(155, 29);
+            btn_salvar_edicao.TabIndex = 38;
+            btn_salvar_edicao.Text = "Salvar edição";
+            btn_salvar_edicao.TextAlign = ContentAlignment.MiddleRight;
+            btn_salvar_edicao.UseVisualStyleBackColor = false;
+            btn_salvar_edicao.Click += btn_salvar_edicao_Click;
             // 
             // EditarVendaProduto
             // 
@@ -608,7 +660,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(730, 715);
-            Controls.Add(button1);
+            Controls.Add(btn_salvar_edicao);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -686,6 +738,8 @@
         private PictureBox pictureBox1;
         private Button btn_fechar;
         private Label label1;
-        private Button button1;
+        private Button btn_salvar_edicao;
+        private Button btn_apagar_produto;
+        private Button btn_apagar_adicionais;
     }
 }

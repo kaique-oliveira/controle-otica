@@ -48,6 +48,8 @@ namespace Kvision.Frame.Paginas.PgVendas
 
             if (listaVendasProdutos.Count > 0)
             {
+                listaViewVendas.Clear();
+
                 VendaView v;
                 foreach (var item in listaVendasProdutos)
                 {
@@ -230,11 +232,11 @@ namespace Kvision.Frame.Paginas.PgVendas
         {
             if (tipoVenda == "Podutos")
             {
-                var f_editarVenda = new EditarVendaProduto(this,_telaBlur, _vendaProduto);
+                var f_editarVenda = new EditarVendaProduto(this, _telaBlur, _vendaProduto);
                 this.Opacity = 0;
                 f_editarVenda.ShowDialog();
             }
-          
+
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)
@@ -253,6 +255,16 @@ namespace Kvision.Frame.Paginas.PgVendas
             {
                 MessageBox.Show("Por favor selecione um cliente da lista!", "Atenção");
             }
+        }
+
+        private void dg_vendas_DataSourceChanged(object sender, EventArgs e)
+        {
+            dg_vendas.ClearSelection();
+            lblClienteVenda.Text = "Nome do cliente";
+            lblReceita_selecionada.Text = "Receita do cliente";
+            lbl_valor_total.Text = $"R$ 0,00";
+            lbl_pagamento.Text = "Tipo pagamento";
+            listViewProdutos.Items.Clear();
         }
     }
 }

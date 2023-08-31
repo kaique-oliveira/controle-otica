@@ -50,7 +50,7 @@ namespace Kvision.Frame.Paginas
                     p.ShowDialog();
                     break;
                 case "selecionar-produto":
-                    var sp = new SelecionarProduto(_mainFrame, this);
+                    var sp = new SelecionarProduto(_mainFrame, null, this);
                     sp.ShowDialog();
                     break;
                 case "selecionar-cliente":
@@ -58,7 +58,7 @@ namespace Kvision.Frame.Paginas
                     sc.ShowDialog();
                     break;
                 case "selecionar-adicional":
-                    var a = new AddAdicional(_mainFrame, this);
+                    var a = new AddAdicional(_mainFrame, null, this);
                     a.ShowDialog();
                     break;
                 case "selecionar-servico":

@@ -33,7 +33,6 @@ namespace Kvision.Frame.Servicos
 
             foreach (var item in itemProdutos)
             {
-
                 var _produto = produtos.Find(p => p.Id == item.Id);
                 
                 if(_produto.Quantidade != 0 && _produto.Quantidade > 0)
@@ -41,13 +40,46 @@ namespace Kvision.Frame.Servicos
                     _produto.Quantidade = _produto.Quantidade > item.Quantidade ? _produto.Quantidade - item.Quantidade : 0;
                 }
 
-                servicoProduto.Editar(_produto);
-                
+                servicoProduto.Editar(_produto);  
             }
 
             return Cadastrar(venda);
         }
 
+        public string AjustarSaldoEditado(VendaProduto venda, VendaProduto newVenda, ServicosProduto servicoProduto)
+        {
+            var itemProdutos = JsonSerializer.Deserialize<List<ItemProduto>>(venda.Produtos);
+            var newItemProdustos = JsonSerializer.Deserialize<List<ItemProduto>>(newVenda.Produtos);
+            var produtos = servicoProduto.ConsultarTodos();
+
+
+            foreach (var item in itemProdutos)
+            {
+                var _produto = produtos.Find(p => p.Id == item.Id);
+
+                if (_produto.Quantidade != 0 && _produto.Quantidade > 0)
+                {
+                    _produto.Quantidade = _produto.Quantidade > item.Quantidade ? _produto.Quantidade + item.Quantidade : 0;
+                }
+
+                servicoProduto.Editar(_produto);
+            }
+
+            foreach (var item in newItemProdustos)
+            {
+                var _produto = produtos.Find(p => p.Id == item.Id);
+
+                if (_produto.Quantidade != 0 && _produto.Quantidade > 0)
+                {
+                    _produto.Quantidade = _produto.Quantidade > item.Quantidade ? _produto.Quantidade - item.Quantidade : 0;
+                }
+
+                servicoProduto.Editar(_produto);
+            }
+
+
+            return Editar(newVenda);
+        }
         public List<VendaProduto> ConsultarTodos()
         {
             var result = _venda.FindAll().ToList<VendaProduto>();

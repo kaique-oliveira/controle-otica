@@ -25,7 +25,6 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
             _editarVenda = editarVenda; 
 
             InitializeComponent();
-
         }
 
 

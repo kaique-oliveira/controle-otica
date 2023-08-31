@@ -1,5 +1,6 @@
 ﻿using k_vision;
 using Kvision.Dominio.ViewModel;
+using Kvision.Frame.Paginas.PgVendas;
 using System;
 using System.Text.RegularExpressions;
 
@@ -9,9 +10,11 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
     {
         private MainFrame _mainFrame;
         private TelaBlur _blur;
-        public AddAdicional(MainFrame mainFrame, TelaBlur blur)
+        private EditarVendaProduto? _editarVendaProduto;
+        public AddAdicional(MainFrame mainFrame, EditarVendaProduto? editarVendaProduto, TelaBlur blur)
         {
             _mainFrame = mainFrame;
+            _editarVendaProduto = editarVendaProduto;
             InitializeComponent();
             _blur = blur;
             this.ShowInTaskbar = false;
@@ -47,8 +50,17 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _blur.Close();
-            this.Close();
+            if (_mainFrame != null)
+            {
+                _blur.Close();
+                this.Close();
+            }
+            else
+            {
+                _editarVendaProduto.Opacity = 100;
+                this.Close();
+            }
+          
         }
 
         private void bnt_confirmar_Click(object sender, EventArgs e)
@@ -60,9 +72,15 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
                 adicional.Descricao = txt_descricao.Text;
                 adicional.Valor = decimal.Parse(txt_valor.Text.Replace(".", ","));
 
-                _mainFrame.confirmarAdicional(adicional);
-
-                MessageBox.Show("Adicional salvo com sucesso!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (_mainFrame != null)
+                {
+                    _mainFrame.confirmarAdicional(adicional);
+                    MessageBox.Show("Adicional salvo com sucesso!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }else if (_editarVendaProduto != null)
+                {
+                    _editarVendaProduto.confirmarAdicional(adicional);
+                    MessageBox.Show("Adicional salvo com sucesso!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
                 txt_descricao.Text = "";
                 txt_valor.Text = "";

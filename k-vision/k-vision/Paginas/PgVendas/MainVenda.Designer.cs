@@ -160,6 +160,7 @@
             dg_vendas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dg_vendas.Size = new Size(440, 304);
             dg_vendas.TabIndex = 1;
+            dg_vendas.DataSourceChanged += dg_vendas_DataSourceChanged;
             dg_vendas.CellClick += dg_vendas_CellClick;
             // 
             // Id
