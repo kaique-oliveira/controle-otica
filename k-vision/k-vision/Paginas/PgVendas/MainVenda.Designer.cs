@@ -40,6 +40,9 @@
             TipoPagamento = new DataGridViewTextBoxColumn();
             Valor = new DataGridViewTextBoxColumn();
             panel5 = new Panel();
+            panel9 = new Panel();
+            txt_observacao_servico = new TextBox();
+            label13 = new Label();
             panel14 = new Panel();
             label4 = new Label();
             pictureBox6 = new PictureBox();
@@ -83,6 +86,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dg_vendas).BeginInit();
             panel5.SuspendLayout();
+            panel9.SuspendLayout();
             panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel2.SuspendLayout();
@@ -107,7 +111,7 @@
             panel1.Controls.Add(dg_vendas);
             panel1.Location = new Point(16, 147);
             panel1.Name = "panel1";
-            panel1.Size = new Size(459, 325);
+            panel1.Size = new Size(459, 341);
             panel1.TabIndex = 0;
             // 
             // dg_vendas
@@ -158,7 +162,7 @@
             dg_vendas.RowHeadersVisible = false;
             dg_vendas.RowTemplate.Height = 25;
             dg_vendas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dg_vendas.Size = new Size(440, 304);
+            dg_vendas.Size = new Size(440, 320);
             dg_vendas.TabIndex = 1;
             dg_vendas.DataSourceChanged += dg_vendas_DataSourceChanged;
             dg_vendas.CellClick += dg_vendas_CellClick;
@@ -207,6 +211,7 @@
             panel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel5.BackColor = Color.LightGray;
             panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(panel9);
             panel5.Controls.Add(panel14);
             panel5.Controls.Add(panel2);
             panel5.Controls.Add(panel10);
@@ -215,8 +220,42 @@
             panel5.Controls.Add(panel6);
             panel5.Location = new Point(509, 46);
             panel5.Name = "panel5";
-            panel5.Size = new Size(348, 426);
+            panel5.Size = new Size(348, 442);
             panel5.TabIndex = 14;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(229, 229, 229);
+            panel9.BorderStyle = BorderStyle.FixedSingle;
+            panel9.Controls.Add(txt_observacao_servico);
+            panel9.Controls.Add(label13);
+            panel9.Location = new Point(10, 369);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(329, 68);
+            panel9.TabIndex = 17;
+            // 
+            // txt_observacao_servico
+            // 
+            txt_observacao_servico.BorderStyle = BorderStyle.FixedSingle;
+            txt_observacao_servico.Enabled = false;
+            txt_observacao_servico.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_observacao_servico.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_observacao_servico.Location = new Point(5, 19);
+            txt_observacao_servico.Multiline = true;
+            txt_observacao_servico.Name = "txt_observacao_servico";
+            txt_observacao_servico.Size = new Size(317, 45);
+            txt_observacao_servico.TabIndex = 27;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.ForeColor = Color.DimGray;
+            label13.Location = new Point(3, 2);
+            label13.Name = "label13";
+            label13.Size = new Size(87, 16);
+            label13.TabIndex = 0;
+            label13.Text = "Observação";
             // 
             // panel14
             // 
@@ -258,7 +297,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(lbl_pagamento);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(10, 131);
+            panel2.Location = new Point(10, 113);
             panel2.Name = "panel2";
             panel2.Size = new Size(329, 33);
             panel2.TabIndex = 19;
@@ -322,7 +361,7 @@
             panel8.BorderStyle = BorderStyle.FixedSingle;
             panel8.Controls.Add(lblReceita_selecionada);
             panel8.Controls.Add(label7);
-            panel8.Location = new Point(10, 78);
+            panel8.Location = new Point(10, 74);
             panel8.Name = "panel8";
             panel8.Size = new Size(329, 33);
             panel8.TabIndex = 18;
@@ -355,9 +394,9 @@
             panel7.BorderStyle = BorderStyle.FixedSingle;
             panel7.Controls.Add(panel15);
             panel7.Controls.Add(listViewProdutos);
-            panel7.Location = new Point(10, 179);
+            panel7.Location = new Point(10, 152);
             panel7.Name = "panel7";
-            panel7.Size = new Size(329, 235);
+            panel7.Size = new Size(329, 211);
             panel7.TabIndex = 17;
             // 
             // panel15
@@ -392,7 +431,7 @@
             listViewProdutos.HeaderStyle = ColumnHeaderStyle.None;
             listViewProdutos.Location = new Point(4, 38);
             listViewProdutos.Name = "listViewProdutos";
-            listViewProdutos.Size = new Size(319, 192);
+            listViewProdutos.Size = new Size(319, 166);
             listViewProdutos.TabIndex = 18;
             listViewProdutos.UseCompatibleStateImageBehavior = false;
             listViewProdutos.View = View.Details;
@@ -414,7 +453,7 @@
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(lblClienteVenda);
             panel6.Controls.Add(label5);
-            panel6.Location = new Point(10, 38);
+            panel6.Location = new Point(10, 36);
             panel6.Name = "panel6";
             panel6.Size = new Size(329, 33);
             panel6.TabIndex = 16;
@@ -569,6 +608,7 @@
             // 
             // dtp_data_fim
             // 
+            dtp_data_fim.Enabled = false;
             dtp_data_fim.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             dtp_data_fim.Format = DateTimePickerFormat.Short;
             dtp_data_fim.Location = new Point(261, 40);
@@ -597,7 +637,7 @@
             btn_deletar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_deletar.Image = (Image)resources.GetObject("btn_deletar.Image");
             btn_deletar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_deletar.Location = new Point(449, 540);
+            btn_deletar.Location = new Point(449, 545);
             btn_deletar.Name = "btn_deletar";
             btn_deletar.Size = new Size(120, 33);
             btn_deletar.TabIndex = 6;
@@ -615,7 +655,7 @@
             btn_show_editar.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_editar.Image = (Image)resources.GetObject("btn_show_editar.Image");
             btn_show_editar.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_editar.Location = new Point(280, 540);
+            btn_show_editar.Location = new Point(280, 545);
             btn_show_editar.Name = "btn_show_editar";
             btn_show_editar.Size = new Size(120, 33);
             btn_show_editar.TabIndex = 5;
@@ -629,7 +669,7 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(lbl_total_todas_as_vendas);
             panel4.Controls.Add(label12);
-            panel4.Location = new Point(16, 480);
+            panel4.Location = new Point(16, 494);
             panel4.Name = "panel4";
             panel4.Size = new Size(841, 33);
             panel4.TabIndex = 24;
@@ -700,6 +740,8 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dg_vendas).EndInit();
             panel5.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -777,5 +819,8 @@
         private DataGridViewTextBoxColumn TipoVenda;
         private DataGridViewTextBoxColumn TipoPagamento;
         private DataGridViewTextBoxColumn Valor;
+        private Panel panel9;
+        private Label label13;
+        private TextBox txt_observacao_servico;
     }
 }

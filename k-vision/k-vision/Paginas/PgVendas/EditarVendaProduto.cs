@@ -23,6 +23,7 @@ namespace Kvision.Frame.Paginas.PgVendas
             InitializeComponent();
             _vendaProduto = vendaProduto;
             _mainVenda = mainVenda;
+            this.ShowInTaskbar = false;
         }
 
 
@@ -246,6 +247,7 @@ namespace Kvision.Frame.Paginas.PgVendas
                 {
                     _mainVenda.atualizarGridVendas();
                     _mainVenda.Opacity = 100;
+                   
                     this.Close();
                 }
             }
@@ -273,7 +275,6 @@ namespace Kvision.Frame.Paginas.PgVendas
 
         private void btn_apagar_produto_Click(object sender, EventArgs e)
         {
-
             listViewProdutos.Items.Clear();
             btn_salvar_edicao.Enabled = false;
 
@@ -296,5 +297,6 @@ namespace Kvision.Frame.Paginas.PgVendas
             listaAdicional.Clear();
             txt_total_produto.Text = $"R$ {valorTotal}";
         }
+
     }
 }

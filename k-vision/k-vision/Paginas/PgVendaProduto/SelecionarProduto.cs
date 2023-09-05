@@ -58,11 +58,12 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
         {
             if (produto != null && indexlista != -1)
             {
-                if (_mainFrame != null) {
+                if (_mainFrame != null)
+                {
                     _mainFrame.confirmarSelecaoProduto(produto);
                     MessageBox.Show("Produto adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else if(_editarVendaProduto != null)
+                else if (_editarVendaProduto != null)
                 {
                     _editarVendaProduto.confirmarSelecaoProduto(produto);
                     MessageBox.Show("Produto adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -78,7 +79,7 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            if(_mainFrame != null)
+            if (_mainFrame != null)
             {
                 _blur.Close();
                 this.Close();

@@ -64,6 +64,8 @@
             rb_pix_produto = new RadioButton();
             rb_dinheiro_produto = new RadioButton();
             painel_produtos = new Panel();
+            btn_apagar_adicionais = new Button();
+            btn_apagar_produto = new Button();
             panel8 = new Panel();
             label8 = new Label();
             label19 = new Label();
@@ -96,6 +98,7 @@
             rb_pix_servico = new RadioButton();
             rb_dinheiro_servico = new RadioButton();
             panel7 = new Panel();
+            btn_limpar_servicos = new Button();
             listViewServicos = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -138,6 +141,7 @@
             bnt_finalizar_venda.BackColor = Color.LightGray;
             bnt_finalizar_venda.BackgroundImageLayout = ImageLayout.Stretch;
             bnt_finalizar_venda.Cursor = Cursors.Hand;
+            bnt_finalizar_venda.Enabled = false;
             bnt_finalizar_venda.FlatAppearance.BorderColor = Color.Gray;
             bnt_finalizar_venda.FlatStyle = FlatStyle.Flat;
             bnt_finalizar_venda.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -203,7 +207,7 @@
             btn_show_select_produto.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_select_produto.Image = (Image)resources.GetObject("btn_show_select_produto.Image");
             btn_show_select_produto.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_select_produto.Location = new Point(114, 239);
+            btn_show_select_produto.Location = new Point(204, 239);
             btn_show_select_produto.Name = "btn_show_select_produto";
             btn_show_select_produto.Size = new Size(121, 28);
             btn_show_select_produto.TabIndex = 23;
@@ -224,7 +228,7 @@
             btn_show_add_adicional.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_add_adicional.Image = (Image)resources.GetObject("btn_show_add_adicional.Image");
             btn_show_add_adicional.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_add_adicional.Location = new Point(443, 239);
+            btn_show_add_adicional.Location = new Point(540, 238);
             btn_show_add_adicional.Name = "btn_show_add_adicional";
             btn_show_add_adicional.Size = new Size(122, 28);
             btn_show_add_adicional.TabIndex = 29;
@@ -240,21 +244,21 @@
             btn_finalizar_servico.BackColor = Color.LightGray;
             btn_finalizar_servico.BackgroundImageLayout = ImageLayout.Stretch;
             btn_finalizar_servico.Cursor = Cursors.Hand;
+            btn_finalizar_servico.Enabled = false;
             btn_finalizar_servico.FlatAppearance.BorderColor = Color.Gray;
             btn_finalizar_servico.FlatStyle = FlatStyle.Flat;
             btn_finalizar_servico.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_finalizar_servico.ForeColor = Color.FromArgb(64, 64, 64);
             btn_finalizar_servico.Image = (Image)resources.GetObject("btn_finalizar_servico.Image");
             btn_finalizar_servico.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_finalizar_servico.Location = new Point(133, 516);
+            btn_finalizar_servico.Location = new Point(130, 495);
             btn_finalizar_servico.Name = "btn_finalizar_servico";
             btn_finalizar_servico.Size = new Size(108, 29);
             btn_finalizar_servico.TabIndex = 27;
-            btn_finalizar_servico.Text = "Finalizar";
+            btn_finalizar_servico.Text = "Finalizar venda serviço";
             btn_finalizar_servico.TextAlign = ContentAlignment.MiddleRight;
             tipBotao.SetToolTip(btn_finalizar_servico, "Finalizar venda");
             btn_finalizar_servico.UseVisualStyleBackColor = false;
-            btn_finalizar_servico.Visible = false;
             btn_finalizar_servico.Click += btn_finalizar_servico_Click;
             // 
             // btn_show_add_servico
@@ -268,7 +272,7 @@
             btn_show_add_servico.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_add_servico.Image = (Image)resources.GetObject("btn_show_add_servico.Image");
             btn_show_add_servico.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_add_servico.Location = new Point(114, 185);
+            btn_show_add_servico.Location = new Point(207, 185);
             btn_show_add_servico.Name = "btn_show_add_servico";
             btn_show_add_servico.Size = new Size(118, 28);
             btn_show_add_servico.TabIndex = 30;
@@ -598,6 +602,8 @@
             // 
             painel_produtos.BackColor = Color.FromArgb(229, 229, 229);
             painel_produtos.BorderStyle = BorderStyle.FixedSingle;
+            painel_produtos.Controls.Add(btn_apagar_adicionais);
+            painel_produtos.Controls.Add(btn_apagar_produto);
             painel_produtos.Controls.Add(panel8);
             painel_produtos.Controls.Add(btn_show_add_adicional);
             painel_produtos.Controls.Add(label19);
@@ -610,6 +616,46 @@
             painel_produtos.Size = new Size(669, 276);
             painel_produtos.TabIndex = 26;
             painel_produtos.Visible = false;
+            // 
+            // btn_apagar_adicionais
+            // 
+            btn_apagar_adicionais.BackColor = Color.LightGray;
+            btn_apagar_adicionais.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_apagar_adicionais.Cursor = Cursors.Hand;
+            btn_apagar_adicionais.FlatAppearance.BorderColor = Color.Gray;
+            btn_apagar_adicionais.FlatStyle = FlatStyle.Flat;
+            btn_apagar_adicionais.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_apagar_adicionais.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_apagar_adicionais.Image = (Image)resources.GetObject("btn_apagar_adicionais.Image");
+            btn_apagar_adicionais.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_apagar_adicionais.Location = new Point(343, 238);
+            btn_apagar_adicionais.Name = "btn_apagar_adicionais";
+            btn_apagar_adicionais.Size = new Size(125, 28);
+            btn_apagar_adicionais.TabIndex = 32;
+            btn_apagar_adicionais.Text = "Limpar lista";
+            btn_apagar_adicionais.TextAlign = ContentAlignment.MiddleRight;
+            btn_apagar_adicionais.UseVisualStyleBackColor = false;
+            btn_apagar_adicionais.Click += btn_apagar_adicionais_Click;
+            // 
+            // btn_apagar_produto
+            // 
+            btn_apagar_produto.BackColor = Color.LightGray;
+            btn_apagar_produto.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_apagar_produto.Cursor = Cursors.Hand;
+            btn_apagar_produto.FlatAppearance.BorderColor = Color.Gray;
+            btn_apagar_produto.FlatStyle = FlatStyle.Flat;
+            btn_apagar_produto.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_apagar_produto.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_apagar_produto.Image = (Image)resources.GetObject("btn_apagar_produto.Image");
+            btn_apagar_produto.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_apagar_produto.Location = new Point(6, 239);
+            btn_apagar_produto.Name = "btn_apagar_produto";
+            btn_apagar_produto.Size = new Size(126, 28);
+            btn_apagar_produto.TabIndex = 31;
+            btn_apagar_produto.Text = "Limpar lista";
+            btn_apagar_produto.TextAlign = ContentAlignment.MiddleRight;
+            btn_apagar_produto.UseVisualStyleBackColor = false;
+            btn_apagar_produto.Click += btn_apagar_produto_Click;
             // 
             // panel8
             // 
@@ -663,7 +709,7 @@
             listViewAdicionais.ForeColor = Color.FromArgb(64, 64, 64);
             listViewAdicionais.FullRowSelect = true;
             listViewAdicionais.HeaderStyle = ColumnHeaderStyle.None;
-            listViewAdicionais.Location = new Point(340, 54);
+            listViewAdicionais.Location = new Point(343, 54);
             listViewAdicionais.Name = "listViewAdicionais";
             listViewAdicionais.Size = new Size(319, 178);
             listViewAdicionais.TabIndex = 24;
@@ -690,7 +736,7 @@
             listViewProdutos.ForeColor = Color.FromArgb(64, 64, 64);
             listViewProdutos.FullRowSelect = true;
             listViewProdutos.HeaderStyle = ColumnHeaderStyle.None;
-            listViewProdutos.Location = new Point(11, 54);
+            listViewProdutos.Location = new Point(5, 54);
             listViewProdutos.Name = "listViewProdutos";
             listViewProdutos.Size = new Size(319, 178);
             listViewProdutos.TabIndex = 19;
@@ -790,12 +836,12 @@
             panel4.Controls.Add(label9);
             panel4.Location = new Point(863, 6);
             panel4.Name = "panel4";
-            panel4.Size = new Size(349, 672);
+            panel4.Size = new Size(349, 535);
             panel4.TabIndex = 15;
             // 
             // panel11
             // 
-            panel11.BackColor = Color.RoyalBlue;
+            panel11.BackColor = Color.OrangeRed;
             panel11.BorderStyle = BorderStyle.FixedSingle;
             panel11.Controls.Add(txt_total_servico);
             panel11.Controls.Add(label14);
@@ -840,7 +886,7 @@
             // 
             // panel13
             // 
-            panel13.BackColor = Color.RoyalBlue;
+            panel13.BackColor = Color.OrangeRed;
             panel13.BorderStyle = BorderStyle.FixedSingle;
             panel13.Controls.Add(label12);
             panel13.Location = new Point(-1, -1);
@@ -887,7 +933,7 @@
             // 
             // panel12
             // 
-            panel12.BackColor = Color.RoyalBlue;
+            panel12.BackColor = Color.OrangeRed;
             panel12.BorderStyle = BorderStyle.FixedSingle;
             panel12.Controls.Add(label10);
             panel12.Location = new Point(-1, -1);
@@ -962,6 +1008,7 @@
             // 
             panel7.BackColor = Color.FromArgb(229, 229, 229);
             panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(btn_limpar_servicos);
             panel7.Controls.Add(btn_show_add_servico);
             panel7.Controls.Add(listViewServicos);
             panel7.Controls.Add(panel10);
@@ -969,6 +1016,27 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(333, 221);
             panel7.TabIndex = 28;
+            // 
+            // btn_limpar_servicos
+            // 
+            btn_limpar_servicos.BackColor = Color.LightGray;
+            btn_limpar_servicos.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_limpar_servicos.Cursor = Cursors.Hand;
+            btn_limpar_servicos.Enabled = false;
+            btn_limpar_servicos.FlatAppearance.BorderColor = Color.Gray;
+            btn_limpar_servicos.FlatStyle = FlatStyle.Flat;
+            btn_limpar_servicos.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_limpar_servicos.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_limpar_servicos.Image = (Image)resources.GetObject("btn_limpar_servicos.Image");
+            btn_limpar_servicos.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_limpar_servicos.Location = new Point(6, 185);
+            btn_limpar_servicos.Name = "btn_limpar_servicos";
+            btn_limpar_servicos.Size = new Size(128, 28);
+            btn_limpar_servicos.TabIndex = 33;
+            btn_limpar_servicos.Text = "Limpar lista";
+            btn_limpar_servicos.TextAlign = ContentAlignment.MiddleRight;
+            btn_limpar_servicos.UseVisualStyleBackColor = false;
+            btn_limpar_servicos.Click += btn_limpar_servicos_Click;
             // 
             // listViewServicos
             // 
@@ -999,7 +1067,7 @@
             // 
             // panel10
             // 
-            panel10.BackColor = Color.RoyalBlue;
+            panel10.BackColor = Color.OrangeRed;
             panel10.BorderStyle = BorderStyle.FixedSingle;
             panel10.Controls.Add(label11);
             panel10.Location = new Point(-1, -1);
@@ -1164,5 +1232,8 @@
         private Label label14;
         private Label txt_total_produto;
         private Label txt_total_servico;
+        private Button btn_apagar_produto;
+        private Button btn_apagar_adicionais;
+        private Button btn_limpar_servicos;
     }
 }

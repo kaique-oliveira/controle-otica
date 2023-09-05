@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelecionarReceita));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             lblTitulo = new Label();
             btn_fechar = new Button();
             pictureBox3 = new PictureBox();
             panel1 = new Panel();
+            panel13 = new Panel();
+            label15 = new Label();
+            panel12 = new Panel();
             btn_confirmar = new Button();
             panel7 = new Panel();
             panel8 = new Panel();
@@ -98,11 +101,10 @@
             DataValExame = new DataGridViewTextBoxColumn();
             nomeExaminador = new DataGridViewTextBoxColumn();
             bnt_confirma_escolha = new Button();
-            panel12 = new Panel();
-            panel13 = new Panel();
-            label15 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel1.SuspendLayout();
+            panel13.SuspendLayout();
+            panel12.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             panel11.SuspendLayout();
@@ -114,8 +116,6 @@
             panel6.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dg_receitas).BeginInit();
-            panel12.SuspendLayout();
-            panel13.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitulo
@@ -171,6 +171,39 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(806, 553);
             panel1.TabIndex = 0;
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.RoyalBlue;
+            panel13.BorderStyle = BorderStyle.FixedSingle;
+            panel13.Controls.Add(label15);
+            panel13.Location = new Point(434, 41);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(361, 25);
+            panel13.TabIndex = 35;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.WhiteSmoke;
+            label15.Location = new Point(141, 2);
+            label15.Name = "label15";
+            label15.Size = new Size(79, 20);
+            label15.TabIndex = 33;
+            label15.Text = "Prescrição";
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.LightGray;
+            panel12.BorderStyle = BorderStyle.FixedSingle;
+            panel12.Controls.Add(btn_fechar);
+            panel12.Controls.Add(pictureBox3);
+            panel12.Controls.Add(lblTitulo);
+            panel12.Location = new Point(-1, -1);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(806, 29);
+            panel12.TabIndex = 36;
             // 
             // btn_confirmar
             // 
@@ -874,31 +907,33 @@
             // 
             dg_receitas.AllowUserToAddRows = false;
             dg_receitas.AllowUserToDeleteRows = false;
+            dg_receitas.AllowUserToResizeColumns = false;
+            dg_receitas.AllowUserToResizeRows = false;
             dg_receitas.Anchor = AnchorStyles.None;
             dg_receitas.BackgroundColor = Color.LightGray;
             dg_receitas.BorderStyle = BorderStyle.None;
             dg_receitas.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dg_receitas.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle4.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Transparent;
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dg_receitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Transparent;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dg_receitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dg_receitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dg_receitas.ColumnHeadersVisible = false;
             dg_receitas.Columns.AddRange(new DataGridViewColumn[] { DataExame, DataValExame, nomeExaminador });
             dg_receitas.Cursor = Cursors.Hand;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.LightGray;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle5.SelectionBackColor = Color.Thistle;
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(64, 64, 64);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dg_receitas.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.LightGray;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle2.SelectionBackColor = Color.Thistle;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dg_receitas.DefaultCellStyle = dataGridViewCellStyle2;
             dg_receitas.EnableHeadersVisualStyles = false;
             dg_receitas.GridColor = Color.WhiteSmoke;
             dg_receitas.Location = new Point(11, 10);
@@ -906,14 +941,14 @@
             dg_receitas.Name = "dg_receitas";
             dg_receitas.ReadOnly = true;
             dg_receitas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Control;
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.LightGray;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
-            dg_receitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dg_receitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dg_receitas.RowHeadersVisible = false;
             dg_receitas.RowTemplate.Height = 25;
             dg_receitas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -964,39 +999,6 @@
             bnt_confirma_escolha.TextAlign = ContentAlignment.MiddleRight;
             bnt_confirma_escolha.UseVisualStyleBackColor = false;
             // 
-            // panel12
-            // 
-            panel12.BackColor = Color.LightGray;
-            panel12.BorderStyle = BorderStyle.FixedSingle;
-            panel12.Controls.Add(btn_fechar);
-            panel12.Controls.Add(pictureBox3);
-            panel12.Controls.Add(lblTitulo);
-            panel12.Location = new Point(-1, -1);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(806, 29);
-            panel12.TabIndex = 36;
-            // 
-            // panel13
-            // 
-            panel13.BackColor = Color.RoyalBlue;
-            panel13.BorderStyle = BorderStyle.FixedSingle;
-            panel13.Controls.Add(label15);
-            panel13.Location = new Point(434, 41);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(361, 25);
-            panel13.TabIndex = 35;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.WhiteSmoke;
-            label15.Location = new Point(141, 2);
-            label15.Name = "label15";
-            label15.Size = new Size(79, 20);
-            label15.TabIndex = 33;
-            label15.Text = "Prescrição";
-            // 
             // SelecionarReceita
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -1011,6 +1013,10 @@
             Load += SelecionarReceita_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel1.ResumeLayout(false);
+            panel13.ResumeLayout(false);
+            panel13.PerformLayout();
+            panel12.ResumeLayout(false);
+            panel12.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel8.ResumeLayout(false);
@@ -1031,10 +1037,6 @@
             panel6.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dg_receitas).EndInit();
-            panel12.ResumeLayout(false);
-            panel12.PerformLayout();
-            panel13.ResumeLayout(false);
-            panel13.PerformLayout();
             ResumeLayout(false);
         }
 

@@ -39,14 +39,14 @@
             bnt_confirma_escolha = new Button();
             btn_fechar = new Button();
             panel2 = new Panel();
+            panel6 = new Panel();
             pictureBox3 = new PictureBox();
             lblTitulo = new Label();
-            panel6 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dg_clientes).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -63,6 +63,8 @@
             // 
             dg_clientes.AllowUserToAddRows = false;
             dg_clientes.AllowUserToDeleteRows = false;
+            dg_clientes.AllowUserToResizeColumns = false;
+            dg_clientes.AllowUserToResizeRows = false;
             dg_clientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dg_clientes.BackgroundColor = Color.LightGray;
             dg_clientes.BorderStyle = BorderStyle.None;
@@ -176,6 +178,18 @@
             panel2.Size = new Size(428, 553);
             panel2.TabIndex = 1;
             // 
+            // panel6
+            // 
+            panel6.BackColor = Color.LightGray;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(btn_fechar);
+            panel6.Controls.Add(pictureBox3);
+            panel6.Controls.Add(lblTitulo);
+            panel6.Location = new Point(-1, -1);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(428, 29);
+            panel6.TabIndex = 37;
+            // 
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.LightGray;
@@ -199,18 +213,6 @@
             lblTitulo.TabIndex = 26;
             lblTitulo.Text = "Clientes";
             // 
-            // panel6
-            // 
-            panel6.BackColor = Color.LightGray;
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(btn_fechar);
-            panel6.Controls.Add(pictureBox3);
-            panel6.Controls.Add(lblTitulo);
-            panel6.Location = new Point(-1, -1);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(428, 29);
-            panel6.TabIndex = 37;
-            // 
             // SelecionarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -227,9 +229,9 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dg_clientes).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
         }
 

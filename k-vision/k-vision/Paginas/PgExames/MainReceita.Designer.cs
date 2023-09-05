@@ -712,6 +712,8 @@
             // 
             dg_receitas.AllowUserToAddRows = false;
             dg_receitas.AllowUserToDeleteRows = false;
+            dg_receitas.AllowUserToResizeColumns = false;
+            dg_receitas.AllowUserToResizeRows = false;
             dg_receitas.Anchor = AnchorStyles.None;
             dg_receitas.BackgroundColor = Color.LightGray;
             dg_receitas.BorderStyle = BorderStyle.None;

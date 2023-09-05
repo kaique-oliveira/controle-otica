@@ -2,8 +2,8 @@
 using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
+using Kvision.Frame.Paginas.PgVendas;
 using Kvision.Frame.Servicos;
-using System.Configuration;
 using System.Data;
 using System.Text.RegularExpressions;
 
@@ -12,11 +12,13 @@ namespace Kvision.Frame.Paginas.PgVendaServico
     public partial class AddServico : Form
     {
 
-        private MainFrame _mainFrame;
+        private MainFrame? _mainFrame;
+        private EditarVendaServico? _editarVendaServico;
         private TelaBlur _blur;
-        public AddServico(MainFrame mainFrame, TelaBlur telaBlur)
+        public AddServico(MainFrame mainFrame, EditarVendaServico? vendaServico, TelaBlur telaBlur)
         {
             _mainFrame = mainFrame;
+            _editarVendaServico = vendaServico;
             _blur = telaBlur;
 
             InitializeComponent();
@@ -45,40 +47,78 @@ namespace Kvision.Frame.Paginas.PgVendaServico
 
         private void bnt_confirmar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txt_valor.Text))
+            if (_mainFrame != null)
             {
-                _servico.Valor = decimal.Parse(string.Format("{0:#,##0.00}", (_servico.Valor * int.Parse(txt_quantidade.Text))));
+                if (!string.IsNullOrEmpty(txt_valor.Text))
+                {
+                    _servico.Valor = decimal.Parse(string.Format("{0:#,##0.00}", (_servico.Valor * int.Parse(txt_quantidade.Text))));
 
-                _mainFrame.valor_total_servico += _servico.Valor;
-                _mainFrame.confirmarServico(_servico, txt_quantidade.Text);
+                    _mainFrame.valor_total_servico += _servico.Valor;
+                    _mainFrame.confirmarServico(_servico);
 
-                txt_valor.Text = "";
-                MessageBox.Show($"Serviço adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_valor.Text = "";
+                    MessageBox.Show($"Serviço adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                indexlista = -1;
-                dg_servicos.ClearSelection();
-                _servico = new Servico();
-                buscarServicos();
-                txt_quantidade.Text = "";
+                    indexlista = -1;
+                    dg_servicos.ClearSelection();
+                    _servico = new Servico();
+                    buscarServicos();
+                    txt_quantidade.Text = "1";
+                    txt_quantidade.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show($"Digite um valor para este serviço, para continuar!", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show($"Digite um valor para este serviço, para continuar!", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!string.IsNullOrEmpty(txt_valor.Text))
+                {
+                    _servico.Valor = decimal.Parse(string.Format("{0:#,##0.00}", (_servico.Valor * int.Parse(txt_quantidade.Text))));
+
+                    _editarVendaServico.valor_total_servico += _servico.Valor;
+                    _editarVendaServico.confirmarServico(_servico);
+
+                    txt_valor.Text = "";
+                    MessageBox.Show($"Serviço adicionado!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    indexlista = -1;
+                    dg_servicos.ClearSelection();
+                    _servico = new Servico();
+                    buscarServicos();
+                    txt_quantidade.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show($"Digite um valor para este serviço, para continuar!", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
         private void dg_servicos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            txt_quantidade.Enabled = true;
             indexlista = dg_servicos.CurrentCell.RowIndex;
             _servico = listaServico[indexlista];
 
             txt_valor.Text = string.Format("{0:#,##0.00}", _servico.Valor);
+            bnt_confirmar.Enabled = true;
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
-            _blur.Close();
-            this.Close();
+            if (_mainFrame != null)
+            {
+                _blur.Close();
+                this.Close();
+            }
+            else
+            {
+                _editarVendaServico.Opacity = 100;
+                this.Close();
+            }
+
         }
 
         private void AddServico_Shown(object sender, EventArgs e)
@@ -130,7 +170,7 @@ namespace Kvision.Frame.Paginas.PgVendaServico
                 }
                 else
                 {
-                    t.Text = e.KeyChar.ToString();
+                    t.Text += e.KeyChar.ToString();
                     t.Select(t.Text.Length, 0);
                     e.Handled = true;
                 }

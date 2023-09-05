@@ -1,4 +1,6 @@
-﻿using Kvision.Database.Interfaces;
+﻿using Kvision.Database.Conexao;
+using Kvision.Database.Interfaces;
+using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.ViewModel;
 using Kvision.Frame.Interfaces;
@@ -10,6 +12,7 @@ namespace Kvision.Frame.Servicos
     {
 
         private readonly IVendaProduto _venda;
+        ServicoMovimentacao _servicoMovimentacao = new ServicoMovimentacao(new CrudMovimentacao(new ConexaoDatabase()));
 
         public ServicosVendaProduto(IVendaProduto venda)
         {
@@ -17,11 +20,28 @@ namespace Kvision.Frame.Servicos
         }
 
         public string Cadastrar(VendaProduto venda)
-        {
+        { 
             if (_venda.Insert(venda))
             {
-                return "Venda finalizada!";
+                var v = _venda.FindAll().Last();
+
+                var movimentacao = new Movimentacao()
+                {
+                    Id = 0,
+                    Descricao = "Venda de produto",
+                    IdVenda = v.Id,
+                    Tipo = Dominio.Enums.TipoMovimentacao.Entrada,
+                    Valor = v.Total
+                };
+
+                var response = _servicoMovimentacao.Cadastrar(movimentacao);
+
+                if (response != "")
+                {
+                    return "Venda finalizada!";
+                }
             }
+            
 
             return "Algo deu errado";
         }
@@ -91,6 +111,8 @@ namespace Kvision.Frame.Servicos
         {
             if (_venda.Delete(venda))
             {
+                Movimentacao mov = _servicoMovimentacao.ConsultarTodos().Where(m => m.IdVenda == venda.Id).First();
+                _servicoMovimentacao.Deletar(mov);
                 return "Venda deletada com sucesso!";
             }
             else
@@ -103,6 +125,9 @@ namespace Kvision.Frame.Servicos
         {
             if (_venda.Update(venda))
             {
+                Movimentacao mov = _servicoMovimentacao.ConsultarTodos().Where(m => m.IdVenda == venda.Id).First();
+                mov.Valor = venda.Total;
+                _servicoMovimentacao.Editar(mov);
                 return "Venda editada com sucesso!";
             }
 

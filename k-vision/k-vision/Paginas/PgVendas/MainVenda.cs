@@ -1,6 +1,4 @@
-﻿using k_vision;
-using Kvision.Database.Conexao;
-using Kvision.Database.Interfaces;
+﻿using Kvision.Database.Conexao;
 using Kvision.Database.Servicos;
 using Kvision.Dominio.Entidades;
 using Kvision.Dominio.ViewModel;
@@ -117,12 +115,14 @@ namespace Kvision.Frame.Paginas.PgVendas
 
             if (tipoVenda == "Podutos")
             {
+                _vendaServico = null;
                 _vendaProduto = listaVendasProdutos.Find(p => p.Id == idVenda);
 
                 lblClienteVenda.Text = _vendaProduto.Cliente.Nome;
                 lblReceita_selecionada.Text = $"{_vendaProduto.Receita.DataExame.ToShortDateString()} - {_vendaProduto.Receita.NomeExaminador}";
                 lbl_valor_total.Text = $"R$ {_vendaProduto.Total}";
                 lbl_pagamento.Text = _vendaProduto.TipoPagamento.ToString();
+                txt_observacao_servico.Text = _vendaProduto.Observacao;
 
                 List<ItemProduto> itensProdutos = JsonSerializer.Deserialize<List<ItemProduto>>(_vendaProduto.Produtos);
 
@@ -150,12 +150,14 @@ namespace Kvision.Frame.Paginas.PgVendas
             }
             else
             {
+                _vendaProduto = null;
                 _vendaServico = listaVendasServicos.Find(s => s.Id == idVenda);
 
                 lblClienteVenda.Text = "Não possui";
                 lblReceita_selecionada.Text = "Não possui";
                 lbl_valor_total.Text = $"R$ {_vendaServico.Total}";
                 lbl_pagamento.Text = _vendaServico.TipoPagamento.ToString();
+                txt_observacao_servico.Text = _vendaServico.Observacao;
 
                 List<Servico> itensServicos = JsonSerializer.Deserialize<List<Servico>>(_vendaServico.Servicos);
 
@@ -171,6 +173,7 @@ namespace Kvision.Frame.Paginas.PgVendas
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
+            _mianCaixa.buscarCaixa();
             _mianCaixa.Opacity = 100;
             this.Close();
         }
@@ -181,6 +184,7 @@ namespace Kvision.Frame.Paginas.PgVendas
 
         private void dtp_data_inicio_ValueChanged(object sender, EventArgs e)
         {
+            dtp_data_fim.Enabled = true;
             dtp_data_fim.MinDate = dtp_data_inicio.Value;
 
             var listaViewVendasFiltrada = listaViewVendas.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
@@ -209,7 +213,7 @@ namespace Kvision.Frame.Paginas.PgVendas
             dg_vendas.DataSource = listaViewVendasFiltrada;
 
             decimal total = 0;
-            foreach (var item in listaViewVendas)
+            foreach (var item in listaViewVendasFiltrada)
             {
                 total += item.Valor;
             }
@@ -223,6 +227,7 @@ namespace Kvision.Frame.Paginas.PgVendas
             dtp_data_inicio.Value = DateTime.Now.Date;
             dtp_data_fim.Value = DateTime.Now.Date;
             dg_vendas.DataSource = listaViewVendas;
+            dtp_data_fim.Enabled = false;
         }
 
 
@@ -236,18 +241,30 @@ namespace Kvision.Frame.Paginas.PgVendas
                 this.Opacity = 0;
                 f_editarVenda.ShowDialog();
             }
+            else
+            {
+                var f_editarVenda = new EditarVendaServico(this, _telaBlur, _vendaServico);
+                this.Opacity = 0;
+                f_editarVenda.ShowDialog();
+            }
 
         }
 
         private void btn_deletar_Click(object sender, EventArgs e)
         {
-            if (indexlistaVenda > -1)
+            if (_vendaProduto != null || _vendaServico != null)
             {
                 var result = MessageBox.Show($"Deseja realmente deletar esta venda?", "Antenção", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-
-                    MessageBox.Show($"{_servicosVendaProduto.Deletar(_vendaProduto)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (_vendaProduto != null)
+                    {
+                        MessageBox.Show($"{_servicosVendaProduto.Deletar(_vendaProduto)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"{_servicosVendaServico.Deletar(_vendaServico)}", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     atualizarGridVendas();
                 }
             }

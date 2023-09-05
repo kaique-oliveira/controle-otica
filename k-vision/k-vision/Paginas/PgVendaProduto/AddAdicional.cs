@@ -8,10 +8,10 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
 {
     public partial class AddAdicional : Form
     {
-        private MainFrame _mainFrame;
+        private MainFrame? _mainFrame;
         private TelaBlur _blur;
         private EditarVendaProduto? _editarVendaProduto;
-        public AddAdicional(MainFrame mainFrame, EditarVendaProduto? editarVendaProduto, TelaBlur blur)
+        public AddAdicional(MainFrame? mainFrame, EditarVendaProduto? editarVendaProduto, TelaBlur blur)
         {
             _mainFrame = mainFrame;
             _editarVendaProduto = editarVendaProduto;
@@ -60,7 +60,7 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
                 _editarVendaProduto.Opacity = 100;
                 this.Close();
             }
-          
+
         }
 
         private void bnt_confirmar_Click(object sender, EventArgs e)
@@ -76,7 +76,8 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
                 {
                     _mainFrame.confirmarAdicional(adicional);
                     MessageBox.Show("Adicional salvo com sucesso!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }else if (_editarVendaProduto != null)
+                }
+                else if (_editarVendaProduto != null)
                 {
                     _editarVendaProduto.confirmarAdicional(adicional);
                     MessageBox.Show("Adicional salvo com sucesso!", "Tudo certo", MessageBoxButtons.OK, MessageBoxIcon.Information);

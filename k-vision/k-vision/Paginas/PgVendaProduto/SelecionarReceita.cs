@@ -22,7 +22,7 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
             _cliente = cliente;
             _selecionarCliente = selecionarCliente;
             _mainFrame = mainFrame;
-            _editarVenda = editarVenda; 
+            _editarVenda = editarVenda;
 
             InitializeComponent();
         }
@@ -130,14 +130,15 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
                     _mainFrame.confirmarSelecaoReceita(receita);
                     _selecionarCliente.Fechar();
                     this.Close();
-                }else 
-                if(_editarVenda != null)
+                }
+                else
+                if (_editarVenda != null)
                 {
                     _editarVenda.confirmarSelecaoReceita(receita);
                     _selecionarCliente.Fechar();
                     this.Close();
                 }
-               
+
             }
             else
             {
@@ -145,6 +146,6 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
             }
         }
 
-        }
-    
+    }
+
 }

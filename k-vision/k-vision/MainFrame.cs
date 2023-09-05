@@ -4,8 +4,6 @@ using Kvision.Dominio.Entidades;
 using Kvision.Dominio.Enums;
 using Kvision.Dominio.ViewModel;
 using Kvision.Frame.Paginas;
-using Kvision.Frame.Paginas.PgVendas;
-using Kvision.Frame.Paginas.PgVendaServico;
 using Kvision.Frame.Servicos;
 using System.Text.Json;
 
@@ -20,8 +18,6 @@ namespace k_vision
             this.ShowInTaskbar = false;
         }
 
-        //ServicosServico servicosServico = new ServicosServico(new CrudServico(new ConexaoDatabase()));
-        //ServicosCliente servicosCliente = new ServicosCliente(new CrudCliente(new ConexaoDatabase()));
         ServicosProduto servicosProduto = new ServicosProduto(new CrudProduto(new ConexaoDatabase()));
         ServicosVendaProduto servicosVendaProduto = new ServicosVendaProduto(new CrudVendaProduto(new ConexaoDatabase()));
 
@@ -74,7 +70,7 @@ namespace k_vision
                 listViewProdutos.Items.Add(itemList);
             }
 
-            bnt_finalizar_venda.Visible = true;
+            bnt_finalizar_venda.Enabled = true;
             painel_observacao.Visible = true;
             valorTotal += _produto.Valor;
             txt_total_produto.Text = $"R$ {valorTotal}";
@@ -209,6 +205,7 @@ namespace k_vision
                 if (result == DialogResult.OK)
                 {
                     limparVendaProduto();
+                    bnt_finalizar_venda.Enabled = false;
                 }
             }
             else
@@ -247,19 +244,30 @@ namespace k_vision
         ServicosVendaServico servicosVendaServico = new ServicosVendaServico(new CrudVendaServico(new ConexaoDatabase()));
         public decimal valor_total_servico = 0;
 
-        public void confirmarServico(Servico servico, string quant)
+        public void confirmarServico(Servico servico)
         {
-            listaServico.Add(servico);
 
             listViewServicos.Items.Clear();
+
+            if (listaServico.Find(e => e.Id == servico.Id) != null)
+            {
+                listaServico.Find(e => e.Id == servico.Id).Valor += servico.Valor;
+            }
+            else
+            {
+                listaServico.Add(servico);
+            }
+
             foreach (var item in listaServico)
             {
-                ListViewItem itemList = new ListViewItem($"{quant} - {item.Nome}");
+                ListViewItem itemList = new ListViewItem($"{item.Nome}");
                 itemList.SubItems.Add($"R$ {item.Valor}");
 
                 listViewServicos.Items.Add(itemList);
             }
 
+            btn_finalizar_servico.Enabled = true;
+            btn_limpar_servicos.Enabled = true;
             painel_pagamento_servico.Visible = true;
             txt_total_servico.Text = $"R$ {valor_total_servico}";
         }
@@ -277,7 +285,6 @@ namespace k_vision
             rb_credito_servico.Checked = false;
 
             painel_observacao_servico.Visible = false;
-            btn_finalizar_servico.Visible = false;
             painel_pagamento_servico.Visible = false;
         }
 
@@ -347,6 +354,7 @@ namespace k_vision
                 if (result == DialogResult.OK)
                 {
                     limparVendaServico();
+                    btn_finalizar_servico.Enabled = false;
                 }
             }
             else
@@ -367,6 +375,40 @@ namespace k_vision
             pg_splash.ShowDialog();
         }
 
+        private void btn_apagar_produto_Click(object sender, EventArgs e)
+        {
+            listViewProdutos.Items.Clear();
+            bnt_finalizar_venda.Enabled = false;
 
+            foreach (var item in produtosSelecionados)
+            {
+                valorTotal -= item.Valor;
+            }
+
+            produtosSelecionados.Clear();
+            txt_total_produto.Text = $"R$ {valorTotal}";
+        }
+
+        private void btn_apagar_adicionais_Click(object sender, EventArgs e)
+        {
+            foreach (var item in listaAdicional)
+            {
+                valorTotal -= item.Valor;
+            }
+            listViewAdicionais.Items.Clear();
+            listaAdicional.Clear();
+            txt_total_produto.Text = $"R$ {valorTotal}";
+        }
+
+        private void btn_limpar_servicos_Click(object sender, EventArgs e)
+        {
+            listViewServicos.Items.Clear();
+            valor_total_servico = 0;
+
+            listaServico.Clear();
+            txt_total_servico.Text = $"R$ 0,00";
+            btn_finalizar_servico.Enabled = false;
+            btn_limpar_servicos.Enabled = false;
+        }
     }
 }

@@ -112,6 +112,7 @@
             bnt_confirmar.BackColor = Color.LightGray;
             bnt_confirmar.BackgroundImageLayout = ImageLayout.Stretch;
             bnt_confirmar.Cursor = Cursors.Hand;
+            bnt_confirmar.Enabled = false;
             bnt_confirmar.FlatAppearance.BorderColor = Color.Gray;
             bnt_confirmar.FlatStyle = FlatStyle.Flat;
             bnt_confirmar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
@@ -141,6 +142,8 @@
             // 
             dg_servicos.AllowUserToAddRows = false;
             dg_servicos.AllowUserToDeleteRows = false;
+            dg_servicos.AllowUserToResizeColumns = false;
+            dg_servicos.AllowUserToResizeRows = false;
             dg_servicos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dg_servicos.BackgroundColor = Color.LightGray;
             dg_servicos.BorderStyle = BorderStyle.None;
@@ -251,6 +254,7 @@
             // 
             txt_quantidade.BackColor = Color.WhiteSmoke;
             txt_quantidade.BorderStyle = BorderStyle.FixedSingle;
+            txt_quantidade.Enabled = false;
             txt_quantidade.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_quantidade.ForeColor = Color.FromArgb(64, 64, 64);
             txt_quantidade.Location = new Point(284, 10);

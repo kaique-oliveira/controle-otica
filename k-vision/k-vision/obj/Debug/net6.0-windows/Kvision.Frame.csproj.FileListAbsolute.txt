@@ -147,7 +147,6 @@ C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\k-vision\obj\Debu
 C:\Users\kaique\Desktop\projeto ótica\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\ref\Kvision.Frame.dll
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.csproj.AssemblyReference.cache
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\k_vision.MainFrame.resources
-C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.Mensagem.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgCaixa.MainCaixa.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgCliente.MainCliente.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgCliente.PersistirCliente.resources
@@ -163,6 +162,7 @@ C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendaProduto.SelecionarReceita.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendaServico.AddServico.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendas.EditarVendaProduto.resources
+C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendas.EditarVendaServico.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgVendas.MainVenda.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.Splash.resources
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.TelaBlur.resources
@@ -286,3 +286,4 @@ C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.pdb
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.genruntimeconfig.cache
 C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\ref\Kvision.Frame.dll
+C:\Users\Interfocus\Desktop\projetos\controle-otica\k-vision\k-vision\obj\Debug\net6.0-windows\Kvision.Frame.Paginas.PgCaixa.PersistirMovimentacao.resources

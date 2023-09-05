@@ -89,6 +89,8 @@
             // 
             dg_clientes.AllowUserToAddRows = false;
             dg_clientes.AllowUserToDeleteRows = false;
+            dg_clientes.AllowUserToResizeColumns = false;
+            dg_clientes.AllowUserToResizeRows = false;
             dg_clientes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dg_clientes.BackgroundColor = Color.LightGray;
             dg_clientes.BorderStyle = BorderStyle.None;

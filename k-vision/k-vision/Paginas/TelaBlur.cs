@@ -1,5 +1,4 @@
 ﻿
-
 using k_vision;
 using Kvision.Dominio.Entidades;
 using Kvision.Frame.Paginas.PgCaixa;
@@ -62,7 +61,7 @@ namespace Kvision.Frame.Paginas
                     a.ShowDialog();
                     break;
                 case "selecionar-servico":
-                    var sv = new AddServico(_mainFrame, this);
+                    var sv = new AddServico(_mainFrame,null, this);
                     sv.ShowDialog();
                     break;
                 case "caixa":

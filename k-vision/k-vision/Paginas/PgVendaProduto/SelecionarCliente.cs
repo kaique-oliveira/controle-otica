@@ -15,7 +15,7 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
         private MainFrame? _mainFrame;
         private EditarVendaProduto? _editarVenda;
         private TelaBlur _blur;
-  
+
         public SelecionarCliente(MainFrame? mainFrame, EditarVendaProduto? editarVenda, TelaBlur blur)
         {
             InitializeComponent();
@@ -68,17 +68,17 @@ namespace Kvision.Frame.Paginas.PgVendaProduto
             if (_cliente != null && indexlista > -1)
             {
 
-            var selectReceita = new SelecionarReceita(_cliente, this, _mainFrame, _editarVenda);
-            this.Opacity = 0;
-            selectReceita.ShowDialog();
-                
+                var selectReceita = new SelecionarReceita(_cliente, this, _mainFrame, _editarVenda);
+                this.Opacity = 0;
+                selectReceita.ShowDialog();
+
             }
             else
             {
 
                 MessageBox.Show("Por favor, selecione um cliente da lista, para continuar!", "Ops", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        
+
         }
 
         private void dg_clientes_CellClick(object sender, DataGridViewCellEventArgs e)

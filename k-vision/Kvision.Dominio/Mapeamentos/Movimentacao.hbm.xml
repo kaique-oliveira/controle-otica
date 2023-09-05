@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Kvision.Dominio.Entidades" assembly="Kvision.Dominio">
+
+	<class name="Movimentacao" lazy="false" table="tbl_movimentacao" >
+
+		<id name="Id" column="id" type="int">
+			<generator class="increment" />
+		</id>
+		
+		<property name="DataCadastro"		column="d_cadastro"			type="date" />
+		<property name="Descricao"		    column="descricao"			type="string" />
+		<property name="Tipo"	column="tipo"/>
+		<property name="IdVenda"		    column="id_venda"			type="int" />
+		<property name="Valor"				column="valor"				type="decimal" />
+
+	</class>
+</hibernate-mapping>
+

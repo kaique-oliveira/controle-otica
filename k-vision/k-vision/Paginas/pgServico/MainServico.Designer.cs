@@ -85,6 +85,8 @@
             // 
             dg_servicos.AllowUserToAddRows = false;
             dg_servicos.AllowUserToDeleteRows = false;
+            dg_servicos.AllowUserToResizeColumns = false;
+            dg_servicos.AllowUserToResizeRows = false;
             dg_servicos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dg_servicos.BackgroundColor = Color.LightGray;
             dg_servicos.BorderStyle = BorderStyle.None;
@@ -104,7 +106,7 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.LightGray;
             dataGridViewCellStyle2.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(64, 64, 64);
+            dataGridViewCellStyle2.ForeColor = Color.Gray;
             dataGridViewCellStyle2.SelectionBackColor = Color.Thistle;
             dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(64, 64, 64);
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;

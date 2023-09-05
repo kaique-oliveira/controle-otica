@@ -73,6 +73,7 @@
             btn_fechar = new Button();
             label1 = new Label();
             btn_salvar_edicao = new Button();
+            panel7 = new Panel();
             panel2.SuspendLayout();
             panel14.SuspendLayout();
             painel_observacao.SuspendLayout();
@@ -314,11 +315,11 @@
             btn_apagar_adicionais.ForeColor = Color.FromArgb(64, 64, 64);
             btn_apagar_adicionais.Image = (Image)resources.GetObject("btn_apagar_adicionais.Image");
             btn_apagar_adicionais.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_apagar_adicionais.Location = new Point(365, 239);
+            btn_apagar_adicionais.Location = new Point(343, 239);
             btn_apagar_adicionais.Name = "btn_apagar_adicionais";
-            btn_apagar_adicionais.Size = new Size(121, 28);
+            btn_apagar_adicionais.Size = new Size(125, 28);
             btn_apagar_adicionais.TabIndex = 31;
-            btn_apagar_adicionais.Text = "Remover";
+            btn_apagar_adicionais.Text = "Limpar lista";
             btn_apagar_adicionais.TextAlign = ContentAlignment.MiddleRight;
             btn_apagar_adicionais.UseVisualStyleBackColor = false;
             btn_apagar_adicionais.Click += btn_apagar_adicionais_Click;
@@ -334,11 +335,11 @@
             btn_apagar_produto.ForeColor = Color.FromArgb(64, 64, 64);
             btn_apagar_produto.Image = (Image)resources.GetObject("btn_apagar_produto.Image");
             btn_apagar_produto.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_apagar_produto.Location = new Point(32, 239);
+            btn_apagar_produto.Location = new Point(5, 239);
             btn_apagar_produto.Name = "btn_apagar_produto";
-            btn_apagar_produto.Size = new Size(121, 28);
+            btn_apagar_produto.Size = new Size(126, 28);
             btn_apagar_produto.TabIndex = 30;
-            btn_apagar_produto.Text = "Remover";
+            btn_apagar_produto.Text = "Limpar lista";
             btn_apagar_produto.TextAlign = ContentAlignment.MiddleRight;
             btn_apagar_produto.UseVisualStyleBackColor = false;
             btn_apagar_produto.Click += btn_apagar_produto_Click;
@@ -375,7 +376,7 @@
             btn_show_add_adicional.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_add_adicional.Image = (Image)resources.GetObject("btn_show_add_adicional.Image");
             btn_show_add_adicional.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_add_adicional.Location = new Point(517, 239);
+            btn_show_add_adicional.Location = new Point(539, 239);
             btn_show_add_adicional.Name = "btn_show_add_adicional";
             btn_show_add_adicional.Size = new Size(122, 28);
             btn_show_add_adicional.TabIndex = 29;
@@ -400,7 +401,7 @@
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label18.ForeColor = Color.FromArgb(64, 64, 64);
-            label18.Location = new Point(115, 31);
+            label18.Location = new Point(118, 31);
             label18.Name = "label18";
             label18.Size = new Size(68, 20);
             label18.TabIndex = 25;
@@ -415,7 +416,7 @@
             listViewAdicionais.ForeColor = Color.FromArgb(64, 64, 64);
             listViewAdicionais.FullRowSelect = true;
             listViewAdicionais.HeaderStyle = ColumnHeaderStyle.None;
-            listViewAdicionais.Location = new Point(340, 54);
+            listViewAdicionais.Location = new Point(343, 54);
             listViewAdicionais.Name = "listViewAdicionais";
             listViewAdicionais.Size = new Size(319, 178);
             listViewAdicionais.TabIndex = 24;
@@ -442,7 +443,7 @@
             listViewProdutos.ForeColor = Color.FromArgb(64, 64, 64);
             listViewProdutos.FullRowSelect = true;
             listViewProdutos.HeaderStyle = ColumnHeaderStyle.None;
-            listViewProdutos.Location = new Point(11, 54);
+            listViewProdutos.Location = new Point(5, 54);
             listViewProdutos.MultiSelect = false;
             listViewProdutos.Name = "listViewProdutos";
             listViewProdutos.Size = new Size(319, 178);
@@ -472,7 +473,7 @@
             btn_show_select_produto.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_select_produto.Image = (Image)resources.GetObject("btn_show_select_produto.Image");
             btn_show_select_produto.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_select_produto.Location = new Point(189, 239);
+            btn_show_select_produto.Location = new Point(203, 239);
             btn_show_select_produto.Name = "btn_show_select_produto";
             btn_show_select_produto.Size = new Size(121, 28);
             btn_show_select_produto.TabIndex = 23;
@@ -590,7 +591,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(731, 29);
+            panel1.Size = new Size(730, 29);
             panel1.TabIndex = 37;
             // 
             // pictureBox1
@@ -654,6 +655,15 @@
             btn_salvar_edicao.UseVisualStyleBackColor = false;
             btn_salvar_edicao.Click += btn_salvar_edicao_Click;
             // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(224, 224, 224);
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Location = new Point(0, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(730, 715);
+            panel7.TabIndex = 39;
+            // 
             // EditarVendaProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -663,6 +673,7 @@
             Controls.Add(btn_salvar_edicao);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            Controls.Add(panel7);
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.FromArgb(64, 64, 64);
             FormBorderStyle = FormBorderStyle.None;
@@ -741,5 +752,6 @@
         private Button btn_salvar_edicao;
         private Button btn_apagar_produto;
         private Button btn_apagar_adicionais;
+        private Panel panel7;
     }
 }

@@ -101,6 +101,8 @@
             // 
             dg_produtos.AllowUserToAddRows = false;
             dg_produtos.AllowUserToDeleteRows = false;
+            dg_produtos.AllowUserToResizeColumns = false;
+            dg_produtos.AllowUserToResizeRows = false;
             dg_produtos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             dg_produtos.BackgroundColor = Color.LightGray;
             dg_produtos.BorderStyle = BorderStyle.None;
