@@ -30,11 +30,11 @@ namespace Kvision.Frame.Paginas.PgProduto
         {
             indexlista = -1;
             dg_produtos.AutoGenerateColumns = false;
-            listaProdutos = servicos.ConsultarTodos();
+            listaProdutos = servicos.ConsultarTodos().OrderBy(p => p.Nome).ToList();
 
             if (listaProdutos.Count > 0)
             {
-                dg_produtos.DataSource = listaProdutos.OrderBy(p => p.Nome).ToList();
+                dg_produtos.DataSource = listaProdutos;
                 dg_produtos.Rows[0].Cells[0].Selected = false;
                 //_mainFrame.atualizarGridProduto();
             }

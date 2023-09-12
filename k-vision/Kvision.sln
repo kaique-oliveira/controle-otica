@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kvision.Database", "Kvision
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kvision.Dominio", "Kvision.Dominio\Kvision.Dominio.csproj", "{42F19B4E-CBF9-4F4D-8C7C-42FA5CA45581}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "k-vizion", "k-vizion\k-vizion.vdproj", "{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,16 @@ Global
 		{42F19B4E-CBF9-4F4D-8C7C-42FA5CA45581}.Release|x64.Build.0 = Release|Any CPU
 		{42F19B4E-CBF9-4F4D-8C7C-42FA5CA45581}.Release|x86.ActiveCfg = Release|Any CPU
 		{42F19B4E-CBF9-4F4D-8C7C-42FA5CA45581}.Release|x86.Build.0 = Release|Any CPU
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Debug|Any CPU.ActiveCfg = Debug
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Debug|ARM.ActiveCfg = Debug
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Debug|ARM64.ActiveCfg = Debug
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Debug|x64.ActiveCfg = Debug
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Debug|x86.ActiveCfg = Debug
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Release|Any CPU.ActiveCfg = Release
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Release|ARM.ActiveCfg = Release
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Release|ARM64.ActiveCfg = Release
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Release|x64.ActiveCfg = Release
+		{1BF22A85-FEDB-400E-8DA6-AEA545AC10E9}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

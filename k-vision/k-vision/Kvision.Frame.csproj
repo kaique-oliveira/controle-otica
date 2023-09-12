@@ -7,7 +7,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>assets\logo.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="assets\logo.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Bunifu.UI.WinForms" Version="6.1.0" />

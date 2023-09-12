@@ -54,7 +54,7 @@ namespace Kvision.Frame.Paginas.PgExames
             {
                 _prescriAdicional.Id = _receita.PrescricaoAdicional.Id;
                 servicoPrescricaoAdicional.Editar(_prescriAdicional);
-                
+
             }
 
             _receita.DataExame = DateTime.Parse(dtp_data_realizado.Value.ToString());
@@ -229,7 +229,7 @@ namespace Kvision.Frame.Paginas.PgExames
                 lblTitulo.Text = "Cadastrando receita";
             }
 
-            dtp_data_realizado.MaxDate = DateTime.Now;
+            dtp_data_realizado.Value = DateTime.Now;
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)

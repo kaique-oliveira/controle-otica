@@ -40,14 +40,13 @@
             btn_finalizar_servico = new Button();
             btn_show_add_servico = new Button();
             tipCampo = new ToolTip(components);
-            pictureBox4 = new PictureBox();
             panel1 = new Panel();
             btn_show_prods = new Button();
             btn_show_servicos = new Button();
             btn_show_caixa = new Button();
-            label1 = new Label();
             bnt_show_clientes = new Button();
             panel2 = new Panel();
+            btn_cancelar_produto = new Button();
             panel14 = new Panel();
             txt_total_produto = new Label();
             label13 = new Label();
@@ -83,6 +82,7 @@
             label3 = new Label();
             label2 = new Label();
             panel4 = new Panel();
+            btn_cancelar_servico = new Button();
             panel11 = new Panel();
             txt_total_servico = new Label();
             label14 = new Label();
@@ -105,7 +105,6 @@
             panel10 = new Panel();
             label11 = new Label();
             label9 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -148,7 +147,7 @@
             bnt_finalizar_venda.ForeColor = Color.FromArgb(64, 64, 64);
             bnt_finalizar_venda.Image = (Image)resources.GetObject("bnt_finalizar_venda.Image");
             bnt_finalizar_venda.ImageAlign = ContentAlignment.MiddleLeft;
-            bnt_finalizar_venda.Location = new Point(303, 635);
+            bnt_finalizar_venda.Location = new Point(396, 595);
             bnt_finalizar_venda.Name = "bnt_finalizar_venda";
             bnt_finalizar_venda.Size = new Size(108, 29);
             bnt_finalizar_venda.TabIndex = 24;
@@ -207,7 +206,7 @@
             btn_show_select_produto.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_select_produto.Image = (Image)resources.GetObject("btn_show_select_produto.Image");
             btn_show_select_produto.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_select_produto.Location = new Point(204, 239);
+            btn_show_select_produto.Location = new Point(203, 239);
             btn_show_select_produto.Name = "btn_show_select_produto";
             btn_show_select_produto.Size = new Size(121, 28);
             btn_show_select_produto.TabIndex = 23;
@@ -228,7 +227,7 @@
             btn_show_add_adicional.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_add_adicional.Image = (Image)resources.GetObject("btn_show_add_adicional.Image");
             btn_show_add_adicional.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_add_adicional.Location = new Point(540, 238);
+            btn_show_add_adicional.Location = new Point(525, 238);
             btn_show_add_adicional.Name = "btn_show_add_adicional";
             btn_show_add_adicional.Size = new Size(122, 28);
             btn_show_add_adicional.TabIndex = 29;
@@ -251,7 +250,7 @@
             btn_finalizar_servico.ForeColor = Color.FromArgb(64, 64, 64);
             btn_finalizar_servico.Image = (Image)resources.GetObject("btn_finalizar_servico.Image");
             btn_finalizar_servico.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_finalizar_servico.Location = new Point(130, 495);
+            btn_finalizar_servico.Location = new Point(224, 592);
             btn_finalizar_servico.Name = "btn_finalizar_servico";
             btn_finalizar_servico.Size = new Size(108, 29);
             btn_finalizar_servico.TabIndex = 27;
@@ -287,31 +286,17 @@
             tipCampo.AutomaticDelay = 200;
             tipCampo.ToolTipTitle = "Campo";
             // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = Color.Transparent;
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox4.Location = new Point(29, 26);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(64, 64);
-            pictureBox4.TabIndex = 14;
-            pictureBox4.TabStop = false;
-            tipCampo.SetToolTip(pictureBox4, "Filtrar clientes por nome ou final do telefone.");
-            // 
             // panel1
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.LightGray;
             panel1.Controls.Add(btn_show_prods);
             panel1.Controls.Add(btn_show_servicos);
             panel1.Controls.Add(btn_show_caixa);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(bnt_show_clientes);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(129, 687);
+            panel1.Size = new Size(1227, 45);
             panel1.TabIndex = 10;
             // 
             // btn_show_prods
@@ -325,7 +310,7 @@
             btn_show_prods.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_prods.Image = (Image)resources.GetObject("btn_show_prods.Image");
             btn_show_prods.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_prods.Location = new Point(7, 295);
+            btn_show_prods.Location = new Point(121, 6);
             btn_show_prods.Name = "btn_show_prods";
             btn_show_prods.Size = new Size(112, 33);
             btn_show_prods.TabIndex = 17;
@@ -345,7 +330,7 @@
             btn_show_servicos.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_servicos.Image = (Image)resources.GetObject("btn_show_servicos.Image");
             btn_show_servicos.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_servicos.Location = new Point(7, 341);
+            btn_show_servicos.Location = new Point(240, 6);
             btn_show_servicos.Name = "btn_show_servicos";
             btn_show_servicos.Size = new Size(112, 33);
             btn_show_servicos.TabIndex = 16;
@@ -365,7 +350,7 @@
             btn_show_caixa.ForeColor = Color.FromArgb(64, 64, 64);
             btn_show_caixa.Image = (Image)resources.GetObject("btn_show_caixa.Image");
             btn_show_caixa.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_show_caixa.Location = new Point(7, 389);
+            btn_show_caixa.Location = new Point(360, 6);
             btn_show_caixa.Name = "btn_show_caixa";
             btn_show_caixa.Size = new Size(112, 33);
             btn_show_caixa.TabIndex = 15;
@@ -373,18 +358,6 @@
             btn_show_caixa.TextAlign = ContentAlignment.MiddleRight;
             btn_show_caixa.UseVisualStyleBackColor = false;
             btn_show_caixa.Click += btn_show_caixa_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(64, 64, 64);
-            label1.Location = new Point(30, 92);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 18);
-            label1.TabIndex = 14;
-            label1.Text = "k-vision";
             // 
             // bnt_show_clientes
             // 
@@ -397,7 +370,7 @@
             bnt_show_clientes.ForeColor = Color.FromArgb(64, 64, 64);
             bnt_show_clientes.Image = (Image)resources.GetObject("bnt_show_clientes.Image");
             bnt_show_clientes.ImageAlign = ContentAlignment.MiddleLeft;
-            bnt_show_clientes.Location = new Point(7, 247);
+            bnt_show_clientes.Location = new Point(3, 6);
             bnt_show_clientes.Name = "bnt_show_clientes";
             bnt_show_clientes.Size = new Size(112, 33);
             bnt_show_clientes.TabIndex = 0;
@@ -411,6 +384,7 @@
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel2.BackColor = Color.LightGray;
             panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(btn_cancelar_produto);
             panel2.Controls.Add(panel14);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(bnt_finalizar_venda);
@@ -418,10 +392,31 @@
             panel2.Controls.Add(painel_pagamentos);
             panel2.Controls.Add(painel_produtos);
             panel2.Controls.Add(panel3);
-            panel2.Location = new Point(151, 7);
+            panel2.Location = new Point(4, 52);
             panel2.Name = "panel2";
-            panel2.Size = new Size(705, 672);
+            panel2.Size = new Size(663, 629);
             panel2.TabIndex = 14;
+            // 
+            // btn_cancelar_produto
+            // 
+            btn_cancelar_produto.Anchor = AnchorStyles.Bottom;
+            btn_cancelar_produto.BackColor = Color.LightGray;
+            btn_cancelar_produto.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_cancelar_produto.Cursor = Cursors.Hand;
+            btn_cancelar_produto.FlatAppearance.BorderColor = Color.Gray;
+            btn_cancelar_produto.FlatStyle = FlatStyle.Flat;
+            btn_cancelar_produto.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_cancelar_produto.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_cancelar_produto.Image = (Image)resources.GetObject("btn_cancelar_produto.Image");
+            btn_cancelar_produto.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_cancelar_produto.Location = new Point(148, 596);
+            btn_cancelar_produto.Name = "btn_cancelar_produto";
+            btn_cancelar_produto.Size = new Size(128, 28);
+            btn_cancelar_produto.TabIndex = 35;
+            btn_cancelar_produto.Text = "Cancelar";
+            btn_cancelar_produto.TextAlign = ContentAlignment.MiddleRight;
+            btn_cancelar_produto.UseVisualStyleBackColor = false;
+            btn_cancelar_produto.Click += btn_cancelar_produto_Click;
             // 
             // panel14
             // 
@@ -429,9 +424,9 @@
             panel14.BorderStyle = BorderStyle.FixedSingle;
             panel14.Controls.Add(txt_total_produto);
             panel14.Controls.Add(label13);
-            panel14.Location = new Point(21, 600);
+            panel14.Location = new Point(5, 563);
             panel14.Name = "panel14";
-            panel14.Size = new Size(668, 27);
+            panel14.Size = new Size(652, 27);
             panel14.TabIndex = 30;
             // 
             // txt_total_produto
@@ -461,7 +456,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Century Gothic", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(64, 64, 64);
-            label5.Location = new Point(295, 8);
+            label5.Location = new Point(295, 2);
             label5.Name = "label5";
             label5.Size = new Size(145, 19);
             label5.TabIndex = 25;
@@ -473,9 +468,9 @@
             painel_observacao.BorderStyle = BorderStyle.FixedSingle;
             painel_observacao.Controls.Add(panel9);
             painel_observacao.Controls.Add(txt_observacao_produto);
-            painel_observacao.Location = new Point(21, 528);
+            painel_observacao.Location = new Point(5, 496);
             painel_observacao.Name = "painel_observacao";
-            painel_observacao.Size = new Size(669, 63);
+            painel_observacao.Size = new Size(653, 63);
             painel_observacao.TabIndex = 26;
             painel_observacao.Visible = false;
             // 
@@ -505,9 +500,9 @@
             txt_observacao_produto.BorderStyle = BorderStyle.FixedSingle;
             txt_observacao_produto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_observacao_produto.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_observacao_produto.Location = new Point(11, 31);
+            txt_observacao_produto.Location = new Point(7, 31);
             txt_observacao_produto.Name = "txt_observacao_produto";
-            txt_observacao_produto.Size = new Size(648, 27);
+            txt_observacao_produto.Size = new Size(639, 27);
             txt_observacao_produto.TabIndex = 26;
             // 
             // painel_pagamentos
@@ -519,9 +514,9 @@
             painel_pagamentos.Controls.Add(rb_debito_produto);
             painel_pagamentos.Controls.Add(rb_pix_produto);
             painel_pagamentos.Controls.Add(rb_dinheiro_produto);
-            painel_pagamentos.Location = new Point(20, 169);
+            painel_pagamentos.Location = new Point(4, 148);
             painel_pagamentos.Name = "painel_pagamentos";
-            painel_pagamentos.Size = new Size(669, 61);
+            painel_pagamentos.Size = new Size(653, 61);
             painel_pagamentos.TabIndex = 26;
             painel_pagamentos.Visible = false;
             // 
@@ -611,9 +606,9 @@
             painel_produtos.Controls.Add(listViewAdicionais);
             painel_produtos.Controls.Add(listViewProdutos);
             painel_produtos.Controls.Add(btn_show_select_produto);
-            painel_produtos.Location = new Point(20, 240);
+            painel_produtos.Location = new Point(4, 214);
             painel_produtos.Name = "painel_produtos";
-            painel_produtos.Size = new Size(669, 276);
+            painel_produtos.Size = new Size(653, 276);
             painel_produtos.TabIndex = 26;
             painel_produtos.Visible = false;
             // 
@@ -628,7 +623,7 @@
             btn_apagar_adicionais.ForeColor = Color.FromArgb(64, 64, 64);
             btn_apagar_adicionais.Image = (Image)resources.GetObject("btn_apagar_adicionais.Image");
             btn_apagar_adicionais.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_apagar_adicionais.Location = new Point(343, 238);
+            btn_apagar_adicionais.Location = new Point(328, 238);
             btn_apagar_adicionais.Name = "btn_apagar_adicionais";
             btn_apagar_adicionais.Size = new Size(125, 28);
             btn_apagar_adicionais.TabIndex = 32;
@@ -648,7 +643,7 @@
             btn_apagar_produto.ForeColor = Color.FromArgb(64, 64, 64);
             btn_apagar_produto.Image = (Image)resources.GetObject("btn_apagar_produto.Image");
             btn_apagar_produto.ImageAlign = ContentAlignment.MiddleLeft;
-            btn_apagar_produto.Location = new Point(6, 239);
+            btn_apagar_produto.Location = new Point(5, 239);
             btn_apagar_produto.Name = "btn_apagar_produto";
             btn_apagar_produto.Size = new Size(126, 28);
             btn_apagar_produto.TabIndex = 31;
@@ -683,7 +678,7 @@
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label19.ForeColor = Color.FromArgb(64, 64, 64);
-            label19.Location = new Point(457, 31);
+            label19.Location = new Point(442, 31);
             label19.Name = "label19";
             label19.Size = new Size(78, 20);
             label19.TabIndex = 26;
@@ -709,7 +704,7 @@
             listViewAdicionais.ForeColor = Color.FromArgb(64, 64, 64);
             listViewAdicionais.FullRowSelect = true;
             listViewAdicionais.HeaderStyle = ColumnHeaderStyle.None;
-            listViewAdicionais.Location = new Point(343, 54);
+            listViewAdicionais.Location = new Point(328, 54);
             listViewAdicionais.Name = "listViewAdicionais";
             listViewAdicionais.Size = new Size(319, 178);
             listViewAdicionais.TabIndex = 24;
@@ -736,7 +731,7 @@
             listViewProdutos.ForeColor = Color.FromArgb(64, 64, 64);
             listViewProdutos.FullRowSelect = true;
             listViewProdutos.HeaderStyle = ColumnHeaderStyle.None;
-            listViewProdutos.Location = new Point(5, 54);
+            listViewProdutos.Location = new Point(4, 54);
             listViewProdutos.Name = "listViewProdutos";
             listViewProdutos.Size = new Size(319, 178);
             listViewProdutos.TabIndex = 19;
@@ -764,9 +759,9 @@
             panel3.Controls.Add(label3);
             panel3.Controls.Add(btn_show_select_cliente);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(20, 44);
+            panel3.Location = new Point(4, 27);
             panel3.Name = "panel3";
-            panel3.Size = new Size(669, 116);
+            panel3.Size = new Size(653, 116);
             panel3.TabIndex = 0;
             // 
             // panel5
@@ -828,16 +823,38 @@
             panel4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel4.BackColor = Color.LightGray;
             panel4.BorderStyle = BorderStyle.FixedSingle;
+            panel4.Controls.Add(btn_cancelar_servico);
             panel4.Controls.Add(panel11);
             panel4.Controls.Add(btn_finalizar_servico);
             panel4.Controls.Add(painel_observacao_servico);
             panel4.Controls.Add(painel_pagamento_servico);
             panel4.Controls.Add(panel7);
             panel4.Controls.Add(label9);
-            panel4.Location = new Point(863, 6);
+            panel4.Location = new Point(880, 52);
             panel4.Name = "panel4";
-            panel4.Size = new Size(349, 535);
+            panel4.Size = new Size(340, 629);
             panel4.TabIndex = 15;
+            // 
+            // btn_cancelar_servico
+            // 
+            btn_cancelar_servico.Anchor = AnchorStyles.Bottom;
+            btn_cancelar_servico.BackColor = Color.LightGray;
+            btn_cancelar_servico.BackgroundImageLayout = ImageLayout.Stretch;
+            btn_cancelar_servico.Cursor = Cursors.Hand;
+            btn_cancelar_servico.FlatAppearance.BorderColor = Color.Gray;
+            btn_cancelar_servico.FlatStyle = FlatStyle.Flat;
+            btn_cancelar_servico.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_cancelar_servico.ForeColor = Color.FromArgb(64, 64, 64);
+            btn_cancelar_servico.Image = (Image)resources.GetObject("btn_cancelar_servico.Image");
+            btn_cancelar_servico.ImageAlign = ContentAlignment.MiddleLeft;
+            btn_cancelar_servico.Location = new Point(8, 594);
+            btn_cancelar_servico.Name = "btn_cancelar_servico";
+            btn_cancelar_servico.Size = new Size(128, 28);
+            btn_cancelar_servico.TabIndex = 34;
+            btn_cancelar_servico.Text = "Cancelar";
+            btn_cancelar_servico.TextAlign = ContentAlignment.MiddleRight;
+            btn_cancelar_servico.UseVisualStyleBackColor = false;
+            btn_cancelar_servico.Click += btn_cancelar_servico_Click;
             // 
             // panel11
             // 
@@ -845,9 +862,9 @@
             panel11.BorderStyle = BorderStyle.FixedSingle;
             panel11.Controls.Add(txt_total_servico);
             panel11.Controls.Add(label14);
-            panel11.Location = new Point(11, 459);
+            panel11.Location = new Point(5, 459);
             panel11.Name = "panel11";
-            panel11.Size = new Size(326, 27);
+            panel11.Size = new Size(330, 27);
             panel11.TabIndex = 32;
             // 
             // txt_total_servico
@@ -878,9 +895,9 @@
             painel_observacao_servico.BorderStyle = BorderStyle.FixedSingle;
             painel_observacao_servico.Controls.Add(panel13);
             painel_observacao_servico.Controls.Add(txt_observacao_servico);
-            painel_observacao_servico.Location = new Point(11, 362);
+            painel_observacao_servico.Location = new Point(4, 362);
             painel_observacao_servico.Name = "painel_observacao_servico";
-            painel_observacao_servico.Size = new Size(326, 88);
+            painel_observacao_servico.Size = new Size(331, 88);
             painel_observacao_servico.TabIndex = 31;
             painel_observacao_servico.Visible = false;
             // 
@@ -910,7 +927,7 @@
             txt_observacao_servico.BorderStyle = BorderStyle.FixedSingle;
             txt_observacao_servico.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_observacao_servico.ForeColor = Color.FromArgb(64, 64, 64);
-            txt_observacao_servico.Location = new Point(3, 30);
+            txt_observacao_servico.Location = new Point(6, 30);
             txt_observacao_servico.Multiline = true;
             txt_observacao_servico.Name = "txt_observacao_servico";
             txt_observacao_servico.Size = new Size(317, 52);
@@ -925,9 +942,9 @@
             painel_pagamento_servico.Controls.Add(rb_debito_servico);
             painel_pagamento_servico.Controls.Add(rb_pix_servico);
             painel_pagamento_servico.Controls.Add(rb_dinheiro_servico);
-            painel_pagamento_servico.Location = new Point(11, 282);
+            painel_pagamento_servico.Location = new Point(3, 282);
             painel_pagamento_servico.Name = "painel_pagamento_servico";
-            painel_pagamento_servico.Size = new Size(326, 67);
+            painel_pagamento_servico.Size = new Size(332, 67);
             painel_pagamento_servico.TabIndex = 29;
             painel_pagamento_servico.Visible = false;
             // 
@@ -1012,7 +1029,7 @@
             panel7.Controls.Add(btn_show_add_servico);
             panel7.Controls.Add(listViewServicos);
             panel7.Controls.Add(panel10);
-            panel7.Location = new Point(8, 45);
+            panel7.Location = new Point(3, 45);
             panel7.Name = "panel7";
             panel7.Size = new Size(333, 221);
             panel7.TabIndex = 28;
@@ -1091,7 +1108,7 @@
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 13F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.FromArgb(64, 64, 64);
-            label9.Location = new Point(103, 5);
+            label9.Location = new Point(103, -1);
             label9.Name = "label9";
             label9.Size = new Size(138, 25);
             label9.TabIndex = 27;
@@ -1114,9 +1131,7 @@
             Text = "k-vision";
             WindowState = FormWindowState.Maximized;
             Load += MainFrame_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel14.ResumeLayout(false);
@@ -1164,10 +1179,8 @@
         private Label lblClienteVenda;
         private ColumnHeader NomeProduto;
         private Button bnt_finalizar_venda;
-        private PictureBox pictureBox4;
         private Panel panel1;
         private Button btn_show_servicos;
-        private Label label1;
         private Button bnt_show_clientes;
         private Button btn_show_caixa;
         private Panel panel2;
@@ -1235,5 +1248,7 @@
         private Button btn_apagar_produto;
         private Button btn_apagar_adicionais;
         private Button btn_limpar_servicos;
+        private Button btn_cancelar_servico;
+        private Button btn_cancelar_produto;
     }
 }

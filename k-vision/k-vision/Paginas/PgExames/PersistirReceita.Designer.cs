@@ -311,7 +311,7 @@
             // 
             txt_altura_esquerdo.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_altura_esquerdo.Location = new Point(116, 39);
-            txt_altura_esquerdo.Mask = "0,00";
+            txt_altura_esquerdo.Mask = "00,00";
             txt_altura_esquerdo.Name = "txt_altura_esquerdo";
             txt_altura_esquerdo.Size = new Size(69, 27);
             txt_altura_esquerdo.TabIndex = 39;
@@ -321,7 +321,7 @@
             // 
             txt_adicao_esquerdo.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_adicao_esquerdo.Location = new Point(41, 39);
-            txt_adicao_esquerdo.Mask = "0,00";
+            txt_adicao_esquerdo.Mask = "#0,00";
             txt_adicao_esquerdo.Name = "txt_adicao_esquerdo";
             txt_adicao_esquerdo.Size = new Size(69, 27);
             txt_adicao_esquerdo.TabIndex = 38;
@@ -331,7 +331,7 @@
             // 
             txt_adicao_direito.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_adicao_direito.Location = new Point(41, 8);
-            txt_adicao_direito.Mask = "0,00";
+            txt_adicao_direito.Mask = "#0,00";
             txt_adicao_direito.Name = "txt_adicao_direito";
             txt_adicao_direito.Size = new Size(69, 27);
             txt_adicao_direito.TabIndex = 34;
@@ -341,7 +341,7 @@
             // 
             txt_altura_direito.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_altura_direito.Location = new Point(116, 7);
-            txt_altura_direito.Mask = "0,00";
+            txt_altura_direito.Mask = "00,00";
             txt_altura_direito.Name = "txt_altura_direito";
             txt_altura_direito.Size = new Size(69, 27);
             txt_altura_direito.TabIndex = 35;
@@ -446,11 +446,11 @@
             txt_dp_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_esquerdo_longe.Location = new Point(265, 37);
-            txt_dp_esquerdo_longe.Mask = "0,00";
+            txt_dp_esquerdo_longe.Mask = "00,00";
             txt_dp_esquerdo_longe.Name = "txt_dp_esquerdo_longe";
             txt_dp_esquerdo_longe.Size = new Size(69, 27);
             txt_dp_esquerdo_longe.TabIndex = 33;
-            txt_dp_esquerdo_longe.ValidatingType = typeof(DateTime);
+            txt_dp_esquerdo_longe.ValidatingType = typeof(int);
             // 
             // label16
             // 
@@ -469,11 +469,11 @@
             txt_eixo_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_esquerdo_longe.Location = new Point(190, 38);
-            txt_eixo_esquerdo_longe.Mask = "0,00";
+            txt_eixo_esquerdo_longe.Mask = "000";
             txt_eixo_esquerdo_longe.Name = "txt_eixo_esquerdo_longe";
             txt_eixo_esquerdo_longe.Size = new Size(69, 27);
             txt_eixo_esquerdo_longe.TabIndex = 32;
-            txt_eixo_esquerdo_longe.ValidatingType = typeof(DateTime);
+            txt_eixo_esquerdo_longe.ValidatingType = typeof(int);
             // 
             // label17
             // 
@@ -493,7 +493,7 @@
             txt_cil_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_cil_esquerdo_longe.Location = new Point(115, 38);
-            txt_cil_esquerdo_longe.Mask = "0,00";
+            txt_cil_esquerdo_longe.Mask = "#0,00";
             txt_cil_esquerdo_longe.Name = "txt_cil_esquerdo_longe";
             txt_cil_esquerdo_longe.Size = new Size(69, 27);
             txt_cil_esquerdo_longe.TabIndex = 31;
@@ -505,7 +505,7 @@
             txt_esf_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_direito_longe.Location = new Point(40, 7);
-            txt_esf_direito_longe.Mask = "0,00";
+            txt_esf_direito_longe.Mask = "#0,00";
             txt_esf_direito_longe.Name = "txt_esf_direito_longe";
             txt_esf_direito_longe.Size = new Size(69, 27);
             txt_esf_direito_longe.TabIndex = 26;
@@ -517,11 +517,11 @@
             txt_eixo_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_direito_longe.Location = new Point(190, 6);
-            txt_eixo_direito_longe.Mask = "0,00";
+            txt_eixo_direito_longe.Mask = "000";
             txt_eixo_direito_longe.Name = "txt_eixo_direito_longe";
             txt_eixo_direito_longe.Size = new Size(69, 27);
             txt_eixo_direito_longe.TabIndex = 28;
-            txt_eixo_direito_longe.ValidatingType = typeof(DateTime);
+            txt_eixo_direito_longe.ValidatingType = typeof(int);
             // 
             // txt_dp_direito_longe
             // 
@@ -529,7 +529,7 @@
             txt_dp_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_direito_longe.Location = new Point(265, 7);
-            txt_dp_direito_longe.Mask = "0,00";
+            txt_dp_direito_longe.Mask = "00,00";
             txt_dp_direito_longe.Name = "txt_dp_direito_longe";
             txt_dp_direito_longe.Size = new Size(69, 27);
             txt_dp_direito_longe.TabIndex = 29;
@@ -540,12 +540,14 @@
             txt_cil_direito_longe.BorderStyle = BorderStyle.FixedSingle;
             txt_cil_direito_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_direito_longe.ForeColor = Color.FromArgb(64, 64, 64);
+            txt_cil_direito_longe.InsertKeyMode = InsertKeyMode.Insert;
             txt_cil_direito_longe.Location = new Point(115, 6);
-            txt_cil_direito_longe.Mask = "0,00";
+            txt_cil_direito_longe.Mask = "#0,00";
             txt_cil_direito_longe.Name = "txt_cil_direito_longe";
             txt_cil_direito_longe.Size = new Size(69, 27);
+            txt_cil_direito_longe.SkipLiterals = false;
             txt_cil_direito_longe.TabIndex = 27;
-            txt_cil_direito_longe.ValidatingType = typeof(DateTime);
+            txt_cil_direito_longe.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
             // 
             // txt_esf_esquerdo_longe
             // 
@@ -553,7 +555,7 @@
             txt_esf_esquerdo_longe.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_esquerdo_longe.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_esquerdo_longe.Location = new Point(40, 38);
-            txt_esf_esquerdo_longe.Mask = "0,00";
+            txt_esf_esquerdo_longe.Mask = "#0,00";
             txt_esf_esquerdo_longe.Name = "txt_esf_esquerdo_longe";
             txt_esf_esquerdo_longe.Size = new Size(69, 27);
             txt_esf_esquerdo_longe.TabIndex = 30;
@@ -646,7 +648,7 @@
             txt_dp_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_esquerdo_perto.Location = new Point(266, 38);
-            txt_dp_esquerdo_perto.Mask = "0,00";
+            txt_dp_esquerdo_perto.Mask = "00,00";
             txt_dp_esquerdo_perto.Name = "txt_dp_esquerdo_perto";
             txt_dp_esquerdo_perto.Size = new Size(69, 27);
             txt_dp_esquerdo_perto.TabIndex = 41;
@@ -669,7 +671,7 @@
             txt_eixo_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_esquerdo_perto.Location = new Point(191, 39);
-            txt_eixo_esquerdo_perto.Mask = "0,00";
+            txt_eixo_esquerdo_perto.Mask = "000";
             txt_eixo_esquerdo_perto.Name = "txt_eixo_esquerdo_perto";
             txt_eixo_esquerdo_perto.Size = new Size(69, 27);
             txt_eixo_esquerdo_perto.TabIndex = 40;
@@ -693,7 +695,7 @@
             txt_cil_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_cil_esquerdo_perto.Location = new Point(116, 39);
-            txt_cil_esquerdo_perto.Mask = "0,00";
+            txt_cil_esquerdo_perto.Mask = "#0,00";
             txt_cil_esquerdo_perto.Name = "txt_cil_esquerdo_perto";
             txt_cil_esquerdo_perto.Size = new Size(69, 27);
             txt_cil_esquerdo_perto.TabIndex = 39;
@@ -705,7 +707,7 @@
             txt_eixo_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_eixo_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_eixo_direito_perto.Location = new Point(191, 7);
-            txt_eixo_direito_perto.Mask = "0,00";
+            txt_eixo_direito_perto.Mask = "000";
             txt_eixo_direito_perto.Name = "txt_eixo_direito_perto";
             txt_eixo_direito_perto.Size = new Size(69, 27);
             txt_eixo_direito_perto.TabIndex = 36;
@@ -717,7 +719,7 @@
             txt_esf_esquerdo_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_esquerdo_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_esquerdo_perto.Location = new Point(41, 39);
-            txt_esf_esquerdo_perto.Mask = "0,00";
+            txt_esf_esquerdo_perto.Mask = "#0,00";
             txt_esf_esquerdo_perto.Name = "txt_esf_esquerdo_perto";
             txt_esf_esquerdo_perto.Size = new Size(69, 27);
             txt_esf_esquerdo_perto.TabIndex = 38;
@@ -729,7 +731,7 @@
             txt_dp_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_dp_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_dp_direito_perto.Location = new Point(266, 8);
-            txt_dp_direito_perto.Mask = "0,00";
+            txt_dp_direito_perto.Mask = "00,00";
             txt_dp_direito_perto.Name = "txt_dp_direito_perto";
             txt_dp_direito_perto.Size = new Size(69, 27);
             txt_dp_direito_perto.TabIndex = 37;
@@ -741,7 +743,7 @@
             txt_esf_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_esf_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_esf_direito_perto.Location = new Point(41, 8);
-            txt_esf_direito_perto.Mask = "0,00";
+            txt_esf_direito_perto.Mask = "#0,00";
             txt_esf_direito_perto.Name = "txt_esf_direito_perto";
             txt_esf_direito_perto.Size = new Size(69, 27);
             txt_esf_direito_perto.TabIndex = 34;
@@ -753,7 +755,7 @@
             txt_cil_direito_perto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_cil_direito_perto.ForeColor = Color.FromArgb(64, 64, 64);
             txt_cil_direito_perto.Location = new Point(116, 7);
-            txt_cil_direito_perto.Mask = "0,00";
+            txt_cil_direito_perto.Mask = "#0,00";
             txt_cil_direito_perto.Name = "txt_cil_direito_perto";
             txt_cil_direito_perto.Size = new Size(69, 27);
             txt_cil_direito_perto.TabIndex = 35;

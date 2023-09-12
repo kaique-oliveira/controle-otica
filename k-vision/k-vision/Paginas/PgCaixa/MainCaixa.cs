@@ -28,7 +28,7 @@ namespace Kvision.Frame.Paginas.PgCaixa
         {
             dg_movimentacoes.AutoGenerateColumns = false;
             listaMovimentacao = _servicoMovimentacao.ConsultarTodos()
-                .OrderBy(m => m.DataCadastro.ToShortDateString() == DateTime.Now.ToShortDateString()).ToList();
+                .OrderByDescending(m => m.DataCadastro.ToShortDateString()).ToList();
 
             if (listaMovimentacao.Count > 0)
             {
@@ -76,9 +76,8 @@ namespace Kvision.Frame.Paginas.PgCaixa
         private void MainCaixa_Shown(object sender, EventArgs e)
         {
             atualizarGridMovimentacoes();
-
             buscarCaixa();
-            cb_tipo_mov.SelectedIndex = 0;
+     
 
             colorirLinhas();
 
@@ -86,7 +85,7 @@ namespace Kvision.Frame.Paginas.PgCaixa
         }
 
 
-       
+
 
         private void btn_show_movimentacao_Click(object sender, EventArgs e)
         {
@@ -139,27 +138,58 @@ namespace Kvision.Frame.Paginas.PgCaixa
 
 
         List<Movimentacao> listaViewMovimentacoesFiltrada = new List<Movimentacao>();
+        DateTime filtro;
+
         private void cb_tipo_mov_SelectedIndexChanged(object sender, EventArgs e)
         {
             var c = (ComboBox)sender;
             TipoMovimentacao tipo;
+            atualizarGridMovimentacoes();
 
             switch (c.SelectedIndex.ToString())
             {
                 case "1":
                     tipo = TipoMovimentacao.Entrada;
-                    listaMovimentacao = listaMovimentacao.Where(m => m.Tipo == tipo)
-                        .OrderBy(m => m.DataCadastro.ToShortDateString() == DateTime.Now.ToShortDateString()).ToList();
 
+                    if (filtro.Date.ToShortDateString() != "01/01/0001")
+                    {
+                        listaMovimentacao = listaMovimentacao.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+                        && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+
+                        listaMovimentacao = listaMovimentacao.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+                        && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+                    }
+
+                    listaMovimentacao = listaMovimentacao.Where(m => m.Tipo == tipo)
+                        .OrderByDescending(m => m.DataCadastro.ToShortDateString()).ToList();
                     break;
                 case "2":
                     tipo = TipoMovimentacao.Saida;
+                    if (filtro.Date.ToShortDateString() != "01/01/0001")
+                    {
+                        listaMovimentacao = listaMovimentacao.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+                        && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+
+                        listaMovimentacao = listaMovimentacao.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+                        && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+                    }
+
                     listaMovimentacao = listaMovimentacao.Where(m => m.Tipo == tipo)
-                       .OrderBy(m => m.DataCadastro.ToShortDateString() == DateTime.Now.ToShortDateString()).ToList();
+                       .OrderByDescending(m => m.DataCadastro.ToShortDateString()).ToList();
                     break;
                 default:
+
+                    if (filtro.Date.ToShortDateString() != "01/01/0001")
+                    {
+                        listaMovimentacao = listaMovimentacao.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+                        && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+
+                        listaMovimentacao = listaMovimentacao.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
+                        && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+                    }
+
                     listaMovimentacao = listaMovimentacao
-                       .OrderBy(m => m.DataCadastro.ToShortDateString() == DateTime.Now.ToShortDateString()).ToList();
+                       .OrderByDescending(m => m.DataCadastro.ToShortDateString()).ToList();
                     break;
             }
 
@@ -204,6 +234,7 @@ namespace Kvision.Frame.Paginas.PgCaixa
         {
             listaMovimentacao = listaMovimentacao.FindAll(v => v.DataCadastro.Date >= dtp_data_inicio.Value.Date
             && v.DataCadastro.Date <= dtp_data_fim.Value.Date);
+            filtro = dtp_data_fim.Value.Date;
 
             dg_movimentacoes.DataSource = listaMovimentacao;
 
@@ -213,7 +244,7 @@ namespace Kvision.Frame.Paginas.PgCaixa
                 total += item.Valor;
             }
 
-            txt_total_caixa.Text = "R$ " + string.Format("{0:#,##0.00}",  total.ToString());
+            txt_total_caixa.Text = "R$ " + string.Format("{0:#,##0.00}", total.ToString());
             colorirLinhas();
 
         }

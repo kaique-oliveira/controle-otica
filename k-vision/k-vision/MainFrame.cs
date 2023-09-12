@@ -410,5 +410,47 @@ namespace k_vision
             btn_finalizar_servico.Enabled = false;
             btn_limpar_servicos.Enabled = false;
         }
+
+        private void btn_cancelar_servico_Click(object sender, EventArgs e)
+        {
+            listaServico.Clear();
+            listViewServicos.Items.Clear();
+            rb_dinheiro_servico.Checked = false;
+            rb_pix_servico.Checked = false;
+            rb_debito_servico.Checked = false;
+            rb_credito_servico.Checked = false;
+            txt_observacao_servico.Text = "";
+            painel_observacao_servico.Visible = false;
+            painel_pagamento_servico.Visible = false;
+            txt_total_servico.Text = "R$ 0.00";
+            valor_total_servico = 0;
+            btn_finalizar_servico.Enabled = false;
+
+        }
+
+        private void btn_cancelar_produto_Click(object sender, EventArgs e)
+        {
+            listViewProdutos.Items.Clear();
+            listaAdicional.Clear();
+            listViewAdicionais.Items.Clear();
+
+            txt_observacao_produto.Text = "";
+            txt_total_produto.Text = "R$ 0.00";
+            lblClienteVenda.Text = "Nome Cliente";
+            lblReceitaVenda.Text = "Receita";
+
+            valorTotal = 0;
+
+            rb_dinheiro_produto.Checked = false;
+            rb_debito_produto.Checked = false;
+            rb_credito_produto.Checked = false;
+            rb_pix_produto.Checked = false;
+
+            painel_pagamentos.Visible = false;
+            painel_produtos.Visible = false;
+            painel_observacao.Visible = false;
+            bnt_finalizar_venda.Enabled = false;
+            produtosSelecionados.Clear();
+        }
     }
 }
